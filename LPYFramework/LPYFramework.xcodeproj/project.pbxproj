@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; settings = {ASSET_TAGS = (); }; };
+		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C44D1B491C2AD94100048CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B481C2AD94100048CFF /* main.m */; };
 		C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B4B1C2AD94100048CFF /* AppDelegate.m */; };
 		C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B4E1C2AD94100048CFF /* ViewController.m */; };
 		C44D1B521C2AD94100048CFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44D1B501C2AD94100048CFF /* Main.storyboard */; };
 		C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44D1B531C2AD94200048CFF /* Assets.xcassets */; };
-		C44D1B571C2AD94200048CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C44D1B551C2AD94200048CFF /* LaunchScreen.storyboard */; };
 		C44D1B621C2AD94200048CFF /* LPYFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B611C2AD94200048CFF /* LPYFrameworkTests.m */; };
 		C44D1B6D1C2AD94200048CFF /* LPYFrameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B6C1C2AD94200048CFF /* LPYFrameworkUITests.m */; };
 /* End PBXBuildFile section */
@@ -35,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollView.h; sourceTree = "<group>"; };
+		C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollView.m; sourceTree = "<group>"; };
+		C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollViewController.h; sourceTree = "<group>"; };
+		C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollViewController.m; sourceTree = "<group>"; };
 		C44D1B441C2AD94100048CFF /* LPYFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LPYFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44D1B481C2AD94100048CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C44D1B4A1C2AD94100048CFF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -43,7 +48,6 @@
 		C44D1B4E1C2AD94100048CFF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C44D1B511C2AD94100048CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C44D1B531C2AD94200048CFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C44D1B561C2AD94200048CFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C44D1B581C2AD94200048CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C44D1B5D1C2AD94200048CFF /* LPYFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPYFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44D1B611C2AD94200048CFF /* LPYFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPYFrameworkTests.m; sourceTree = "<group>"; };
@@ -78,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */,
+				C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */,
+				C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */,
+				C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		C44D1B3B1C2AD94100048CFF = {
 			isa = PBXGroup;
 			children = (
@@ -101,13 +116,13 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C40E70E71C3ABF7500F9567D /* ScrollView */,
 				C44D1B4A1C2AD94100048CFF /* AppDelegate.h */,
 				C44D1B4B1C2AD94100048CFF /* AppDelegate.m */,
 				C44D1B4D1C2AD94100048CFF /* ViewController.h */,
 				C44D1B4E1C2AD94100048CFF /* ViewController.m */,
 				C44D1B501C2AD94100048CFF /* Main.storyboard */,
 				C44D1B531C2AD94200048CFF /* Assets.xcassets */,
-				C44D1B551C2AD94200048CFF /* LaunchScreen.storyboard */,
 				C44D1B581C2AD94200048CFF /* Info.plist */,
 				C44D1B471C2AD94100048CFF /* Supporting Files */,
 			);
@@ -202,6 +217,7 @@
 		C44D1B3C1C2AD94100048CFF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = LPY;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = liupuyan;
 				TargetAttributes = {
@@ -246,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C44D1B571C2AD94200048CFF /* LaunchScreen.storyboard in Resources */,
 				C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */,
 				C44D1B521C2AD94100048CFF /* Main.storyboard in Resources */,
 			);
@@ -275,7 +290,9 @@
 			files = (
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
+				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
+				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,14 +334,6 @@
 				C44D1B511C2AD94100048CFF /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C44D1B551C2AD94200048CFF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C44D1B561C2AD94200048CFF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -499,6 +508,7 @@
 				C44D1B731C2AD94200048CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C44D1B741C2AD94200048CFF /* Build configuration list for PBXNativeTarget "LPYFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +517,7 @@
 				C44D1B761C2AD94200048CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C44D1B771C2AD94200048CFF /* Build configuration list for PBXNativeTarget "LPYFrameworkUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +526,7 @@
 				C44D1B791C2AD94200048CFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

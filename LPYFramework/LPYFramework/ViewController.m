@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "LPYInfiniteScrollViewController.h"
 
 @interface ViewController ()
 
@@ -19,7 +20,9 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+// 无限循环
 - (IBAction)btn_ScrollViewClick {
-    
+    LPYInfiniteScrollViewController *VC = [[LPYInfiniteScrollViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
 }
 @end
