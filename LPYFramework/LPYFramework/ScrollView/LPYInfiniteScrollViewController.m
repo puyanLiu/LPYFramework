@@ -20,6 +20,7 @@
     // Do any additional setup after loading the view.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     LPYInfiniteScrollView *scrollView = [[LPYInfiniteScrollView alloc] init];
     scrollView.frame = CGRectMake(30, 100, 300, 130);
