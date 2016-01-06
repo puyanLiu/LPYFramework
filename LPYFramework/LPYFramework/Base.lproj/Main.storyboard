@@ -24,15 +24,18 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFh-rE-1YU">
-                                <rect key="frame" x="92" y="72" width="45" height="30"/>
-                                <state key="normal" title="二维码"/>
+                                <rect key="frame" x="89" y="72" width="75" height="30"/>
+                                <state key="normal" title="二维码生成"/>
                                 <connections>
                                     <action selector="btn_QRCodeClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="0m4-bE-8AO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x6j-AL-2oR">
-                                <rect key="frame" x="150" y="72" width="75" height="30"/>
+                                <rect key="frame" x="179" y="72" width="75" height="30"/>
                                 <state key="normal" title="二维码扫描"/>
+                                <connections>
+                                    <action selector="btn_QRCodeScanningClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewi-EZ-FOr"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

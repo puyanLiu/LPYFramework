@@ -11,6 +11,8 @@
 		841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */; };
 		841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6451C3CD10B007B1762 /* UIView+Extension.m */; };
 		841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6481C3CD184007B1762 /* UIImage+Extension.m */; };
+		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
+		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
 		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; };
 		C44D1B491C2AD94100048CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B481C2AD94100048CFF /* main.m */; };
@@ -47,6 +49,9 @@
 		841FB6451C3CD10B007B1762 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		841FB6471C3CD184007B1762 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		841FB6481C3CD184007B1762 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
+		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
+		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
 		C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollView.h; sourceTree = "<group>"; };
 		C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollView.m; sourceTree = "<group>"; };
 		C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollViewController.h; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 				841FB63E1C3CB88B007B1762 /* LPYQRCodeViewController.h */,
 				841FB63F1C3CB88B007B1762 /* LPYQRCodeViewController.m */,
 				841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */,
+				84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */,
+				84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */,
+				84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -257,7 +265,7 @@
 				TargetAttributes = {
 					C44D1B431C2AD94100048CFF = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = D3F273K29F;
+						DevelopmentTeam = M4H635DK49;
 					};
 					C44D1B5C1C2AD94200048CFF = {
 						CreatedOnToolsVersion = 7.0;
@@ -299,6 +307,7 @@
 				841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */,
 				C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */,
 				C44D1B521C2AD94100048CFF /* Main.storyboard in Resources */,
+				84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +335,7 @@
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
+				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
@@ -461,10 +471,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LPYFramework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liupuyan.app.LPYFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -472,10 +486,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = LPYFramework/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liupuyan.app.LPYFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
