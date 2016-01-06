@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; settings = {ASSET_TAGS = (); }; };
-		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; settings = {ASSET_TAGS = (); }; };
+		841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB63F1C3CB88B007B1762 /* LPYQRCodeViewController.m */; };
+		841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */; };
+		841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6451C3CD10B007B1762 /* UIView+Extension.m */; };
+		841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6481C3CD184007B1762 /* UIImage+Extension.m */; };
+		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
+		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; };
 		C44D1B491C2AD94100048CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B481C2AD94100048CFF /* main.m */; };
 		C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B4B1C2AD94100048CFF /* AppDelegate.m */; };
 		C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B4E1C2AD94100048CFF /* ViewController.m */; };
@@ -36,6 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		841FB63E1C3CB88B007B1762 /* LPYQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeViewController.h; sourceTree = "<group>"; };
+		841FB63F1C3CB88B007B1762 /* LPYQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeViewController.m; sourceTree = "<group>"; };
+		841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeViewController.xib; sourceTree = "<group>"; };
+		841FB6441C3CD10B007B1762 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		841FB6451C3CD10B007B1762 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		841FB6471C3CD184007B1762 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		841FB6481C3CD184007B1762 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 		C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollView.h; sourceTree = "<group>"; };
 		C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollView.m; sourceTree = "<group>"; };
 		C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollViewController.h; sourceTree = "<group>"; };
@@ -82,6 +93,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841FB63D1C3CB839007B1762 /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				841FB63E1C3CB88B007B1762 /* LPYQRCodeViewController.h */,
+				841FB63F1C3CB88B007B1762 /* LPYQRCodeViewController.m */,
+				841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		841FB6431C3CD0CF007B1762 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				841FB6471C3CD184007B1762 /* UIImage+Extension.h */,
+				841FB6481C3CD184007B1762 /* UIImage+Extension.m */,
+				841FB6441C3CD10B007B1762 /* UIView+Extension.h */,
+				841FB6451C3CD10B007B1762 /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +148,8 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				841FB6431C3CD0CF007B1762 /* Category */,
+				841FB63D1C3CB839007B1762 /* QRCode */,
 				C40E70E71C3ABF7500F9567D /* ScrollView */,
 				C44D1B4A1C2AD94100048CFF /* AppDelegate.h */,
 				C44D1B4B1C2AD94100048CFF /* AppDelegate.m */,
@@ -262,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */,
 				C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */,
 				C44D1B521C2AD94100048CFF /* Main.storyboard in Resources */,
 			);
@@ -288,11 +323,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
+				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
 				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
+				841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

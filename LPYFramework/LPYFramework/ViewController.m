@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "LPYInfiniteScrollViewController.h"
+#import "LPYQRCodeViewController.h"
 
 @interface ViewController ()
 
@@ -25,4 +26,11 @@
     LPYInfiniteScrollViewController *VC = [[LPYInfiniteScrollViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
+
+// 二维码
+- (IBAction)btn_QRCodeClick {
+    LPYQRCodeViewController *VC = [[LPYQRCodeViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 @end
