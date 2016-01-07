@@ -11,6 +11,7 @@
 		841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */; };
 		841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6451C3CD10B007B1762 /* UIView+Extension.m */; };
 		841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6481C3CD184007B1762 /* UIImage+Extension.m */; };
+		84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84441DFF1C3E80180059BEDA /* noticeMusic.wav */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
@@ -49,6 +50,7 @@
 		841FB6451C3CD10B007B1762 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		841FB6471C3CD184007B1762 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		841FB6481C3CD184007B1762 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		84441DFF1C3E80180059BEDA /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		841FB63D1C3CB839007B1762 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				84441DFF1C3E80180059BEDA /* noticeMusic.wav */,
 				841FB63E1C3CB88B007B1762 /* LPYQRCodeViewController.h */,
 				841FB63F1C3CB88B007B1762 /* LPYQRCodeViewController.m */,
 				841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */,
@@ -306,6 +309,7 @@
 			files = (
 				841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */,
 				C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */,
+				84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */,
 				C44D1B521C2AD94100048CFF /* Main.storyboard in Resources */,
 				84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */,
 			);
