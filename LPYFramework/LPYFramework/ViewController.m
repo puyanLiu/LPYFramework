@@ -10,6 +10,7 @@
 #import "LPYInfiniteScrollViewController.h"
 #import "LPYQRCodeViewController.h"
 #import "LPYQRCodeScanningViewController.h"
+#import "LPYLightShowViewController.h"
 
 @interface ViewController ()
 
@@ -37,6 +38,12 @@
 // 二维码扫描
 - (IBAction)btn_QRCodeScanningClick {
     LPYQRCodeScanningViewController *VC = [[LPYQRCodeScanningViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+// 开关灯
+- (IBAction)btn_LightClick {
+    LPYLightShowViewController *VC = [[LPYLightShowViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
 
