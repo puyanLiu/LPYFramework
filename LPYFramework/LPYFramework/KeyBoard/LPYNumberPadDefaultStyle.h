@@ -6,30 +6,9 @@
 //  Copyright © 2016年 liupuyan. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-@protocol LPYNumberPadStyle;
+#import "LPYNumberPadStyle.h"
 
 @interface LPYNumberPadDefaultStyle : NSObject <LPYNumberPadStyle>
-
-@end
-
-@protocol LPYNumberPadStyle <NSObject>
-
-+ (CGRect)numberPadFrame;
-+ (CGFloat)separator;
-+ (UIColor *)numberPadBackgroundColor;
-
-+ (UIFont *)numberButtonFont;
-+ (UIColor *)numberButtonBackgroundColor;
-+ (UIColor *)numberButtonHighlightedColor;
-+ (UIColor *)numberButtonTextColor;
-
-+ (UIFont *)functionButtonFont;
-+ (UIColor *)functionButtonBackgroundColor;
-+ (UIColor *)functionButtonHighlightedColor;
-+ (UIColor *)functionButtonTextColor;
-+ (UIImage *)clearFunctionButtonImage;
 
 @end

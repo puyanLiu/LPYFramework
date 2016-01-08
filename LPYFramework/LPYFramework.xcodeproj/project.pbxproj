@@ -73,6 +73,7 @@
 		842F6CC91C3FC49A0031AC16 /* LPYCommonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCommonHelp.h; sourceTree = "<group>"; };
 		842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCommonHelp.m; sourceTree = "<group>"; };
 		842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LPYNumberPad.bundle; sourceTree = "<group>"; };
+		842F6CCE1C3FC6A30031AC16 /* LPYNumberPadStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberPadStyle.h; sourceTree = "<group>"; };
 		84441DFF1C3E80180059BEDA /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
@@ -156,6 +157,7 @@
 				842F6CB61C3FC4940031AC16 /* LPYNumberButton.m */,
 				842F6CB71C3FC4940031AC16 /* LPYNumberPad.h */,
 				842F6CB81C3FC4940031AC16 /* LPYNumberPad.m */,
+				842F6CCE1C3FC6A30031AC16 /* LPYNumberPadStyle.h */,
 				842F6CB91C3FC4940031AC16 /* LPYNumberPadDefaultStyle.h */,
 				842F6CBA1C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m */,
 				842F6CBB1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.h */,

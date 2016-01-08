@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LPYNumberPadStyle.h"
 
 @protocol LPYNumberPadDelegate;
 
 @interface LPYNumberPad : UIView
 + (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate;
 
-// 左边按钮
-@property (nonatomic, strong) UIButton *leftFunctionButton;
-// 右边按钮
-@property (nonatomic, strong) UIButton *clearButton;
+//// 左边按钮
+//@property (nonatomic, strong) UIButton *leftFunctionButton;
+//// 右边按钮
+//@property (nonatomic, strong) UIButton *clearButton;
+//
+//// 样式
+//@property (nonatomic, strong) Class<LPYNumberPadStyle> styleClass;
 @end
 
 @protocol LPYNumberPadDelegate <NSObject>
