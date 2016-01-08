@@ -7,8 +7,9 @@
 //
 
 #import "LPYPasswordKeyBoardViewController.h"
+#import "LPYNumberPad.h"
 
-@interface LPYPasswordKeyBoardViewController ()
+@interface LPYPasswordKeyBoardViewController () <LPYNumberPadDelegate>
 
 @end
 
@@ -38,7 +39,11 @@
      UIKeyboardTypeTwitter,                // 输入Twitter键盘
      UIKeyboardTypeWebSearch ,             // 搜索框键盘
      */
-    txt.keyboardType = UIKeyboardTypeNumberPad;
+//    txt.keyboardType = UIKeyboardTypeNumberPad;
+    txt.inputView = ({
+        LPYNumberPad *numberPad = [LPYNumberPad numberPadWithDelegate:self];
+        numberPad;
+    });
     [self.view addSubview:txt];
 }
 

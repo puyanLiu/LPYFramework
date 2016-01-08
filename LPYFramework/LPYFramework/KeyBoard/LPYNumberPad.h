@@ -12,7 +12,6 @@
 @protocol LPYNumberPadDelegate;
 
 @interface LPYNumberPad : UIView
-+ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate;
 
 //// 左边按钮
 //@property (nonatomic, strong) UIButton *leftFunctionButton;
@@ -21,6 +20,10 @@
 //
 //// 样式
 //@property (nonatomic, strong) Class<LPYNumberPadStyle> styleClass;
+
++ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate;
+
++ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass;
 @end
 
 @protocol LPYNumberPadDelegate <NSObject>

@@ -56,6 +56,10 @@
         }
         self.numberButtons = numbersButtons;
         
+        // leftButton
+        self.leftButton = [self functionButton];
+        [self addSubview:self.leftButton];
+        
         // clearButton
         self.clearButton = [self functionButton];
         [self.clearButton setImage:[self.styleClass clearFunctionButtonImage] forState:UIControlStateNormal];
@@ -67,6 +71,48 @@
         [self addSubview:self.clearButton];
     }
     return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    int rows = 4;
+    int sections = 3;
+    CGFloat sep = [self.styleClass separator];
+    CGFloat left = 0.0f;
+    CGFloat top = 0.0f;
+#if defined(__LP64__) && __LP64__
+    CGFloat buttonHeight = trunc((CGRectGetHeight(self.bounds) - sep * (rows - 1)) / rows) + sep;
+#else
+    CGFloat buttonHeight = truncf((CGRectGetHeight(self.bounds) - sep * (rows - 1)) / rows) + sep;
+#endif
+    CGSize buttonSize = CGSizeMake((CGRectGetWidth(self.bounds) - sep * (sections - 1)) / sections, buttonHeight);
+    
+    // 1-9
+    for (int i = 1; i < self.numberButtons.count - 1; i++) {
+        LPYNumberButton *numberButton = self.numberButtons[i];
+        numberButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
+        
+        if (i % sections == 0) {
+            left = 0.0f;
+            top += buttonSize.height + sep;
+        } else {
+            left += buttonSize.width + sep;
+        }
+    }
+    
+    // leftButton
+    left = 0.0f;
+    self.leftButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
+    
+    // 0
+    left += buttonSize.width + sep;
+    UIButton *zeroButton = [self.numberButtons firstObject];
+    zeroButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
+    
+    // clearButton
+    left += buttonSize.width + sep;
+    self.clearButton.frame = CGRectMake(left, top, buttonSize.width, buttonSize.height);
 }
 
 - (void)longPressGestureRecognizerAction:(UILongPressGestureRecognizer *)longPress {
@@ -124,6 +170,6 @@
 }
 
 - (void)textDidEndEditing:(NSNotification *)notification {
-    
+    self.textInput = nil;
 }
 @end
