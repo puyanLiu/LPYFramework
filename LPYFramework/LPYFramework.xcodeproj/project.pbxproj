@@ -11,11 +11,17 @@
 		841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 841FB6401C3CB88B007B1762 /* LPYQRCodeViewController.xib */; };
 		841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6451C3CD10B007B1762 /* UIView+Extension.m */; };
 		841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 841FB6481C3CD184007B1762 /* UIImage+Extension.m */; };
+		842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CB61C3FC4940031AC16 /* LPYNumberButton.m */; };
+		842F6CC31C3FC4940031AC16 /* LPYNumberPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CB81C3FC4940031AC16 /* LPYNumberPad.m */; };
+		842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CBA1C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m */; };
+		842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CBC1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m */; };
+		842F6CC61C3FC4940031AC16 /* UIImage+LPYNumberPad.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CBE1C3FC4940031AC16 /* UIImage+LPYNumberPad.m */; };
+		842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CC11C3FC4940031AC16 /* LPYLightShowViewController.m */; };
+		842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */; };
+		842F6CCD1C3FC5AD0031AC16 /* LPYNumberPad.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */; };
 		84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84441DFF1C3E80180059BEDA /* noticeMusic.wav */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
-		84FE458E1C3F51A200B1C806 /* LPYLightShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FE458D1C3F51A200B1C806 /* LPYLightShowViewController.m */; };
-		84FE45921C3F5BCD00B1C806 /* LPYCommonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FE45911C3F5BCD00B1C806 /* LPYCommonHelp.m */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
 		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; };
 		C44D1B491C2AD94100048CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B481C2AD94100048CFF /* main.m */; };
@@ -52,14 +58,25 @@
 		841FB6451C3CD10B007B1762 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		841FB6471C3CD184007B1762 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		841FB6481C3CD184007B1762 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		842F6CB51C3FC4940031AC16 /* LPYNumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberButton.h; sourceTree = "<group>"; };
+		842F6CB61C3FC4940031AC16 /* LPYNumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNumberButton.m; sourceTree = "<group>"; };
+		842F6CB71C3FC4940031AC16 /* LPYNumberPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberPad.h; sourceTree = "<group>"; };
+		842F6CB81C3FC4940031AC16 /* LPYNumberPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNumberPad.m; sourceTree = "<group>"; };
+		842F6CB91C3FC4940031AC16 /* LPYNumberPadDefaultStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberPadDefaultStyle.h; sourceTree = "<group>"; };
+		842F6CBA1C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNumberPadDefaultStyle.m; sourceTree = "<group>"; };
+		842F6CBB1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPasswordKeyBoardViewController.h; sourceTree = "<group>"; };
+		842F6CBC1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPasswordKeyBoardViewController.m; sourceTree = "<group>"; };
+		842F6CBD1C3FC4940031AC16 /* UIImage+LPYNumberPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LPYNumberPad.h"; sourceTree = "<group>"; };
+		842F6CBE1C3FC4940031AC16 /* UIImage+LPYNumberPad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LPYNumberPad.m"; sourceTree = "<group>"; };
+		842F6CC01C3FC4940031AC16 /* LPYLightShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYLightShowViewController.h; sourceTree = "<group>"; };
+		842F6CC11C3FC4940031AC16 /* LPYLightShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYLightShowViewController.m; sourceTree = "<group>"; };
+		842F6CC91C3FC49A0031AC16 /* LPYCommonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCommonHelp.h; sourceTree = "<group>"; };
+		842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCommonHelp.m; sourceTree = "<group>"; };
+		842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LPYNumberPad.bundle; sourceTree = "<group>"; };
 		84441DFF1C3E80180059BEDA /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
-		84FE458C1C3F51A200B1C806 /* LPYLightShowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYLightShowViewController.h; sourceTree = "<group>"; };
-		84FE458D1C3F51A200B1C806 /* LPYLightShowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYLightShowViewController.m; sourceTree = "<group>"; };
-		84FE45901C3F5BCD00B1C806 /* LPYCommonHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCommonHelp.h; sourceTree = "<group>"; };
-		84FE45911C3F5BCD00B1C806 /* LPYCommonHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCommonHelp.m; sourceTree = "<group>"; };
 		C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollView.h; sourceTree = "<group>"; };
 		C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollView.m; sourceTree = "<group>"; };
 		C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollViewController.h; sourceTree = "<group>"; };
@@ -131,29 +148,40 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		84FE458B1C3F518B00B1C806 /* Light */ = {
+		842F6CB41C3FC4940031AC16 /* KeyBoard */ = {
 			isa = PBXGroup;
 			children = (
-				84FE458C1C3F51A200B1C806 /* LPYLightShowViewController.h */,
-				84FE458D1C3F51A200B1C806 /* LPYLightShowViewController.m */,
+				842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */,
+				842F6CB51C3FC4940031AC16 /* LPYNumberButton.h */,
+				842F6CB61C3FC4940031AC16 /* LPYNumberButton.m */,
+				842F6CB71C3FC4940031AC16 /* LPYNumberPad.h */,
+				842F6CB81C3FC4940031AC16 /* LPYNumberPad.m */,
+				842F6CB91C3FC4940031AC16 /* LPYNumberPadDefaultStyle.h */,
+				842F6CBA1C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m */,
+				842F6CBB1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.h */,
+				842F6CBC1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m */,
+				842F6CBD1C3FC4940031AC16 /* UIImage+LPYNumberPad.h */,
+				842F6CBE1C3FC4940031AC16 /* UIImage+LPYNumberPad.m */,
 			);
-			name = Light;
+			path = KeyBoard;
 			sourceTree = "<group>";
 		};
-		84FE458F1C3F5BBC00B1C806 /* Tool */ = {
+		842F6CBF1C3FC4940031AC16 /* Light */ = {
 			isa = PBXGroup;
 			children = (
-				84FE45901C3F5BCD00B1C806 /* LPYCommonHelp.h */,
-				84FE45911C3F5BCD00B1C806 /* LPYCommonHelp.m */,
+				842F6CC01C3FC4940031AC16 /* LPYLightShowViewController.h */,
+				842F6CC11C3FC4940031AC16 /* LPYLightShowViewController.m */,
 			);
-			name = Tool;
+			path = Light;
 			sourceTree = "<group>";
 		};
-		84FE45931C3F68F800B1C806 /* KeyBoard */ = {
+		842F6CC81C3FC49A0031AC16 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				842F6CC91C3FC49A0031AC16 /* LPYCommonHelp.h */,
+				842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */,
 			);
-			name = KeyBoard;
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
@@ -190,9 +218,9 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
-				84FE45931C3F68F800B1C806 /* KeyBoard */,
-				84FE458F1C3F5BBC00B1C806 /* Tool */,
-				84FE458B1C3F518B00B1C806 /* Light */,
+				842F6CC81C3FC49A0031AC16 /* Tool */,
+				842F6CB41C3FC4940031AC16 /* KeyBoard */,
+				842F6CBF1C3FC4940031AC16 /* Light */,
 				841FB6431C3CD0CF007B1762 /* Category */,
 				841FB63D1C3CB839007B1762 /* QRCode */,
 				C40E70E71C3ABF7500F9567D /* ScrollView */,
@@ -341,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842F6CCD1C3FC5AD0031AC16 /* LPYNumberPad.bundle in Resources */,
 				841FB6421C3CB88B007B1762 /* LPYQRCodeViewController.xib in Resources */,
 				C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */,
 				84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */,
@@ -371,16 +400,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */,
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
+				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
-				84FE458E1C3F51A200B1C806 /* LPYLightShowViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
+				842F6CC61C3FC4940031AC16 /* UIImage+LPYNumberPad.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
+				842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */,
+				842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
 				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
-				84FE45921C3F5BCD00B1C806 /* LPYCommonHelp.m in Sources */,
+				842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */,
 				841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */,
+				842F6CC31C3FC4940031AC16 /* LPYNumberPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 #import "LPYQRCodeViewController.h"
 #import "LPYQRCodeScanningViewController.h"
 #import "LPYLightShowViewController.h"
+#import "LPYPasswordKeyBoardViewController.h"
 
 @interface ViewController ()
 
@@ -44,6 +45,12 @@
 // 开关灯
 - (IBAction)btn_LightClick {
     LPYLightShowViewController *VC = [[LPYLightShowViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+// 弹出密码键盘
+- (IBAction)btn_PasswordKeyBoardClick {
+    LPYPasswordKeyBoardViewController *VC = [[LPYPasswordKeyBoardViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
 

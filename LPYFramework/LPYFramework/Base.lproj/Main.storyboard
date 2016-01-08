@@ -51,6 +51,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKX-LJ-zfY">
                                         <rect key="frame" x="295" y="0.0" width="105" height="50"/>
                                         <state key="normal" title="模仿支付宝密码"/>
+                                        <connections>
+                                            <action selector="btn_PasswordKeyBoardClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="84Y-yj-EY0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
