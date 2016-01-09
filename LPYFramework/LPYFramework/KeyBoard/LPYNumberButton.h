@@ -12,4 +12,6 @@
 + (instancetype)buttonWithBackgroundColor:(UIColor *)backgroundColor highlightedColor:(UIColor *)highlightedColor;
 
 - (instancetype)initWithBackgroundColor:(UIColor *)backgroundColor highlightedColor:(UIColor *)highlightedColor;
+
+- (void)lpy_touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 @end

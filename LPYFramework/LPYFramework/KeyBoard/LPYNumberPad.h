@@ -13,13 +13,12 @@
 
 @interface LPYNumberPad : UIView
 
-//// 左边按钮
-//@property (nonatomic, strong) UIButton *leftFunctionButton;
-//// 右边按钮
-//@property (nonatomic, strong) UIButton *clearButton;
-//
-//// 样式
-//@property (nonatomic, strong) Class<LPYNumberPadStyle> styleClass;
+// 左边按钮
+@property (nonatomic, strong, readonly) UIButton *leftFunctionButton;
+// 右边按钮
+@property (nonatomic, strong) UIButton *clearButton;
+// 样式
+@property (nonatomic, strong, readonly) Class<LPYNumberPadStyle> styleClass;
 
 + (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate;
 
@@ -29,6 +28,7 @@
 @protocol LPYNumberPadDelegate <NSObject>
 
 @optional
+// 若左边按钮需要执行操作时，需要实现此方法
 - (void)numberPad:(LPYNumberPad *)numberPad functionButtonAction:(UIButton *)functionButton textInput:(UIResponder<UITextInput> *)textInput;
 @end
 

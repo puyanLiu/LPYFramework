@@ -21,7 +21,7 @@
 }
 
 + (UIColor *)numberPadBackgroundColor {
-    return [UIColor grayColor];
+    return [UIColor redColor];
 }
 
 + (UIFont *)numberButtonFont {
