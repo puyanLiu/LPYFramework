@@ -8,6 +8,7 @@
 
 #import "LPYPasswordKeyBoardViewController.h"
 #import "LPYNumberPad.h"
+#import "LPYPasswordInputView.h"
 
 @interface LPYPasswordKeyBoardViewController () <LPYNumberPadDelegate>
 
@@ -45,6 +46,17 @@
         numberPad;
     });
     [self.view addSubview:txt];
+    
+    UIButton *btn = [[UIButton alloc] init];
+    [btn setTitle:@"支付" forState:UIControlStateNormal];
+    btn.frame = CGRectMake(200, 200, 50, 30);
+    [btn addTarget:self action:@selector(btn_Click) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)btn_Click {
+    LPYPasswordInputView *VC = [[LPYPasswordInputView alloc] init];
+    [VC show];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -27,6 +27,7 @@
 		84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6581C40EF6100378F31 /* NSDictionary+Extension.m */; };
 		84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */; };
+		84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
@@ -95,6 +96,8 @@
 		84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dealloc+MyDealloc.m"; sourceTree = "<group>"; };
 		84C1E65C1C40F03C00378F31 /* CAGradientLayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Extension.h"; sourceTree = "<group>"; };
 		84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+Extension.m"; sourceTree = "<group>"; };
+		84C1E65F1C40F3C700378F31 /* LPYPasswordInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPasswordInputView.h; sourceTree = "<group>"; };
+		84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPasswordInputView.m; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
@@ -197,6 +200,8 @@
 				842F6CBC1C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m */,
 				842F6CBD1C3FC4940031AC16 /* UIImage+LPYNumberPad.h */,
 				842F6CBE1C3FC4940031AC16 /* UIImage+LPYNumberPad.m */,
+				84C1E65F1C40F3C700378F31 /* LPYPasswordInputView.h */,
+				84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */,
 			);
 			path = KeyBoard;
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */,
 				84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */,
 				842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */,
+				84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */,
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
