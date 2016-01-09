@@ -20,6 +20,13 @@
 		842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */; };
 		842F6CCD1C3FC5AD0031AC16 /* LPYNumberPad.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */; };
 		84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84441DFF1C3E80180059BEDA /* noticeMusic.wav */; };
+		84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */; };
+		84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */; };
+		84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6521C40EF0700378F31 /* UILabel+Extension.m */; };
+		84C1E6561C40EF4300378F31 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6551C40EF4300378F31 /* NSString+Extension.m */; };
+		84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6581C40EF6100378F31 /* NSDictionary+Extension.m */; };
+		84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
@@ -75,6 +82,19 @@
 		842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LPYNumberPad.bundle; sourceTree = "<group>"; };
 		842F6CCE1C3FC6A30031AC16 /* LPYNumberPadStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberPadStyle.h; sourceTree = "<group>"; };
 		84441DFF1C3E80180059BEDA /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
+		84C1E64B1C40EE4000378F31 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		84C1E64E1C40EEB100378F31 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
+		84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+PlaceHolder.m"; sourceTree = "<group>"; };
+		84C1E6511C40EF0700378F31 /* UILabel+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Extension.h"; sourceTree = "<group>"; };
+		84C1E6521C40EF0700378F31 /* UILabel+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Extension.m"; sourceTree = "<group>"; };
+		84C1E6541C40EF4300378F31 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		84C1E6551C40EF4300378F31 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		84C1E6571C40EF6100378F31 /* NSDictionary+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		84C1E6581C40EF6100378F31 /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dealloc+MyDealloc.m"; sourceTree = "<group>"; };
+		84C1E65C1C40F03C00378F31 /* CAGradientLayer+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAGradientLayer+Extension.h"; sourceTree = "<group>"; };
+		84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+Extension.m"; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
@@ -141,6 +161,19 @@
 		841FB6431C3CD0CF007B1762 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				84C1E65C1C40F03C00378F31 /* CAGradientLayer+Extension.h */,
+				84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */,
+				84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */,
+				84C1E6571C40EF6100378F31 /* NSDictionary+Extension.h */,
+				84C1E6581C40EF6100378F31 /* NSDictionary+Extension.m */,
+				84C1E6541C40EF4300378F31 /* NSString+Extension.h */,
+				84C1E6551C40EF4300378F31 /* NSString+Extension.m */,
+				84C1E6511C40EF0700378F31 /* UILabel+Extension.h */,
+				84C1E6521C40EF0700378F31 /* UILabel+Extension.m */,
+				84C1E64E1C40EEB100378F31 /* UITextView+PlaceHolder.h */,
+				84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */,
+				84C1E64B1C40EE4000378F31 /* UIBarButtonItem+Extension.h */,
+				84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */,
 				841FB6471C3CD184007B1762 /* UIImage+Extension.h */,
 				841FB6481C3CD184007B1762 /* UIImage+Extension.m */,
 				841FB6441C3CD10B007B1762 /* UIView+Extension.h */,
@@ -402,17 +435,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */,
+				84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */,
 				842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */,
 				C44D1B4F1C2AD94100048CFF /* ViewController.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
+				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				842F6CC61C3FC4940031AC16 /* UIImage+LPYNumberPad.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
+				84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */,
 				842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */,
 				842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */,
+				84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
+				84C1E6561C40EF4300378F31 /* NSString+Extension.m in Sources */,
+				84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */,
 				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
 				842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */,
 				841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */,
