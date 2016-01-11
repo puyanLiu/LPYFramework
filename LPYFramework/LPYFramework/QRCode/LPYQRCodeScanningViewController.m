@@ -59,14 +59,27 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self startAnimation];
     [self startScan];
+    [self stopAnimation];
+    [self startAnimation];
+    [self setupObserver];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self stopAnimation];
     [self stopScan];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+#pragma mark - 通知
+- (void)setupObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)applicationWillEnterForeground:(NSNotification *)notification {
+    [self stopAnimation];
+    [self startAnimation];
 }
 
 - (void)setupNav {
@@ -82,7 +95,7 @@
 
 // 设置遮盖图层
 - (void)setupOverlayView {
-    CGFloat alpha = 0.6;
+    CGFloat alpha = 0.5;
     UIColor *bgColor = [UIColor blackColor];
     self.topView.backgroundColor = bgColor;
     self.topView.alpha = alpha;
@@ -97,19 +110,29 @@
 // 开始冲击波动画
 - (void)startAnimation {
     // 让约束从顶部开始
-    self.animateTopConstraint.constant = - self.QRCodeHeightConstraint.constant;
-    [self.animateImageView layoutIfNeeded];
-    // 执行动画
-    [UIView animateWithDuration:2.0 animations:^{
-        self.animateTopConstraint.constant = self.QRCodeHeightConstraint.constant;
-        // 动画执行次数
-        [UIView setAnimationRepeatCount:MAXFLOAT];
-        [self.animateImageView layoutIfNeeded];
-    }];
+    self.animateTopConstraint.constant = -self.QRCodeHeightConstraint.constant;
+//    [self.animateImageView layoutIfNeeded];
+//    // 执行动画
+//    [UIView animateWithDuration:2.0 animations:^{
+//        self.animateTopConstraint.constant = self.QRCodeHeightConstraint.constant;
+//        // 动画执行次数
+//        [UIView setAnimationRepeatCount:MAXFLOAT];
+//        [self.animateImageView layoutIfNeeded];
+//    }];
+    self.animateImageView.layer.anchorPoint = CGPointMake(0.5, 1);
+    CABasicAnimation *anima = [CABasicAnimation animation];
+    anima.keyPath = @"position.y";
+    CGFloat y = self.animateImageView.frame.size.height;
+    NSLog(@"======%f", y);
+    anima.fromValue = @(0);
+    anima.toValue = @(y);
+    anima.duration = 2.0;
+    anima.repeatCount = MAXFLOAT;
+    [self.animateImageView.layer addAnimation:anima forKey:nil];
 }
 
 - (void)stopAnimation {
-    [self.animateImageView.layer removeAllAnimations];
+//    [self.animateImageView.layer removeAllAnimations];
 }
 
 // 开始扫描

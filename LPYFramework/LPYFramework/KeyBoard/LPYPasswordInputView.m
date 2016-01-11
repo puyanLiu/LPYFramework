@@ -8,6 +8,7 @@
 
 #import "LPYPasswordInputView.h"
 #import "LPYNumberPad.h"
+#import <objc/runtime.h>
 
 #define LPYKeyWindow [UIApplication sharedApplication].keyWindow
 // 获取屏幕高度
@@ -37,6 +38,16 @@
 {
     if(self = [super init])
     {
+        
+        unsigned int count;
+        Ivar *ivar =class_copyIvarList([UITextField class], &count);
+        for (int i = 0 ; i < count; i++) {
+            Ivar tmp = *(ivar + i);
+            NSLog(@"%s",ivar_getName(tmp));
+        }
+        NSLog(@"-------%zd",count);
+        free(ivar);
+        
         self.frame = [UIScreen mainScreen].bounds;
         
         [self customeView];
@@ -106,7 +117,6 @@
 }
 
 #pragma mark - 监听键盘
-
 - (UIView *)contentView
 {
     if(!_contentView)
@@ -163,7 +173,20 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context  {
-    
+    for (UITextField *txt in self.passwordView.subviews) {
+        if (context == (__bridge void * _Nullable)(txt)) {
+            if ([change[@"new"] isEqualToString:@""]) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    txt.secureTextEntry = NO;
+                    
+                });
+            } else {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    txt.secureTextEntry = YES;
+                });
+            }
+        }
+    }
 }
 
 - (UITextField *)hideTextField
