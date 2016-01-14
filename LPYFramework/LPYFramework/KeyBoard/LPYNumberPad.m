@@ -44,11 +44,11 @@
     return [self numberPadWithDelegate:delegate numberPadStyleClass:nil];
 }
 
-+ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass {
++ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class<LPYNumberPadStyle>)styleClass {
     return [[self alloc] initWithDelegate:delegate numberPadStyleClass:styleClass];
 }
 
-- (instancetype)initWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass {
+- (instancetype)initWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class<LPYNumberPadStyle>)styleClass {
     self = [super initWithFrame:CGRectZero];
     if (self) {
         self.styleClass = styleClass;

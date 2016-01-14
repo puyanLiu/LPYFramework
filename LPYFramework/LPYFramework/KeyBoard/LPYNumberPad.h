@@ -22,7 +22,7 @@
 
 + (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate;
 
-+ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class)styleClass;
++ (instancetype)numberPadWithDelegate:(id<LPYNumberPadDelegate>)delegate numberPadStyleClass:(Class<LPYNumberPadStyle>)styleClass;
 @end
 
 @protocol LPYNumberPadDelegate <NSObject>

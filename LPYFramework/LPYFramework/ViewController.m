@@ -12,6 +12,7 @@
 #import "LPYQRCodeScanningViewController.h"
 #import "LPYLightShowViewController.h"
 #import "LPYPasswordKeyBoardViewController.h"
+#import "LPYBussinessCardViewController.h"
 
 @interface ViewController ()
 
@@ -54,4 +55,9 @@
     [self.navigationController pushViewController:VC animated:YES];
 }
 
+// 适配器模式
+- (IBAction)btn_AdapterPatternClick {
+    LPYBussinessCardViewController *VC = [[LPYBussinessCardViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
 @end
