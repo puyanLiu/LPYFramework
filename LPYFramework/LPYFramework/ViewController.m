@@ -13,6 +13,7 @@
 #import "LPYLightShowViewController.h"
 #import "LPYPasswordKeyBoardViewController.h"
 #import "LPYBussinessCardViewController.h"
+#import "LPYStrategyViewController.h"
 
 @interface ViewController ()
 
@@ -60,4 +61,11 @@
     LPYBussinessCardViewController *VC = [[LPYBussinessCardViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
+
+// 策略模式
+- (IBAction)btn_StrategyPatternClick {
+    LPYStrategyViewController *VC = [[LPYStrategyViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 @end

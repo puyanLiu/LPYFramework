@@ -28,6 +28,13 @@
 		84885F8C1C4799C300EC90E4 /* LPYBussinessCardModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F8B1C4799C300EC90E4 /* LPYBussinessCardModelAdapter.m */; };
 		84885F8F1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F8E1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m */; };
 		84885F921C47A45000EC90E4 /* LPYBussinessCardAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F911C47A45000EC90E4 /* LPYBussinessCardAdapter.m */; };
+		848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DC91C489D10009168D3 /* LPYStrategyViewController.m */; };
+		848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DCC1C489D91009168D3 /* LPYCustomField.m */; };
+		848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DCF1C48A221009168D3 /* UIButton+inits.m */; };
+		848B2DD31C48A41F009168D3 /* RegExCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DD21C48A41F009168D3 /* RegExCategories.m */; };
+		848B2DD71C48A6E9009168D3 /* LPYBaseInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DD61C48A6E9009168D3 /* LPYBaseInputValidator.m */; };
+		848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DD91C48A78F009168D3 /* LPYEmailValidator.m */; };
+		848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */; };
 		84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */; };
 		84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */; };
 		84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6521C40EF0700378F31 /* UILabel+Extension.m */; };
@@ -108,6 +115,20 @@
 		84885F8E1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBussinessNewCardModelAdapter.m; sourceTree = "<group>"; };
 		84885F901C47A45000EC90E4 /* LPYBussinessCardAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBussinessCardAdapter.h; sourceTree = "<group>"; };
 		84885F911C47A45000EC90E4 /* LPYBussinessCardAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBussinessCardAdapter.m; sourceTree = "<group>"; };
+		848B2DC81C489D10009168D3 /* LPYStrategyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYStrategyViewController.h; sourceTree = "<group>"; };
+		848B2DC91C489D10009168D3 /* LPYStrategyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYStrategyViewController.m; sourceTree = "<group>"; };
+		848B2DCB1C489D91009168D3 /* LPYCustomField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCustomField.h; sourceTree = "<group>"; };
+		848B2DCC1C489D91009168D3 /* LPYCustomField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCustomField.m; sourceTree = "<group>"; };
+		848B2DCE1C48A221009168D3 /* UIButton+inits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+inits.h"; sourceTree = "<group>"; };
+		848B2DCF1C48A221009168D3 /* UIButton+inits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+inits.m"; sourceTree = "<group>"; };
+		848B2DD11C48A41F009168D3 /* RegExCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExCategories.h; sourceTree = "<group>"; };
+		848B2DD21C48A41F009168D3 /* RegExCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExCategories.m; sourceTree = "<group>"; };
+		848B2DD51C48A6E9009168D3 /* LPYBaseInputValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBaseInputValidator.h; sourceTree = "<group>"; };
+		848B2DD61C48A6E9009168D3 /* LPYBaseInputValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBaseInputValidator.m; sourceTree = "<group>"; };
+		848B2DD81C48A78F009168D3 /* LPYEmailValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYEmailValidator.h; sourceTree = "<group>"; };
+		848B2DD91C48A78F009168D3 /* LPYEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYEmailValidator.m; sourceTree = "<group>"; };
+		848B2DDB1C48A7A5009168D3 /* LPYPhoneNumberValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPhoneNumberValidator.h; sourceTree = "<group>"; };
+		848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPhoneNumberValidator.m; sourceTree = "<group>"; };
 		84C1E64B1C40EE4000378F31 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		84C1E64E1C40EEB100378F31 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
@@ -285,8 +306,30 @@
 		848B2DC71C47B862009168D3 /* StragegyPattern（策略模式） */ = {
 			isa = PBXGroup;
 			children = (
+				848B2DD41C48A682009168D3 /* InputValidator */,
+				848B2DC81C489D10009168D3 /* LPYStrategyViewController.h */,
+				848B2DC91C489D10009168D3 /* LPYStrategyViewController.m */,
+				848B2DCB1C489D91009168D3 /* LPYCustomField.h */,
+				848B2DCC1C489D91009168D3 /* LPYCustomField.m */,
+				848B2DCE1C48A221009168D3 /* UIButton+inits.h */,
+				848B2DCF1C48A221009168D3 /* UIButton+inits.m */,
+				848B2DD11C48A41F009168D3 /* RegExCategories.h */,
+				848B2DD21C48A41F009168D3 /* RegExCategories.m */,
 			);
 			path = "StragegyPattern（策略模式）";
+			sourceTree = "<group>";
+		};
+		848B2DD41C48A682009168D3 /* InputValidator */ = {
+			isa = PBXGroup;
+			children = (
+				848B2DD51C48A6E9009168D3 /* LPYBaseInputValidator.h */,
+				848B2DD61C48A6E9009168D3 /* LPYBaseInputValidator.m */,
+				848B2DD81C48A78F009168D3 /* LPYEmailValidator.h */,
+				848B2DD91C48A78F009168D3 /* LPYEmailValidator.m */,
+				848B2DDB1C48A7A5009168D3 /* LPYPhoneNumberValidator.h */,
+				848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */,
+			);
+			path = InputValidator;
 			sourceTree = "<group>";
 		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
@@ -506,9 +549,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				848B2DD31C48A41F009168D3 /* RegExCategories.m in Sources */,
 				84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */,
 				84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */,
 				84885F921C47A45000EC90E4 /* LPYBussinessCardAdapter.m in Sources */,
+				848B2DD71C48A6E9009168D3 /* LPYBaseInputValidator.m in Sources */,
 				84885F821C478D0400EC90E4 /* LPYBussinessCardViewController.m in Sources */,
 				842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */,
 				84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */,
@@ -516,9 +561,14 @@
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
 				84885F7F1C478CCA00EC90E4 /* LPYBussinessCardModel.m in Sources */,
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
+				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
+				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
+				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
+				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
+				848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */,
 				842F6CC61C3FC4940031AC16 /* UIImage+LPYNumberPad.m in Sources */,
 				84885F7C1C4789D200EC90E4 /* LPYBussinessCardView.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
