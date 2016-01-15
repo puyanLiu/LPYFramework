@@ -93,14 +93,24 @@
                                             <action selector="btn_StrategyPatternClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4M-bM-XAX"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anc-kN-B0x">
+                                        <rect key="frame" x="227" y="0.0" width="101" height="50"/>
+                                        <state key="normal" title="app跳转缺钱么"/>
+                                        <connections>
+                                            <action selector="btn_AppJumpClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="B1M-40-7bL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="anc-kN-B0x" firstAttribute="leading" secondItem="Muu-Ar-bzP" secondAttribute="trailing" constant="5" id="BQO-OQ-1Hf"/>
+                                    <constraint firstAttribute="bottom" secondItem="anc-kN-B0x" secondAttribute="bottom" id="PYa-ix-Rd0"/>
                                     <constraint firstItem="fGj-oZ-NmN" firstAttribute="leading" secondItem="sGe-ol-R8a" secondAttribute="leading" id="Xdv-2F-P1o"/>
                                     <constraint firstAttribute="bottom" secondItem="fGj-oZ-NmN" secondAttribute="bottom" id="YVW-Uk-aEi"/>
                                     <constraint firstItem="Muu-Ar-bzP" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="d7D-xp-1Wj"/>
                                     <constraint firstItem="fGj-oZ-NmN" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="e5r-b2-Vbm"/>
                                     <constraint firstItem="Muu-Ar-bzP" firstAttribute="leading" secondItem="fGj-oZ-NmN" secondAttribute="trailing" constant="5" id="uHX-gm-ZdT"/>
+                                    <constraint firstItem="anc-kN-B0x" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="xlA-4r-HhG"/>
                                     <constraint firstAttribute="bottom" secondItem="Muu-Ar-bzP" secondAttribute="bottom" id="zcS-hw-hCo"/>
                                 </constraints>
                             </view>

@@ -68,4 +68,28 @@
     [self.navigationController pushViewController:VC animated:YES];
 }
 
+// app跳转到相应应用
+- (IBAction)btn_AppJumpClick {
+    // 跳转到相应的应用
+    // scheme://identifier 协议头://路径
+    NSString *scheme = @"queqianme";
+    NSString *identifier = @"com.queqianme.app";
+    NSString *path = [NSString stringWithFormat:@"%@%@%@",scheme ,scheme ? @"://" : @"", identifier];
+    NSURL *url = [NSURL URLWithString:path];
+    
+    UIApplication *application = [UIApplication sharedApplication];
+    
+    NSString *appUrl = @"http://itunes.apple.com/app/id1031465316?mt=8";
+    // 判断是否有安装应用
+    if([application canOpenURL:url])
+    {
+        [application openURL:url];
+    }
+    else
+    {
+        // 打开appstore地址
+        [application openURL:[NSURL URLWithString:appUrl]];
+    }
+}
+
 @end
