@@ -273,6 +273,7 @@
 		84885F781C47887100EC90E4 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */,
 				848B2DC71C47B862009168D3 /* StragegyPattern（策略模式） */,
 				84885F791C47887100EC90E4 /* AdapterPattern（适配器模式） */,
 			);
@@ -330,6 +331,13 @@
 				848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */,
 			);
 			path = InputValidator;
+			sourceTree = "<group>";
+		};
+		848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "ObserverPattern（观察者模式）";
 			sourceTree = "<group>";
 		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
