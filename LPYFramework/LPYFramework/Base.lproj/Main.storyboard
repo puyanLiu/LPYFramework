@@ -80,38 +80,66 @@
                                 <rect key="frame" x="0.0" y="115" width="600" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fGj-oZ-NmN">
-                                        <rect key="frame" x="0.0" y="0.0" width="116" height="50"/>
-                                        <state key="normal" title="适配器模式Demo"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="50"/>
+                                        <state key="normal" title="适配器模式"/>
                                         <connections>
                                             <action selector="btn_AdapterPatternClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1I-ra-L97"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Muu-Ar-bzP">
-                                        <rect key="frame" x="121" y="0.0" width="101" height="50"/>
-                                        <state key="normal" title="策略模式Demo"/>
+                                        <rect key="frame" x="80" y="0.0" width="60" height="50"/>
+                                        <state key="normal" title="策略模式"/>
                                         <connections>
                                             <action selector="btn_StrategyPatternClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="H4M-bM-XAX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anc-kN-B0x">
-                                        <rect key="frame" x="227" y="0.0" width="101" height="50"/>
+                                        <rect key="frame" x="145" y="0.0" width="101" height="50"/>
                                         <state key="normal" title="app跳转缺钱么"/>
                                         <connections>
                                             <action selector="btn_AppJumpClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="B1M-40-7bL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWr-wJ-BRk">
+                                        <rect key="frame" x="251" y="0.0" width="75" height="50"/>
+                                        <state key="normal" title="观察者模式"/>
+                                        <connections>
+                                            <action selector="btn_ObserverPatternClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="71f-pr-1Hh"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="anc-kN-B0x" firstAttribute="leading" secondItem="Muu-Ar-bzP" secondAttribute="trailing" constant="5" id="BQO-OQ-1Hf"/>
+                                    <constraint firstItem="gWr-wJ-BRk" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="H36-lv-Uqc"/>
                                     <constraint firstAttribute="bottom" secondItem="anc-kN-B0x" secondAttribute="bottom" id="PYa-ix-Rd0"/>
                                     <constraint firstItem="fGj-oZ-NmN" firstAttribute="leading" secondItem="sGe-ol-R8a" secondAttribute="leading" id="Xdv-2F-P1o"/>
                                     <constraint firstAttribute="bottom" secondItem="fGj-oZ-NmN" secondAttribute="bottom" id="YVW-Uk-aEi"/>
+                                    <constraint firstItem="gWr-wJ-BRk" firstAttribute="leading" secondItem="anc-kN-B0x" secondAttribute="trailing" constant="5" id="aXs-wI-Seb"/>
                                     <constraint firstItem="Muu-Ar-bzP" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="d7D-xp-1Wj"/>
                                     <constraint firstItem="fGj-oZ-NmN" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="e5r-b2-Vbm"/>
+                                    <constraint firstAttribute="bottom" secondItem="gWr-wJ-BRk" secondAttribute="bottom" id="eRg-Z6-EYM"/>
                                     <constraint firstItem="Muu-Ar-bzP" firstAttribute="leading" secondItem="fGj-oZ-NmN" secondAttribute="trailing" constant="5" id="uHX-gm-ZdT"/>
                                     <constraint firstItem="anc-kN-B0x" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="top" id="xlA-4r-HhG"/>
                                     <constraint firstAttribute="bottom" secondItem="Muu-Ar-bzP" secondAttribute="bottom" id="zcS-hw-hCo"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwS-xE-edb">
+                                <rect key="frame" x="0.0" y="166" width="600" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cE4-PT-MfL">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="50"/>
+                                        <state key="normal" title="通知中心与KVO"/>
+                                        <connections>
+                                            <action selector="btn_NotificationCenterAndKVOClick" destination="BYZ-38-t0r" eventType="touchUpInside" id="fQ8-to-YSe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="cE4-PT-MfL" secondAttribute="bottom" id="1LI-xa-iO0"/>
+                                    <constraint firstItem="cE4-PT-MfL" firstAttribute="leading" secondItem="xwS-xE-edb" secondAttribute="leading" id="oB7-7B-Ji5"/>
+                                    <constraint firstItem="cE4-PT-MfL" firstAttribute="top" secondItem="xwS-xE-edb" secondAttribute="top" id="qUh-f1-zfF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -119,11 +147,15 @@
                         <constraints>
                             <constraint firstItem="sGe-ol-R8a" firstAttribute="height" secondItem="1dh-HP-Sss" secondAttribute="height" id="ArO-kX-LA6"/>
                             <constraint firstItem="sGe-ol-R8a" firstAttribute="leading" secondItem="1dh-HP-Sss" secondAttribute="leading" id="EBu-PA-0xv"/>
+                            <constraint firstItem="xwS-xE-edb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="MoZ-ae-pkF"/>
                             <constraint firstItem="1dh-HP-Sss" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="PjM-Ds-2EQ"/>
+                            <constraint firstAttribute="trailing" secondItem="xwS-xE-edb" secondAttribute="trailing" id="QdJ-56-FJv"/>
                             <constraint firstItem="sGe-ol-R8a" firstAttribute="top" secondItem="1dh-HP-Sss" secondAttribute="bottom" constant="1" id="VNG-1H-0FL"/>
                             <constraint firstItem="sGe-ol-R8a" firstAttribute="trailing" secondItem="1dh-HP-Sss" secondAttribute="trailing" id="jRl-lQ-nc5"/>
                             <constraint firstItem="1dh-HP-Sss" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ol6-Wm-ewX"/>
+                            <constraint firstItem="xwS-xE-edb" firstAttribute="top" secondItem="sGe-ol-R8a" secondAttribute="bottom" constant="1" id="vq4-dh-PSX"/>
                             <constraint firstAttribute="trailing" secondItem="1dh-HP-Sss" secondAttribute="trailing" id="xed-A0-tCS"/>
+                            <constraint firstItem="xwS-xE-edb" firstAttribute="height" secondItem="sGe-ol-R8a" secondAttribute="height" id="y69-gz-WiN"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="LPYFramework" id="N04-Jd-G6X"/>

@@ -14,6 +14,8 @@
 #import "LPYPasswordKeyBoardViewController.h"
 #import "LPYBussinessCardViewController.h"
 #import "LPYStrategyViewController.h"
+#import "LPYOberverPatternViewController.h"
+#import "LPYNotificationCenterAndKVOViewController.h"
 
 @interface ViewController ()
 
@@ -91,5 +93,18 @@
         [application openURL:[NSURL URLWithString:appUrl]];
     }
 }
+
+// 观察者模式
+- (IBAction)btn_ObserverPatternClick {
+    LPYOberverPatternViewController *VC = [[LPYOberverPatternViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+// 通知中心与KVO
+- (IBAction)btn_NotificationCenterAndKVOClick {
+    LPYNotificationCenterAndKVOViewController *VC = [[LPYNotificationCenterAndKVOViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 
 @end

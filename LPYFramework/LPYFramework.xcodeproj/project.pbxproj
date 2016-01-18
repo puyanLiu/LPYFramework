@@ -35,6 +35,8 @@
 		848B2DD71C48A6E9009168D3 /* LPYBaseInputValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DD61C48A6E9009168D3 /* LPYBaseInputValidator.m */; };
 		848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DD91C48A78F009168D3 /* LPYEmailValidator.m */; };
 		848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */; };
+		848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DE11C4C84A5009168D3 /* LPYOberverPatternViewController.m */; };
+		848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DE41C4C853D009168D3 /* LPYSubscriptionServiceCenter.m */; };
 		84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */; };
 		84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */; };
 		84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6521C40EF0700378F31 /* UILabel+Extension.m */; };
@@ -43,6 +45,8 @@
 		84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65A1C40EF9700378F31 /* Dealloc+MyDealloc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */; };
 		84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */; };
+		84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD0D941C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m */; };
+		84DD0D981C4C92E200E379E2 /* LPYKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
@@ -129,6 +133,10 @@
 		848B2DD91C48A78F009168D3 /* LPYEmailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYEmailValidator.m; sourceTree = "<group>"; };
 		848B2DDB1C48A7A5009168D3 /* LPYPhoneNumberValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPhoneNumberValidator.h; sourceTree = "<group>"; };
 		848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPhoneNumberValidator.m; sourceTree = "<group>"; };
+		848B2DE01C4C84A5009168D3 /* LPYOberverPatternViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYOberverPatternViewController.h; sourceTree = "<group>"; };
+		848B2DE11C4C84A5009168D3 /* LPYOberverPatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYOberverPatternViewController.m; sourceTree = "<group>"; };
+		848B2DE31C4C853D009168D3 /* LPYSubscriptionServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYSubscriptionServiceCenter.h; sourceTree = "<group>"; };
+		848B2DE41C4C853D009168D3 /* LPYSubscriptionServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYSubscriptionServiceCenter.m; sourceTree = "<group>"; };
 		84C1E64B1C40EE4000378F31 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		84C1E64E1C40EEB100378F31 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
@@ -144,6 +152,11 @@
 		84C1E65D1C40F03C00378F31 /* CAGradientLayer+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAGradientLayer+Extension.m"; sourceTree = "<group>"; };
 		84C1E65F1C40F3C700378F31 /* LPYPasswordInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPasswordInputView.h; sourceTree = "<group>"; };
 		84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPasswordInputView.m; sourceTree = "<group>"; };
+		84D3F9621C4C8AF40079DEA3 /* LPYSubscriptionServiceCenterProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYSubscriptionServiceCenterProtocol.h; sourceTree = "<group>"; };
+		84DD0D931C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNotificationCenterAndKVOViewController.h; sourceTree = "<group>"; };
+		84DD0D941C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNotificationCenterAndKVOViewController.m; sourceTree = "<group>"; };
+		84DD0D961C4C92E200E379E2 /* LPYKVOModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYKVOModel.h; sourceTree = "<group>"; };
+		84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYKVOModel.m; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
@@ -273,6 +286,7 @@
 		84885F781C47887100EC90E4 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				848B2DDF1C4C8369009168D3 /* NotificationCenterAndKVO  */,
 				848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */,
 				848B2DC71C47B862009168D3 /* StragegyPattern（策略模式） */,
 				84885F791C47887100EC90E4 /* AdapterPattern（适配器模式） */,
@@ -336,8 +350,24 @@
 		848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */ = {
 			isa = PBXGroup;
 			children = (
+				848B2DE01C4C84A5009168D3 /* LPYOberverPatternViewController.h */,
+				848B2DE11C4C84A5009168D3 /* LPYOberverPatternViewController.m */,
+				848B2DE31C4C853D009168D3 /* LPYSubscriptionServiceCenter.h */,
+				848B2DE41C4C853D009168D3 /* LPYSubscriptionServiceCenter.m */,
+				84D3F9621C4C8AF40079DEA3 /* LPYSubscriptionServiceCenterProtocol.h */,
 			);
 			path = "ObserverPattern（观察者模式）";
+			sourceTree = "<group>";
+		};
+		848B2DDF1C4C8369009168D3 /* NotificationCenterAndKVO  */ = {
+			isa = PBXGroup;
+			children = (
+				84DD0D931C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.h */,
+				84DD0D941C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m */,
+				84DD0D961C4C92E200E379E2 /* LPYKVOModel.h */,
+				84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */,
+			);
+			path = "NotificationCenterAndKVO ";
 			sourceTree = "<group>";
 		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
@@ -557,6 +587,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */,
 				848B2DD31C48A41F009168D3 /* RegExCategories.m in Sources */,
 				84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */,
 				84C1E65E1C40F03C00378F31 /* CAGradientLayer+Extension.m in Sources */,
@@ -573,6 +604,7 @@
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
+				848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
@@ -581,6 +613,7 @@
 				84885F7C1C4789D200EC90E4 /* LPYBussinessCardView.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */,
+				848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */,
 				842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */,
 				842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */,
 				84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */,
@@ -589,6 +622,7 @@
 				84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */,
 				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
 				842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */,
+				84DD0D981C4C92E200E379E2 /* LPYKVOModel.m in Sources */,
 				84885F8F1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m in Sources */,
 				84885F8C1C4799C300EC90E4 /* LPYBussinessCardModelAdapter.m in Sources */,
 				84885F891C47970B00EC90E4 /* LPYBussinessBaseCardAdapter.m in Sources */,
