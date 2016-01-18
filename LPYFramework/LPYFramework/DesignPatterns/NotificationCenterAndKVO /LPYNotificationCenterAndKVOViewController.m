@@ -50,11 +50,12 @@
 
 #pragma mark - 释放资源
 - (void)dealloc {
-    // 移除通知中心
-    [[NSNotificationCenter defaultCenter] removeObserver:self forKeyPath:SCIENCE];
     
     // 移除KVO
     [self.model removeObserver:self forKeyPath:@"name"];
+    
+    // 移除通知中心
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)didReceiveMemoryWarning {
