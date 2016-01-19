@@ -147,15 +147,21 @@
 {
     UIColor *color;
     switch (self.state) {
+        case LPYCircleStateNormal:
+            color = CircleStateNormalOutsideColor;
+            break;
         case LPYCircleStateSelected:
-        case LPYCircleStateLastOneSelected:
             color = CircleStateSelectedOutsideColor;
             break;
         case LPYCircleStateError:
+            color = CircleStateErrorOutsideColor;
+            break;
+        case LPYCircleStateLastOneSelected:
+            color = CircleStateSelectedOutsideColor;
+            break;
         case LPYCircleStateLastOneError:
             color = CircleStateErrorOutsideColor;
             break;
-        case LPYCircleStateNormal:
         default:
             color = CircleStateNormalOutsideColor;
             break;
@@ -168,15 +174,21 @@
 {
     UIColor *color;
     switch (self.state) {
+        case LPYCircleStateNormal:
+            color = CircleStateNormalInsideColor;
+            break;
         case LPYCircleStateSelected:
-        case LPYCircleStateLastOneSelected:
             color = CircleStateSelectedInsideColor;
             break;
         case LPYCircleStateError:
+            color = CircleStateErrorInsideColor;
+            break;
+        case LPYCircleStateLastOneSelected:
+            color = CircleStateSelectedInsideColor;
+            break;
         case LPYCircleStateLastOneError:
             color = CircleStateErrorInsideColor;
             break;
-        case LPYCircleStateNormal:
         default:
             color = CircleStateNormalInsideColor;
             break;
@@ -189,15 +201,21 @@
 {
     UIColor *color;
     switch (self.state) {
+        case LPYCircleStateNormal:
+            color = CircleStateNormalTrangleColor;
+            break;
         case LPYCircleStateSelected:
-        case LPYCircleStateLastOneSelected:
             color = CircleStateSelectedTrangleColor;
             break;
         case LPYCircleStateError:
-        case LPYCircleStateLastOneError:
             color = CircleStateErrorTrangleColor;
             break;
-        case LPYCircleStateNormal:
+        case LPYCircleStateLastOneSelected:
+            color = CircleStateNormalTrangleColor;
+            break;
+        case LPYCircleStateLastOneError:
+            color = CircleStateNormalTrangleColor;
+            break;
         default:
             color = CircleStateNormalTrangleColor;
             break;
