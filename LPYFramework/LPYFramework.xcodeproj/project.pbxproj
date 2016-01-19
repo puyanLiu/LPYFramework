@@ -197,6 +197,13 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
+		C430173A1C4E833A00CDD1F5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		C44D1B3B1C2AD94100048CFF = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +227,7 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C430173A1C4E833A00CDD1F5 /* Resource */,
 				842F6CC81C3FC49A0031AC16 /* Tool */,
 				842F6CB41C3FC4940031AC16 /* KeyBoard */,
 				842F6CBF1C3FC4940031AC16 /* Light */,
