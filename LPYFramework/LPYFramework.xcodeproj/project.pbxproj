@@ -48,6 +48,9 @@
 		84AC0DCE1C4CEC6A00C49331 /* LPYLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DCD1C4CEC6A00C49331 /* LPYLockLabel.m */; };
 		84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD01C4CEC7900C49331 /* LPYCircleInfoView.m */; };
 		84AC0DD41C4CF4F100C49331 /* LPYGestureVertifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD31C4CF4F100C49331 /* LPYGestureVertifyViewController.m */; };
+		84AC0DD81C4E176B00C49331 /* SFHFKeychainUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD71C4E176B00C49331 /* SFHFKeychainUtils.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		84AC0DDA1C4E17B700C49331 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AC0DD91C4E17B700C49331 /* Security.framework */; };
+		84AC0DDD1C4E1A6100C49331 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DDC1C4E1A6100C49331 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */; };
 		84C1E6501C40EEB100378F31 /* UITextView+PlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E64F1C40EEB100378F31 /* UITextView+PlaceHolder.m */; };
 		84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6521C40EF0700378F31 /* UILabel+Extension.m */; };
@@ -169,6 +172,11 @@
 		84AC0DD01C4CEC7900C49331 /* LPYCircleInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCircleInfoView.m; sourceTree = "<group>"; };
 		84AC0DD21C4CF4F100C49331 /* LPYGestureVertifyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYGestureVertifyViewController.h; sourceTree = "<group>"; };
 		84AC0DD31C4CF4F100C49331 /* LPYGestureVertifyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYGestureVertifyViewController.m; sourceTree = "<group>"; };
+		84AC0DD61C4E176B00C49331 /* SFHFKeychainUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFHFKeychainUtils.h; sourceTree = "<group>"; };
+		84AC0DD71C4E176B00C49331 /* SFHFKeychainUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFHFKeychainUtils.m; sourceTree = "<group>"; };
+		84AC0DD91C4E17B700C49331 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		84AC0DDB1C4E1A6100C49331 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		84AC0DDC1C4E1A6100C49331 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		84C1E64B1C40EE4000378F31 /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
 		84C1E64C1C40EE4000378F31 /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
 		84C1E64E1C40EEB100378F31 /* UITextView+PlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+PlaceHolder.h"; sourceTree = "<group>"; };
@@ -216,6 +224,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84AC0DDA1C4E17B700C49331 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +248,7 @@
 		841846381C4CBD5D00F8AF89 /* GesturesUnlock(手势解锁) */ = {
 			isa = PBXGroup;
 			children = (
+				84AC0DD51C4E175C00C49331 /* Tool */,
 				84AC0DC81C4CEC3500C49331 /* View */,
 				84AC0DC41C4CEBB600C49331 /* Category */,
 				841846461C4CD46700F8AF89 /* Circle */,
@@ -458,6 +468,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		84AC0DD51C4E175C00C49331 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				84AC0DDB1C4E1A6100C49331 /* KeychainItemWrapper.h */,
+				84AC0DDC1C4E1A6100C49331 /* KeychainItemWrapper.m */,
+				84AC0DD61C4E176B00C49331 /* SFHFKeychainUtils.h */,
+				84AC0DD71C4E176B00C49331 /* SFHFKeychainUtils.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +493,7 @@
 		C44D1B3B1C2AD94100048CFF = {
 			isa = PBXGroup;
 			children = (
+				84AC0DD91C4E17B700C49331 /* Security.framework */,
 				C44D1B461C2AD94100048CFF /* LPYFramework */,
 				C44D1B601C2AD94200048CFF /* LPYFrameworkTests */,
 				C44D1B6B1C2AD94200048CFF /* LPYFrameworkUITests */,
@@ -704,10 +726,12 @@
 				84885F7C1C4789D200EC90E4 /* LPYBussinessCardView.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */,
+				84AC0DDD1C4E1A6100C49331 /* KeychainItemWrapper.m in Sources */,
 				841846451C4CD15700F8AF89 /* LPYGestureViewController.m in Sources */,
 				84AC0DD41C4CF4F100C49331 /* LPYGestureVertifyViewController.m in Sources */,
 				848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */,
 				8418463F1C4CC07900F8AF89 /* LPYTouchIDViewController.m in Sources */,
+				84AC0DD81C4E176B00C49331 /* SFHFKeychainUtils.m in Sources */,
 				842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */,
 				842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */,
 				841846491C4CD4B200F8AF89 /* LPYCircle.m in Sources */,
