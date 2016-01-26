@@ -44,6 +44,15 @@
 		848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DDC1C48A7A5009168D3 /* LPYPhoneNumberValidator.m */; };
 		848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DE11C4C84A5009168D3 /* LPYOberverPatternViewController.m */; };
 		848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 848B2DE41C4C853D009168D3 /* LPYSubscriptionServiceCenter.m */; };
+		849A8F051C57766C002EA2F1 /* LPYStudentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F041C57766C002EA2F1 /* LPYStudentModel.m */; };
+		849A8F081C577734002EA2F1 /* LPYPrototypePatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F071C577734002EA2F1 /* LPYPrototypePatternViewController.m */; };
+		849A8F0C1C577B1C002EA2F1 /* LPYBaseCopyObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F0B1C577B1C002EA2F1 /* LPYBaseCopyObject.m */; };
+		849A8F0F1C577C8E002EA2F1 /* LPYTeacherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F0E1C577C8E002EA2F1 /* LPYTeacherModel.m */; };
+		849A8F151C577D03002EA2F1 /* LPYDepartmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F141C577D03002EA2F1 /* LPYDepartmentModel.m */; };
+		849A8F191C578227002EA2F1 /* LPYShapeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F181C578227002EA2F1 /* LPYShapeMaker.m */; };
+		849A8F1C1C57823F002EA2F1 /* LPYShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F1B1C57823E002EA2F1 /* LPYShape.m */; };
+		849A8F1F1C5782A2002EA2F1 /* LPYRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */; };
+		849A8F221C5782EC002EA2F1 /* LPYCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F211C5782EC002EA2F1 /* LPYCircle.m */; };
 		84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */; };
 		84AC0DCE1C4CEC6A00C49331 /* LPYLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DCD1C4CEC6A00C49331 /* LPYLockLabel.m */; };
 		84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD01C4CEC7900C49331 /* LPYCircleInfoView.m */; };
@@ -164,6 +173,25 @@
 		848B2DE11C4C84A5009168D3 /* LPYOberverPatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYOberverPatternViewController.m; sourceTree = "<group>"; };
 		848B2DE31C4C853D009168D3 /* LPYSubscriptionServiceCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYSubscriptionServiceCenter.h; sourceTree = "<group>"; };
 		848B2DE41C4C853D009168D3 /* LPYSubscriptionServiceCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYSubscriptionServiceCenter.m; sourceTree = "<group>"; };
+		849A8F031C57766C002EA2F1 /* LPYStudentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYStudentModel.h; sourceTree = "<group>"; };
+		849A8F041C57766C002EA2F1 /* LPYStudentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYStudentModel.m; sourceTree = "<group>"; };
+		849A8F061C577734002EA2F1 /* LPYPrototypePatternViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPrototypePatternViewController.h; sourceTree = "<group>"; };
+		849A8F071C577734002EA2F1 /* LPYPrototypePatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYPrototypePatternViewController.m; sourceTree = "<group>"; };
+		849A8F091C5777F9002EA2F1 /* LPYPrototypeCopyProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYPrototypeCopyProtocol.h; sourceTree = "<group>"; };
+		849A8F0A1C577B1C002EA2F1 /* LPYBaseCopyObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBaseCopyObject.h; sourceTree = "<group>"; };
+		849A8F0B1C577B1C002EA2F1 /* LPYBaseCopyObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBaseCopyObject.m; sourceTree = "<group>"; };
+		849A8F0D1C577C8E002EA2F1 /* LPYTeacherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYTeacherModel.h; sourceTree = "<group>"; };
+		849A8F0E1C577C8E002EA2F1 /* LPYTeacherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYTeacherModel.m; sourceTree = "<group>"; };
+		849A8F131C577D03002EA2F1 /* LPYDepartmentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYDepartmentModel.h; sourceTree = "<group>"; };
+		849A8F141C577D03002EA2F1 /* LPYDepartmentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYDepartmentModel.m; sourceTree = "<group>"; };
+		849A8F171C578227002EA2F1 /* LPYShapeMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYShapeMaker.h; sourceTree = "<group>"; };
+		849A8F181C578227002EA2F1 /* LPYShapeMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYShapeMaker.m; sourceTree = "<group>"; };
+		849A8F1A1C57823E002EA2F1 /* LPYShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYShape.h; sourceTree = "<group>"; };
+		849A8F1B1C57823E002EA2F1 /* LPYShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYShape.m; sourceTree = "<group>"; };
+		849A8F1D1C5782A2002EA2F1 /* LPYRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYRectangle.h; sourceTree = "<group>"; };
+		849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYRectangle.m; sourceTree = "<group>"; };
+		849A8F201C5782EC002EA2F1 /* LPYCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCircle.h; sourceTree = "<group>"; };
+		849A8F211C5782EC002EA2F1 /* LPYCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCircle.m; sourceTree = "<group>"; };
 		84AC0DC51C4CEBD600C49331 /* CALayer+LPYAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LPYAnimation.h"; sourceTree = "<group>"; };
 		84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LPYAnimation.m"; sourceTree = "<group>"; };
 		84AC0DCC1C4CEC6A00C49331 /* LPYLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYLockLabel.h; sourceTree = "<group>"; };
@@ -364,6 +392,7 @@
 		84885F781C47887100EC90E4 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				849A8F021C577636002EA2F1 /* PrototypePatter（原型:外观） */,
 				848B2DDF1C4C8369009168D3 /* NotificationCenterAndKVO  */,
 				848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */,
 				848B2DC71C47B862009168D3 /* StragegyPattern（策略模式） */,
@@ -446,6 +475,40 @@
 				84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */,
 			);
 			path = "NotificationCenterAndKVO ";
+			sourceTree = "<group>";
+		};
+		849A8F021C577636002EA2F1 /* PrototypePatter（原型:外观） */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F161C578207002EA2F1 /* DrawDemo */,
+				849A8F091C5777F9002EA2F1 /* LPYPrototypeCopyProtocol.h */,
+				849A8F031C57766C002EA2F1 /* LPYStudentModel.h */,
+				849A8F041C57766C002EA2F1 /* LPYStudentModel.m */,
+				849A8F061C577734002EA2F1 /* LPYPrototypePatternViewController.h */,
+				849A8F071C577734002EA2F1 /* LPYPrototypePatternViewController.m */,
+				849A8F0A1C577B1C002EA2F1 /* LPYBaseCopyObject.h */,
+				849A8F0B1C577B1C002EA2F1 /* LPYBaseCopyObject.m */,
+				849A8F0D1C577C8E002EA2F1 /* LPYTeacherModel.h */,
+				849A8F0E1C577C8E002EA2F1 /* LPYTeacherModel.m */,
+				849A8F131C577D03002EA2F1 /* LPYDepartmentModel.h */,
+				849A8F141C577D03002EA2F1 /* LPYDepartmentModel.m */,
+			);
+			path = "PrototypePatter（原型:外观）";
+			sourceTree = "<group>";
+		};
+		849A8F161C578207002EA2F1 /* DrawDemo */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F171C578227002EA2F1 /* LPYShapeMaker.h */,
+				849A8F181C578227002EA2F1 /* LPYShapeMaker.m */,
+				849A8F1A1C57823E002EA2F1 /* LPYShape.h */,
+				849A8F1B1C57823E002EA2F1 /* LPYShape.m */,
+				849A8F1D1C5782A2002EA2F1 /* LPYRectangle.h */,
+				849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */,
+				849A8F201C5782EC002EA2F1 /* LPYCircle.h */,
+				849A8F211C5782EC002EA2F1 /* LPYCircle.m */,
+			);
+			path = DrawDemo;
 			sourceTree = "<group>";
 		};
 		84AC0DC41C4CEBB600C49331 /* Category */ = {
@@ -707,6 +770,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				849A8F051C57766C002EA2F1 /* LPYStudentModel.m in Sources */,
 				84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */,
 				84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */,
 				848B2DD31C48A41F009168D3 /* RegExCategories.m in Sources */,
@@ -721,11 +785,13 @@
 				84885F7F1C478CCA00EC90E4 /* LPYBussinessCardModel.m in Sources */,
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
+				849A8F081C577734002EA2F1 /* LPYPrototypePatternViewController.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
 				84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
 				848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */,
+				849A8F0F1C577C8E002EA2F1 /* LPYTeacherModel.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
@@ -736,6 +802,7 @@
 				84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */,
 				84AC0DDD1C4E1A6100C49331 /* KeychainItemWrapper.m in Sources */,
 				841846451C4CD15700F8AF89 /* LPYGestureViewController.m in Sources */,
+				849A8F151C577D03002EA2F1 /* LPYDepartmentModel.m in Sources */,
 				84AC0DD41C4CF4F100C49331 /* LPYGestureVertifyViewController.m in Sources */,
 				848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */,
 				8418463F1C4CC07900F8AF89 /* LPYTouchIDViewController.m in Sources */,
@@ -747,8 +814,10 @@
 				84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
 				84C1E6561C40EF4300378F31 /* NSString+Extension.m in Sources */,
+				849A8F221C5782EC002EA2F1 /* LPYCircle.m in Sources */,
 				84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */,
 				841846421C4CC10D00F8AF89 /* LPYMainViewController.m in Sources */,
+				849A8F1C1C57823F002EA2F1 /* LPYShape.m in Sources */,
 				8418463B1C4CBDA000F8AF89 /* LPYGesturesUnlockViewController.m in Sources */,
 				C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */,
 				842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */,
@@ -758,8 +827,11 @@
 				84885F891C47970B00EC90E4 /* LPYBussinessBaseCardAdapter.m in Sources */,
 				8418464C1C4CD4DA00F8AF89 /* LPYCircleView.m in Sources */,
 				841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */,
+				849A8F1F1C5782A2002EA2F1 /* LPYRectangle.m in Sources */,
 				84AC0DCE1C4CEC6A00C49331 /* LPYLockLabel.m in Sources */,
+				849A8F191C578227002EA2F1 /* LPYShapeMaker.m in Sources */,
 				84885F861C47935300EC90E4 /* LPYBussinessNewCardModel.m in Sources */,
+				849A8F0C1C577B1C002EA2F1 /* LPYBaseCopyObject.m in Sources */,
 				842F6CC31C3FC4940031AC16 /* LPYNumberPad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

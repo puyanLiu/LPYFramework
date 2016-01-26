@@ -18,6 +18,7 @@
 #import "LPYNotificationCenterAndKVOViewController.h"
 #import "LPYGesturesUnlockViewController.h"
 #import "LPYTouchIDViewController.h"
+#import "LPYPrototypePatternViewController.h"
 
 @interface LPYMainViewController ()
 
@@ -111,6 +112,12 @@
 // TouchID验证
 - (IBAction)btn_TouchIDClick {
     LPYTouchIDViewController *VC = [[LPYTouchIDViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+// 原型外观
+- (IBAction)btn_PrototypePatternClick {
+    LPYPrototypePatternViewController *VC = [[LPYPrototypePatternViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
 

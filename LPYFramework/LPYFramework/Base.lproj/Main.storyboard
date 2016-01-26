@@ -158,15 +158,25 @@
                                                         <action selector="btn_TouchIDClick" destination="B3e-5R-mMX" eventType="touchUpInside" id="Kbx-Uf-Sl1"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jqs-3f-OtV">
+                                                    <rect key="frame" x="268" y="0.0" width="65" height="43"/>
+                                                    <state key="normal" title="原型/外观"/>
+                                                    <connections>
+                                                        <action selector="btn_PrototypePatternClick" destination="B3e-5R-mMX" eventType="touchUpInside" id="Dpb-J3-KK0"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sIY-ku-68e" firstAttribute="leading" secondItem="cE4-PT-MfL" secondAttribute="trailing" constant="5" id="3Gk-px-4Gk"/>
                                                 <constraint firstAttribute="bottom" secondItem="6oE-Ng-FrY" secondAttribute="bottom" id="Q3W-5U-3rl"/>
+                                                <constraint firstItem="Jqs-3f-OtV" firstAttribute="leading" secondItem="6oE-Ng-FrY" secondAttribute="trailing" constant="5" id="RwW-vr-bKn"/>
                                                 <constraint firstItem="cE4-PT-MfL" firstAttribute="leading" secondItem="8se-rS-W4n" secondAttribute="leading" id="Ubt-O0-MGS"/>
                                                 <constraint firstAttribute="bottom" secondItem="cE4-PT-MfL" secondAttribute="bottom" id="dv5-i1-cyN"/>
                                                 <constraint firstItem="6oE-Ng-FrY" firstAttribute="top" secondItem="8se-rS-W4n" secondAttribute="top" id="ipq-Ao-AFf"/>
+                                                <constraint firstItem="Jqs-3f-OtV" firstAttribute="top" secondItem="8se-rS-W4n" secondAttribute="top" id="kv3-Vy-QgL"/>
                                                 <constraint firstAttribute="bottom" secondItem="sIY-ku-68e" secondAttribute="bottom" id="lys-2p-mhP"/>
                                                 <constraint firstItem="6oE-Ng-FrY" firstAttribute="leading" secondItem="sIY-ku-68e" secondAttribute="trailing" constant="5" id="nYt-UX-2dS"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jqs-3f-OtV" secondAttribute="bottom" id="rkw-6C-VyB"/>
                                                 <constraint firstItem="sIY-ku-68e" firstAttribute="top" secondItem="8se-rS-W4n" secondAttribute="top" id="wGX-ik-ulN"/>
                                                 <constraint firstItem="cE4-PT-MfL" firstAttribute="top" secondItem="8se-rS-W4n" secondAttribute="top" id="ypa-Sv-eTU"/>
                                             </constraints>
