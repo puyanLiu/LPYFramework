@@ -20,6 +20,7 @@
 #import "LPYTouchIDViewController.h"
 #import "LPYPrototypePatternViewController.h"
 #import "LPYDecoratorPatternViewController.h"
+#import "LPYFactoryPatternViewController.h"
 
 @interface LPYMainViewController ()
 
@@ -125,6 +126,12 @@
 // 装饰模式
 - (IBAction)btn_DecoratorPatternClick {
     LPYDecoratorPatternViewController *VC = [[LPYDecoratorPatternViewController alloc] init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
+// 工厂模式
+- (IBAction)btn_FactoryPatternClick {
+    LPYFactoryPatternViewController *VC = [[LPYFactoryPatternViewController alloc] init];
     [self.navigationController pushViewController:VC animated:YES];
 }
 

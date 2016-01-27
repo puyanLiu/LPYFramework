@@ -196,9 +196,19 @@
                                                         <action selector="btn_DecoratorPatternClick" destination="B3e-5R-mMX" eventType="touchUpInside" id="iRT-sX-gEE"/>
                                                     </connections>
                                                 </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASI-KC-qay">
+                                                    <rect key="frame" x="65" y="0.0" width="60" height="43"/>
+                                                    <state key="normal" title="工厂模式"/>
+                                                    <connections>
+                                                        <action selector="btn_FactoryPatternClick" destination="B3e-5R-mMX" eventType="touchUpInside" id="oGU-8X-dUi"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="ASI-KC-qay" firstAttribute="top" secondItem="wFU-ST-jbb" secondAttribute="top" id="Lmh-cI-S7U"/>
+                                                <constraint firstAttribute="bottom" secondItem="ASI-KC-qay" secondAttribute="bottom" id="jkK-Nr-Qh5"/>
                                                 <constraint firstItem="68Z-g9-Ls7" firstAttribute="leading" secondItem="wFU-ST-jbb" secondAttribute="leading" id="otA-tq-wXi"/>
+                                                <constraint firstItem="ASI-KC-qay" firstAttribute="leading" secondItem="68Z-g9-Ls7" secondAttribute="trailing" constant="5" id="pBD-KL-tu4"/>
                                                 <constraint firstItem="68Z-g9-Ls7" firstAttribute="top" secondItem="wFU-ST-jbb" secondAttribute="top" id="qaS-o6-Rrx"/>
                                                 <constraint firstAttribute="bottom" secondItem="68Z-g9-Ls7" secondAttribute="bottom" id="rHd-DL-t7J"/>
                                             </constraints>
