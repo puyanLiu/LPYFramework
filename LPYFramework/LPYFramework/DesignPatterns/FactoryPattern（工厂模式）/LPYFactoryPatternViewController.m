@@ -9,6 +9,8 @@
 #import "LPYFactoryPatternViewController.h"
 #import "LPYDeviceFactory.h"
 
+#import "LPYFactoryManager.h"
+
 @interface LPYFactoryPatternViewController ()
 
 @end
@@ -22,6 +24,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self simpleFactoryPattern];
+    
+    [self abstractFactoryPattern];
+}
+
+- (void)abstractFactoryPattern {
+    // 获取工厂
+    LPYBaseFactory *factory = [LPYFactoryManager factoryWithBrand:kApple];
+    
+    // 创建商品
+    LPYBasePhone *phone = [factory createPhone];
+    LPYBaseWatch *watch = [factory createWatch];
+    
+    NSLog(@"%@ %@", phone, watch);
 }
 
 - (void)simpleFactoryPattern {

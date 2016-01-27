@@ -66,6 +66,16 @@
 		849A8F681C589E47002EA2F1 /* LPYiPhoneDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F671C589E47002EA2F1 /* LPYiPhoneDevice.m */; };
 		849A8F6B1C589E55002EA2F1 /* LPYAndroidDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F6A1C589E55002EA2F1 /* LPYAndroidDevice.m */; };
 		849A8F6E1C589E64002EA2F1 /* LPYNokiaDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F6D1C589E64002EA2F1 /* LPYNokiaDevice.m */; };
+		849A8F741C58A349002EA2F1 /* LPYFactoryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F731C58A349002EA2F1 /* LPYFactoryManager.m */; };
+		849A8F771C58A390002EA2F1 /* LPYBaseFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F761C58A390002EA2F1 /* LPYBaseFactory.m */; };
+		849A8F7A1C58A3B2002EA2F1 /* LPYAppleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F791C58A3B2002EA2F1 /* LPYAppleFactory.m */; };
+		849A8F7D1C58A3C3002EA2F1 /* LPYGoogleFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F7C1C58A3C3002EA2F1 /* LPYGoogleFactory.m */; };
+		849A8F801C58A3EB002EA2F1 /* LPYBasePhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F7F1C58A3EB002EA2F1 /* LPYBasePhone.m */; };
+		849A8F831C58A400002EA2F1 /* LPYiPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F821C58A400002EA2F1 /* LPYiPhone.m */; };
+		849A8F861C58A419002EA2F1 /* LPYAndroid.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F851C58A419002EA2F1 /* LPYAndroid.m */; };
+		849A8F891C58A42C002EA2F1 /* LPYBaseWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F881C58A42C002EA2F1 /* LPYBaseWatch.m */; };
+		849A8F8C1C58A43E002EA2F1 /* LPYiWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F8B1C58A43E002EA2F1 /* LPYiWatch.m */; };
+		849A8F8F1C58A449002EA2F1 /* LPYAndroidWatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F8E1C58A449002EA2F1 /* LPYAndroidWatch.m */; };
 		84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */; };
 		84AC0DCE1C4CEC6A00C49331 /* LPYLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DCD1C4CEC6A00C49331 /* LPYLockLabel.m */; };
 		84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD01C4CEC7900C49331 /* LPYCircleInfoView.m */; };
@@ -232,6 +242,26 @@
 		849A8F6A1C589E55002EA2F1 /* LPYAndroidDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYAndroidDevice.m; sourceTree = "<group>"; };
 		849A8F6C1C589E64002EA2F1 /* LPYNokiaDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNokiaDevice.h; sourceTree = "<group>"; };
 		849A8F6D1C589E64002EA2F1 /* LPYNokiaDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNokiaDevice.m; sourceTree = "<group>"; };
+		849A8F721C58A349002EA2F1 /* LPYFactoryManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYFactoryManager.h; sourceTree = "<group>"; };
+		849A8F731C58A349002EA2F1 /* LPYFactoryManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYFactoryManager.m; sourceTree = "<group>"; };
+		849A8F751C58A390002EA2F1 /* LPYBaseFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBaseFactory.h; sourceTree = "<group>"; };
+		849A8F761C58A390002EA2F1 /* LPYBaseFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBaseFactory.m; sourceTree = "<group>"; };
+		849A8F781C58A3B1002EA2F1 /* LPYAppleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYAppleFactory.h; sourceTree = "<group>"; };
+		849A8F791C58A3B2002EA2F1 /* LPYAppleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYAppleFactory.m; sourceTree = "<group>"; };
+		849A8F7B1C58A3C3002EA2F1 /* LPYGoogleFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYGoogleFactory.h; sourceTree = "<group>"; };
+		849A8F7C1C58A3C3002EA2F1 /* LPYGoogleFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYGoogleFactory.m; sourceTree = "<group>"; };
+		849A8F7E1C58A3EB002EA2F1 /* LPYBasePhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBasePhone.h; sourceTree = "<group>"; };
+		849A8F7F1C58A3EB002EA2F1 /* LPYBasePhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBasePhone.m; sourceTree = "<group>"; };
+		849A8F811C58A400002EA2F1 /* LPYiPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYiPhone.h; sourceTree = "<group>"; };
+		849A8F821C58A400002EA2F1 /* LPYiPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYiPhone.m; sourceTree = "<group>"; };
+		849A8F841C58A419002EA2F1 /* LPYAndroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYAndroid.h; sourceTree = "<group>"; };
+		849A8F851C58A419002EA2F1 /* LPYAndroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYAndroid.m; sourceTree = "<group>"; };
+		849A8F871C58A42C002EA2F1 /* LPYBaseWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBaseWatch.h; sourceTree = "<group>"; };
+		849A8F881C58A42C002EA2F1 /* LPYBaseWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBaseWatch.m; sourceTree = "<group>"; };
+		849A8F8A1C58A43E002EA2F1 /* LPYiWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYiWatch.h; sourceTree = "<group>"; };
+		849A8F8B1C58A43E002EA2F1 /* LPYiWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYiWatch.m; sourceTree = "<group>"; };
+		849A8F8D1C58A449002EA2F1 /* LPYAndroidWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYAndroidWatch.h; sourceTree = "<group>"; };
+		849A8F8E1C58A449002EA2F1 /* LPYAndroidWatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYAndroidWatch.m; sourceTree = "<group>"; };
 		84AC0DC51C4CEBD600C49331 /* CALayer+LPYAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LPYAnimation.h"; sourceTree = "<group>"; };
 		84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LPYAnimation.m"; sourceTree = "<group>"; };
 		84AC0DCC1C4CEC6A00C49331 /* LPYLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYLockLabel.h; sourceTree = "<group>"; };
@@ -578,7 +608,6 @@
 			isa = PBXGroup;
 			children = (
 				849A8F581C589887002EA2F1 /* AbstractFactoryPattern（抽象工厂模式） */,
-				849A8F591C589887002EA2F1 /* NSNumberDemo */,
 				849A8F5A1C589887002EA2F1 /* SimpleFactoryPattern（简单工厂模式） */,
 				849A8F5B1C589D47002EA2F1 /* LPYFactoryPatternViewController.h */,
 				849A8F5C1C589D47002EA2F1 /* LPYFactoryPatternViewController.m */,
@@ -589,15 +618,13 @@
 		849A8F581C589887002EA2F1 /* AbstractFactoryPattern（抽象工厂模式） */ = {
 			isa = PBXGroup;
 			children = (
+				849A8F6F1C58A32F002EA2F1 /* Factory */,
+				849A8F701C58A32F002EA2F1 /* Phone */,
+				849A8F711C58A32F002EA2F1 /* Watch */,
+				849A8F721C58A349002EA2F1 /* LPYFactoryManager.h */,
+				849A8F731C58A349002EA2F1 /* LPYFactoryManager.m */,
 			);
 			path = "AbstractFactoryPattern（抽象工厂模式）";
-			sourceTree = "<group>";
-		};
-		849A8F591C589887002EA2F1 /* NSNumberDemo */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = NSNumberDemo;
 			sourceTree = "<group>";
 		};
 		849A8F5A1C589887002EA2F1 /* SimpleFactoryPattern（简单工厂模式） */ = {
@@ -624,6 +651,45 @@
 				849A8F6D1C589E64002EA2F1 /* LPYNokiaDevice.m */,
 			);
 			path = Device;
+			sourceTree = "<group>";
+		};
+		849A8F6F1C58A32F002EA2F1 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F751C58A390002EA2F1 /* LPYBaseFactory.h */,
+				849A8F761C58A390002EA2F1 /* LPYBaseFactory.m */,
+				849A8F781C58A3B1002EA2F1 /* LPYAppleFactory.h */,
+				849A8F791C58A3B2002EA2F1 /* LPYAppleFactory.m */,
+				849A8F7B1C58A3C3002EA2F1 /* LPYGoogleFactory.h */,
+				849A8F7C1C58A3C3002EA2F1 /* LPYGoogleFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		849A8F701C58A32F002EA2F1 /* Phone */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F7E1C58A3EB002EA2F1 /* LPYBasePhone.h */,
+				849A8F7F1C58A3EB002EA2F1 /* LPYBasePhone.m */,
+				849A8F811C58A400002EA2F1 /* LPYiPhone.h */,
+				849A8F821C58A400002EA2F1 /* LPYiPhone.m */,
+				849A8F841C58A419002EA2F1 /* LPYAndroid.h */,
+				849A8F851C58A419002EA2F1 /* LPYAndroid.m */,
+			);
+			path = Phone;
+			sourceTree = "<group>";
+		};
+		849A8F711C58A32F002EA2F1 /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F871C58A42C002EA2F1 /* LPYBaseWatch.h */,
+				849A8F881C58A42C002EA2F1 /* LPYBaseWatch.m */,
+				849A8F8A1C58A43E002EA2F1 /* LPYiWatch.h */,
+				849A8F8B1C58A43E002EA2F1 /* LPYiWatch.m */,
+				849A8F8D1C58A449002EA2F1 /* LPYAndroidWatch.h */,
+				849A8F8E1C58A449002EA2F1 /* LPYAndroidWatch.m */,
+			);
+			path = Watch;
 			sourceTree = "<group>";
 		};
 		84AC0DC41C4CEBB600C49331 /* Category */ = {
@@ -885,7 +951,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				849A8F261C585602002EA2F1 /* LPYDecoratorPatternViewController.m in Sources */,
+				849A8F861C58A419002EA2F1 /* LPYAndroid.m in Sources */,
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
+				849A8F7D1C58A3C3002EA2F1 /* LPYGoogleFactory.m in Sources */,
 				849A8F5D1C589D47002EA2F1 /* LPYFactoryPatternViewController.m in Sources */,
 				84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */,
 				84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */,
@@ -904,10 +972,12 @@
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
+				849A8F741C58A349002EA2F1 /* LPYFactoryManager.m in Sources */,
 				849A8F321C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m in Sources */,
 				84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
+				849A8F8C1C58A43E002EA2F1 /* LPYiWatch.m in Sources */,
 				848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */,
 				849A8F521C589859002EA2F1 /* LPYBaseCopyObject.m in Sources */,
 				849A8F601C589DE7002EA2F1 /* LPYDeviceFactory.m in Sources */,
@@ -930,10 +1000,13 @@
 				841846451C4CD15700F8AF89 /* LPYGestureViewController.m in Sources */,
 				84AC0DD41C4CF4F100C49331 /* LPYGestureVertifyViewController.m in Sources */,
 				848B2DE21C4C84A5009168D3 /* LPYOberverPatternViewController.m in Sources */,
+				849A8F771C58A390002EA2F1 /* LPYBaseFactory.m in Sources */,
 				8418463F1C4CC07900F8AF89 /* LPYTouchIDViewController.m in Sources */,
 				84AC0DD81C4E176B00C49331 /* SFHFKeychainUtils.m in Sources */,
 				842F6CC41C3FC4940031AC16 /* LPYNumberPadDefaultStyle.m in Sources */,
+				849A8F891C58A42C002EA2F1 /* LPYBaseWatch.m in Sources */,
 				842F6CC71C3FC4940031AC16 /* LPYLightShowViewController.m in Sources */,
+				849A8F801C58A3EB002EA2F1 /* LPYBasePhone.m in Sources */,
 				841846491C4CD4B200F8AF89 /* LPYCircle.m in Sources */,
 				8418464F1C4CD4EA00F8AF89 /* LPYCircleViewConst.m in Sources */,
 				84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */,
@@ -941,7 +1014,9 @@
 				849A8F381C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m in Sources */,
 				84C1E6561C40EF4300378F31 /* NSString+Extension.m in Sources */,
 				849A8F2C1C585874002EA2F1 /* LPYGamePadDecorator.m in Sources */,
+				849A8F7A1C58A3B2002EA2F1 /* LPYAppleFactory.m in Sources */,
 				849A8F4E1C589859002EA2F1 /* LPYCircle1.m in Sources */,
+				849A8F8F1C58A449002EA2F1 /* LPYAndroidWatch.m in Sources */,
 				849A8F351C585D87002EA2F1 /* LPYGamePad+LPYCheat.m in Sources */,
 				84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */,
 				841846421C4CC10D00F8AF89 /* LPYMainViewController.m in Sources */,
@@ -952,6 +1027,7 @@
 				842F6CC21C3FC4940031AC16 /* LPYNumberButton.m in Sources */,
 				84DD0D981C4C92E200E379E2 /* LPYKVOModel.m in Sources */,
 				84885F8F1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m in Sources */,
+				849A8F831C58A400002EA2F1 /* LPYiPhone.m in Sources */,
 				84885F8C1C4799C300EC90E4 /* LPYBussinessCardModelAdapter.m in Sources */,
 				84885F891C47970B00EC90E4 /* LPYBussinessBaseCardAdapter.m in Sources */,
 				8418464C1C4CD4DA00F8AF89 /* LPYCircleView.m in Sources */,
