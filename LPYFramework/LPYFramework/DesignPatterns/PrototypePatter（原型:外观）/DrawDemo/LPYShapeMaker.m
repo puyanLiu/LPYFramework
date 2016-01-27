@@ -7,7 +7,7 @@
 //
 
 #import "LPYShapeMaker.h"
-#import "LPYCircle.h"
+#import "LPYCircle1.h"
 #import "LPYRectangle.h"
 
 @implementation LPYShapeMaker
@@ -18,7 +18,7 @@
  */
 + (void)drawCircleWithParas:(NSDictionary *)paras {
     // 绘制圆
-    LPYCircle *circle = [LPYCircle new];
+    LPYCircle1 *circle = [LPYCircle1 new];
     circle.radius = 10.0f; // paras里边取
     [circle draw];
 }
@@ -30,7 +30,7 @@
  */
 + (void)draCircleAndRectangle:(NSDictionary *)paras {
     // 绘制圆
-    LPYCircle *circle = [LPYCircle new];
+    LPYCircle1 *circle = [LPYCircle1 new];
     circle.radius = 10.0f; // paras里边取
     [circle draw];
     

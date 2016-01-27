@@ -6,9 +6,9 @@
 //  Copyright © 2016年 liupuyan. All rights reserved.
 //
 
-#import "LPYCircle.h"
+#import "LPYCircle1.h"
 
-@implementation LPYCircle
+@implementation LPYCircle1
 - (void)draw {
     NSLog(@"实现圆");
 }

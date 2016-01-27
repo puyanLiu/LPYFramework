@@ -52,7 +52,14 @@
 		849A8F191C578227002EA2F1 /* LPYShapeMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F181C578227002EA2F1 /* LPYShapeMaker.m */; };
 		849A8F1C1C57823F002EA2F1 /* LPYShape.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F1B1C57823E002EA2F1 /* LPYShape.m */; };
 		849A8F1F1C5782A2002EA2F1 /* LPYRectangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */; };
-		849A8F221C5782EC002EA2F1 /* LPYCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F211C5782EC002EA2F1 /* LPYCircle.m */; };
+		849A8F221C5782EC002EA2F1 /* LPYCircle1.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F211C5782EC002EA2F1 /* LPYCircle1.m */; };
+		849A8F261C585602002EA2F1 /* LPYDecoratorPatternViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F251C585602002EA2F1 /* LPYDecoratorPatternViewController.m */; };
+		849A8F291C58565F002EA2F1 /* LPYGamePad.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F281C58565F002EA2F1 /* LPYGamePad.m */; };
+		849A8F2C1C585874002EA2F1 /* LPYGamePadDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F2B1C585874002EA2F1 /* LPYGamePadDecorator.m */; };
+		849A8F2F1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F2E1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.m */; };
+		849A8F321C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F311C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m */; };
+		849A8F351C585D87002EA2F1 /* LPYGamePad+LPYCheat.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F341C585D87002EA2F1 /* LPYGamePad+LPYCheat.m */; };
+		849A8F381C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A8F371C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m */; };
 		84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */; };
 		84AC0DCE1C4CEC6A00C49331 /* LPYLockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DCD1C4CEC6A00C49331 /* LPYLockLabel.m */; };
 		84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AC0DD01C4CEC7900C49331 /* LPYCircleInfoView.m */; };
@@ -190,8 +197,22 @@
 		849A8F1B1C57823E002EA2F1 /* LPYShape.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYShape.m; sourceTree = "<group>"; };
 		849A8F1D1C5782A2002EA2F1 /* LPYRectangle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYRectangle.h; sourceTree = "<group>"; };
 		849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYRectangle.m; sourceTree = "<group>"; };
-		849A8F201C5782EC002EA2F1 /* LPYCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCircle.h; sourceTree = "<group>"; };
-		849A8F211C5782EC002EA2F1 /* LPYCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCircle.m; sourceTree = "<group>"; };
+		849A8F201C5782EC002EA2F1 /* LPYCircle1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCircle1.h; sourceTree = "<group>"; };
+		849A8F211C5782EC002EA2F1 /* LPYCircle1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCircle1.m; sourceTree = "<group>"; };
+		849A8F241C585602002EA2F1 /* LPYDecoratorPatternViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYDecoratorPatternViewController.h; sourceTree = "<group>"; };
+		849A8F251C585602002EA2F1 /* LPYDecoratorPatternViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYDecoratorPatternViewController.m; sourceTree = "<group>"; };
+		849A8F271C58565F002EA2F1 /* LPYGamePad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYGamePad.h; sourceTree = "<group>"; };
+		849A8F281C58565F002EA2F1 /* LPYGamePad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYGamePad.m; sourceTree = "<group>"; };
+		849A8F2A1C585874002EA2F1 /* LPYGamePadDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYGamePadDecorator.h; sourceTree = "<group>"; };
+		849A8F2B1C585874002EA2F1 /* LPYGamePadDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYGamePadDecorator.m; sourceTree = "<group>"; };
+		849A8F2D1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCheatGamePadDecorator.h; sourceTree = "<group>"; };
+		849A8F2E1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCheatGamePadDecorator.m; sourceTree = "<group>"; };
+		849A8F301C585A7E002EA2F1 /* LPYCoinGamePadDecorator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYCoinGamePadDecorator.h; sourceTree = "<group>"; };
+		849A8F311C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYCoinGamePadDecorator.m; sourceTree = "<group>"; };
+		849A8F331C585D87002EA2F1 /* LPYGamePad+LPYCheat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPYGamePad+LPYCheat.h"; sourceTree = "<group>"; };
+		849A8F341C585D87002EA2F1 /* LPYGamePad+LPYCheat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPYGamePad+LPYCheat.m"; sourceTree = "<group>"; };
+		849A8F361C585DB2002EA2F1 /* LPYGamePad+LPYCoin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LPYGamePad+LPYCoin.h"; sourceTree = "<group>"; };
+		849A8F371C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LPYGamePad+LPYCoin.m"; sourceTree = "<group>"; };
 		84AC0DC51C4CEBD600C49331 /* CALayer+LPYAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+LPYAnimation.h"; sourceTree = "<group>"; };
 		84AC0DC61C4CEBD600C49331 /* CALayer+LPYAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LPYAnimation.m"; sourceTree = "<group>"; };
 		84AC0DCC1C4CEC6A00C49331 /* LPYLockLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYLockLabel.h; sourceTree = "<group>"; };
@@ -392,6 +413,7 @@
 		84885F781C47887100EC90E4 /* DesignPatterns */ = {
 			isa = PBXGroup;
 			children = (
+				849A8F231C585516002EA2F1 /* DecoratorPattern（装饰模式） */,
 				849A8F021C577636002EA2F1 /* PrototypePatter（原型:外观） */,
 				848B2DDF1C4C8369009168D3 /* NotificationCenterAndKVO  */,
 				848B2DDE1C49009F009168D3 /* ObserverPattern（观察者模式） */,
@@ -505,10 +527,31 @@
 				849A8F1B1C57823E002EA2F1 /* LPYShape.m */,
 				849A8F1D1C5782A2002EA2F1 /* LPYRectangle.h */,
 				849A8F1E1C5782A2002EA2F1 /* LPYRectangle.m */,
-				849A8F201C5782EC002EA2F1 /* LPYCircle.h */,
-				849A8F211C5782EC002EA2F1 /* LPYCircle.m */,
+				849A8F201C5782EC002EA2F1 /* LPYCircle1.h */,
+				849A8F211C5782EC002EA2F1 /* LPYCircle1.m */,
 			);
 			path = DrawDemo;
+			sourceTree = "<group>";
+		};
+		849A8F231C585516002EA2F1 /* DecoratorPattern（装饰模式） */ = {
+			isa = PBXGroup;
+			children = (
+				849A8F241C585602002EA2F1 /* LPYDecoratorPatternViewController.h */,
+				849A8F251C585602002EA2F1 /* LPYDecoratorPatternViewController.m */,
+				849A8F271C58565F002EA2F1 /* LPYGamePad.h */,
+				849A8F281C58565F002EA2F1 /* LPYGamePad.m */,
+				849A8F2A1C585874002EA2F1 /* LPYGamePadDecorator.h */,
+				849A8F2B1C585874002EA2F1 /* LPYGamePadDecorator.m */,
+				849A8F2D1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.h */,
+				849A8F2E1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.m */,
+				849A8F301C585A7E002EA2F1 /* LPYCoinGamePadDecorator.h */,
+				849A8F311C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m */,
+				849A8F331C585D87002EA2F1 /* LPYGamePad+LPYCheat.h */,
+				849A8F341C585D87002EA2F1 /* LPYGamePad+LPYCheat.m */,
+				849A8F361C585DB2002EA2F1 /* LPYGamePad+LPYCoin.h */,
+				849A8F371C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m */,
+			);
+			path = "DecoratorPattern（装饰模式）";
 			sourceTree = "<group>";
 		};
 		84AC0DC41C4CEBB600C49331 /* Category */ = {
@@ -769,6 +812,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849A8F261C585602002EA2F1 /* LPYDecoratorPatternViewController.m in Sources */,
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
 				849A8F051C57766C002EA2F1 /* LPYStudentModel.m in Sources */,
 				84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */,
@@ -787,6 +831,7 @@
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
 				849A8F081C577734002EA2F1 /* LPYPrototypePatternViewController.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
+				849A8F321C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m in Sources */,
 				84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */,
 				842F6CC51C3FC4940031AC16 /* LPYPasswordKeyBoardViewController.m in Sources */,
 				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
@@ -797,9 +842,11 @@
 				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
 				848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */,
 				842F6CC61C3FC4940031AC16 /* UIImage+LPYNumberPad.m in Sources */,
+				849A8F291C58565F002EA2F1 /* LPYGamePad.m in Sources */,
 				84885F7C1C4789D200EC90E4 /* LPYBussinessCardView.m in Sources */,
 				C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */,
 				84C1E6591C40EF6100378F31 /* NSDictionary+Extension.m in Sources */,
+				849A8F2F1C5859F9002EA2F1 /* LPYCheatGamePadDecorator.m in Sources */,
 				84AC0DDD1C4E1A6100C49331 /* KeychainItemWrapper.m in Sources */,
 				841846451C4CD15700F8AF89 /* LPYGestureViewController.m in Sources */,
 				849A8F151C577D03002EA2F1 /* LPYDepartmentModel.m in Sources */,
@@ -813,8 +860,11 @@
 				8418464F1C4CD4EA00F8AF89 /* LPYCircleViewConst.m in Sources */,
 				84C1E64D1C40EE4000378F31 /* UIBarButtonItem+Extension.m in Sources */,
 				C44D1B491C2AD94100048CFF /* main.m in Sources */,
+				849A8F381C585DB2002EA2F1 /* LPYGamePad+LPYCoin.m in Sources */,
 				84C1E6561C40EF4300378F31 /* NSString+Extension.m in Sources */,
-				849A8F221C5782EC002EA2F1 /* LPYCircle.m in Sources */,
+				849A8F221C5782EC002EA2F1 /* LPYCircle1.m in Sources */,
+				849A8F2C1C585874002EA2F1 /* LPYGamePadDecorator.m in Sources */,
+				849A8F351C585D87002EA2F1 /* LPYGamePad+LPYCheat.m in Sources */,
 				84C1E65B1C40EF9700378F31 /* Dealloc+MyDealloc.m in Sources */,
 				841846421C4CC10D00F8AF89 /* LPYMainViewController.m in Sources */,
 				849A8F1C1C57823F002EA2F1 /* LPYShape.m in Sources */,

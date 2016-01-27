@@ -9,7 +9,7 @@
 #import "LPYShape.h"
 #import <UIKit/UIKit.h>
 
-@interface LPYCircle : LPYShape
+@interface LPYCircle1 : LPYShape
 /**
  *  radius
  */
