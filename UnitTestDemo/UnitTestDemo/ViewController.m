@@ -24,4 +24,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (int)getNum {
+    return 100;
+}
+
 @end
