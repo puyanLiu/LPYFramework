@@ -18,6 +18,7 @@
 		848703FD1CC6348D00EA01D1 /* UnitTestDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848703FC1CC6348D00EA01D1 /* UnitTestDemoUITests.m */; };
 		8487040C1CC781B300EA01D1 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8487040B1CC781B300EA01D1 /* TestObject.m */; };
 		848704111CC7835000EA01D1 /* EmptyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848704101CC7835000EA01D1 /* EmptyAppTests.m */; };
+		848704151CC799DB00EA01D1 /* ExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 848704141CC799DB00EA01D1 /* ExampleUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8487040A1CC781B300EA01D1 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
 		8487040B1CC781B300EA01D1 /* TestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
 		848704101CC7835000EA01D1 /* EmptyAppTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyAppTests.m; sourceTree = "<group>"; };
+		848704141CC799DB00EA01D1 /* ExampleUITests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUITests.m; sourceTree = "<group>"; };
 		A7A13C991144C68BACD7FF0B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7BD4830029B474F7112C3AD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CFFAC4C48F63479076CF6ECC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			children = (
 				848703FC1CC6348D00EA01D1 /* UnitTestDemoUITests.m */,
 				848703FE1CC6348D00EA01D1 /* Info.plist */,
+				848704141CC799DB00EA01D1 /* ExampleUITests.m */,
 			);
 			path = UnitTestDemoUITests;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				848704151CC799DB00EA01D1 /* ExampleUITests.m in Sources */,
 				848703FD1CC6348D00EA01D1 /* UnitTestDemoUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
