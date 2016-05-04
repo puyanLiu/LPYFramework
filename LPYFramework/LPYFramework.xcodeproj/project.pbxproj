@@ -27,6 +27,10 @@
 		842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */; };
 		842F6CCD1C3FC5AD0031AC16 /* LPYNumberPad.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */; };
 		84441E001C3E80180059BEDA /* noticeMusic.wav in Resources */ = {isa = PBXBuildFile; fileRef = 84441DFF1C3E80180059BEDA /* noticeMusic.wav */; };
+		8460B6F81CDA021200B5A80B /* QQMNetReloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460B6EF1CDA021200B5A80B /* QQMNetReloader.m */; };
+		8460B6F91CDA021200B5A80B /* QQMPlaceHolderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460B6F11CDA021200B5A80B /* QQMPlaceHolderView.m */; };
+		8460B6FA1CDA021200B5A80B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460B6F51CDA021200B5A80B /* TestViewController.m */; };
+		8460B6FB1CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 8460B6F71CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.m */; };
 		84885F7C1C4789D200EC90E4 /* LPYBussinessCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F7B1C4789D200EC90E4 /* LPYBussinessCardView.m */; };
 		84885F7F1C478CCA00EC90E4 /* LPYBussinessCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F7E1C478CCA00EC90E4 /* LPYBussinessCardModel.m */; };
 		84885F821C478D0400EC90E4 /* LPYBussinessCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84885F811C478D0400EC90E4 /* LPYBussinessCardViewController.m */; };
@@ -161,6 +165,16 @@
 		842F6CCC1C3FC5AD0031AC16 /* LPYNumberPad.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LPYNumberPad.bundle; sourceTree = "<group>"; };
 		842F6CCE1C3FC6A30031AC16 /* LPYNumberPadStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYNumberPadStyle.h; sourceTree = "<group>"; };
 		84441DFF1C3E80180059BEDA /* noticeMusic.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = noticeMusic.wav; sourceTree = "<group>"; };
+		8460B6EE1CDA021200B5A80B /* QQMNetReloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMNetReloader.h; sourceTree = "<group>"; };
+		8460B6EF1CDA021200B5A80B /* QQMNetReloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMNetReloader.m; sourceTree = "<group>"; };
+		8460B6F01CDA021200B5A80B /* QQMPlaceHolderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMPlaceHolderView.h; sourceTree = "<group>"; };
+		8460B6F11CDA021200B5A80B /* QQMPlaceHolderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMPlaceHolderView.m; sourceTree = "<group>"; };
+		8460B6F21CDA021200B5A80B /* QQMTableViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMTableViewPlaceHolder.h; sourceTree = "<group>"; };
+		8460B6F31CDA021200B5A80B /* QQMTableViewPlaceHolderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMTableViewPlaceHolderDelegate.h; sourceTree = "<group>"; };
+		8460B6F41CDA021200B5A80B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		8460B6F51CDA021200B5A80B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		8460B6F61CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+QQMTableViewPlaceHolder.h"; sourceTree = "<group>"; };
+		8460B6F71CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+QQMTableViewPlaceHolder.m"; sourceTree = "<group>"; };
 		84885F7A1C4789D200EC90E4 /* LPYBussinessCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBussinessCardView.h; sourceTree = "<group>"; };
 		84885F7B1C4789D200EC90E4 /* LPYBussinessCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYBussinessCardView.m; sourceTree = "<group>"; };
 		84885F7D1C478CCA00EC90E4 /* LPYBussinessCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYBussinessCardModel.h; sourceTree = "<group>"; };
@@ -457,6 +471,32 @@
 				842F6CCA1C3FC49A0031AC16 /* LPYCommonHelp.m */,
 			);
 			path = Tool;
+			sourceTree = "<group>";
+		};
+		8460B6EC1CDA021200B5A80B /* ViewPlaceHolder(网络请求占位View) */ = {
+			isa = PBXGroup;
+			children = (
+				8460B6ED1CDA021200B5A80B /* PlaceHolderView */,
+				8460B6F21CDA021200B5A80B /* QQMTableViewPlaceHolder.h */,
+				8460B6F31CDA021200B5A80B /* QQMTableViewPlaceHolderDelegate.h */,
+				8460B6F41CDA021200B5A80B /* TestViewController.h */,
+				8460B6F51CDA021200B5A80B /* TestViewController.m */,
+				8460B6F61CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.h */,
+				8460B6F71CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.m */,
+			);
+			name = "ViewPlaceHolder(网络请求占位View)";
+			path = ViewPlaceHolder;
+			sourceTree = "<group>";
+		};
+		8460B6ED1CDA021200B5A80B /* PlaceHolderView */ = {
+			isa = PBXGroup;
+			children = (
+				8460B6EE1CDA021200B5A80B /* QQMNetReloader.h */,
+				8460B6EF1CDA021200B5A80B /* QQMNetReloader.m */,
+				8460B6F01CDA021200B5A80B /* QQMPlaceHolderView.h */,
+				8460B6F11CDA021200B5A80B /* QQMPlaceHolderView.m */,
+			);
+			path = PlaceHolderView;
 			sourceTree = "<group>";
 		};
 		84885F781C47887100EC90E4 /* DesignPatterns */ = {
@@ -765,6 +805,7 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				8460B6EC1CDA021200B5A80B /* ViewPlaceHolder(网络请求占位View) */,
 				C430173A1C4E833A00CDD1F5 /* Resource */,
 				8418463C1C4CC06F00F8AF89 /* TouchID */,
 				841846381C4CBD5D00F8AF89 /* GesturesUnlock(手势解锁) */,
@@ -954,7 +995,9 @@
 				849A8F861C58A419002EA2F1 /* LPYAndroid.m in Sources */,
 				841FB6411C3CB88B007B1762 /* LPYQRCodeViewController.m in Sources */,
 				849A8F7D1C58A3C3002EA2F1 /* LPYGoogleFactory.m in Sources */,
+				8460B6F91CDA021200B5A80B /* QQMPlaceHolderView.m in Sources */,
 				849A8F5D1C589D47002EA2F1 /* LPYFactoryPatternViewController.m in Sources */,
+				8460B6FB1CDA021200B5A80B /* UITableView+QQMTableViewPlaceHolder.m in Sources */,
 				84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */,
 				84AC0DC71C4CEBD600C49331 /* CALayer+LPYAnimation.m in Sources */,
 				848B2DD31C48A41F009168D3 /* RegExCategories.m in Sources */,
@@ -965,6 +1008,7 @@
 				848B2DD71C48A6E9009168D3 /* LPYBaseInputValidator.m in Sources */,
 				84885F821C478D0400EC90E4 /* LPYBussinessCardViewController.m in Sources */,
 				842F6CCB1C3FC49A0031AC16 /* LPYCommonHelp.m in Sources */,
+				8460B6F81CDA021200B5A80B /* QQMNetReloader.m in Sources */,
 				84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */,
 				C44D1B4C1C2AD94100048CFF /* AppDelegate.m in Sources */,
 				84885F7F1C478CCA00EC90E4 /* LPYBussinessCardModel.m in Sources */,
@@ -972,6 +1016,7 @@
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
+				8460B6FA1CDA021200B5A80B /* TestViewController.m in Sources */,
 				849A8F741C58A349002EA2F1 /* LPYFactoryManager.m in Sources */,
 				849A8F321C585A7E002EA2F1 /* LPYCoinGamePadDecorator.m in Sources */,
 				84AC0DD11C4CEC7900C49331 /* LPYCircleInfoView.m in Sources */,
