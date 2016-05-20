@@ -99,6 +99,8 @@
 		84DD0D981C4C92E200E379E2 /* LPYKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
+		84FDD2401CEEF06800466E51 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDD23D1CEEF06800466E51 /* UITextField+Extension.m */; };
+		84FDD2411CEEF06800466E51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDD23F1CEEF06800466E51 /* ViewController.m */; };
 		C40E70EA1C3AC21B00F9567D /* LPYInfiniteScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */; };
 		C40E70ED1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C40E70EC1C3AC2D900F9567D /* LPYInfiniteScrollViewController.m */; };
 		C44D1B491C2AD94100048CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B481C2AD94100048CFF /* main.m */; };
@@ -312,6 +314,10 @@
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
+		84FDD23C1CEEF06800466E51 /* UITextField+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+Extension.h"; sourceTree = "<group>"; };
+		84FDD23D1CEEF06800466E51 /* UITextField+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Extension.m"; sourceTree = "<group>"; };
+		84FDD23E1CEEF06800466E51 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		84FDD23F1CEEF06800466E51 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C40E70E81C3AC21B00F9567D /* LPYInfiniteScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollView.h; sourceTree = "<group>"; };
 		C40E70E91C3AC21B00F9567D /* LPYInfiniteScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYInfiniteScrollView.m; sourceTree = "<group>"; };
 		C40E70EB1C3AC2D900F9567D /* LPYInfiniteScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYInfiniteScrollViewController.h; sourceTree = "<group>"; };
@@ -763,6 +769,17 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		84FDD23B1CEEF06800466E51 /* 文本录入以空格分隔 */ = {
+			isa = PBXGroup;
+			children = (
+				84FDD23C1CEEF06800466E51 /* UITextField+Extension.h */,
+				84FDD23D1CEEF06800466E51 /* UITextField+Extension.m */,
+				84FDD23E1CEEF06800466E51 /* ViewController.h */,
+				84FDD23F1CEEF06800466E51 /* ViewController.m */,
+			);
+			path = "文本录入以空格分隔";
+			sourceTree = "<group>";
+		};
 		C40E70E71C3ABF7500F9567D /* ScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -805,6 +822,7 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				84FDD23B1CEEF06800466E51 /* 文本录入以空格分隔 */,
 				8460B6EC1CDA021200B5A80B /* ViewPlaceHolder(网络请求占位View) */,
 				C430173A1C4E833A00CDD1F5 /* Resource */,
 				8418463C1C4CC06F00F8AF89 /* TouchID */,
@@ -1015,6 +1033,7 @@
 				849A8F501C589859002EA2F1 /* LPYShape.m in Sources */,
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
+				84FDD2411CEEF06800466E51 /* ViewController.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
 				8460B6FA1CDA021200B5A80B /* TestViewController.m in Sources */,
 				849A8F741C58A349002EA2F1 /* LPYFactoryManager.m in Sources */,
@@ -1028,6 +1047,7 @@
 				849A8F601C589DE7002EA2F1 /* LPYDeviceFactory.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
+				84FDD2401CEEF06800466E51 /* UITextField+Extension.m in Sources */,
 				849A8F681C589E47002EA2F1 /* LPYiPhoneDevice.m in Sources */,
 				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
 				849A8F561C589859002EA2F1 /* LPYTeacherModel.m in Sources */,
