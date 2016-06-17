@@ -97,6 +97,7 @@
 		84C1E6611C40F3C700378F31 /* LPYPasswordInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1E6601C40F3C700378F31 /* LPYPasswordInputView.m */; };
 		84DD0D951C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD0D941C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m */; };
 		84DD0D981C4C92E200E379E2 /* LPYKVOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */; };
+		84F9FA801D1403540048C8DF /* LPYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9FA7F1D1403540048C8DF /* LPYWebViewController.m */; };
 		84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */; };
 		84FDBAA31C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */; };
 		84FDD2401CEEF06800466E51 /* UITextField+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDD23D1CEEF06800466E51 /* UITextField+Extension.m */; };
@@ -311,6 +312,8 @@
 		84DD0D941C4C912A00E379E2 /* LPYNotificationCenterAndKVOViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYNotificationCenterAndKVOViewController.m; sourceTree = "<group>"; };
 		84DD0D961C4C92E200E379E2 /* LPYKVOModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYKVOModel.h; sourceTree = "<group>"; };
 		84DD0D971C4C92E200E379E2 /* LPYKVOModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYKVOModel.m; sourceTree = "<group>"; };
+		84F9FA7E1D1403540048C8DF /* LPYWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYWebViewController.h; sourceTree = "<group>"; };
+		84F9FA7F1D1403540048C8DF /* LPYWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYWebViewController.m; sourceTree = "<group>"; };
 		84FDBA9F1C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYQRCodeScanningViewController.h; sourceTree = "<group>"; };
 		84FDBAA01C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYQRCodeScanningViewController.m; sourceTree = "<group>"; };
 		84FDBAA11C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LPYQRCodeScanningViewController.xib; sourceTree = "<group>"; };
@@ -769,6 +772,15 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		84F9FA7D1D14033F0048C8DF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				84F9FA7E1D1403540048C8DF /* LPYWebViewController.h */,
+				84F9FA7F1D1403540048C8DF /* LPYWebViewController.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		84FDD23B1CEEF06800466E51 /* 文本录入以空格分隔 */ = {
 			isa = PBXGroup;
 			children = (
@@ -822,6 +834,7 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				84F9FA7D1D14033F0048C8DF /* WebView */,
 				84FDD23B1CEEF06800466E51 /* 文本录入以空格分隔 */,
 				8460B6EC1CDA021200B5A80B /* ViewPlaceHolder(网络请求占位View) */,
 				C430173A1C4E833A00CDD1F5 /* Resource */,
@@ -1094,6 +1107,7 @@
 				84885F8F1C4799E900EC90E4 /* LPYBussinessNewCardModelAdapter.m in Sources */,
 				849A8F831C58A400002EA2F1 /* LPYiPhone.m in Sources */,
 				84885F8C1C4799C300EC90E4 /* LPYBussinessCardModelAdapter.m in Sources */,
+				84F9FA801D1403540048C8DF /* LPYWebViewController.m in Sources */,
 				84885F891C47970B00EC90E4 /* LPYBussinessBaseCardAdapter.m in Sources */,
 				8418464C1C4CD4DA00F8AF89 /* LPYCircleView.m in Sources */,
 				841FB6491C3CD184007B1762 /* UIImage+Extension.m in Sources */,
