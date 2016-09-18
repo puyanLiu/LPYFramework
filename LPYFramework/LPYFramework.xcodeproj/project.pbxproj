@@ -110,6 +110,9 @@
 		C44D1B541C2AD94200048CFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C44D1B531C2AD94200048CFF /* Assets.xcassets */; };
 		C44D1B621C2AD94200048CFF /* LPYFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B611C2AD94200048CFF /* LPYFrameworkTests.m */; };
 		C44D1B6D1C2AD94200048CFF /* LPYFrameworkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C44D1B6C1C2AD94200048CFF /* LPYFrameworkUITests.m */; };
+		C44E8F061D8E41E800AB264B /* LPYADView.m in Sources */ = {isa = PBXBuildFile; fileRef = C44E8F051D8E41E800AB264B /* LPYADView.m */; };
+		C44E8F091D8E420100AB264B /* LPYADViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C44E8F081D8E420100AB264B /* LPYADViewController.m */; };
+		C4DD634A1D8E8B7C007ABDBD /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C4DD63491D8E8B7C007ABDBD /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +341,12 @@
 		C44D1B681C2AD94200048CFF /* LPYFrameworkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LPYFrameworkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C44D1B6C1C2AD94200048CFF /* LPYFrameworkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LPYFrameworkUITests.m; sourceTree = "<group>"; };
 		C44D1B6E1C2AD94200048CFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C44E8F041D8E41E800AB264B /* LPYADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYADView.h; sourceTree = "<group>"; };
+		C44E8F051D8E41E800AB264B /* LPYADView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYADView.m; sourceTree = "<group>"; };
+		C44E8F071D8E420100AB264B /* LPYADViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPYADViewController.h; sourceTree = "<group>"; };
+		C44E8F081D8E420100AB264B /* LPYADViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPYADViewController.m; sourceTree = "<group>"; };
+		C4DD63481D8E8B7C007ABDBD /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C4DD63491D8E8B7C007ABDBD /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -834,6 +843,7 @@
 		C44D1B461C2AD94100048CFF /* LPYFramework */ = {
 			isa = PBXGroup;
 			children = (
+				C4DD63471D8E8B6D007ABDBD /* Main */,
 				84F9FA7D1D14033F0048C8DF /* WebView */,
 				84FDD23B1CEEF06800466E51 /* 文本录入以空格分隔 */,
 				8460B6EC1CDA021200B5A80B /* ViewPlaceHolder(网络请求占位View) */,
@@ -847,6 +857,7 @@
 				841FB6431C3CD0CF007B1762 /* Category */,
 				841FB63D1C3CB839007B1762 /* QRCode */,
 				C40E70E71C3ABF7500F9567D /* ScrollView */,
+				C44E8F031D8E3F0E00AB264B /* 广告 */,
 				C44D1B4A1C2AD94100048CFF /* AppDelegate.h */,
 				C44D1B4B1C2AD94100048CFF /* AppDelegate.m */,
 				C44D1B501C2AD94100048CFF /* Main.storyboard */,
@@ -883,6 +894,26 @@
 				C44D1B6E1C2AD94200048CFF /* Info.plist */,
 			);
 			path = LPYFrameworkUITests;
+			sourceTree = "<group>";
+		};
+		C44E8F031D8E3F0E00AB264B /* 广告 */ = {
+			isa = PBXGroup;
+			children = (
+				C44E8F041D8E41E800AB264B /* LPYADView.h */,
+				C44E8F051D8E41E800AB264B /* LPYADView.m */,
+				C44E8F071D8E420100AB264B /* LPYADViewController.h */,
+				C44E8F081D8E420100AB264B /* LPYADViewController.m */,
+			);
+			path = "广告";
+			sourceTree = "<group>";
+		};
+		C4DD63471D8E8B6D007ABDBD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C4DD63481D8E8B7C007ABDBD /* UIView+Extension.h */,
+				C4DD63491D8E8B7C007ABDBD /* UIView+Extension.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1047,6 +1078,7 @@
 				84C1E6531C40EF0700378F31 /* UILabel+Extension.m in Sources */,
 				848B2DD01C48A221009168D3 /* UIButton+inits.m in Sources */,
 				84FDD2411CEEF06800466E51 /* ViewController.m in Sources */,
+				C44E8F061D8E41E800AB264B /* LPYADView.m in Sources */,
 				848B2DCD1C489D91009168D3 /* LPYCustomField.m in Sources */,
 				8460B6FA1CDA021200B5A80B /* TestViewController.m in Sources */,
 				849A8F741C58A349002EA2F1 /* LPYFactoryManager.m in Sources */,
@@ -1056,12 +1088,14 @@
 				848B2DCA1C489D10009168D3 /* LPYStrategyViewController.m in Sources */,
 				849A8F8C1C58A43E002EA2F1 /* LPYiWatch.m in Sources */,
 				848B2DE51C4C853D009168D3 /* LPYSubscriptionServiceCenter.m in Sources */,
+				C4DD634A1D8E8B7C007ABDBD /* UIView+Extension.m in Sources */,
 				849A8F521C589859002EA2F1 /* LPYBaseCopyObject.m in Sources */,
 				849A8F601C589DE7002EA2F1 /* LPYDeviceFactory.m in Sources */,
 				84FDBAA21C3D0B7F0048FDA4 /* LPYQRCodeScanningViewController.m in Sources */,
 				841FB6461C3CD10B007B1762 /* UIView+Extension.m in Sources */,
 				84FDD2401CEEF06800466E51 /* UITextField+Extension.m in Sources */,
 				849A8F681C589E47002EA2F1 /* LPYiPhoneDevice.m in Sources */,
+				C44E8F091D8E420100AB264B /* LPYADViewController.m in Sources */,
 				848B2DDA1C48A78F009168D3 /* LPYEmailValidator.m in Sources */,
 				849A8F561C589859002EA2F1 /* LPYTeacherModel.m in Sources */,
 				848B2DDD1C48A7A5009168D3 /* LPYPhoneNumberValidator.m in Sources */,

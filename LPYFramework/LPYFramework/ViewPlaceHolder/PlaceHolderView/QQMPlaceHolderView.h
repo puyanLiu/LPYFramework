@@ -22,6 +22,6 @@
  */
 @property (nonatomic, weak) id<QQMPlaceHolderViewDelegate> delegate;
 
-- (instancetype)initWithFrame:(CGRect)frame noDataType:(NoDataType)noDataType;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 @end

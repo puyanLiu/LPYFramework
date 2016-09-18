@@ -7,7 +7,7 @@
 //
 
 #import "TestViewController.h"
-#import <MJRefresh.h>
+//#import <MJRefresh.h>
 #import "QQMNetReloader.h"
 #import "QQMPlaceHolderView.h"
 #import "QQMTableViewPlaceHolder.h"
@@ -57,15 +57,15 @@ static const CGFloat CYLDuration = 1.0;
 }
 
 - (void)setUpMJRefresh {
-    __unsafe_unretained __typeof(self) weakSelf = self;
-    
-    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf loadNewData];
-    }];
-    
-    // 马上进入刷新状态
-    [self.tableView.header beginRefreshing];
+//    __unsafe_unretained __typeof(self) weakSelf = self;
+//    
+//    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+//    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        [weakSelf loadNewData];
+//    }];
+//    
+//    // 马上进入刷新状态
+//    [self.tableView.header beginRefreshing];
 }
 
 #pragma mark - UITableViewDataSource
@@ -101,7 +101,7 @@ static const CGFloat CYLDuration = 1.0;
         // 刷新表格
         [self.tableView qqm_reloadData];
         // 拿到当前的下拉刷新控件，结束刷新状态
-        [self.tableView.header endRefreshing];
+//        [self.tableView.header endRefreshing];
     });
 }
 
@@ -114,11 +114,12 @@ static const CGFloat CYLDuration = 1.0;
 }
 
 - (UIView *)taoBaoStylePlaceHolder {
-    __block QQMNetReloader *netReloader = [[QQMNetReloader alloc] initWithFrame:CGRectMake(0, 0, 0, 0)
-                                                                  reloadBlock:^{
-                                                                      [self.tableView.header beginRefreshing];
-                                                                  }] ;
-    return netReloader;
+//    __block QQMNetReloader *netReloader = [[QQMNetReloader alloc] initWithFrame:CGRectMake(0, 0, 0, 0)
+//                                                                  reloadBlock:^{
+//                                                                      [self.tableView.header beginRefreshing];
+//                                                                  }] ;
+//    return netReloader;
+    return nil;
 }
 
 - (UIView *)weChatStylePlaceHolder {
@@ -130,7 +131,7 @@ static const CGFloat CYLDuration = 1.0;
 #pragma mark - WeChatStylePlaceHolderDelegate Method
 
 - (void)emptyOverlayClicked:(id)sender {
-    [self.tableView.header beginRefreshing];
+//    [self.tableView.header beginRefreshing];
 }
 
 
