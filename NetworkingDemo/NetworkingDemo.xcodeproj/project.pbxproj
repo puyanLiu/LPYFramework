@@ -23,6 +23,8 @@
 		C47C60061D93D0D4009BC02F /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C47C60031D93D0D4009BC02F /* MBProgressHUD.bundle */; };
 		C47C60071D93D0D4009BC02F /* MBProgressHUD+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C60051D93D0D4009BC02F /* MBProgressHUD+Extension.m */; };
 		C47C600A1D93D168009BC02F /* URLHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C60091D93D168009BC02F /* URLHelp.m */; };
+		C47C600D1D94BE4E009BC02F /* QQMBaseTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C600C1D94BE4E009BC02F /* QQMBaseTool.m */; };
+		C47C60101D94BE65009BC02F /* QQMHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C600F1D94BE65009BC02F /* QQMHttpTool.m */; };
 		FE0C43875CC812D93EE49FBA /* libPods-NetworkingDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54E3898203C6F0A254CDEE10 /* libPods-NetworkingDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +80,10 @@
 		C47C60051D93D0D4009BC02F /* MBProgressHUD+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Extension.m"; sourceTree = "<group>"; };
 		C47C60081D93D168009BC02F /* URLHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLHelp.h; sourceTree = "<group>"; };
 		C47C60091D93D168009BC02F /* URLHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLHelp.m; sourceTree = "<group>"; };
+		C47C600B1D94BE4E009BC02F /* QQMBaseTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMBaseTool.h; sourceTree = "<group>"; };
+		C47C600C1D94BE4E009BC02F /* QQMBaseTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMBaseTool.m; sourceTree = "<group>"; };
+		C47C600E1D94BE65009BC02F /* QQMHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMHttpTool.h; sourceTree = "<group>"; };
+		C47C600F1D94BE65009BC02F /* QQMHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMHttpTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,10 @@
 				C47C5FFB1D93CF67009BC02F /* DeviceHelp.m */,
 				C47C5FF41D93CF00009BC02F /* QQMResponse.h */,
 				C47C5FF51D93CF00009BC02F /* QQMResponse.m */,
+				C47C600B1D94BE4E009BC02F /* QQMBaseTool.h */,
+				C47C600C1D94BE4E009BC02F /* QQMBaseTool.m */,
+				C47C600E1D94BE65009BC02F /* QQMHttpTool.h */,
+				C47C600F1D94BE65009BC02F /* QQMHttpTool.m */,
 				C47C5FF71D93CF0A009BC02F /* QQMNetworkingHelp.h */,
 				C47C5FF81D93CF0A009BC02F /* QQMNetworkingHelp.m */,
 				C47C5FCA1D93C991009BC02F /* Main.storyboard */,
@@ -392,9 +402,11 @@
 				C47C60021D93CFB1009BC02F /* NSDictionary+Extension.m in Sources */,
 				C47C5FFC1D93CF67009BC02F /* DeviceHelp.m in Sources */,
 				C47C5FC61D93C991009BC02F /* AppDelegate.m in Sources */,
+				C47C60101D94BE65009BC02F /* QQMHttpTool.m in Sources */,
 				C47C5FF61D93CF00009BC02F /* QQMResponse.m in Sources */,
 				C47C600A1D93D168009BC02F /* URLHelp.m in Sources */,
 				C47C5FC31D93C991009BC02F /* main.m in Sources */,
+				C47C600D1D94BE4E009BC02F /* QQMBaseTool.m in Sources */,
 				C47C5FFF1D93CF8D009BC02F /* VersionHelp.m in Sources */,
 				C47C60071D93D0D4009BC02F /* MBProgressHUD+Extension.m in Sources */,
 			);
