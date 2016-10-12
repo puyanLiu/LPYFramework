@@ -1,23 +1,4 @@
 // AFNetworkReachabilityManager.m
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 #import "AFNetworkReachabilityManager.h"
 #if !TARGET_OS_WATCH
@@ -90,18 +71,27 @@ static void AFPostReachabilityStatusChange(SCNetworkReachabilityFlags flags, AFN
     });
 }
 
+
+/**
+ 在Main Runloop中对网络状态进行监控之后，在每次网络状态改变，就会调用AFNetworkReachabilityCallback函数
+
+ @param target <#target description#>
+ @param flags  <#flags description#>
+ @param info   <#info description#>
+ */
 static void AFNetworkReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info) {
     AFPostReachabilityStatusChange(flags, (__bridge AFNetworkReachabilityStatusBlock)info);
 }
 
 
 static const void * AFNetworkReachabilityRetainCallback(const void *info) {
-    return Block_copy(info);
+    
+    return (__typeof(info))_Block_copy((const void *)(info));
 }
 
 static void AFNetworkReachabilityReleaseCallback(const void *info) {
     if (info) {
-        Block_release(info);
+        _Block_release((const void *)(info));
     }
 }
 
@@ -133,10 +123,21 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     return manager;
 }
 
+
+/**
+ 初始化网络状态
+
+ @param address <#address description#>
+
+ @return <#return value description#>
+ */
 + (instancetype)managerForAddress:(const void *)address {
+    // 使用SCNetworkReachabilityCreateWithAddress生成一个SCNetworkReachabilityRef引用
     SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
+    // 将生成的SCNetworkReachabilityRef引用传给AFNetworkReachabilityManager
     AFNetworkReachabilityManager *manager = [[self alloc] initWithReachability:reachability];
 
+    // 释放reachability
     CFRelease(reachability);
     
     return manager;
@@ -163,8 +164,10 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     if (!self) {
         return nil;
     }
-
+    
+    // 把reachability赋值给self.networkReachability，并将原来的reachability的引用计数器+1
     _networkReachability = CFRetain(reachability);
+    // 设置一个默认的网络状态
     self.networkReachabilityStatus = AFNetworkReachabilityStatusUnknown;
 
     return self;
@@ -185,14 +188,32 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 
 #pragma mark -
 
+
+/**
+ 网络可用
+
+ @return <#return value description#>
+ */
 - (BOOL)isReachable {
     return [self isReachableViaWWAN] || [self isReachableViaWiFi];
 }
 
+
+/**
+ 手机网络
+
+ @return <#return value description#>
+ */
 - (BOOL)isReachableViaWWAN {
     return self.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWWAN;
 }
 
+
+/**
+ WiFi状态
+
+ @return <#return value description#>
+ */
 - (BOOL)isReachableViaWiFi {
     return self.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWiFi;
 }
@@ -200,6 +221,7 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 #pragma mark -
 
 - (void)startMonitoring {
+    // 取消之前的监听
     [self stopMonitoring];
 
     if (!self.networkReachability) {
@@ -209,18 +231,32 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     __weak __typeof(self)weakSelf = self;
     AFNetworkReachabilityStatusBlock callback = ^(AFNetworkReachabilityStatus status) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
-
+        
+        // 每次回调被调用，都更新当前的网络状态
         strongSelf.networkReachabilityStatus = status;
+        // 调用networkReachabilityStatusBlock
         if (strongSelf.networkReachabilityStatusBlock) {
             strongSelf.networkReachabilityStatusBlock(status);
         }
 
     };
 
+    // 创建一个SCNetworkReachabilityContext
     SCNetworkReachabilityContext context = {0, (__bridge void *)callback, AFNetworkReachabilityRetainCallback, AFNetworkReachabilityReleaseCallback, NULL};
+    // 当目标的网络状态改变时，会调用传入的回调
     SCNetworkReachabilitySetCallback(self.networkReachability, AFNetworkReachabilityCallback, &context);
+    // 在Main Runloop中对应的模式开始监控网络状态
     SCNetworkReachabilityScheduleWithRunLoop(self.networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
 
+    /*
+     dispatch_get_global_queue(优先级:优先执行任务，暂无:默认传0) 全局线程 default
+     // 优先级从高到低
+     #define DISPATCH_QUEUE_PRIORITY_HIGH 2
+     #define DISPATCH_QUEUE_PRIORITY_DEFAULT 0
+     #define DISPATCH_QUEUE_PRIORITY_LOW (-2)
+     #define DISPATCH_QUEUE_PRIORITY_BACKGROUND INT16_MIN
+     */
+    // 获取当前的网络状态，调用callback
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
         SCNetworkReachabilityFlags flags;
         if (SCNetworkReachabilityGetFlags(self.networkReachability, &flags)) {
@@ -229,11 +265,16 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     });
 }
 
+
+/**
+ 停止网络监听
+ */
 - (void)stopMonitoring {
     if (!self.networkReachability) {
         return;
     }
-
+    
+    // 使用 SCNetworkReachabilityUnscheduleFromRunLoop 方法取消之前在 Main Runloop 中的监听
     SCNetworkReachabilityUnscheduleFromRunLoop(self.networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
 }
 

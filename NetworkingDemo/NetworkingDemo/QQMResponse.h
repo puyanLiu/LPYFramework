@@ -33,10 +33,6 @@
 /**
  *  text 页面返回来得原始信息
  */
-@property (nonatomic, strong) NSString *text;
-/**
- *  text 页面返回来得原始信息 转换为字典
- */
 @property (nonatomic, strong) NSDictionary *textDictionary;
 /**
  *  error AFN返回给我们的错误信息

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44187B31DAE09D80004678A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C44187B21DAE09D80004678A /* SystemConfiguration.framework */; };
 		C47C5FC31D93C991009BC02F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C5FC21D93C991009BC02F /* main.m */; };
 		C47C5FC61D93C991009BC02F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C5FC51D93C991009BC02F /* AppDelegate.m */; };
 		C47C5FC91D93C991009BC02F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C47C5FC81D93C991009BC02F /* ViewController.m */; };
@@ -49,6 +50,7 @@
 		5280DBDC1C3D7A6D56C6F34F /* Pods-NetworkingDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkingDemo/Pods-NetworkingDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		54E3898203C6F0A254CDEE10 /* libPods-NetworkingDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NetworkingDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		70CA3228312575D1FC5CEB93 /* Pods-NetworkingDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NetworkingDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-NetworkingDemo/Pods-NetworkingDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C44187B21DAE09D80004678A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C47C5FBE1D93C991009BC02F /* NetworkingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47C5FC21D93C991009BC02F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C47C5FC41D93C991009BC02F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C44187B31DAE09D80004678A /* SystemConfiguration.framework in Frameworks */,
 				FE0C43875CC812D93EE49FBA /* libPods-NetworkingDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +118,7 @@
 		26B9CA0C2DEDC1AA2B52728F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C44187B21DAE09D80004678A /* SystemConfiguration.framework */,
 				54E3898203C6F0A254CDEE10 /* libPods-NetworkingDemo.a */,
 			);
 			name = Frameworks;

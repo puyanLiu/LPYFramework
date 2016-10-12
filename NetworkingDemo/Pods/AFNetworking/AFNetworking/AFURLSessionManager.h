@@ -31,7 +31,7 @@
 
 /**
  `AFURLSessionManager` creates and manages an `NSURLSession` object based on a specified `NSURLSessionConfiguration` object, which conforms to `<NSURLSessionTaskDelegate>`, `<NSURLSessionDataDelegate>`, `<NSURLSessionDownloadDelegate>`, and `<NSURLSessionDelegate>`.
-
+ 
  ## Subclassing Notes
 
  This is the base class for `AFHTTPSessionManager`, which adds functionality specific to making HTTP requests. If you are looking to extend `AFURLSessionManager` specifically for HTTP, consider subclassing `AFHTTPSessionManager` instead.
@@ -90,12 +90,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface AFURLSessionManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSSecureCoding, NSCopying>
 
 /**
- The managed session.
+ The managed session. 
+ 会话管理
  */
 @property (readonly, nonatomic, strong) NSURLSession *session;
 
 /**
- The operation queue on which delegate callbacks are run.
+ The operation queue on which delegate callbacks are run. 
+ 代理回调后执行的队列
  */
 @property (readonly, nonatomic, strong) NSOperationQueue *operationQueue;
 
@@ -103,6 +105,7 @@ NS_ASSUME_NONNULL_BEGIN
  Responses sent from the server in data tasks created with `dataTaskWithRequest:success:failure:` and run using the `GET` / `POST` / et al. convenience methods are automatically validated and serialized by the response serializer. By default, this property is set to an instance of `AFJSONResponseSerializer`.
 
  @warning `responseSerializer` must not be `nil`.
+ responseSerializer属性不能为空
  */
 @property (nonatomic, strong) id <AFURLResponseSerialization> responseSerializer;
 
