@@ -18,20 +18,41 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
-    AFHTTPSessionManager *session = [AFHTTPSessionManager manager];
-//    [session GET:@"http://www.baidu.com" parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSLog(@"成功");
-//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//        NSLog(@"成功");
-//    }];
-    [session GET:@"http://www.baidu.com" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"成功--------------------%@", responseObject);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"失败--------------------%@", error);
-    }];
 }
 
+- (IBAction)btn_GetCurrentReachability:(id)sender {
+    AFNetworkReachabilityManager *reach = [AFNetworkReachabilityManager sharedManager];
+    [reach setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSString * tips = @"";
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+                tips = @"无网络连接";
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                tips = @"手机网络";
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                tips = @"wifi";
+                break;
+            case AFNetworkReachabilityStatusUnknown:
+                tips = @"未知网络";
+                break;
+            default:
+                break;
+        }
+        
+        
+        NSLog(@"tips = %@",tips);
+        UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"当前网络状态为:%@",tips] preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction * aa = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [ac dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [ac addAction:aa];
+        [self presentViewController:ac animated:YES completion:nil];
+    }];
+    [reach startMonitoring];
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

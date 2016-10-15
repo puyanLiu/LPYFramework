@@ -28,6 +28,29 @@ NSString * AFStringFromNetworkReachabilityStatus(AFNetworkReachabilityStatus sta
     }
 }
 
+
+/**
+ 网络状态标志位
+ typedef CF_OPTIONS(uint32_t, SCNetworkReachabilityFlags) {
+	kSCNetworkReachabilityFlagsTransientConnection	= 1<<0,
+	kSCNetworkReachabilityFlagsReachable		= 1<<1,
+	kSCNetworkReachabilityFlagsConnectionRequired	= 1<<2,
+	kSCNetworkReachabilityFlagsConnectionOnTraffic	= 1<<3,
+	kSCNetworkReachabilityFlagsInterventionRequired	= 1<<4,
+	kSCNetworkReachabilityFlagsConnectionOnDemand	= 1<<5,	// __OSX_AVAILABLE_STARTING(__MAC_10_6,__IPHONE_3_0)
+	kSCNetworkReachabilityFlagsIsLocalAddress	= 1<<16,
+	kSCNetworkReachabilityFlagsIsDirect		= 1<<17,
+ #if	TARGET_OS_IPHONE
+	kSCNetworkReachabilityFlagsIsWWAN		= 1<<18,
+ #endif	// TARGET_OS_IPHONE
+ 
+	kSCNetworkReachabilityFlagsConnectionAutomatic	= kSCNetworkReachabilityFlagsConnectionOnTraffic
+ };
+
+ @param flags 是一个SCNetworkReachabilityFlags，它的不同位代表了不同的网络可达性状态，通过flags的位操作，获取当前的状态信息AFNetworkReachabilityStatus
+
+ @return <#return value description#>
+ */
 static AFNetworkReachabilityStatus AFNetworkReachabilityStatusForFlags(SCNetworkReachabilityFlags flags) {
     BOOL isReachable = ((flags & kSCNetworkReachabilityFlagsReachable) != 0);
     BOOL needsConnection = ((flags & kSCNetworkReachabilityFlagsConnectionRequired) != 0);
@@ -60,12 +83,16 @@ static AFNetworkReachabilityStatus AFNetworkReachabilityStatusForFlags(SCNetwork
  * the later update, resulting in the listener being left in the wrong state.
  */
 static void AFPostReachabilityStatusChange(SCNetworkReachabilityFlags flags, AFNetworkReachabilityStatusBlock block) {
+    // 调用AFNetworkReachabilityStatusForFlags获取当前的网络可达性状态
     AFNetworkReachabilityStatus status = AFNetworkReachabilityStatusForFlags(flags);
+    // 在主线程中异步执行传入的callback
     dispatch_async(dispatch_get_main_queue(), ^{
         if (block) {
             block(status);
         }
+        // 发出通知
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+        // 传入通知的数据
         NSDictionary *userInfo = @{ AFNetworkingReachabilityNotificationStatusItem: @(status) };
         [notificationCenter postNotificationName:AFNetworkingReachabilityDidChangeNotification object:nil userInfo:userInfo];
     });
@@ -80,9 +107,9 @@ static void AFPostReachabilityStatusChange(SCNetworkReachabilityFlags flags, AFN
  @param info   <#info description#>
  */
 static void AFNetworkReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info) {
+    // 这里从info中取出之前存在context中的AFNetworkReachabilityStatusBlock
     AFPostReachabilityStatusChange(flags, (__bridge AFNetworkReachabilityStatusBlock)info);
 }
-
 
 static const void * AFNetworkReachabilityRetainCallback(const void *info) {
     

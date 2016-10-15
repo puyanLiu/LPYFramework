@@ -1,24 +1,4 @@
 // AFURLSessionManager.h
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
-
 
 #import <Foundation/Foundation.h>
 
@@ -31,11 +11,12 @@
 
 /**
  `AFURLSessionManager` creates and manages an `NSURLSession` object based on a specified `NSURLSessionConfiguration` object, which conforms to `<NSURLSessionTaskDelegate>`, `<NSURLSessionDataDelegate>`, `<NSURLSessionDownloadDelegate>`, and `<NSURLSessionDelegate>`.
- 
+ AFURLSessionManager 负责创建和管理基于NSURLSessionConfiguration对象的NSURLSession，，实现了如下协议NSURLSessionTaskDelegate、NSURLSessionDataDelegate、NSURLSessionDownloadDelegate、NSURLSessionDelegate
  ## Subclassing Notes
 
  This is the base class for `AFHTTPSessionManager`, which adds functionality specific to making HTTP requests. If you are looking to extend `AFURLSessionManager` specifically for HTTP, consider subclassing `AFHTTPSessionManager` instead.
-
+这是AFHTTPSessionManager基类，它增加了专门针对HTTP请求的功能，如果你想要扩展AFURLSessionManager专门针对HTTP请求，可考虑继承AFHTTPSessionManager
+ 
  ## NSURLSession & NSURLSessionTask Delegate Methods
 
  `AFURLSessionManager` implements the following delegate methods:
@@ -68,25 +49,43 @@
  - `URLSession:downloadTask:didResumeAtOffset:expectedTotalBytes:`
 
  If any of these methods are overridden in a subclass, they _must_ call the `super` implementation first.
-
+ 如果这些方法在自类中被覆盖，必须调用super
+ 
  ## Network Reachability Monitoring
+ 网络可达性监控
 
  Network reachability status and change monitoring is available through the `reachabilityManager` property. Applications may choose to monitor network reachability conditions in order to prevent or suspend any outbound requests. See `AFNetworkReachabilityManager` for more details.
-
+ 网络可达性状态和变化监控可通过reachabilityManager属性，应用程序可以选择监控网络可达性条件，以防止或阻断任何出站请求
+ 
  ## NSCoding Caveats
+ NSCoding 注意事项
 
  - Encoded managers do not include any block properties. Be sure to set delegate callback blocks when using `-initWithCoder:` or `NSKeyedUnarchiver`.
+ 编码的管理者不包括任何块属性，当使用initWithCoder或NSKeyedUnarchiver时一定要设置委托回调块
 
  ## NSCopying Caveats
+ NSCopying 注意事项
 
  - `-copy` and `-copyWithZone:` return a new manager with a new `NSURLSession` created from the configuration of the original.
+ `-copy`和`-copyWithZone:`从原来的配置创建一个新的NSURLSession并返回
+ 
  - Operation copies do not include any delegate callback blocks, as they often strongly captures a reference to `self`, which would otherwise have the unintuitive side-effect of pointing to the _original_ session manager when copied.
-
+ 操作复制不能包括任何代理回调块，因为它们对self强引用，当复制时如果有强引用将会对原始session产生副作用
+ 
  @warning Managers for background sessions must be owned for the duration of their use. This can be accomplished by creating an application-wide or shared singleton instance.
+ 后台会话管理必须拥有其使用期限，这可以通过创建单例来实现
  */
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 1、AFURLSessionManager 是对 NSURLSession 的封装
+ 2、它通过 - [AFURLSessionManager dataTaskWithRequest:completionHandler:] 等接口创建 NSURLSessionDataTask 的实例
+ 3、持有一个字典 mutableTaskDelegatesKeyedByTaskIdentifier 管理这些 data task 实例
+ 4、引入 AFURLSessionManagerTaskDelegate 来对传入的 uploadProgressBlock downloadProgressBlock completionHandler 在合适的时间进行调用
+ 5、实现了全部的代理方法来提供 block 接口
+ 6、通过方法调剂在 data task 状态改变时，发出通知
+ */
 @interface AFURLSessionManager : NSObject <NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDownloadDelegate, NSSecureCoding, NSCopying>
 
 /**
@@ -115,6 +114,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The security policy used by created session to evaluate server trust for secure connections. `AFURLSessionManager` uses the `defaultPolicy` unless otherwise specified.
+ AFSecurityPolicy是AFNetworking用来保证HTTP请求安全的类，它被AFURLSessionManager持有
  */
 @property (nonatomic, strong) AFSecurityPolicy *securityPolicy;
 
@@ -125,6 +125,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The network reachability manager. `AFURLSessionManager` uses the `sharedManager` by default.
+ 网络可达性管理
+ AFURLSessionManager对网络状态的监控是由AFNetworkReachabilityManager来负责，它仅仅是持有一个AFNetworkReachabilityManager的对象
+ 真正需要判断网络状态时，仍然需要开发者调用对应的API获取网络状态
  */
 @property (readwrite, nonatomic, strong) AFNetworkReachabilityManager *reachabilityManager;
 #endif

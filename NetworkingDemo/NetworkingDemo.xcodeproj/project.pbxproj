@@ -286,6 +286,7 @@
 				TargetAttributes = {
 					C47C5FBD1D93C991009BC02F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = R5NK8T5JLD;
 						ProvisioningStyle = Automatic;
 					};
 					C47C5FD61D93C992009BC02F = {
@@ -562,6 +563,7 @@
 			baseConfigurationReference = 5280DBDC1C3D7A6D56C6F34F /* Pods-NetworkingDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5NK8T5JLD;
 				INFOPLIST_FILE = NetworkingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -575,6 +577,7 @@
 			baseConfigurationReference = 70CA3228312575D1FC5CEB93 /* Pods-NetworkingDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R5NK8T5JLD;
 				INFOPLIST_FILE = NetworkingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

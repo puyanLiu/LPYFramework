@@ -181,7 +181,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Posted when network reachability changes.
  This notification assigns no notification object. The `userInfo` dictionary contains an `NSNumber` object under the `AFNetworkingReachabilityNotificationStatusItem` key, representing the `AFNetworkReachabilityStatus` value for the current network reachability.
- 当网络可用性改变时发布，传递的参数是当前的网络状态
+ 当网络可达性改变时发布，传递的参数是当前的网络状态
 
  @warning In order for network reachability to be monitored, include the `SystemConfiguration` framework in the active target's "Link Binary With Library" build phase, and add `#import <SystemConfiguration/SystemConfiguration.h>` to the header prefix of the project (`Prefix.pch`).
  为了网络状态能够被监测，应包含SystemConfiguration框架，并且添加#import <SystemConfiguration/SystemConfiguration.h>在pch中文件
