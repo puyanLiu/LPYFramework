@@ -1,23 +1,4 @@
 // AFURLResponseSerialization.h
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
@@ -26,14 +7,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  The `AFURLResponseSerialization` protocol is adopted by an object that decodes data into a more useful object representation, according to details in the server response. Response serializers may additionally perform validation on the incoming response and data.
-
+ AFURLResponseSerialization协议根据在服务器响应信息解码成更有意义的表现形式。响应序列化可以附加在传入响应和数据执行验证
  For example, a JSON response serializer may check for an acceptable status code (`2XX` range) and content type (`application/json`), decoding a valid JSON response into an object.
+ 例如，JSON响应串行器可以检查用于可接受的状态码、内容类型，返回有效的JSON对象
+ 遵循此协议的类会将数据解码成更有意义的表现形式，遵循这个协议的类同时也要遵循NSObject、NSSecureCoding、NSCopying这三个协议，实现安全编码、拷贝以及Objective-C对象的基本行为
+ 此模块中的所有类都遵循AFURLResponseSerialization协议
+ AFHTTPResponseSerializer模块中最重要的根类
+ 
+ AFURLResponseSerialization 负责对返回的数据进行序列化
  */
 @protocol AFURLResponseSerialization <NSObject, NSSecureCoding, NSCopying>
 
 /**
  The response object decoded from the data associated with a specified response.
-
+ 返回对特定响应的数据解码后的对象
  @param response The response to be processed.
  @param data The response data to be decoded.
  @param error The error that occurred while attempting to decode the response data.
@@ -46,7 +33,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-#pragma mark -
+#pragma mark - 以下类都遵循AFURLResponseSerialization协议
 
 /**
  `AFHTTPResponseSerializer` conforms to the `AFURLRequestSerialization` & `AFURLResponseSerialization` protocols, offering a concrete base implementation of query string / URL form-encoded parameter serialization and default request headers, as well as response status code and content type validation.

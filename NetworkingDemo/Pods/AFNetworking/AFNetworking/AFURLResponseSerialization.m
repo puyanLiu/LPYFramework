@@ -56,7 +56,7 @@ static BOOL AFErrorOrUnderlyingErrorHasCodeInDomain(NSError *error, NSInteger co
     } else if (error.userInfo[NSUnderlyingErrorKey]) {
         return AFErrorOrUnderlyingErrorHasCodeInDomain(error.userInfo[NSUnderlyingErrorKey], code, domain);
     }
-
+ 
     return NO;
 }
 
@@ -73,6 +73,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
         for (id <NSCopying> key in [(NSDictionary *)JSONObject allKeys]) {
             id value = (NSDictionary *)JSONObject[key];
             if (!value || [value isEqual:[NSNull null]]) {
+                // 移除null 
                 [mutableDictionary removeObjectForKey:key];
             } else if ([value isKindOfClass:[NSArray class]] || [value isKindOfClass:[NSDictionary class]]) {
                 mutableDictionary[key] = AFJSONObjectByRemovingKeysWithNullValues(value, readingOptions);
@@ -87,6 +88,11 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
 
 @implementation AFHTTPResponseSerializer
 
+/**
+ 实例化方法
+
+ @return <#return value description#>
+ */
 + (instancetype)serializer {
     return [[self alloc] init];
 }
@@ -96,17 +102,28 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
     if (!self) {
         return nil;
     }
-
+    // 对HTTP响应进行序列化
+    // 设置stringEncoding为NSUTF8StringEncoding，没有对接收的内容类型加以限制
     self.stringEncoding = NSUTF8StringEncoding;
 
+    // acceptableStatusCodes设置为200到299之间的状态码，只有这些状态码标示获得了有效的响应
     self.acceptableStatusCodes = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 100)];
     self.acceptableContentTypes = nil;
 
     return self;
 }
 
-#pragma mark -
+#pragma mark - 验证响应的有效性
 
+/**
+ 根据在初始化方法中初始化的属性acceptableStatusCodes和acceptableContentTypes来判断当前响应是否有效
+
+ @param response <#response description#>
+ @param data     <#data description#>
+ @param error    <#error description#>
+
+ @return <#return value description#>
+ */
 - (BOOL)validateResponse:(NSHTTPURLResponse *)response
                     data:(NSData *)data
                    error:(NSError * __autoreleasing *)error
@@ -117,8 +134,10 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
     if (response && [response isKindOfClass:[NSHTTPURLResponse class]]) {
         if (self.acceptableContentTypes && ![self.acceptableContentTypes containsObject:[response MIMEType]] &&
             !([response MIMEType] == nil && [data length] == 0)) {
-
+            
+            // 返回内容类型无效
             if ([data length] > 0 && [response URL]) {
+                // 出现错误时通过AFErrorWithUnderlyingError生成格式化之后的错误，最后设置responseIsValid
                 NSMutableDictionary *mutableUserInfo = [@{
                                                           NSLocalizedDescriptionKey: [NSString stringWithFormat:NSLocalizedStringFromTable(@"Request failed: unacceptable content-type: %@", @"AFNetworking", nil), [response MIMEType]],
                                                           NSURLErrorFailingURLErrorKey:[response URL],
@@ -135,6 +154,7 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
         }
 
         if (self.acceptableStatusCodes && ![self.acceptableStatusCodes containsIndex:(NSUInteger)response.statusCode] && [response URL]) {
+            // 返回状态码无效
             NSMutableDictionary *mutableUserInfo = [@{
                                                NSLocalizedDescriptionKey: [NSString stringWithFormat:NSLocalizedStringFromTable(@"Request failed: %@ (%ld)", @"AFNetworking", nil), [NSHTTPURLResponse localizedStringForStatusCode:response.statusCode], (long)response.statusCode],
                                                NSURLErrorFailingURLErrorKey:[response URL],
@@ -158,12 +178,13 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
     return responseIsValid;
 }
 
-#pragma mark - AFURLResponseSerialization
+#pragma mark - AFURLResponseSerialization 协议的实现
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error
 {
+    // 调用上面的方法对响应进行验证，然后返回数据
     [self validateResponse:(NSHTTPURLResponse *)response data:data error:error];
 
     return data;
@@ -224,18 +245,20 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
     if (!self) {
         return nil;
     }
-
+    
+    // 更新acceptableContentTypes属性
     self.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", nil];
 
     return self;
 }
 
-#pragma mark - AFURLResponseSerialization
+#pragma mark - AFURLResponseSerialization 协议实现
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error
 {
+    // 验证请求
     if (![self validateResponse:(NSHTTPURLResponse *)response data:data error:error]) {
         if (!error || AFErrorOrUnderlyingErrorHasCodeInDomain(*error, NSURLErrorCannotDecodeContentData, AFURLResponseSerializationErrorDomain)) {
             return nil;
@@ -244,16 +267,20 @@ static id AFJSONObjectByRemovingKeysWithNullValues(id JSONObject, NSJSONReadingO
 
     id responseObject = nil;
     NSError *serializationError = nil;
+    // 解决一个由只包含一个空格的响应引起的bug
     // Workaround for behavior of Rails to return a single space for `head :ok` (a workaround for a bug in Safari), which is not interpreted as valid input by NSJSONSerialization.
     // See https://github.com/rails/rails/issues/1742
     BOOL isSpace = [data isEqualToData:[NSData dataWithBytes:" " length:1]];
     if (data.length > 0 && !isSpace) {
+        // 序列化JSON
         responseObject = [NSJSONSerialization JSONObjectWithData:data options:self.readingOptions error:&serializationError];
     } else {
         return nil;
     }
 
+    // 移除JSON中的null
     if (self.removesKeysWithNullValues && responseObject) {
+        // AFJSONObjectByRemovingKeysWithNullValues递归调用函数
         responseObject = AFJSONObjectByRemovingKeysWithNullValues(responseObject, self.readingOptions);
     }
 

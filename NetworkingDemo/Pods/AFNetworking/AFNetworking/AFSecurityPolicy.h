@@ -1,27 +1,15 @@
 // AFSecurityPolicy.h
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
 
+/**
+ 验证服务器是否被信任的方式
+
+ - AFSSLPinningModeNone:        默认的认证方式，只会在系统的信任的证书列表中对服务器返回的证书进行验证
+ - AFSSLPinningModePublicKey:   需要客户端预先保存服务器的证书
+ - AFSSLPinningModeCertificate: 也需要预先保存服务端发送的证书，但是这里只会验证证书中的公钥是否正确
+ */
 typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
     AFSSLPinningModeNone,
     AFSSLPinningModePublicKey,
@@ -36,6 +24,11 @@ typedef NS_ENUM(NSUInteger, AFSSLPinningMode) {
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ AFSecurityPolicy主要作用就是验证HTTPS请求的证书是否有效，如果app中一些敏感信息或者涉及交易信息，一定要使用HTTPS来保证交易或者用户信息的安全
+ 
+ AFSecurityPolicy 同样也作为一个即插即用的模块，在 AFNetworking 中作为验证 HTTPS 证书是否有效的模块存在
+ */
 @interface AFSecurityPolicy : NSObject <NSSecureCoding, NSCopying>
 
 /**

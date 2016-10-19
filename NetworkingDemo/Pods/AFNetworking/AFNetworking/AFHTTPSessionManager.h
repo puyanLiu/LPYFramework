@@ -1,23 +1,4 @@
 // AFHTTPSessionManager.h
-// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
-//
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
-//
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 #if !TARGET_OS_WATCH
@@ -105,7 +86,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Initializes an `AFHTTPSessionManager` object with the specified base URL.
-
+ - [AFHTTPSessionManager initWithBaseURL:]
+    - [AFHTTPSessionManager initWithBaseURL:sessionConfiguration:]
+        - [AFURLSessionManager initWithSessionConfiguration:]
+            - [NSURLSession sessionWithConfiguration:delegate:delegateQueue:]
+            - [AFJSONResponseSerializer serializer] // 负责序列化响应
+            - [AFSecurityPolicy defaultPolicy] // 负责身份认证
+            - [AFNetworkReachabilityManager sharedManager] // 查看网络连接情况
+        - [AFHTTPRequestSerializer serializer] // 负责序列化请求
+        - [AFJSONResponseSerializer serializer] // 负责序列化响应
+ 
+ 从这个初始化方法的调用栈，我们可以非常清晰地了解这个框架的结构：
+ 
+ 其中 AFURLSessionManager 是 AFHTTPSessionManager 的父类
+ AFURLSessionManager 负责生成 NSURLSession 的实例，管理 AFSecurityPolicy 和 AFNetworkReachabilityManager，来保证请求的安全和查看网络连接情况，它有一个 AFJSONResponseSerializer 的实例来序列化 HTTP 响应
+ AFHTTPSessionManager 有着自己的 AFHTTPRequestSerializer 和 AFJSONResponseSerializer 来管理请求和响应的序列化，同时依赖父类提供的接口保证安全、监控网络状态，实现发出 HTTP 请求这一核心功能
+ 
  @param url The base URL for the HTTP client.
 
  @return The newly-initialized HTTP client
@@ -147,7 +143,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `GET` request.
-
+ - [AFHTTPSessionManager GET:parameters:process:success:failure:]
+    - [AFHTTPSessionManager dataTaskWithHTTPMethod:parameters:uploadProgress:downloadProgress:success:failure:] // 返回 NSURLSessionDataTask #1
+        - [AFHTTPRequestSerializer requestWithMethod:URLString:parameters:error:] // 返回 NSMutableURLRequest
+        - [AFURLSessionManager dataTaskWithRequest:uploadProgress:downloadProgress:completionHandler:] // 返回 NSURLSessionDataTask #2
+            - [NSURLSession dataTaskWithRequest:] // 返回 NSURLSessionDataTask #3
+            - [AFURLSessionManager addDelegateForDataTask:uploadProgress:downloadProgress:completionHandler:]
+                - [AFURLSessionManagerTaskDelegate init]
+                - [AFURLSessionManager setDelegate:forTask:]
+    - [NSURLSessionDataTask resume]
+ 
+ 在这里 #1 #2 #3 处返回的是同一个 data task，我们可以看到，在 #3 处调用的方法 - [NSURLSession dataTaskWithRequest:] 和只使用 NSURLSession 发出 HTTP 请求时调用的方法 - [NSURLSession dataTaskWithRequest:completionHandler:] 差不多。在这个地方返回 data task 之后，我们再调用 - resume 方法执行请求，并在某些事件执行时通知代理 AFURLSessionManagerTaskDelegate
+ 
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param downloadProgress A block object to be executed when the download progress is updated. Note this block is called on the session queue, not the main queue.
