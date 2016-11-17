@@ -46,10 +46,10 @@
     //    NSString *imageUrl = @"http://www.mangowed.com/uploads/allimg/130410/1-130410215449417.jpg";
     
     
-    NSString *imageUrl = @"http://img5.pcpop.com/ArticleImages/picshow/0x0/20110801/2011080114495843125.jpg";
-//    NSString *imageUrl = @"http://img5.duitang.com/uploads/item/201501/05/20150105184318_w8HPK.jpeg";
+//    NSString *imageUrl = @"http://img5.pcpop.com/ArticleImages/picshow/0x0/20110801/2011080114495843125.jpg";
+    NSString *imageUrl = @"http://img5.duitang.com/uploads/item/201501/05/20150105184318_w8HPK.jpeg";
 //    NSString *imageUrl = @"http://img5q.duitang.com/uploads/item/201505/25/20150525223238_NdQrh.thumb.700_0.png";
-    NSString *adURL = @"http://tieba.baidu.com/";
+    NSString *adURL = @"http://www.baidu.com/";
     __weak typeof(self) weakSelf = self;
     // 创建广告
     LPYADView *adView = [[LPYADView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds imgUrl:imageUrl adUrl:adURL clickImgBlock:^(NSString *clickImgUrl) {
@@ -60,7 +60,7 @@
     }];
     
     // 设置倒计时
-    adView.showTime = 5;
+    adView.showTime = 10;
     
     // 显示广告
     [adView show];

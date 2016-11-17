@@ -128,7 +128,7 @@
     
     if (self.scrollDirection == MarqueeViewScrollDirectionHorizontal) {
         __block CGFloat width = 0.0;
-        
+        width += self.frame.size.width;
         [self.views enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             if ([obj isKindOfClass:[UIView class]]) {
                 UIView *view = obj;
