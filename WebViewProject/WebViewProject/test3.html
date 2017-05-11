@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>我是HTML的标题</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h2> 这里是第二种方式 </h2>
+    <br/>
+    <br/>
+    <div id="para"></div>
+    <button type="button" onclick="secondClick()">Click Me!</button>
+
+    <script type="text/javascript">
+        function showAlert(message){
+            console.log('我是通过OC调用的');
+            alert(message);
+            document.getElementById('para').innerHTML = '被OC调用了';
+        }
+
+        function secondClick() {
+            share('分享的标题','分享的内容','图片地址');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title>我是HTML的标题</title>
+    </head>
+    <body>
+    	<div>
+    		<input type="button" value="通过注入的脚本对象再传递数据到原生" onclick="scriptMessageHandler('哈哈 我是通过js传递的数据')">
+    		<br>
+    		<input type="button" value="Alert弹框" onclick="alertPop()">
+    		<br>
+    		<input type="button" value="Confirm弹框" onclick="confirmPop()">
+    		<br>
+    		<input type="button" value="Prompt弹框" onclick="promptPop()">
+    	</div>
+    	<p id="para"></p>
+    	<script type="text/javascript">
+    		function scriptMessageHandler(content) {
+    			// postMessage()括号内不能为空，如果不需要传参，可传null, postMessage(null)，否则无法接受到回调
+                // AppModel是我们所注入的对象
+    			window.webkit.messageHandlers.AppModel.postMessage({body: content});
+    		}
+
+    		function alertPop() {
+    			alert("我是alert弹框");
+    		}
+
+    		function confirmPop() {
+    			if (confirm('我是confirm弹框')) {
+    				document.getElementById('para').innerHTML = '点击了OK';
+    			} else {
+    				document.getElementById('para').innerHTML = '点击了取消';
+    			}
+    		}
+
+    		function promptPop() {
+    			var response = prompt('我是prompt弹框', '我是默认值');
+    			document.getElementById('para').innerHTML = response;
+    		}
+    	</script>
+    </body>
+</html>
