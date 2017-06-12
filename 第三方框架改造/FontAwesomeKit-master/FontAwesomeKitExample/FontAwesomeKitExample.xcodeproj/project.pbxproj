@@ -40,8 +40,6 @@
 		CCFF2D2D181148CD0003CFE3 /* AppIconCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFF2D2C181148CD0003CFE3 /* AppIconCell.m */; };
 		CCFF2D3218114A450003CFE3 /* AppIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFF2D3118114A450003CFE3 /* AppIconViewController.m */; };
 		CCFF2D3418114C070003CFE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCFF2D3318114C070003CFE3 /* Images.xcassets */; };
-		CCFF2D3F1811DBC60003CFE3 /* IconMapCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFF2D3E1811DBC60003CFE3 /* IconMapCell.m */; };
-		CCFF2D421811DD1E0003CFE3 /* IconMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFF2D411811DD1E0003CFE3 /* IconMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,10 +91,6 @@
 		CCFF2D3018114A450003CFE3 /* AppIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppIconViewController.h; sourceTree = "<group>"; };
 		CCFF2D3118114A450003CFE3 /* AppIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppIconViewController.m; sourceTree = "<group>"; };
 		CCFF2D3318114C070003CFE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		CCFF2D3D1811DBC60003CFE3 /* IconMapCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconMapCell.h; sourceTree = "<group>"; };
-		CCFF2D3E1811DBC60003CFE3 /* IconMapCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconMapCell.m; sourceTree = "<group>"; };
-		CCFF2D401811DD1E0003CFE3 /* IconMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IconMapViewController.h; sourceTree = "<group>"; };
-		CCFF2D411811DD1E0003CFE3 /* IconMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IconMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +212,6 @@
 				CC0334E118151CED00CFB044 /* FontAwesomeKit */,
 				CC2F5BB31813131D002D6C2B /* KitchenSink */,
 				CC7159AA18A784AD0033F64A /* StackIcons */,
-				CCFF2D3C1811DB8C0003CFE3 /* IconMap */,
 				CCFF2D2F18114A1E0003CFE3 /* AppIcon */,
 				CC44A86716CD9B3F0039E101 /* AppDelegate.h */,
 				CC44A86816CD9B3F0039E101 /* AppDelegate.m */,
@@ -263,17 +256,6 @@
 				CCFF2D3318114C070003CFE3 /* Images.xcassets */,
 			);
 			name = AppIcon;
-			sourceTree = "<group>";
-		};
-		CCFF2D3C1811DB8C0003CFE3 /* IconMap */ = {
-			isa = PBXGroup;
-			children = (
-				CCFF2D3D1811DBC60003CFE3 /* IconMapCell.h */,
-				CCFF2D3E1811DBC60003CFE3 /* IconMapCell.m */,
-				CCFF2D401811DD1E0003CFE3 /* IconMapViewController.h */,
-				CCFF2D411811DD1E0003CFE3 /* IconMapViewController.m */,
-			);
-			name = IconMap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,10 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCFF2D3F1811DBC60003CFE3 /* IconMapCell.m in Sources */,
 				CC0334F018151CED00CFB044 /* FAKIcon.m in Sources */,
 				CCFF2D3218114A450003CFE3 /* AppIconViewController.m in Sources */,
-				CCFF2D421811DD1E0003CFE3 /* IconMapViewController.m in Sources */,
 				CC2F5BB61813133E002D6C2B /* KitchenSinkViewController.m in Sources */,
 				CCBC72A618A78A0A0046FDAB /* StackIconCell.m in Sources */,
 				CC44A86516CD9B3F0039E101 /* main.m in Sources */,

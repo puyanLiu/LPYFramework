@@ -42,6 +42,7 @@
             @[[FAKFontAwesome fivehundredpxIconWithSize:35], banIcon],
             @[[FAKFontAwesome fivehundredpxIconWithSize:35], banIcon],
             @[[FAKFontAwesome fivehundredpxIconWithSize:35], banIcon],
+            @[[FAKFontAwesome fivehundredpxIconWithSize:35]],
         ];
     }
     
