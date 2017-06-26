@@ -13,13 +13,6 @@ let QQMScreenWidth = QQMScreenBounds.size.width
 let QQMScreenHeight = QQMScreenBounds.size.height
 
 
-// 圆环直径
-let circleSize: CGFloat = 26
-// 缺口角度
-let gapAngle: CGFloat = 20
-let imageH: CGFloat = 20
-let imageSizeScale: CGFloat = 135 / 15
-let refreshMargin: CGFloat = 10
 
 class QQMRefreshHeaderAnimator: UIView, ESRefreshProtocol, ESRefreshAnimatorProtocol, ESRefreshImpactProtocol {
 
@@ -38,6 +31,14 @@ class QQMRefreshHeaderAnimator: UIView, ESRefreshProtocol, ESRefreshAnimatorProt
     open var trigger: CGFloat = 80.0
     open var executeIncremental: CGFloat = 80.0
     open var state: ESRefreshViewState = .pullToRefresh
+    
+    // 圆环直径
+    let circleSize: CGFloat = 26
+    // 缺口角度
+    let gapAngle: CGFloat = 20
+    let imageH: CGFloat = 20
+    let imageSizeScale: CGFloat = 135 / 15
+    let refreshMargin: CGFloat = 10
     
     fileprivate let titleLabel: UILabel = {
         let label = UILabel.init(frame: CGRect.zero)

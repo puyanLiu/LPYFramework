@@ -68,16 +68,16 @@ public class ESRefreshTableViewController: UITableViewController {
         self.tableView.refreshIdentifier = String.init(describing: type)
         self.tableView.expiredTimeInterval = 20.0
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.tableView.es.autoPullToRefresh()
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//            self.tableView.es.autoPullToRefresh()
+//        }
     }
 
     private func refresh() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.page = 1
             self.array.removeAll()
-            for num in 1...8{
+            for num in 1...2{
                 if num % 2 == 0 && arc4random() % 4 == 0 {
                     self.array.append("info")
                 } else {
@@ -121,6 +121,10 @@ public class ESRefreshTableViewController: UITableViewController {
         return CGFloat.leastNormalMagnitude
     }
     
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100;
+    }
+    
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell!
         let string = self.array[indexPath.row]
@@ -128,9 +132,9 @@ public class ESRefreshTableViewController: UITableViewController {
             cell = tableView.dequeueReusableCell(withIdentifier: "ESRefreshTableViewCell", for: indexPath as IndexPath)
         } else if string == "photo" {
             cell = tableView.dequeueReusableCell(withIdentifier: "ESPhotoTableViewCell", for: indexPath as IndexPath)
-            if let cell = cell as? ESPhotoTableViewCell {
-                cell.updateContent(indexPath: indexPath)
-            }
+//            if let cell = cell as? ESPhotoTableViewCell {
+//                cell.updateContent(indexPath: indexPath)
+//            }
         } else {
             cell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath as IndexPath)
         }

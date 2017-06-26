@@ -18,15 +18,15 @@ class ESPhotoTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    func updateContent(indexPath: IndexPath) {
-        let name = String.init(format: "Photo_Lofter_%d", (indexPath.row) % 9 + 1)
-        self.photoImageView.image = UIImage.init(named: name)
-        self.indexLabel.text = String.init(format: "Section: %d Row: %d", indexPath.section, indexPath.row)
-    }
-    
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        self.photoImageView.alpha = highlighted ? 0.8 : 1.0
-    }
+//    func updateContent(indexPath: IndexPath) {
+//        let name = String.init(format: "Photo_Lofter_%d", (indexPath.row) % 9 + 1)
+//        self.photoImageView.image = UIImage.init(named: name)
+//        self.indexLabel.text = String.init(format: "Section: %d Row: %d", indexPath.section, indexPath.row)
+//    }
+//    
+//    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+//        super.setHighlighted(highlighted, animated: animated)
+//        self.photoImageView.alpha = highlighted ? 0.8 : 1.0
+//    }
     
 }

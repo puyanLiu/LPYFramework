@@ -339,7 +339,7 @@
 					};
 					F692000B1CDB9A530029EF47 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = A367N9R36B;
+						DevelopmentTeam = R5NK8T5JLD;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -614,7 +614,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = A367N9R36B;
+				DEVELOPMENT_TEAM = R5NK8T5JLD;
 				INFOPLIST_FILE = ESPullToRefreshExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -630,7 +630,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = A367N9R36B;
+				DEVELOPMENT_TEAM = R5NK8T5JLD;
 				INFOPLIST_FILE = ESPullToRefreshExample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

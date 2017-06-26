@@ -15,8 +15,8 @@ class ESRefreshTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-    }
+//    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+//        super.setHighlighted(highlighted, animated: animated)
+//    }
     
 }

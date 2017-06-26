@@ -85,8 +85,11 @@ public extension ES where Base: UIScrollView {
         removeRefreshFooter()
         let footer = ESRefreshFooterView(frame: CGRect.zero, handler: handler, animator: animator)
         let footerH = footer.animator.executeIncremental
-        footer.frame = CGRect.init(x: 0.0, y: self.base.contentSize.height + self.base.contentInset.bottom, width: self.base.bounds.size.width, height: footerH)
+//        footer.frame = CGRect.init(x: 0.0, y: self.base.contentSize.height + self.base.contentInset.bottom, width: self.base.bounds.size.width, height: footerH)
+        footer.height_ = footerH
+        footer.width_ = self.base.bounds.size.width
         self.base.footer = footer
+        footer.backgroundColor = UIColor.red
         self.base.addSubview(footer)
         return footer
     }
@@ -135,7 +138,7 @@ public extension ES where Base: UIScrollView {
             }
             self.base.footer?.resetNoMoreData()
         }
-        self.base.footer?.isHidden = ignoreFooter
+//        self.base.footer?.isHidden = ignoreFooter
     }
     
     /// Footer notice method
@@ -441,7 +444,7 @@ open class ESRefreshFooterView: ESRefreshComponent {
         }
 
         if scrollView.contentSize.height <= 0.0 || scrollView.contentOffset.y + scrollView.contentInset.top <= 0.0 {
-            self.alpha = 0.0
+//            self.alpha = 0.0
             return
         } else {
             self.alpha = 1.0
