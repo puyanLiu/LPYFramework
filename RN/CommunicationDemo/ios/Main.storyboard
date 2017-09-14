@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9sf-EC-hy6">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--首页-->
+        <scene sceneID="McJ-VS-aEC">
+            <objects>
+                <viewController id="6NK-5N-qPb" customClass="HomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R2z-g0-xAQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="5Lk-hk-84Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wGf-Bf-tuN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr1-NE-fsD">
+                                <frame key="frameInset" minX="252" minY="285" width="96" height="30"/>
+                                <state key="normal" title="跳转到RN页面"/>
+                                <connections>
+                                    <action selector="btn_PushRNClick" destination="6NK-5N-qPb" eventType="touchUpInside" id="RKM-06-e9Q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OcY-Ct-3US">
+                                <frame key="frameInset" minX="260" minY="335" width="81" height="30"/>
+                                <state key="normal" title="RN界面跳转"/>
+                                <connections>
+                                    <action selector="btn_PushRN2Click" destination="6NK-5N-qPb" eventType="touchUpInside" id="N5a-ag-8vp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyR-7q-T7o">
+                                <frame key="frameInset" minX="260" minY="385" width="81" height="30"/>
+                                <state key="normal" title="RN原生交互"/>
+                                <connections>
+                                    <action selector="btn_PushRN3Click" destination="6NK-5N-qPb" eventType="touchUpInside" id="J7S-s2-f2E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nr1-NE-fsD" firstAttribute="centerX" secondItem="wGf-Bf-tuN" secondAttribute="centerX" id="7h6-kp-cAa"/>
+                            <constraint firstItem="iyR-7q-T7o" firstAttribute="top" secondItem="OcY-Ct-3US" secondAttribute="bottom" constant="20" id="J7N-Rd-0Lv"/>
+                            <constraint firstItem="OcY-Ct-3US" firstAttribute="centerX" secondItem="wGf-Bf-tuN" secondAttribute="centerX" id="RtL-KO-a1i"/>
+                            <constraint firstItem="OcY-Ct-3US" firstAttribute="top" secondItem="Nr1-NE-fsD" secondAttribute="bottom" constant="20" id="W7t-90-3zb"/>
+                            <constraint firstItem="Nr1-NE-fsD" firstAttribute="centerY" secondItem="wGf-Bf-tuN" secondAttribute="centerY" id="aW9-rs-GzK"/>
+                            <constraint firstItem="iyR-7q-T7o" firstAttribute="centerX" secondItem="wGf-Bf-tuN" secondAttribute="centerX" id="ruT-wu-CCY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="首页" id="Xpm-8e-YA7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wld-eF-wNS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029" y="333"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ACu-QJ-sls">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9sf-EC-hy6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xtB-aI-7nr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6NK-5N-qPb" kind="relationship" relationship="rootViewController" id="j6H-Oa-bFg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c3b-6w-Sfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="333"/>
+        </scene>
+    </scenes>
+</document>
