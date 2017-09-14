@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//基类
+    var Person = function(){
+        this.name = '张三';
+        this.age = 20;
+    }
+    Person.prototype = {
+        say : function(){
+            console.log('Person.prototype - say');
+        }
+    }
+    //构造函数
+    var Student = function(){
+        Person.call(this, arguments);
+
+        //子类也可以拥有自己的一些属性和方法
+        this.sID='000001'
+        this.jiemu = '唱歌'
+        this.luobenTimes= 0
+    }
+    //学生继承person,则拥有person原型中的方法
+    Student.prototype = new Person();
+    //子类也可以拥有自己的一些属性和方法
+    Student.prototype.getTeacher = function(){
+        console.log('Student.prototype.getTeacher');
+    }
+
+    //测试 -- 学生类拥有了person中的方法
+    var xiaoWang = new Student();
+    //xiaoWang.name = '张三'
+    console.log(xiaoWang.name)
+    xiaoWang.say()
+    xiaoWang.getTeacher()
+</script>

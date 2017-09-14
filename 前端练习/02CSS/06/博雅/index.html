@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .cl {
+            clear: both;
+        }
+        body {
+            font-family: "Microsoft YaHei", "SimSun";
+        }
+        .inner_c {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            height: 58px;
+            background-color: #191D3A;
+        }
+        .header .logo {
+            float: left;
+            padding-left: 12px;
+            margin-right: 39px;
+            width: 174px;
+            height: 58px;
+        }
+        .header .logo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url(images/logo.png) no-repeat;
+            text-indent: -999em;
+        }
+        .header .nav {
+            float: left;
+        }
+        .header .nav ul {
+            list-style: none;
+        }
+        .header .nav ul li {
+            float: left;
+            width: 100px;
+            height: 58px;
+            border-left: 1px solid #252947;
+        }
+        .header .nav ul li a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 58px;
+            color: #818496;
+            text-decoration: none;
+        }
+        .header .nav ul li a:hover {
+            background-color: #252947;
+            color: #E2E4ED;
+        }
+        .header .nav ul li.current a {
+            background-color: #252947;
+            color: #E2E4ED;
+        }
+        .header .nav ul li.last {
+            border-right: 1px solid #252947;
+        }
+        .header .jrwm {
+            float: right;
+            padding-top: 11px;
+        }
+        .header .jrwm a {
+            display: block;
+            width: 98px;
+            height: 32px;
+            background-color: #38B774;
+            border: 1px solid #3ACA7A;
+            border-radius: 4px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 32px;
+        }
+        .header .jrwm a:hover {
+            background-color: #48C784;
+        }
+        .banner {
+            height: 465px;
+            background: url(images/banner.jpg) no-repeat center top;
+            position: relative;
+        }
+        .content {
+            padding-top: 50px;
+            height: 650px;
+            background: url(images/indexmainbg.jpg) no-repeat center bottom;
+        }
+        .content .product {
+            height: 229px;
+            border-bottom: 1px solid #D8E1E7;
+            position: relative;
+        }
+        .content .product ul {
+            list-style: none;
+        }
+        .content .product ul li {
+            float: left;
+            width: 218px;
+            height: 229px;
+            margin-right: 43px;
+        }
+        .content .product ul li.last {
+            margin-right: 0;
+            width: 217px;
+        }
+        .content .product ul li p.pro_image img {
+            width: 100%;
+            height: 130px;
+        }
+        .content .product ul li h3 {
+            text-align: center;
+            line-height: 38px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content .info {
+            padding-top: 53px;
+        }
+        .content .info .news {
+            float: left;
+            width: 500px;
+            background: url(images/bynewsbg.jpg) no-repeat;
+            position: relative;
+            padding-top: 121px;
+        }
+        .content .info .news ul {
+            list-style-type: none;
+            padding: 0 20px;
+        }
+        .content .info .news ul li {
+            line-height: 45px;
+            border-bottom: 1px solid #DBE1E7;
+            font-size: 12px;
+        }
+        .content .info .news span {
+            color: #AFBECF;
+            margin-right: 22px;
+        }
+        .content .info .news a {
+            color: #444866;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .content .info .news a:hover {
+            color: orange;
+        }
+        .content .info .more {
+            position: absolute;
+            top: 40px;
+            left: 218px;
+        }
+        .content .info .job {
+            float: left;
+            background: url(images/byhrbg3.jpg) no-repeat;
+            width: 500px;
+            height: 314px;
+            position: relative;
+        }
+        .content .info .job .title {
+            padding-top: 40px;
+            padding-left: 78px;
+        }
+        .content .info .job .title h3 {
+            width: 119px;
+            height: 51px;
+            text-indent: -999em;
+            background: url(images/zczp.png) no-repeat;
+        }
+        .content .info .job h4 {
+            padding-top: 18px;
+            padding-left: 20px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .content .info .job ul {
+            list-style: none;
+            width: 305px;
+            padding-left: 20px;
+        }
+        .content .info .job ul li {
+            border-bottom: 1px solid #6FDEA3;
+            line-height: 40px;
+        }
+        .content .info .job ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        .content .info .job ul li a:hover {
+            color: orange;
+        }
+        .footer {
+            height: 91px;
+            background-color: #191D3A;
+            color: #6C6E7E;
+            font-size: 10px;
+            line-height: 91px;
+        }
+        .footer .left {
+            float: left;
+        }
+        .footer .left a {
+            text-decoration: none;
+            color: #6C6E7E;
+        }
+        .footer .govIcon {
+            float: right;
+            padding-right: 4px;
+            padding-top: 21px;
+            margin-left: 9px;
+        }
+        .footer .govIcon img {
+            width: 36px;
+        }
+        .footer .right {
+            float: right;
+        }
+        .footer .backTop {
+            position: fixed;
+            bottom: 75px;
+            right: 15px;
+            width: 68px;
+            height: 29px;
+            background-color: #C7D6E5;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .footer .backTop a {
+            background: url(images/top.png) no-repeat left center;
+            padding-left: 15px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px;
+            line-height: 29px;
+        }
+        .banner .pageCircle {
+            width: 120px;
+            height: 12px;
+            position: absolute;
+            top: 430px;
+            left: 50%;
+            margin-left: -60px;
+        }
+        .banner .pageCircle ol {
+            list-style: none;
+        }
+        .banner .pageCircle ol li {
+            background: url(images/dian1.fw.png) no-repeat;
+            float: left;
+            width: 12px;
+            height: 12px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+        .banner .pageCircle ol li.last {
+            padding-right: 0;
+        }
+        .banner .pageCircle ol li.current {
+            background: url(images/dian2.fw.png) no-repeat;
+        }
+        .content .product .pageCircle {
+            width: 118px;
+            height: 12px;
+            position: absolute;
+            background: #fff;
+            bottom: -6px;
+            left: 50%;
+            margin-left: -59px;
+        }
+        .content .product .pageCircle ol {
+            list-style: none;
+            padding-left: 13px;
+        }
+        .content .product .pageCircle ol li {
+            float: left;
+            background: url(images/dian4.fw.png) no-repeat;
+            width: 12px;
+            height: 12px;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+        .content .product .pageCircle ol li.current {
+            background: url(images/dian3.fw.png) no-repeat;
+        }
+        .content .product .pageCircle ol li.last {
+            padding-right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="inner_c">
+            <div class="logo">
+                <a href="#">博雅互动-世界上最好的游戏公司</a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="current">
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <a href="#">博雅游戏</a>
+                    </li>
+                    <li>
+                        <a href="#">博雅新闻</a>
+                    </li>
+                    <li>
+                        <a href="#">关于我们</a>
+                    </li>
+                    <li>
+                        <a href="#">客服中心</a>
+                    </li>
+                    <li class="last">
+                        <a href="#">投资者关系</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="jrwm">
+                <a href="">加入我们</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="cl"></div>
+    <div class="banner">
+        <div class="pageCircle">
+            <ol>
+                <li class="current"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li class="last"></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="inner_c">
+            <div class="product">
+                <ul>
+                    <li>
+                        <p class="pro_image">
+                            <img src="images/bpt.jpg" alt="" />
+                        </p>
+                        <h3>BPT宣传片</h3>
+                        <p class="play">
+                            <a href="">点击播放</a>
+                        </p>
+                    </li>
+                     <li>
+                        <p class="pro_image">
+                            <img src="images/gamepic3.jpg" alt="" />
+                        </p>
+                        <h3>BPT宣传片</h3>
+                        <p class="play">
+                            <a href="">点击播放</a>
+                        </p>
+                    </li>
+                     <li>
+                        <p class="pro_image">
+                            <img src="images/gamepic1.jpg" alt="" />
+                        </p>
+                        <h3>BPT宣传片</h3>
+                        <p class="play">
+                            <a href="">点击播放</a>
+                        </p>
+                    </li>
+                     <li class="last">
+                        <p class="pro_image">
+                            <img src="images/video.jpg" alt="" />
+                        </p>
+                        <h3>BPT宣传片</h3>
+                        <p class="play">
+                            <a href="">点击播放</a>
+                        </p>
+                    </li>
+                </ul>
+                <div class="pageCircle">
+                    <ol>
+                        <li class="current"></li>
+                        <li></li>
+                        <li></li>
+                        <li class="last"></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="info">
+                <div class="news">
+                    <a href="" class="more">
+                        <img src="images/more.png" alt="" />
+                    </a>
+                    <ul>
+                        <li>
+                            <span>09 / 28</span>
+                            <a href="">2015博雅国际博客大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09 / 28</span>
+                            <a href="">2015博雅国际博客大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09 / 28</span>
+                            <a href="">2015博雅国际博客大赛（BPT）在澳门落幕</a>
+                        </li>
+                        <li>
+                            <span>09 / 28</span>
+                            <a href="">2015博雅国际博客大赛（BPT）在澳门落幕</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <a href="" class="more">
+                        <img src="images/more2.png" alt="" />
+                    </a>
+                    <div class="title">
+                        <h3>博雅招聘</h3>
+                    </div>
+                    <h4>专职招聘岗位：</h4>
+                    <ul>
+                        <li><a href="#">PHP开发工程师</a></li>
+                        <li><a href="#">PHP开发工程师</a></li>
+                        <li><a href="#">WEB前端开发工程师</a></li>
+                        <li><a href="#">大数据开发工程师</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="inner_c">
+            <div class="left">
+                <a href="">网站地图</a>
+                <span>|</span>
+                <a href="">免责声明</a>
+            </div>
+            <div class="govIcon">
+                <img src="images/govIcon.gif" alt="" />
+            </div>
+            <div class="right">
+            Copyright © 2004 - 2014 博雅互动(Boyaa Interactive) 粤ICP备05062536号 增值电信业务经营许可证：粤B2-20110513
+            </div>
+        </div>
+        <div class="backTop">
+            <a href="#">TOP</a>
+        </div>
+    </div>
+</body>
+</html>

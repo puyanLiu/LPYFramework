@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		function Cat() {
+    			console.log(this);
+    			this.name = '123';
+    			this.age = 12;
+    		}
+    		Cat.prototype.show = function() {
+    			console.log(typeof this);
+    		}
+    		var c  = new Cat();
+    		c.show();
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		padding: 0;
+        		margin: 0;
+        	}
+        	div:first-child {
+        		width: 100%;
+        		height: 100px;
+        		padding: 10px;
+        		border: 10px solid #c91523;
+        	}
+        	div:nth-child(2) {
+        		height: 100px;
+        		border: 10px solid red;
+        	}
+        	#b {
+        		height: 100px;
+        		width: 100%;
+        		border: 10px solid green;
+        		box-sizing: border-box;
+        	}
+        </style>
+        <script>
+        	window.onload = function() {
+        		var a = document.getElementById('a');
+        		console.log(a.offsetWidth);
+        		console.log(a.clientWidth);
+
+        		var b = document.getElementById('b');
+        		console.log(b.offsetWidth);
+        		console.log(b.clientWidth);
+        	}
+        </script>
+    </head>
+    <body>
+    	<div id="a"></div>
+    	<div></div>
+    	<div id="b"></div>
+    </body>
+</html>

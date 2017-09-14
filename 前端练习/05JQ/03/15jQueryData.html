@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.demo {
+			height: 400px;
+			width: 400px;
+			border: 1px solid #000;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".demo").data("name", 123)
+					  .data("2", 12345)
+					  .data("key", {
+					  	"userId": 1900,
+					  	"userName": "xiaohong"
+					  });
+
+			$("#btn").on("click", function() {
+				// $(".demo").text($(".demo").data("2"));
+				$(".demo").text($(".demo").data("key").userId);
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="获取data" id="btn">
+	<div class="demo">
+		
+	</div>
+</body>
+</html>

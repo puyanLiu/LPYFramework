@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// triggerHandler不触发浏览器默认行为
+			// $("form").on("click", "#btnSub", function() {
+			// 	var txtName = $("#txtName").val();
+			// 	if (txtName === "1") {
+			// 		alert("提交成功");
+			// 	} else {
+			// 		$("#txtName").val("").triggerHandler('focus');
+			// 	}
+			// });
+			
+			$("#btnSub").click(function(event) {
+				var txtName = $("#txtName").val();
+				if (txtName === "1") {
+					alert("提交成功");
+				} else {
+					$("#txtName").val("").triggerHandler('focus');
+				}
+			});
+
+			$("#btnTriggerHandle").bind("click", function() {
+				// $("#btnSub").trigger('click');
+				$("#btnSub").triggerHandler('click');
+			});
+		})
+	</script>
+</head>
+<body>
+	<form action="">
+		<label for="txtName">用户名</label><input type="text" id="txtName">
+		<input type="submit" value="提交" id="btnSub">
+		<input type="button" value="触发提交" id="btnTriggerHandle">
+	</form>
+</body>
+</html>

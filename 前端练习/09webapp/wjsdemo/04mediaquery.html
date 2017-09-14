@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body,html {
+        		margin: 0;
+        		padding: 0;
+        	}
+        	.container {
+        		height: 1000px;
+        		background-color: #f40;
+        	}
+        	/*媒体查询
+				当使用min-width作为判断条件一定要从小到大 原因：css从上往下执行
+        	*/
+        	@media (min-width: 768px) and (max-width: 982px) {
+        		.container {
+        			width: 750px;
+        		}
+        	}
+        	@media (min-width: 982px) {
+        		.container {
+        			width: 900px;
+        		}
+        	}
+        	@media (min-width: 1122px) {
+        		.container {
+        			width: 100%;
+        		}
+        	}
+        
+        </style>
+    </head>
+    <body>
+    	<div class="container"></div>
+    </body>
+</html>

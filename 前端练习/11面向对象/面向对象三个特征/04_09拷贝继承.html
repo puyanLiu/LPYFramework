@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	var Chinese = {nation:'中国'};
+    var Doctor ={career:'医生'}
+
+//    请问怎样才能让"医生"去继承"中国人"，也就是说，我怎样才能生成一个"中国医生"的对象？
+//    这里要注意，这两个对象都是普通对象，不是构造函数，无法使用构造函数方法实现"继承"。
+
+
+
+    function extend(p) {
+        var c = {};
+        for (var i in p) { 　　　　　
+            c[i] = p[i];　　　　
+        }
+        c.uber = p;
+        return c;
+    }
+
+    var Doctor = extend(Chinese);
+    console.log(Doctor);
+    Doctor.career = '医生';
+    console.log(Doctor.nation); // 中国
+</script>

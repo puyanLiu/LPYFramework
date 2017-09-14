@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+			body,html{background: #000;}
+			#container{width: 600px; height: 400px; background: #fff; margin: 20px auto; position: relative;}
+			span{display: inline-block; width: 50px; height: 50px; background: red; position: absolute;}
+		</style>
+    </head>
+    <body>
+		<div id="container"></div>
+    </body>
+</html>
+
+<script>
+
+	//定义一个对象 - 名字是$
+	var $$ = function() {};
+	//第二种写法
+	$$.prototype = {
+	    $id:function(id){
+	        return document.getElementById(id)
+	    },
+	    //随机数
+	    random: function (begin, end) {
+	        return Math.floor(Math.random() * (end - begin)) + begin;
+	    }
+	}
+	//在框架中实例化，这样外面使用的使用就不用实例化了
+	$$ = new $$();
+	
+
+	var canvas = $$.$id('container')
+
+	var Box = function(){
+		//宏观构思
+		//实现方式非常简单: 就是随机生成一个span(),然后随机移动,当移动到边界就随机再移动到别的位置
+        this.dom = document.createElement('span');
+        this.x = 300;
+		this.y = 300;
+//    物体运用偏移量
+		this.vx = $$.random(1,12);
+		this.vy =$$.random(1,12);
+		this.timeBar = null;
+	}
+	Box.prototype = {
+		_LoopLife : function(){
+			var that = this;
+			that.timeBar = setInterval(function(){
+				that._draw();
+			}, 33);
+		}
+		,add:function() {
+
+			//默认添加
+			this._draw();
+			//添加到容器中
+			canvas.appendChild(this.dom);
+			//让物体循环移动,每个物体生命周期
+			//物体生命周期法则: 诞生,游离世界/瓢泼人生,结束
+			this._LoopLife();
+		},
+//    每次循环重画物体位置
+		_draw : function(){
+			//this.dom.style.background=
+			//为什么做成独立函数,以后我可能添加事件,更多样式
+			this.x += this.vx;
+			this.y += this.vy;
+
+//        检测是否超标
+			//同样校验以后可能会变化,而我们封装的就是可能的变化或者已经知道的变化
+			if(this.x > 550){
+				//当移动位置超越最大,就将left的值设置为550
+				this.x = 550;
+				this.vx *= -1;
+			}
+			if(this.y > 350){
+				this.y = 350;
+				//当物体的y值大于边界 则等于边界
+				this.vy *= -1;
+			}
+
+//        改变物体位置
+			this.dom.style.left = this.x + 'px';
+			this.dom.style.top = this.y + 'px';
+
+		}
+
+	}
+
+
+
+
+var GreenBox = function(){
+	Box.call(this);//拥有 x y vx vy属性
+	this.dom.style.background = 'green';
+	this.dom.innerHTML = '小球';
+	this.dom.style.lineHeight = '50px';
+	this.dom.style.textAlign = 'center';
+	this.dom.style.color = '#fff';
+	this.dom.style.fontWeight = 'bold';
+}
+// GreenBox.prototype = new Box();
+GreenBox.prototype = Box.prototype;
+// GreenBox.constructor = GreenBox;
+
+var CurcleBox = function(){
+	Box.call(this);
+	this.dom.style.borderRadius = '50px';
+}
+CurcleBox.prototype = Box.prototype;
+
+var OrangeCurcleBox = function(){
+	Box.call(this);
+	this.dom.style.background = 'orange';
+	this.dom.style.borderRadius = '50px';
+	this.dom.style.cursor = 'pointer';
+}
+
+OrangeCurcleBox.prototype = Box.prototype;
+
+var AllBox = [Box, GreenBox, CurcleBox, OrangeCurcleBox];
+setInterval(function(){
+	var box = new AllBox[$$.random(0,4)]();
+	box.add();
+}, 1000)
+</script>

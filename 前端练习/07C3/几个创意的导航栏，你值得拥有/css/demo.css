@@ -1,0 +1,69 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Raleway:400,300,700);
+@font-face {
+	font-family: 'codropsicons';
+	src:url('../fonts/codropsicons/codropsicons.eot');
+	src:url('../fonts/codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/codropsicons/codropsicons.woff') format('woff'),
+		url('../fonts/codropsicons/codropsicons.ttf') format('truetype'),
+		url('../fonts/codropsicons/codropsicons.svg#codropsicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.container > section {
+	margin: 0 auto;
+	padding: 10em 3em;
+	text-align: center;
+}
+
+.color-1 {
+	background: #435a6b;
+}
+
+.color-2 {
+	background: #f39c12;
+}
+
+.color-3 {
+	background: #2ac56c;
+}
+
+.color-4 {
+	background: #0e83cd;
+}
+
+.color-5 {
+	background: #cd4436;
+}
+
+.color-6 {
+	background: #f19f0f;
+}
+
+.color-7 {
+	background: #3fa46a;
+}
+
+.color-8 {
+	background: #ecf0f1;
+}
+
+.color-9 {
+	background: #9e487f;
+}
+
+.color-10 {
+	background: #16a085;
+}
+
+.color-11 {
+	background: #aab7b7;
+}
+
+@media screen and (max-width: 25em) {
+
+	.codrops-icon span {
+		display: none;
+	}
+
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		div {
+			width: 300px;
+			height: 300px;
+			overflow: scroll;
+			background: pink;
+		}
+		div p {
+			width: 2000px;
+			height: 2000px;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 获取
+			$("#btn1").click(function(event) {
+				console.log($("div").scrollLeft());
+			});
+
+			var i = 0;
+			$("#btn2").click(function(event) {
+				i += 100;
+				$("div").scrollTop(i);
+				$("div").scrollLeft(i);
+			});
+		})
+	</script>
+</head>
+<body>
+	<button id="btn1">获取滚动条位置</button>
+	<button id="btn2">设置滚动条位置</button>
+	<div>
+		<p>我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容我是内容</p>
+	</div>
+</body>
+</html>

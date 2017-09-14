@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+    *{margin: 0 auto;padding: 0;list-style: none;border: 0; text-align: center;}
+    body{background: url(baidu/bg.jpg); -webkit-background-size: cover;
+        background-size: cover;}
+    .logo{margin-top: 30px; display: block;}
+    .links{width: 740px; margin: 0 auto;}
+    .links a{color: #fff; margin-right: 10px;}
+    .search{margin-bottom: 40px; margin-top: 10px;}
+    .search input{width: 537px; height: 40px;}
+    .search button{width: 104px; height: 40px;}
+    .container{width: 911px;}
+    .menu{width: 80px; height: 318px; float: left; background: rgba(0,0,0,0.4);}
+    .menu span{width: 80px; height: 35px; line-height: 35px; color: #fff; display: inline-block; font-weight: bold; font-size: 14px;}
+    .menu span.choose{background: rgba(255,255,255,0.6) url(baidu/menu.png);}
+    .card{width: 813px; height: 318px; float: right; background: rgba(255,255,255,0.6) url(baidu/music.png); }
+
+    body, html, h2{
+        font-family: arial, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial, Helvetica, STHeiti;
+    }
+    .yinyue{
+        width: 218px;
+        height: 294px;
+        float: right;
+        margin: 30px 0 0 0;
+    }
+    .yinyue h2{
+        padding-bottom: 9px;
+        font-size: 18px;
+        color: #222;
+        height: 24px;
+        line-height: 24px;
+        padding-left: 24px;
+        font-weight: normal;
+        text-align: left;
+    }
+    .yinyue a, .yinyue a span{
+        display: block;
+        width: 90px;
+        height: 30px;
+    }
+    .yinyue a{
+        float: left;
+        margin-right: 16px;
+        cursor: pointer;
+        -webkit-transition: color .5s;
+        -o-transition: color .5s;
+        -ms-transition: .5s;
+        -moz-transition: .5s;
+    }
+    .yinyue a span{
+        background: url(yinyue/fm.png) no-repeat 0 0;
+        text-indent: 25px;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: left;
+    }
+    .yinyue a:hover{
+        text-decoration: none;
+        color: #0079f5;
+    }
+    .yinyue .item-0 span{
+        background-position: -276px -122px;
+    }
+    .yinyue .item-1 span{
+        background-position: -378px -121px;
+    }
+    .yinyue a.parse span{
+        background-position: -276px -212px;
+    }
+    .yinyue a.choose span{
+        background: url(yinyue/fm_go.gif) no-repeat 9px 9px;
+    }
+    .yinyue a.choose{
+        color: #fff;
+        background: #389cff;
+    }
+</style>
+<!--引入jquery脚本-->
+<script src="jquery-1.11.3.js"></script>
+<script type="text/javascript">
+    var data = [
+        '私人频道',
+        '红心频道',
+        '随便听听',
+        '欧美',
+        '经典老歌',
+        'DJ舞曲',
+        '热歌',
+        '网络红歌',
+        '成名曲',
+        '火爆新歌',
+        '流行',
+        '快乐旋律',
+        'KTV金曲',
+        '伤感调频',
+        '80后',
+        '90后'
+    ];
+</script>
+<script type="text/javascript">
+
+ //简单的数据绑定formateString
+    function formateString(str, data){
+    return str.replace(/@\((\w+)\)/g, function(match, key){
+        return typeof data[key] === "undefined" ? '' : data[key]});
+}
+
+    $(function(){
+        var Yinyue = function(container, data){
+            this.container = container;
+            this.data = data;
+            this.init();
+        };
+        Yinyue.prototype = {
+            init : function(){
+                this.bindDOM();
+                this.bindEvent();
+            },
+            bindDOM : function(){
+                var str = '<h2>热门频道</h2>',
+                        description = '<a class="item-@(num)" onclick="return false;" hidefocus><span>@(title)</span></a>';
+                for(var i = 0, len = this.data.length; i < len; i++){
+                    str += formateString(description, {
+                        num : i,
+                        title : this.data[i]
+                    });
+                }
+                $(this.container).html('<div class="yinyue">' + str + '</div>');
+            },
+            bindEvent : function(){
+                $(this.container + ' a').on('click', function(e){
+                    $(this.container + ' a').removeClass('choose');
+                    $(this).addClass('choose');
+                });
+            }
+        }
+        new Yinyue('#card', data);
+    })
+</script>
+    </head>
+    <body>
+    	<img class="logo" width="270" src="baidu/logo_white.png" alt="">
+			<p class="links">
+			    <a href="http://news.baidu.com" target="_blank">新闻</a>
+			    <a href="http://www.baidu.com" target="_blank">网页</a>
+			    <a href="http://tieba.baidu.com" target="_blank">贴吧</a>
+			    <a href="http://zhidao.baidu.com" target="_blank">知道</a>
+			    <a href="http://music.baidu.com" target="_blank">音乐</a>
+			    <a href="http://image.baidu.com" target="_blank">图片</a>
+			    <a href="http://v.baidu.com" target="_blank">视频</a>
+			    <a href="http://map.baidu.com" target="_blank">地图</a>
+			    <a href="http://baike.baidu.com" target="_blank">百科</a>
+			    <a href="http://wenku.baidu.com" target="_blank">文库</a>
+			    <a href="http://www.baidu.com/more/" target="_blank">更多&gt;&gt;</a>
+			</p>
+			<div class="search">
+			    <input type="text"><button>百度一下</button>
+			</div>
+			<div class="container">
+			    <div class="menu">
+			        <span>导航</span>
+			        <span class="choose">音乐</span>
+			        <span>新闻</span>
+			    </div>
+			    <div id="card" class="card"></div>
+			</div>
+    </body>
+</html>

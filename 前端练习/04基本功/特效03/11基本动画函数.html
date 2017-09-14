@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn200">200</button>
+    <button id="btn400">400</button>
+    <div id="run"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    $("btn200").onclick = function() {
+        animate($("run"), 200);
+    }
+
+    $("btn400").onclick = function() {
+        animate($("run"), 400);
+    }
+
+    function animate(obj, target) {
+        obj.timer = setInterval(function() {
+            if (obj.offsetLeft > target) {
+                clearInterval(obj.timer);
+            }
+            obj.style.left = obj.offsetLeft + 10 + "px";
+        }, 30);
+    }
+
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>网络信息访问</title>
+    </head>
+    <body>
+    	<h1 id="value"></h1>
+    	<script>
+    		var v = document.querySelector('#value');
+    		if (navigator.onLine) {
+    			console.log('online');
+    			v.innerHTML += 'online<br>';
+    		} else {
+    			console.log('offline');
+    			v.innerHTML += 'offline<br>';
+    		}
+
+    		// 获取网络类型
+    		var ctype = navigator.connection.type;
+    		console.log(ctype);
+    		v.innerHTML += type + '<br>';
+    	</script>
+    </body>
+</html>

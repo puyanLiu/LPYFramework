@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	.clip-img {
+        		width: 130px;
+        		height: 130px;
+        		margin: 200px auto;
+        		background-image: url(images/flowerbg.jpg);
+        		position: relative;
+        	}
+        	.clip-img::before,
+        	.clip-img::after {
+        		content: '';
+        		position: absolute;
+        		width: 100%;
+        		height: 100%;
+        		box-sizing: border-box;
+				background-clip: content-box;
+        	}
+        	.clip-img::before {
+        		background-color: #fff;
+        		left: 0px;
+        		padding: 30px;
+        	}
+        	.clip-img::after {
+        		background-image: url(images/flowerbg.jpg);
+        		right: -50px;
+        		top: 50px;
+        		padding: 30px;
+        		background-size: 100%;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="clip-img">
+    		
+    	</div>
+    </body>
+</html>

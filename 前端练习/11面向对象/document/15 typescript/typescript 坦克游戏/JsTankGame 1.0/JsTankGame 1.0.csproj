@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FD964BF5-85D4-433D-9E84-006A2C9A968D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JsTankGame_1._0</RootNamespace>
+    <AssemblyName>JsTankGame 1.0</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.html" />
+    <Content Include="images\ETank\down.png" />
+    <Content Include="images\ETank\left.png" />
+    <Content Include="images\ETank\right.png" />
+    <Content Include="images\ETank\up.png" />
+    <Content Include="images\Explosion\0.png" />
+    <Content Include="images\Explosion\1.png" />
+    <Content Include="images\Explosion\2.png" />
+    <Content Include="images\Explosion\3.png" />
+    <Content Include="images\Explosion\4.png" />
+    <Content Include="images\Explosion\5.png" />
+    <Content Include="images\Explosion\6.png" />
+    <Content Include="images\Explosion\7.png" />
+    <Content Include="images\MyMaps\0.png" />
+    <Content Include="images\MyMaps\1.png" />
+    <Content Include="images\MyMaps\10.png" />
+    <Content Include="images\MyMaps\11.png" />
+    <Content Include="images\MyMaps\12.png" />
+    <Content Include="images\MyMaps\13.png" />
+    <Content Include="images\MyMaps\14.png" />
+    <Content Include="images\MyMaps\15.png" />
+    <Content Include="images\MyMaps\16.png" />
+    <Content Include="images\MyMaps\17.png" />
+    <Content Include="images\MyMaps\18.png" />
+    <Content Include="images\MyMaps\19.png" />
+    <Content Include="images\MyMaps\2.png" />
+    <Content Include="images\MyMaps\20.png" />
+    <Content Include="images\MyMaps\21.png" />
+    <Content Include="images\MyMaps\22.png" />
+    <Content Include="images\MyMaps\23.png" />
+    <Content Include="images\MyMaps\24.png" />
+    <Content Include="images\MyMaps\25.png" />
+    <Content Include="images\MyMaps\26.png" />
+    <Content Include="images\MyMaps\27.png" />
+    <Content Include="images\MyMaps\28.png" />
+    <Content Include="images\MyMaps\29.png" />
+    <Content Include="images\MyMaps\3.png" />
+    <Content Include="images\MyMaps\30.png" />
+    <Content Include="images\MyMaps\31.png" />
+    <Content Include="images\MyMaps\32.png" />
+    <Content Include="images\MyMaps\33.png" />
+    <Content Include="images\MyMaps\34.png" />
+    <Content Include="images\MyMaps\35.png" />
+    <Content Include="images\MyMaps\36.png" />
+    <Content Include="images\MyMaps\37.png" />
+    <Content Include="images\MyMaps\38.png" />
+    <Content Include="images\MyMaps\39.png" />
+    <Content Include="images\MyMaps\4.png" />
+    <Content Include="images\MyMaps\40.png" />
+    <Content Include="images\MyMaps\41.png" />
+    <Content Include="images\MyMaps\42.png" />
+    <Content Include="images\MyMaps\43.png" />
+    <Content Include="images\MyMaps\44.png" />
+    <Content Include="images\MyMaps\45.png" />
+    <Content Include="images\MyMaps\46.png" />
+    <Content Include="images\MyMaps\47.png" />
+    <Content Include="images\MyMaps\48.png" />
+    <Content Include="images\MyMaps\49.png" />
+    <Content Include="images\MyMaps\5.png" />
+    <Content Include="images\MyMaps\50.png" />
+    <Content Include="images\MyMaps\51.png" />
+    <Content Include="images\MyMaps\52.png" />
+    <Content Include="images\MyMaps\53.png" />
+    <Content Include="images\MyMaps\54.png" />
+    <Content Include="images\MyMaps\55.png" />
+    <Content Include="images\MyMaps\56.png" />
+    <Content Include="images\MyMaps\57.png" />
+    <Content Include="images\MyMaps\58.png" />
+    <Content Include="images\MyMaps\59.png" />
+    <Content Include="images\MyMaps\6.png" />
+    <Content Include="images\MyMaps\60.png" />
+    <Content Include="images\MyMaps\61.png" />
+    <Content Include="images\MyMaps\62.png" />
+    <Content Include="images\MyMaps\63.png" />
+    <Content Include="images\MyMaps\64.png" />
+    <Content Include="images\MyMaps\65.png" />
+    <Content Include="images\MyMaps\66.png" />
+    <Content Include="images\MyMaps\67.png" />
+    <Content Include="images\MyMaps\68.png" />
+    <Content Include="images\MyMaps\69.png" />
+    <Content Include="images\MyMaps\7.png" />
+    <Content Include="images\MyMaps\70.png" />
+    <Content Include="images\MyMaps\71.png" />
+    <Content Include="images\MyMaps\72.png" />
+    <Content Include="images\MyMaps\73.png" />
+    <Content Include="images\MyMaps\74.png" />
+    <Content Include="images\MyMaps\75.png" />
+    <Content Include="images\MyMaps\76.png" />
+    <Content Include="images\MyMaps\77.png" />
+    <Content Include="images\MyMaps\78.png" />
+    <Content Include="images\MyMaps\79.png" />
+    <Content Include="images\MyMaps\8.png" />
+    <Content Include="images\MyMaps\80.png" />
+    <Content Include="images\MyMaps\81.png" />
+    <Content Include="images\MyMaps\82.png" />
+    <Content Include="images\MyMaps\83.png" />
+    <Content Include="images\MyMaps\84.png" />
+    <Content Include="images\MyMaps\85.png" />
+    <Content Include="images\MyMaps\86.png" />
+    <Content Include="images\MyMaps\87.png" />
+    <Content Include="images\MyMaps\88.png" />
+    <Content Include="images\MyMaps\89.png" />
+    <Content Include="images\MyMaps\9.png" />
+    <Content Include="images\MyMaps\90.png" />
+    <Content Include="images\MyMaps\91.png" />
+    <Content Include="images\MyMaps\92.png" />
+    <Content Include="images\MyMaps\93.png" />
+    <Content Include="images\MyMaps\94.png" />
+    <Content Include="images\MyMaps\95.png" />
+    <Content Include="images\MyMaps\96.png" />
+    <Content Include="images\MyMaps\97.png" />
+    <Content Include="images\MyMaps\98.png" />
+    <Content Include="images\MyMaps\99.png" />
+    <Content Include="images\orginal\ETank.png" />
+    <Content Include="images\orginal\explosion.gif" />
+    <Content Include="images\orginal\MyMaps.PNG" />
+    <Content Include="images\orginal\Shell.png" />
+    <Content Include="images\orginal\Tank.png" />
+    <Content Include="images\Shell\0.png" />
+    <Content Include="images\Shell\1.png" />
+    <Content Include="images\Tank\down.png" />
+    <Content Include="images\Tank\left.png" />
+    <Content Include="images\Tank\right.png" />
+    <Content Include="images\Tank\up.png" />
+    <Content Include="js\hxy\JsGame\Common\Rectangle.js" />
+    <Content Include="js\hxy\JsGame\Common\SpriteBase.js" />
+    <Content Include="js\hxy\JsGame\ConcreteSprite\EnemyTank.js" />
+    <Content Include="js\hxy\JsGame\ConcreteSprite\Explosion.js" />
+    <Content Include="js\hxy\JsGame\ConcreteSprite\PlayerTank.js" />
+    <Content Include="js\hxy\JsGame\ConcreteSprite\Shell.js" />
+    <Content Include="js\hxy\JsGame\ConcreteSprite\TankBase.js" />
+    <Content Include="js\hxy\JsGame\Enum\CollisionType.js" />
+    <Content Include="js\hxy\JsGame\Enum\Direction.js" />
+    <Content Include="js\hxy\JsGame\GameManager.js" />
+    <Content Include="js\hxy\JsGame\Interface\ICollidable.js" />
+    <Content Include="js\hxy\JsGame\SpriteManager.js" />
+    <Content Include="js\MicrosoftAjax.debug.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52869</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52869/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="" />
+    <button id="btn">点击发送短信</button>
+</body>
+</html>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var count = 5;
+    var timer = null; // 定时器的名称
+    btn.onclick = function() {
+        clearInterval(timer);
+        this.disabled = true;
+        timer = setInterval(fn, 1000);
+        var that = this;
+        function fn() {
+            count--;
+            if (count <= 0) {
+                clearInterval(timer);
+                that.disabled = false;
+                btn.innerHTML = "点击发送短信";
+                count = 5;
+                return;
+            }
+            btn.innerHTML = "还剩余" + count + "秒";
+        }
+    }
+</script>

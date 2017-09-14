@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	* { margin: 0; padding: 0}
+	        ul {list-style: none;}
+	        ul {
+	            width: 200px;
+	            height: 200px;
+	            margin: 100px auto;
+	            position: relative;
+	            transform-style: preserve-3d;
+	            transition: all 6s;
+	        }
+	        ul li {
+	        	width: 100%;
+	        	height: 100%;
+				text-align: center;
+				line-height: 200px;
+				color: white;
+				font-size: 40px;
+				position: absolute;
+	        }
+	        ul li:nth-child(1) {
+	        	background: rgba(255, 0, 0, 0.6);
+	        	transform: rotateX(0deg) translateZ(100px);
+	        }
+	        ul li:nth-child(2) {
+	        	background: rgba(0, 255, 0, 0.6);
+	        	transform: rotateX(-90deg) translateZ(100px);
+	        }
+	        ul li:nth-child(3) {
+	        	background: rgba(0, 0, 255, 0.6);
+	        	transform: rotateX(-180deg) translateZ(100px);
+	        }
+	        ul li:nth-child(4) {
+	        	background: rgba(0, 255, 255, 0.6);
+	        	transform: rotateX(90deg) translateZ(100px);
+	        }
+	        ul li:nth-child(5) {
+	        	background: rgba(255, 255, 0, 0.6);
+	        	transform: rotateY(90deg) translateZ(100px);
+	        }
+	        ul li:nth-child(6) {
+	        	background: rgba(255, 0, 255, 0.6);
+	        	transform: rotateY(-90deg) translateZ(100px);
+	        }
+	        ul:hover {
+	        	transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+	        }
+        </style>
+    </head>
+    <body>
+    	<ul>
+    		<li>第1个盒子</li>
+    		<li>第2个盒子</li>
+    		<li>第3个盒子</li>
+    		<li>第4个盒子</li>
+    		<li>第5个盒子</li>
+    		<li>第6个盒子</li>
+    	</ul>
+    </body>
+</html>

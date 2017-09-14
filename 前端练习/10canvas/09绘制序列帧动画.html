@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+		<button id="btn-dir-left">&lt;</button>
+		<button id="btn-dir-right">&gt;</button>
+		<button id="btn-dir-up">↑</button>
+		<button id="btn-dir-down">↓</button>
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			var dirIndex = 0; // 设置方向的索引
+
+    			// 加载图片
+    			var img = new Image();
+    			img.src = 'images/DMMban.png';
+    			// 绘制精灵图片
+    			img.onload = function() {
+    				var frameIndex = 0;
+
+    				setInterval(function() {
+    					// 清除之前的图片墨迹
+	    				ctx.clearRect(0, 0, canvasElem.width, canvasElem.height);
+
+	    				// 通过代码重新设置canvas画布的宽高，那么canvas画布里面的所有的内容都被清空
+	    				// canvasElem.width = canvasElem.width;
+
+	    				ctx.drawImage(img, frameIndex * 40, dirIndex * 65, 40, 65, 200, 200, 80, 65 * 2);
+	    				frameIndex++;
+	    				frameIndex %= 4;
+
+    				}, 1000 / 10); // 100毫秒绘制一帧动画
+
+    			}
+
+    			// 绑定事件
+    			var btnLeft = document.getElementById('btn-dir-left');
+    			btnLeft.onclick = function() {
+    				dirIndex = 1;
+    			}
+    			var btnRight = document.getElementById('btn-dir-right');
+    			btnRight.onclick = function() {
+    				dirIndex = 2;
+    			}
+    			var btnUp = document.getElementById('btn-dir-up');
+    			btnUp.onclick = function() {
+    				dirIndex = 3;
+    			}
+    			var btnDown = document.getElementById('btn-dir-down');
+    			btnDown.onclick = function() {
+    				dirIndex = 0;
+    			}
+    		}());
+    	</script>
+    </body>
+</html>

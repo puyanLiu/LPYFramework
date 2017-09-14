@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="konva/konva.js"></script>
+        <style>
+        	body {
+        		padding: 0;
+				margin: 0;
+				background: #f0f0f0;
+				overflow: hidden;
+        	}
+        	#buttons {
+        		position: absolute;
+        		top: 10px;
+        		left: 10px;
+        	}
+        	#buttons > input {
+        		padding: 10px;
+        	}
+        </style>
+    </head>
+    <body>
+	    <!-- 放我们的舞台 -->
+    	<div id="container"></div>
+    	<div id="buttons">
+    		<input type="button" id="play" value="Play">
+			<input type="button" id="pause" value="Pause">
+			<input type="button" id="reverse" value="Reverse">
+    	</div>
+    	<script>
+    		// 创建舞台
+    		var stage = new Konva.Stage({
+    			container: 'container',
+    			width: window.innerWidth,
+    			height: 707
+    		});
+    		// 创建一个层
+    		var layer = new Konva.Layer();
+    		// 把层添加到舞台上
+    		stage.add(layer);
+
+    		var easings = [
+		        {name: 'Linear', color:'blue'},
+		        {name: 'EaseIn', color:'green'},
+		        {name: 'EaseOut', color:'green'},
+		        {name: 'EaseInOut', color:'green'},
+		        {name: 'BackEaseIn', color:'blue'},
+		        {name: 'BackEaseOut', color:'blue'},
+		        {name: 'BackEaseInOut', color:'blue'},
+		        {name: 'ElasticEaseIn', color:'green'},
+		        {name: 'ElasticEaseOut', color:'green'},
+		        {name: 'ElasticEaseInOut', color:'green'},
+		        {name: 'BounceEaseIn', color:'blue'},
+		        {name: 'BounceEaseOut', color:'blue'},
+		        {name: 'BounceEaseInOut', color:'blue'},
+		        {name: 'StrongEaseIn', color:'green'},
+		        {name: 'StrongEaseOut', color:'green'},
+		        {name: 'StrongEaseInOut', color:'green'}
+		    ];
+
+		    var tweens = [];
+		    for(var n = 0; n < easings.length; n++) {
+		    	var num = n + 1;
+		        var ease = easings[n];
+		        var text = new Konva.Text({
+		            x: 10,
+		            y: 60 + (n * 400 / easings.length),
+		            padding: 4,
+		            text: num + ') ' + ease.name,
+		            fontSize: 18,
+		            fontFamily: 'Calibri',
+		            fill: ease.color
+		        });
+
+		        layer.add(text);
+
+
+		         var tween = new Konva.Tween({
+		            node: text,
+		            x: 280,
+		            easing: Konva.Easings[ease.name],
+		            duration: 2
+		        });
+
+		        // add tween to tweens array
+		        tweens.push(tween);
+		    }
+			// play
+		    document.getElementById('play').addEventListener('click', function() {
+		        for (var n=0; n<tweens.length; n++) {
+		            tweens[n].play();
+		        }
+		    }, false);
+
+		    // pause
+		    document.getElementById('pause').addEventListener('click', function() {
+		        for (var n=0; n<tweens.length; n++) {
+		            tweens[n].pause();
+		        }
+		    }, false);
+
+		    // reverse
+		    document.getElementById('reverse').addEventListener('click', function() {
+		        for (var n=0; n<tweens.length; n++) {
+		            tweens[n].reverse();
+		        }
+		    }, false);
+
+    	</script>
+    </body>
+</html>

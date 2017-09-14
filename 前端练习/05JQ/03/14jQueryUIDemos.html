@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.wrapper div {
+			height: 300px;
+			background: #ccc;
+		}
+	</style>
+	<!-- 
+		第一步： 引入jQuery
+		第二步： 引入jQueryUI的js库
+		第三步： 引入jQueryUI的css样式
+		第四步： 照人家的demo去写
+	-->
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jQueryUI/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="jQueryUI/jquery-ui.min.css">
+	<script type="text/javascript">
+		$(function() {
+			$(".wrapper").tabs();
+			$(".dialog").dialog();
+		})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<ul>
+			<li><a href="#tab1">页签1</a></li>
+			<li><a href="#tab2">页签2</a></li>
+			<li><a href="#tab3">页签3</a></li>
+		</ul>
+
+		<div id="tab1">1</div>
+		<div id="tab2">2</div>
+		<div id="tab3">3</div>
+	</div>
+
+	<div class="dialog" title="我是对话框的标题">
+		我是对话框
+	</div>
+</body>
+</html>

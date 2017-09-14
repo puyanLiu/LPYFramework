@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//-------------------------拷贝创建对象核心代码--------------------------
+
+    /*函数的用处：就是将一个json对象 所有属性拷贝给另外一个对象*/
+    /*source：原始对象*/
+    /*target：目标对象*/
+    function extend(target,source) {
+        //遍历对象
+        for(var i in source){
+            target[i] = source[i];
+        }
+        return target;
+    }
+
+
+    //游戏随机生成名字
+       var boy = {
+        name:'郭靖'
+        ,image:'男性头像'
+        ,age:20
+        ,sex:'男'
+    };
+
+    var girl = {
+        name:'黄蓉'
+        ,age:18
+        ,image:'女性头像'
+        ,sex:'女'
+    };
+
+    /*六大神器之一*/
+
+    var zuixiake = extend({}, boy);
+    var huangrong = extend({},girl)
+    console.log(zuixiake.name);
+    console.log(zuixiake.sex);
+    console.log(huangrong.name)
+</script>

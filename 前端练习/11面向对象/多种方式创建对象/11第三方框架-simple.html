@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script src="simple.js"></script>
+<script>
+	var Person = Class.extend({
+        init: function(isDancing){
+            this.dancing = isDancing;
+        },
+        dance: function(){
+            return this.dancing;
+        }
+    });
+
+
+    var product = Class.extend({
+        init:function(name,price){
+            this.name=name;
+            this.price=price;
+        },
+        buy:function(){},
+        addCart:function(){}
+
+    });
+
+
+
+    var Ninja = Person.extend({
+        init: function(){
+            this._super( false );
+        },
+        dance: function(){
+            // Call the inherited version of dance()
+            return this._super();
+        },
+        swingSword: function(){
+            return true;
+        }
+    });
+
+    var p = new Person(true);
+    p.dance(); // => true
+
+    var n = new Ninja();
+    n.dance(); // => false
+    n.swingSword(); // => true
+
+    // Should all be true
+    p instanceof Person && p instanceof Class &&
+    n instanceof Ninja && n instanceof Person && n instanceof Class
+</script>

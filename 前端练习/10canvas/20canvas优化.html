@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="js/19rect.js"></script>
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			var canvasHide = document.createElement('canvas');
+    			canvasHide.width = canvasElem.width;
+    			canvasHide.height = canvasElem.height;
+    			var ctxHide = canvasHide.getContext('2d');
+
+    			for(var i = 0; i < 100; i++) {
+    				var r = new Rect({
+    					x: Math.random() * 100,
+    					y: Math.random() * 100,
+    					w: Math.random() * 100,
+    					h: Math.random() * 100,
+    					rotation: Math.random() * 90,
+    					opacity: Math.random()
+    				});
+    				r.render(ctxHide);
+    			}
+
+    			// 批量绘制
+    			ctx.drawImage(canvasHide, 0, 0);
+
+    		}());
+    	</script>
+    </body>
+</html>

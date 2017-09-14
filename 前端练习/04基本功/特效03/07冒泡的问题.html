@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点击</button>
+</body>
+</html>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+
+    document.onclick = function() {
+        alert("点击了空白处");
+    }
+
+    btn.onclick = function(event) {
+        alert("点击了按钮");
+
+        // 阻止冒泡
+        var event = event || window.event;
+        if (event && event.stopPropagation) {
+            event.stopPropagation(); // w3c标准
+        } else {
+            event.cancelBubble = true; // ie678 ie浏览器
+        }
+    }
+</script>

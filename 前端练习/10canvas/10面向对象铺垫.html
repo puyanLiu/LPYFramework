@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		// 创建对象的方式
+    		
+    		// 第一种：json方式创建对象
+    		// var o = {key: value};
+    		// var arry = [1, 2, 3, {}];
+    		// var kong = {};
+    		// var kong2 = new Object();
+
+    		var o = {
+    			name: 'zhangsan',
+    			age: 18,
+    			sayHi: function() {
+    				// this === o
+    				console.log('name: ' + this.name + ' ' + this.age + ' ' + this);
+    			}
+    		}
+    		// 缺点：不能把json对象当成一个模板，通过new来构造一个新对象
+    		// 给json对象添加属性
+    		o.color = 'red';
+    		// 给json对象添加方法
+    		o.show = function() {
+
+    		};
+    		o.sayHi();
+
+    		// 第二种：创建对象的方式
+    		var o2 = new Object();
+    		o2.age = 19;
+    		o2.show = function() {};
+    		// 缺点：不能把json对象当成一个模板，通过new来构造一个新对象
+    		
+    		// 第三种：创建对象的方式
+    		function Cat() {
+    			// this = {}; // 让this指向一个空对象
+    			// var t = {};
+    			// this = t;
+    			// t.__proto__ = Cat.prototype;
+    		
+    			this.age = 18;
+    			this.show = function() {
+    				console.log(this.age);
+    			}
+    			this.name = '123';
+    		}
+
+    		var cat = new Cat(); // 通过构造函数构造一个对象出来
+    		cat.show();
+    		var cat1 = new Cat();
+
+    		/*
+    		new：内部的原理
+    		1、在内存中开辟一块空间
+    		2、创建一个新空对象
+    		3、把this指向到这个空对象
+    		4、把空对象的内部原型指向到构造函数的原型对象
+    		5、当构造函数执行完成后，如果有return的话，返回return内容，否则把当前的this返回
+    		 */
+    		
+    		// 构造函数有return
+    		function Bird() {
+    			this.age = 19;
+    			this.show = function() {
+
+    			}
+    			return this;
+    		}
+    		var t = new Bird();
+    		console.log(t.show)
+    		
+    	</script>
+    </body>
+</html>

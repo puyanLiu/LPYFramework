@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.box {
+			height: 200px;
+			width: 400px;
+			background: teal;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".link").on("click", function(e) {
+				// 取消默认操作
+				e.preventDefault();
+				// 阻止事件冒泡
+				// e.stopPropagation();
+
+				console.log(e.type);
+			});
+
+			$(".box").on("click", function(e) {
+				console.log("div 事件响应方法执行");
+				if(e.target === this) {
+					console.log("你点击的div");
+				}
+			});
+
+			$(window).click(function(event) {
+				// event.which 针对键盘和鼠标事件，这个属性能确定你到底按的是哪个键
+				console.log(event.which);
+			}).keydown(function(event) {
+				// 输出键盘字母的编码
+				console.log(event.keyCode);
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<a href="http://www.baidu.com" class="link">我是百度</a>
+	</div>
+</body>
+</html>

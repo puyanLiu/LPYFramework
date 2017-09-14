@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+
+    <script src="jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            // :odd 奇数
+            $("li:odd").css("background", "red");
+
+            // :even 
+            $("li:even").css("background", "green");
+
+            // :eq(index) 所有li元素 索引从0开始
+            $("ul li:eq(4)").css("font-size", "30px");
+            $("ul li:eq(14)").css("font-size", "30px");
+
+            // :lt(index) 小于6的
+            $("li:lt(6)").css("background", "yellow");
+
+            // :gt(index)
+            $("li:gt(8)").css('background', 'pink');
+            
+            // :first
+            $("li:first").css('background', 'blue');
+
+            // :last
+            $("li:last").css('background', 'orange');
+        });
+
+    </script>
+</head>
+<body>
+    <ul class="ulList">
+        <li>01男嘉宾</li>
+        <li>02男嘉宾</li>
+        <li>03男嘉宾</li>
+        <li>04男嘉宾</li>
+        <li>05男嘉宾</li>
+        <li>06男嘉宾</li>
+        <li>07男嘉宾</li>
+        <li>08男嘉宾</li>
+        <li>09男嘉宾</li>
+        <li>10男嘉宾</li>
+    </ul>
+    <ul class="ulList">
+        <li>01男嘉宾</li>
+        <li>02男嘉宾</li>
+        <li>03男嘉宾</li>
+        <li>04男嘉宾</li>
+        <li>05男嘉宾</li>
+        <li>06男嘉宾</li>
+        <li>07男嘉宾</li>
+        <li>08男嘉宾</li>
+        <li>09男嘉宾</li>
+        <li>10男嘉宾</li>
+    </ul>
+</body>
+</html>

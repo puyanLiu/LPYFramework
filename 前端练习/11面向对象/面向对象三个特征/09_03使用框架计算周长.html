@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script src="simpleInheritance.js"></script>
+
+<script>
+	// 好处 ，将构造函数，方法放在一起了
+    var Sharp = Class.extend({
+//        构造函数
+       init:function(name){
+           this.name=name;
+       },
+        //改方法被继承,这个方法是大家都有的,并且都一样,可以放在基类中
+        getName : function(){
+            return this.name;
+        }
+        //会根据不同的形状而被重写
+        ,zhouchang : function(){
+            return 100;
+        }
+    });
+
+	//矩形对象
+	var Rectangle =Sharp.extend({
+	//    构造函数  里面放置属性
+	    init:function(length,width){
+	        //调用父类，继承父亲的属性和方法
+	        this._super.apply(this,arguments)
+	        this.name='矩形';
+	        this.length =length;
+	        this.width = width;
+	    },
+	    zhouchang: function(){
+	    return (this.length + this.width) * 2;
+	}
+	})
+
+
+    //使用对象 封装
+    function computezhouchang(shape) {
+        console.log( shape.getName() + '的周长是' + shape.zhouchang() );
+    }
+
+
+    //使用
+    var rectangle = new Rectangle(10,20);
+    computezhouchang(rectangle);
+</script>

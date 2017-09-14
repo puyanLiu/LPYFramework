@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">My name is andy!</div>
+    <div id="div2">what's your name?</div>
+    <button id="btn1">concat()</button><span></span> <br />
+    <button id="btn2">slice(3)</button><span></span> <br />
+    <button id="btn3">slice(3, 6)</button><span></span> <br />
+    <button id="btn4">slice(-1)</button><span></span> <br />
+    <button id="btn5">slice(-10, div1.length - 5)</button><span></span> <br />
+
+    <button id="btn6">substr(3)</button><span></span> <br />
+    <button id="btn7">substr(3, 6)</button><span></span> <br />
+    <button id="btn8">substr(-1)</button><span></span> <br />
+    <button id="btn9">substr(-1)存在兼容问题</button><span></span> <br />
+
+    <button id="btn10">slice(6, 3)</button><span></span> <br />
+    <button id="btn11">substring(6, 3)</button><span></span> <br />
+    <button id="btn12">substr(6, 3)</button><span></span> <br />
+
+</body>
+</html>
+
+<script type="text/javascript">
+    var div1 = document.getElementById("div1").innerHTML;
+    var div2 = document.getElementById("div2").innerHTML;
+    function onBtnClick(id, txt) {
+        document.getElementById(id).onclick = function() {
+            this.nextSibling.innerHTML = txt;
+        }
+    }
+    onBtnClick("btn1", div1.concat(div2));
+    onBtnClick("btn2", div1.slice(3));
+    onBtnClick("btn3", div1.slice(3, 6)); // 不包含索引6
+    onBtnClick("btn4", div1.slice(-1)); // 从后往前
+    onBtnClick("btn5", div1.slice(-10, div1.length - 5));
+
+    onBtnClick("btn6", div1.substr(3));
+    onBtnClick("btn7", div1.substr(3, 6));
+    onBtnClick("btn8", div1.substr(-1));
+    onBtnClick("btn9", div1.substr(div1.length - 1, 1)); // 兼容的写法
+
+    onBtnClick("btn10", div1.slice(6, 3));
+    onBtnClick("btn11", div1.substring(6, 3));
+    onBtnClick("btn12", div1.substr(6, 3));
+</script>

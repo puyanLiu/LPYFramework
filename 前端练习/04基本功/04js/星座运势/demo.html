@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 300px;
+            height: 200px;
+            margin: 100px auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .box .mt h3 {
+            font-size: 16px;
+            line-height: 16px;
+        }
+        .box .mt a {
+            float: left;
+            width: 50px;
+            height: 50px;
+            background: url(images/astroIcon.png) no-repeat 0 0;
+        }
+        .box .mt .right {
+            padding-left: 70px;
+            height: 70px;
+        }
+        .box .mt .yunshi {
+            font-size: 14px;
+            line-height: 30px;
+            height: 20px;
+        }
+        .box .mt .yunshi span {
+            float: left;
+        }
+        .box .mt .yunshi .yunshi-showbg {
+            display: block;
+            width: 80px;
+            height: 13px;
+            margin-top: 8px;
+            background: url(images/yunshi.png) no-repeat 0 0;
+        }
+        .box .mt .yunshi .yunshi-showbg i {
+            display: block;
+            width: 16px;
+            height: 13px;
+            background: url(images/yunshi.png) no-repeat 0 -27px;
+        }
+        .box .md {
+            font-size: 14px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var select = document.getElementById("select");
+            var xingxing = [64, 56, 48, 56, 48, 56, 64, 48, 48, 48, 48, 48];
+            var content = ["今天的你能够踊跃思考，许多想法在内心孕育而生，也可能产生关于房屋借贷投资方面的决定，家人也...",
+                        "这几天你与他人互动相当频繁，有些金牛可能有许多客户关系，合作需要处理。积极沟通能够迅速拉近...",
+                        "你对财务规划产生越来越清晰的想法，这有助于你直接开展计划，让工作效率事半功倍。然而你也需要...",
+                        "你可能非常享受居家生活，今天是你非常平静，又容易满足的一天。无论和家人还是爱人，关系都非常...",
+                        "你有许多想法在心中产生，积极思考会带来更多的感悟。最近你和家人的互动也可能非常热烈，但是小...",
+                        "最近你的思维非常踊跃，会有许多聊天沟通之事发生，有些处女可能会有许多应酬活动，忙于交际，周...",
+                        "你的火力全开，工作和个人的发展是你目前最为重视的，然而却可能会因此疏远另一半。你需要注意两...",
+                        "现在你有一些想法可能会脱离实际，不具备可操作性。而你也容易逃避现实，在一些问题上走极端。建...",
+                        "今天的你可能需要应对许多社交关系，但是却容易触发你对财务的紧张感。因此在参加各种聚会，应酬...",
+                        "你可能会在聊天中发现彼此的分歧，今天也可能过于防卫，在关系中缺乏安全感。你的职场状态也可能...",
+                        "今天你的思想压力有些大哦，其实他人并不是在针对你，疑神疑鬼可能会导致人际问题。你需要留意自...",
+                        "娱乐生活可能会导致你财务的动荡，吃喝玩乐与恋爱开支，都别因为头脑发热而开销过度，投资方面更...",];
+            
+            select.onchange = function() {
+
+                var value = this.value;
+
+                document.getElementById("icon").style.backgroundPosition = "0 " + value * (-50) + "px";
+                document.getElementById("yunshifen").style.width = xingxing[value] + "px";
+                document.getElementById("tedian").innerHTML = content[value];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="mt">
+            <h3>星座运势</h3>
+            <a href="javascript:;" id="icon" ></a>
+            <div class="right">
+                <select id="select">
+                    <option selected="selected" value="0">白羊座(03.21-04.19)</option>
+                    <option value="1">金牛座(04.20-05.20)</option>
+                    <option value="2">双子座(05.21-06.21)</option>
+                    <option value="3">巨蟹座(06.22-07.22)</option>
+                    <option value="4">狮子座(07.23-08.22)</option>
+                    <option value="5">处女座(08.23-09.22)</option>
+                    <option value="6">天秤座(09.23-10.23)</option>
+                    <option value="7">天蝎座(10.24-11.22)</option>
+                    <option value="8">射手座(11.23-12.21)</option>
+                    <option value="9">摩羯座(12.22-01.19)</option>
+                    <option value="10">水瓶座(01.20-02.18)</option>
+                    <option value="11">双鱼座(02.19-03.20)</option>
+                </select>
+                <div class="yunshi"><span>今日运势：</span><span class="yunshi-showbg">
+                <i id="yunshifen"></i>
+                </span></div>
+            </div>
+        </div>
+        <div class="md" id="tedian">
+            今天的你能够踊跃思考，许多想法在内心孕育而生，也可能产生关于房屋借贷投资方面的决定，家人也...<a href="">[详细]</a>
+        </div>
+    </div>
+</body>
+</html>

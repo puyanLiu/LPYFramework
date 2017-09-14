@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            background: url(images/01.jpg);
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var select = document.getElementById("selectBg");
+            select.onchange = function() {
+                switch(this.value) {
+                    case "1" :
+                        document.body.style.backgroundImage = "url(images/01.jpg)";
+                    break;
+                    case "2" :
+                        document.body.style.backgroundImage = "url(images/02.jpeg)";
+                    break;
+                    case "3" :
+                        document.body.style.backgroundImage = "url(images/03.jpg)";
+                    break;
+                    case "4" :
+                        document.body.style.backgroundImage = "url(images/04.jpg)";
+                    break;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <select id="selectBg">
+        <option value="1">图片1</option>
+        <option value="2">图片2</option>
+        <option value="3">图片3</option>
+        <option value="4">图片4</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	* {
+        		margin: 0;
+        		padding: 0;
+        	}
+        	#box {
+        		width: 400px;
+        		height: 200px;
+        		background-color: #ccf;
+        		margin: 100px auto;
+        		border-radius: 50%;
+        		font: 55px '微软雅黑';
+        		line-height: 150px;
+        		color: #88f;
+        		text-align: center;
+        		transition: all 0.3s ease-in;
+        		box-shadow: inset 0 -15px 15px #88f,
+        					inset 10px -15px 15px #44f,
+        					inset -10px -15px 15px #fff,
+        					0 15px #88f,
+        					-35px 40px 5px rgba(0, 0, 0, 0.3);
+        	}
+        	#content {
+				text-shadow: 3px -3px 1px #44f,
+							 -3px 3px 1px #fff;
+				transform: scale(1, 0.8);
+        	}
+        	#box:hover {
+        		box-shadow: inset 0 -15px 15px #88f,
+        					inset 10px -15px 15px #44f,
+        					inset -10px -15px 15px #fff,
+        					0 2px #88f,
+        					-8px 15px 5px rgba(0, 0, 0, 0.3);
+        		margin-top: 115px;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="box">
+			<div id="content">哈哈你猜</div>
+    	</div>
+    </body>
+</html>

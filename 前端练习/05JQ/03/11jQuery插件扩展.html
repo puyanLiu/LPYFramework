@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		// 给JQuery全局对象扩展一个方法
+		$.log = function() {
+			console.log(new Date());
+		};
+
+		$.log();
+
+		// 扩展一个普通的JQuery对象的方法
+		$.fn.log = function() {
+			console.log($(this).text());
+
+			// 输出所有的代码
+			return "<p>嘿嘿</p>";
+		};
+
+		$(function() {
+			$.log();
+
+			$("div").log();
+			$("div").append($("div").log());
+		})
+	</script>
+</head>
+<body>
+	<div>哈哈世界真美好</div>
+</body>
+</html>

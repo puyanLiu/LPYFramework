@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+        	#ems {
+        		position: absolute;
+        		left: 50%;
+        		width: 400px;
+        		height: auto;
+        		margin-left: -200px;
+        		background-color: lightGreen;
+        		min-height: 50px;
+        		overflow-y: scroll;
+        		overflow-x: hidden;
+        	}
+        	#ems input {
+        		height: 25px;
+        		margin-top: 10px;
+        	}
+        	#list {
+        		background-color: lightBlue;
+        	}
+        	#list li {
+        		text-align: left;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="weather">
+    		<div>
+    			<input type="text" id="code">
+    			<input type="button" value="查询" id="btn">
+    		</div>
+    		<div id="list"></div>
+    	</div>
+    	<script type="text/javascript">
+    		window.onload = function() {
+    			var btn = document.getElementById('btn');
+    			btn.onclick = function() {
+    				var param = {
+    					url: 'http://cdn.weather.hao.360.cn/api_weather_info.php?app=hao360&_jsonp=weather&code=101010100',
+    					type: 'get',
+    					dataType: 'json',
+    					success: function(data) {
+    						alert(data);
+    					}
+    				};
+    				ajax(param);
+    			}
+    		}
+
+    		/*
+    		data = {
+				data: "",
+				dataType: "xml/json",
+				type: "get/post",
+				url: "",
+				asyn: "true/false",
+				success: function() {},
+				failure: function() {}
+    		}
+    		 */
+    		function ajax(data) {
+    			// 创建xhr对象
+    			var xhr = null;
+    			if (window.XMLHttpRequest) {
+    				// 标准浏览器
+    				xhr = new XMLHttpRequest();
+    			} else {
+    				xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    			}
+
+    			// 准备发送前的一些配置参数
+    			console.log(data);
+
+    			var type = data.type == 'get' ? 'get' : 'post';
+    			var url = '';
+    			if (data.url) {
+    				url = data.url;
+    				if (type == 'get') {
+    					// 添加时间戳，避免缓存数据
+    					url += "?" + data.data + "&_t" + new Date().getTime();
+    				}
+    			}
+    			var flag = data.asyn == 'true' ? 'true' : 'false';
+    			xhr.open(type, url, flag);
+
+    			// 执行发送的动作
+    			if (type == 'get') {
+    				xhr.send(null);
+    			} else if (type == "post") {
+    				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    				xhr.send(data.data);
+    			}
+
+    			// 指定回调函数
+    			xhr.onreadystatechange = function() {
+    				if (this.readyState == 4) {
+    					if (this.status == 200) {
+    						if (typeof data.success == 'function') {
+	    						var d = data.dataType == 'xml' ? xhr.responseXML : xhr.responseText;
+	    						data.success(d);
+	    					}
+    					} else {
+    						if (typeof data.failure == 'function') {
+    							data.failure();
+    						}
+    					}
+    				}
+    			}
+
+    		}
+    	</script>
+    </body>
+</html>

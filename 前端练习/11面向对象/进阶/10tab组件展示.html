@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	*{padding:0;margin:0;list-style:none}
+	.all{margin:100px auto;border:1px solid #CCC;text-align:center;padding:10px;height: 300px;
+width: 400px;}
+.all h1{text-align:center;line-height:30px;}
+.all h1 span{ background:#999}
+.all ul li {background:red;height:270px;display:none;margin-top: 3px;}
+.all ul li.select{display:block;}
+.all h1 span.select{background:#F00}
+</style>
+</head>
+
+<body>
+<div class='all' id='box01'>
+	<h1>
+      <span class='select'>新闻</span>
+      <span>经济</span>
+      <span>科技</span>
+      <span>体育</span>
+    </h1>
+	<ul>
+    	<li class='select'>新闻的内容</li>
+        <li>经济的内容</li>
+        <li>科技的内容</li>
+        <li>体育的内容</li>
+    </ul>
+</div>
+
+
+<div class='all' id='box02'>
+	<h1>
+      <span class='select'>NBA</span>
+      <span>足球</span>
+      <span>羽毛球</span>
+      <span>瑜伽</span>
+    </h1>
+	<ul>
+    	<li class='select'>篮球内容</li>
+        <li>足球的内容</li>
+        <li>羽毛球的内容</li>
+        <li>瑜伽的内容</li>
+    </ul>
+</div>
+</body>
+</html>
+<script src='02_05经典*数据类型判断封装.js'></script>
+<script>
+    //老代码
+//  tab('box01');
+//  tab('box02');
+    $$.tab('box01')
+    $$.tab('box02')
+
+
+</script>

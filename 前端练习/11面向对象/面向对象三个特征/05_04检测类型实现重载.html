@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	var MyClass=function(){
+        var AddNum=function(a,b){
+            return a+b;
+        }
+        var AddString=function(a,b){
+            return "I am here"+a+b;
+        }
+        this.Add=function(a,b){
+            if(typeof(a)=="number")
+                return AddNum(a,b);
+            else
+                return AddString(a,b);
+        }
+    }
+
+    function add(a,b){
+        return a+b;
+    }
+
+    function add(a,b){
+        return "I am here"+a+b;
+    }
+
+    var MyObj = new MyClass();
+    var X = MyObj.Add(5,6);
+    var Y = MyObj.Add("A","FFFFFF");
+    console.log(X); //结果：11
+    console.log(Y); //结果：I am hereAFFFFFF
+</script>

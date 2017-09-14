@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 创建节点
+            var demo = document.createElement("div");
+            // 追加节点
+            document.body.appendChild(demo);
+
+
+            var demo1 = document.createElement("span");
+            demo1.innerHTML = "哈哈";
+            // 第一个参数插入的节点，第二个参数参照节点，如果第二个参数为null，默认把新生成的盒子放入到最后面
+            // 放入那个节点的前面
+            document.body.insertBefore(demo1, demo);
+
+            var demo2 = document.createElement("span");
+            demo2.innerHTML = "嘻嘻";
+            document.body.insertBefore(demo2, null);
+
+
+            // 移除孩子节点
+            var box = document.getElementById("demo");
+            box.removeChild(box.children[0]);
+
+            // 克隆节点
+            // 深层复制
+            var new1 = box.cloneNode(true);
+            document.body.appendChild(new1);
+            // 浅层复制
+            var new2 = box.cloneNode(false);
+            document.body.appendChild(new2);
+        }
+    </script>
+</head>
+<body>
+    <div id="demo">
+        <span>啦啦啦</span>
+        <span>啦啦啦</span>
+        <span>啦啦啦</span>
+        <span>啦啦啦</span>
+        <span>啦啦啦</span>
+        <span>啦啦啦</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: : 0;
+            padding: 0;
+        }
+        div {
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById("demo").onclick = function() {
+                var divs = document.getElementsByTagName("div");
+                for(var i = 0; i < divs.length; i++) {
+                    divs[i].style.display = "block";
+                    // divs[i].innerHTML = "我是内容";
+                    divs[i].innerText = "我是内容";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="我是按钮" id="demo" />
+    <div id="div1">
+        <span>哈哈哈</span>
+    </div>
+    <div>嘿嘿</div>
+    <div>呼呼</div>
+    <a href="javascript:alert(div1.innerHTML)">innerHTML（弹出内容包含HTML标签）</a>
+    <a href="javascript:alert(div1.innerText)">innerText（弹出内容部包含HTML标签）</a>
+</body>
+</html>

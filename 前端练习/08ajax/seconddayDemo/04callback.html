@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<input type="button" value="点击" id="btn">
+    	<script type="text/javascript">
+    		var btn = document.getElementById("btn");
+    		window.onload = function() {
+    			console.log(456);
+    		}
+    		btn.onclick = function() {
+    			console.log(123);
+    		}
+
+    		var fn = function() {
+    			console.log(678);
+    		}
+    		setTimeout(fn, 1000);
+    	</script>
+    </body>
+</html>

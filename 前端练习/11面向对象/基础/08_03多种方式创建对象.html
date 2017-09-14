@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	var Student = function(name, age){
+		var chineseAge;
+		this.name = name;
+		this.age = age;
+		chineseAge = age + 1;
+		this.getChineseAge = function(){
+			return chineseAge;
+		}
+	}
+
+	Student.prototype = {
+		//值类型不共享属性  -字符串
+		lesson : 'javascript'
+		//数字
+		,nums:4
+		//布尔
+		,booltype:true
+		//未定义类型
+		,untype:undefined
+		//null类型
+		,nulltype:null
+		
+		//引用类型共享属性
+		,lessons:['html入门经典','css入门经典']
+		,getTeacher : function(){
+			console.log('Mr Zhang');
+		}
+	}
+
+	//为什么通过prototype能扩充方法
+	//其实当实例化一个对象的时候,系统自动在内存中开辟一段内存...
+	//如果有prototype定义的属性和方法,会自动生成内存空间保存期内存地址,那么通过地址就可以访问到方法和属性
+
+	//整段程序在运行的过程中，内存中只分配了一个lesson变量和一个getTeacher方法 
+	var xiaoWang = new Student('wang', 20);
+	var xiaoLi = new Student('li', 30);
+
+	//值类型不会共享属性
+	xiaoWang.lesson='css入门经典';
+	console.log(xiaoWang.lesson);
+	console.log(xiaoLi.lesson);
+
+	//引用数值型 数值型 不会共享属性
+	xiaoWang.nums=12;
+	console.log(xiaoWang.nums); //12
+	console.log(xiaoLi.nums);//4
+
+
+	//引用数值型 布尔型 不会共享属性
+	xiaoWang.booltype=false;
+	console.log(xiaoWang.booltype); //false
+	console.log(xiaoLi.booltype);//true
+
+
+	//引用类型共享属性
+	xiaoWang.lessons.push('JavaScript入门经典');
+	console.log("小王的书籍数量应该是3:"+xiaoWang.lessons.length);//目前应该是三本书
+	console.log("小李的书籍数量应该是2:"+xiaoLi.lessons.length);//目前是两本书 ,但是实际是3
+
+	//下面分析比较
+	//他们比较的是地址
+
+	console.log(xiaoWang.name === xiaoLi.name);
+	console.log(xiaoWang.getChineseAge === xiaoLi.getChineseAge);
+	console.log(xiaoWang.lesson === xiaoLi.lesson);
+	console.log(xiaoWang.getTeacher === xiaoLi.getTeacher);
+
+</script>

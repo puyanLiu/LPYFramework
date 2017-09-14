@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var a = parseInt(prompt("请输入一个数字"));
+        var a5 = a % 5;
+        var a6 = a % 6;
+        if (a5 ==0 && a6 == 0) {
+            alert("这个数字同时能被5和6整除");
+        } else if (a5 == 0 && a6 != 0) {
+            alert("这个数字能被5整除，但是不能被6整除");
+        } else if (a6 == 0 && a5 != 0) {
+            alert("这个数字能被6整除，但是不能被5整除");
+        } else {
+            alert("这个数字既不能被5整除，也不能被6整除");
+        }
+    </script> 
+</body>
+</html>

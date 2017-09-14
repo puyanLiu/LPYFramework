@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn").click(function(event) {
+				// jQuery事件对象
+				console.log(event);
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="事件对象" id="btn">
+</body>
+</html>

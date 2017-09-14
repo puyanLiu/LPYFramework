@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    字符串：<input type="text" id="txt" />
+    索引的字符串：<input type="text" id="index" />
+    <button id="btn1">从前面开始索引</button>
+    <button id="btn2">从后面开始索引</button>
+</body>
+</html>
+
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    $("btn1").onclick = function() {
+        alert($("txt").value.indexOf($("index").value));
+    }
+    $("btn2").onclick = function() {
+        alert($("txt").value.lastIndexOf($("index").value));
+    }
+</script>

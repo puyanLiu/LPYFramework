@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 设置div的背景色
+			$("div").css({"background-color": "green"});
+			// 设置高度
+			$("button").eq(0).click(function() {
+				// css方式设置高度
+				// $("div").css("height", "300px");
+				// $("div").height(300);
+				$("div").height("300px");
+			});
+
+			// 获取高度
+			$("button").eq(1).click(function() {
+				// 给div设置html内容
+				$("div").html("div的高度是：" + $("div").height());
+			});
+
+			// 设置宽度
+			$("button").eq(2).click(function() {
+				$("div").width(600);
+			});
+
+			$("button").eq(3).click(function() {
+				$("div").html("div的宽度是：" + $("div").width());
+			});
+
+			$("button").eq(4).click(function() {
+				console.log("height()方式获取的结果是：" + $("div").height());
+				console.log("height()方式获取的结果类型是：" + typeof $("div").height());
+				console.log("css()方式获取的结果是：" + $("div").css("height"));
+				console.log("css()方式获取的结果类型是：" + typeof $("div").css("height"));
+			});
+		})
+	</script>
+</head>
+<body>
+	<button>设置高度</button>
+	<button>获取高度</button>
+	<button>设置宽度</button>
+	<button>获取宽度</button>
+	<button>对比CSS height和height高度</button>
+	<div></div>
+</body>
+</html>

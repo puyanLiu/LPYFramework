@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	function add(){
+        var sum=0;
+       /* arguments.push(10)  //报错*/
+        var arr = Array.prototype.slice.call(arguments) // 能将具有length属性的对象转成数组
+        console.log(arr);
+        arr.push(10)  
+        console.log(arr);
+        for(var i=0;i<arr.length;i++){
+            sum+=arr[i]
+        }
+        return sum;
+    }
+
+    var sum = add(1,2,3,4,5)
+
+    console.log(sum)
+</script>

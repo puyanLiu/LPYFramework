@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+
+<script>
+	var Base = function() {
+		update = function() {
+			console.log('基础对象，放置公共属性方法');
+
+		}
+	}
+
+	var player = function() {
+		update =function()
+		{
+			console.log("当打完一场比赛，更新球员统计信息，比如个人平均分，篮板平均分");
+		}
+	}
+	
+	var JiaoLian =function() {
+		update = function(){
+			console.log("当打完一场比赛，更新教练执教经历，比如执教过1000场，胜利500场");	
+		}
+	}
+</script>

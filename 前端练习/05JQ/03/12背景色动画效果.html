@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.box {
+			background-color: #ccc;
+			height: 400px;
+			width: 400px;
+		}
+	</style>
+	<!-- 
+		第一步： 引入jQuery
+		第二步： 引入第三方插件
+		第三步： 用第三方插件实现效果
+	-->
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.color.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".box").animate({'background-color': 'teal'}, 2000);
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		
+	</div>
+</body>
+</html>

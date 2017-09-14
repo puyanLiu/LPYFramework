@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// $("button").click(function(event) {
+			// 	alert("我是click事件");
+			// }).mouseenter(function() {
+			// 	alert("我是mouseenter事件");
+			// });
+			
+			// bind绑定两个事件
+			// $("button").bind("click mouseenter", function() {
+			// 	alert("我是click事件");
+			// });
+
+			// bindg绑定两个事件，分别处理不同的效果
+			// $("button").bind({
+			// 	"click": function() {
+			// 		console.log("我是click事件");
+			// 	},
+			// 	"mouseenter": function() {
+			// 		console.log("我是mouseenter事件");
+			// 	}
+			// });
+			
+			// 传递数据
+			// $("button").bind("click", {aa : "哈哈我是传递的数据"}, function(e) {
+			// 	alert(e.data.aa);
+			// });
+
+			// one 只触发一次
+			// $("button").one("click", function() {
+			// 	alert("我是one事件");
+			// });
+		
+			// $("li").bind("click", function() {
+			// 	alert($(this).html());
+			// });
+
+			// delegate绑定方式
+			// $("ul").delegate("li", "click", function() {
+			// 	alert($(this).html());
+			// });
+
+			// on 强烈推荐使用
+			$("ul").on("click", "li", function() {
+				alert($(this).html());
+			});
+
+			$("div").on("click", "h1", function() {
+				alert($(this).html());
+			});
+		})
+	</script>
+</head>
+<body>
+	<button>绑定两个事件</button>
+	<div>
+		<p>我是p标签</p>
+		<h1>我是h1元素1</h1>
+		<h1>我是h1元素2</h1>
+	</div>
+	<ul>
+		<li>我是li1</li>
+		<li>我是li2</li>
+		<li>我是li3</li>
+		<li>我是li4</li>
+		<li>我是li5</li>
+		<li>我是li6</li>
+		<li>我是li7</li>
+		<li>我是li8</li>
+		<li>我是li9</li>
+		<li>我是li10</li>
+	</ul>
+</body>
+</html>

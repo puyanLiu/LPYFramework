@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Scalable Vector Graphics 可缩放矢量图形</title>
+    </head>
+    <body>
+    <div>
+    	基于可扩展标记语言
+    	<p>优势：体积小、质量高、效果好、可控程度高</p>
+    </div>
+    	<!-- 第一种方式 -->
+    	<iframe src="famoustiger.svg" style="border: none; width: 550px; height: 540px; background: white"></iframe>
+
+    	<!-- 第二种方式 -->
+		<embed src="famoustiger.svg" style="border: none; width: 550px; height: 540px; background: white" type="image/svg+xml" pluginspage="http://www.adobe.com/svg/viewer/install/" />
+
+    	<!-- 第三种方式 -->
+		<object type="image/svg+xml" style="border: none; width: 550px; height: 540px; background: white" data="famoustiger.svg" codebase="http://www.adobe.com/svg/viewer/install/"></object>
+
+		<!-- 代码追加 -->
+		<svg data-src="demo.svg"></svg>
+		<script src="jquery-1.11.1.js"></script>
+		<script>
+			window.addEventListener('load', function() {
+				var svgs = document.getElementsByTagName('svg');
+				for(var i = 0; i < svgs.length; i++) {
+					console.log(svgs[i].dataset);
+					console.log($(svgs[i]).data('src'));
+
+					var src = $(svgs[i]).data('src');
+					$(document.body).append('<iframe src="' + src + '" frameborder="0"></iframe>');
+				}
+			});
+		</script>
+    </body>
+</html>

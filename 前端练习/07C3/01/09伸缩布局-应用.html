@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		font-family: '微软雅黑';
+        		background: #f7f7f7;
+        	}
+        	ul {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+        	.wrapper {
+        		width: 1024px;
+        		margin: 0 auto;
+        	}
+        	.wrapper > section {
+        		min-height: 300px;
+        		margin-bottom: 30px;
+        		box-shadow: 1px 1px 4px #ddd;
+        		background: #fff;
+        	}
+        	.wrapper > header {
+        		text-align: center;
+        		line-height: 1;
+        		padding: 20px;
+        		margin-bottom: 10px;
+        		font-size: 30px;
+        	}
+        	.wrapper section > header {
+        		line-height: 1;
+        		padding: 10px;
+        		font-size: 22px;
+				color: #333;
+				background: #eee;
+        	}
+        	.wrapper .wrap-box {
+        		padding: 20px;
+        	}
+
+            /*-----------------------------------------------*/
+            section:nth-child(2) ul {
+            	width: 500px;
+            	height: 50px;
+            	display: flex;
+            }
+            section:nth-child(2) li {
+            	flex: 1;
+            	text-align: center;
+            	line-height: 50px;
+            	background-color: pink;
+            	display: flex;
+            	flex-direction: column;
+            }
+
+            section:nth-child(3) .layout {
+            	width: 480px;
+            	height: 500px;
+            	display: flex;
+            	flex-direction: column;
+            	justify-content: space-between;
+            	text-align: center;
+            }
+            section:nth-child(3) .header {
+            	height: 60px;
+            	line-height: 60px;
+            	background-color: green;
+            }
+            section:nth-child(3) .main {
+            	display: flex;
+				flex-direction: row;
+				flex: 1;
+            }
+            section:nth-child(3) .aside {
+				width: 150px;
+				background-color: yellow;
+            }
+            section:nth-child(3) .content {
+				flex: 1;
+				background-color: red;
+            }
+            section:nth-child(3) .footer {
+            	height: 60px;
+            	line-height: 60px;
+            	background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>伸缩布局应用</header>
+    		<section>
+    			<header>自适应导航</header>
+    			<div class="wrap-box">
+    				<ul>
+    					<li>QQ聊天</li>
+    					<li>商品分类</li>
+    					<li>我的订单</li>
+    					<li>购物车</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section>
+    			<header>经典网页布局</header>
+    			<div class="wrap-box">
+    				<div class="layout">
+    					<div class="header">头部</div>
+    					<div class="main">
+    						<div class="aside">侧边栏</div>
+    						<div class="content">主体内容</div>
+    					</div>
+    					<div class="footer">底部</div>
+    				</div>
+    			</div>
+    		</section>
+    	</div>
+    </body>
+</html>

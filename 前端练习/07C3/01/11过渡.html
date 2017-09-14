@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+	        body {
+	        	background-color: #f2f2f2;
+	        }
+        	.show {
+        		width: 100px;
+        		height: 100px;
+        		margin: 0 auto;
+        		background-color: yellow;
+        		/*当前元素只要有”属性“发生变化时，可以平滑进行过渡*/
+        		transition: all 1s;
+        		/*transition: height 1s, width 0.5s;*/
+        	}
+        	.show:hover {
+        		width: 200px;
+        		height: 200px;
+        		border-radius: 100px;
+        		background-color: green;
+        	}
+
+			.zoom {
+				width: 300px;
+				height: 300px;
+				border: 1px solid #ccc;
+				margin: 100px auto;
+				background-image: url(images/flowerbg.jpg);
+				background-position: center;
+				background-size: 100%;
+				transition: all 1.5s;
+			}
+			.zoom:hover {
+				background-size: 120%;
+			}
+
+			.text {
+				height: 80px;
+				text-align: center;
+				line-height: 1;
+				margin: 100px auto;
+				font-size: 80px;
+				font-family: '微软雅黑';
+			}
+			.text span {
+				margin: 0 20px;
+				transition: all 1.5s;
+			}
+			.text:hover span {
+				margin: 0;
+			}
+        </style>
+    </head>
+    <body>
+    	<div class="show">
+    		
+    	</div>
+
+    	<div class="zoom">
+    		
+    	</div>
+    	<div class="text">
+    		<span>4</span>
+    		<span>亿</span>
+    		<span>网</span>
+    		<span>友</span>
+    		<span>共</span>
+    		<span>同</span>
+    		<span>信</span>
+    		<span>赖</span>
+    	</div>
+    </body>
+</html>

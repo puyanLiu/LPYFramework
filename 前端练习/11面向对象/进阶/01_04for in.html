@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	function Product(){
+        this.name='iphone8'
+        this.description='手机中的战斗机'
+        this.price=7777
+        this.date=new Date()
+        this.add = function(){}
+    }
+
+    Product.prototype={
+        date:'2017-8-8',
+        buy:function(){}
+    }
+    var iphone = new Product()
+
+    //    通过hasOwnProperty过滤掉原型中的属性
+    for(var item in iphone) {
+        if (iphone.hasOwnProperty(item)) {
+            if(item == 'price') {
+                console.log(iphone[item]*0.9) ;
+            }
+            if(item == 'date') {
+                console.log(iphone[item].toLocaleDateString()) ;
+            }
+            if(item == 'test') {
+                console.log('test') ;
+            }
+        }
+    }
+
+     var iphone = {
+        name:'iphone',
+        age:100,
+        address:{home:'江苏',current:'北京昌平'}
+    }
+    for(var item in iphone) {
+        if (iphone.hasOwnProperty(item)) {
+            console.log(item);
+        }
+    }
+</script>

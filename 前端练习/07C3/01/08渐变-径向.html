@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body, ul, li, dl, dt, dd, h1, h2, h3, h4, h5 {
+				margin: 0;
+				padding: 0;
+			}	
+			body {
+				background: #f7f7f7;
+			}
+			.wrapper {
+				width: 1000px;
+				margin: 0 auto;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			header {
+				padding: 20px 0;
+				margin-bottom: 20px;
+				text-align: center;
+			}
+			header h3 {
+				line-height: 1;
+				font-weight: normal;
+				font-size: 28px;
+			}
+			.main .item {
+				width: 210px;
+				height: 210px;
+				margin: 0 30px 30px 0;
+				position: relative;
+				display: flex;
+				background: #fff;
+				float: left;
+				box-shadow: 2px 2px 5px #ccc;
+			}
+			.main .item:after {
+				content: attr(data-brief);
+				display: block;
+				width: 100%;
+				height: 100%;
+				text-align: center;
+				line-height: 210px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				color: #fff;
+				font-family: '微软雅黑';
+				font-size: 18px;
+				background: rgba(170, 170, 170, 0);
+				z-index: -1;
+				transition: all 0.3s ease-in;
+			}
+			.main .item:hover:after {
+				background-color: rgba(170, 170, 170, 0.6);
+				z-index: 100;
+			}
+			
+			/*-----------------------------------------------*/
+			.radial-gradient {
+				width: 200px;
+				height: 200px;
+				margin: auto;
+			}
+			/*从一个中心点开始沿着四周方向进行渐变*/
+			.item:nth-of-type(1) .radial-gradient {
+				background-image: radial-gradient(yellow, green);
+			}
+			/*1、辐射范围 2、中心点 3、颜色的起止*/
+			.item:nth-of-type(2) .radial-gradient {
+				background-image: radial-gradient(120px at center center, yellow, green);
+			}
+			/*中心位置参照的是盒子的左上角*/
+			.item:nth-of-type(3) .radial-gradient {
+				background-image: radial-gradient(120px at 80px 80px, yellow, green);
+			}
+			/*辐射范围的半径可以不等 即是椭圆*/
+			.item:nth-of-type(4) .radial-gradient {
+				background-image: radial-gradient(120px 80px at center center, yellow, green);
+			}
+			/*直接用名称*/
+			.item:nth-of-type(5) .radial-gradient {
+				height: 100px;
+				background-image: radial-gradient(circle at center center, yellow, green);
+			}
+			/*直接用名称*/
+			.item:nth-of-type(6) .radial-gradient {
+				height: 100px;
+				background-image: radial-gradient(ellipse at center center, yellow, green);
+			}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>
+    			<h3>CSS3径向渐变</h3>
+    		</header>
+    		<div class="main">
+    			<div class="item" data-brief="从一个中心点开始沿着四周方向进行渐变">
+    				<div class="radial-gradient"></div>
+    			</div>
+    			<div class="item" data-brief="1、辐射范围 2、中心点 3、颜色的起止">
+    				<div class="radial-gradient"></div>
+    			</div>
+    			<div class="item" data-brief="中心位置参照的是盒子的左上角">
+    				<div class="radial-gradient"></div>
+    			</div>
+    			<div class="item" data-brief="辐射范围的半径可以不等 即是椭圆">
+    				<div class="radial-gradient"></div>
+    			</div>
+    			<div class="item" data-brief="圆">
+    				<div class="radial-gradient"></div>
+    			</div>
+    			<div class="item" data-brief="椭圆">
+    				<div class="radial-gradient"></div>
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			var arrowWidth = 10;
+    			var maxHeight = 300;
+    			var maxWidth = 300;
+
+    			// 绘制x轴
+    			ctx.beginPath();
+    			ctx.moveTo(100, 400);
+    			ctx.lineTo(400, 400);
+    			ctx.lineTo(400 - arrowWidth, 400 - arrowWidth);
+    			ctx.moveTo(400, 400);
+    			ctx.lineTo(400 - arrowWidth, 400 + arrowWidth);
+    			ctx.strokeStyle = 'purple';
+    			ctx.stroke();
+
+    			// 绘制y轴
+    			ctx.beginPath();
+    			ctx.moveTo(100, 400);
+    			ctx.lineTo(100, 100);
+    			ctx.lineTo(100 - arrowWidth, 100 + arrowWidth);
+    			ctx.moveTo(100, 100);
+    			ctx.lineTo(100 + arrowWidth, 100 + arrowWidth);
+    			ctx.strokeStyle = 'green';
+    			ctx.stroke();
+    			
+    			// 绘制点的坐标
+    			var data = [.1, .6, .8, .7, .4, .6];
+    			// 每个点之间的距离
+    			var widthSpace = maxWidth / (data.length + 1);
+    			ctx.beginPath();
+    			for(var i = 1; i <= data.length; i++) {
+    				ctx.lineTo(100 + i * widthSpace, 400 - data[i - 1] * maxHeight);
+    			}
+    			ctx.strokeStyle = 'blue';
+    			ctx.stroke();
+
+    		}());
+    	</script>
+    </body>
+</html>

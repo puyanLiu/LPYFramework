@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+        #box {
+            height: auto;
+            background-color: yellowgreen;
+        }
+        .demo {
+            background-color: purple
+        }
+        .test {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            function getClass(className, id) {
+                // 浏览器支持
+                if(document.getElementsByClassName) {
+
+                    // 有id
+                    if(id) {
+                        return document.getElementById(id).getElementsByClassName(className);
+                    }
+
+                    return document.getElementsByClassName(className);
+
+                }
+
+                // 浏览器不支持
+                var dom;
+                // 有id
+                if(id) {
+                    var eleId = document.getElementById(id);
+                    dom = eleId.getElementsByTagName("*");
+                } else {
+                    dom = document.getElementsByTagName("*");
+                }
+
+                for(var i = 0; i < dom.length; i++) {
+
+                    var classNameArray = dom[i].className.split(" ");
+                    for(var j = 0; j < classNameArray; j++) {
+                        if (classNameArray[j] == className) {
+                            arr.push(dom[i]);
+                        }
+                    }
+                }
+                return arr;
+            }
+
+            var test = getClass("demo", "box");
+            for(var i = 0; i < test.length; i++) {
+                test[i].style.backgroundColor = "red";
+            }
+        }
+    </script>
+</head>
+    <div id="box"> 
+        <div class="demo"></div>
+        <div></div>
+        <div class="demo test"></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+<body>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script src="js/19rect.js"></script>
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+
+    		<canvas id="canvasElem2">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+		<img src="" alt="" id="imgId">
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			var canvasElem2 = document.querySelector('#canvasElem2');
+    			var ctx2 = canvasElem2.getContext('2d');
+    			canvasElem2.width = 600;
+    			canvasElem2.height = 600;
+    			canvasElem2.style.border = "1px solid #000";
+
+    			// 创建矩形
+    			var rect = new Rect({
+    				x: 100,
+    				y: 100,
+    				w: 100,
+    				h: 100,
+    				opacity: .6,
+    				rotation: 60,
+    				scaleX: 1,
+    				scaleY: 2,
+    				fillStyle: 'purple',
+    				strokeStyle: 'yellow'
+    			});
+    			// 渲染矩形
+    			rect.render(ctx);
+
+    			for(var i = 0; i < 100; i++) {
+    				var r = new Rect({
+    					x: Math.random() * 100,
+    					y: Math.random() * 100,
+    					w: Math.random() * 100,
+    					h: Math.random() * 100,
+    					rotation: Math.random() * 90,
+    					opacity: Math.random()
+    				});
+    				r.render(ctx);
+    			}
+
+    			// canvas生成图片
+    			var img = document.querySelector("#imgId");
+    			img.src = canvasElem.toDataURL("image/png", .6);
+
+    			setInterval(function() {
+    				ctx.clearRect(0, 0, canvasElem.width, canvasElem.height);
+    				rect.x += 10;
+    				rect.render(ctx);
+
+    				// 把一个画布渲染到另外一个画布上
+    				ctx2.drawImage(canvasElem, 0, 0);
+
+    			}, 100);
+    		}());
+    	</script>
+    </body>
+</html>

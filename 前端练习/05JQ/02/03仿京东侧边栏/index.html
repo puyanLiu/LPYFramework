@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.top, .dian, .jia, .fu, .mei, .bottom {
+			width: 1210px;
+			margin: 0 auto;
+		}
+		.subnav {
+			position: fixed;
+			width: 38px;
+			height: 200px;
+			top: 200px;
+			left: 50%;
+			margin-left: 615px;
+			display: none;
+		}
+		.subnav li {
+			height: 36px;
+			border: 1px solid #DEDEDE;
+			margin-bottom: 5px;
+			font-size: 0;
+			background: url(images/bg.png) no-repeat;
+		}
+		.subnav li:hover, .subnav li.current, .back {
+			border: 1px solid #ED5759;
+			background: #FDEEEE;
+			font-size: 12px;
+			color: #ED5759;
+			padding-left: 6px;
+			height: 36px;
+			line-height: 18px;
+			cursor: pointer;
+		}
+		.back {
+			line-height: 36px;
+		}
+	</style>
+	<script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 显示默认背景
+			var num = 0, $subnav = $(".subnav"),  $sideBarMenu = $(".subnav li");
+			$sideBarMenu.each(function(index, ele) {
+				num = index * 55;
+				$(ele).css({
+					"background-position": '0 -' + num + 'px'
+				});
+			});
+
+			var top = 0;
+			// 滚动效果
+			$(window).scroll(function() {
+				top = $(document).scrollTop();
+
+				if (top >= $(".mei").offset().top) {
+					$sideBarMenu.eq(3).addClass('current').siblings().removeClass();
+				} else if (top >= $(".fu").offset().top) {
+					$sideBarMenu.eq(2).addClass('current').siblings().removeClass();
+				} else if (top >= $(".jia").offset().top) {
+					$sideBarMenu.eq(1).addClass('current').siblings().removeClass();
+				} else if (top >= $(".dian").offset().top) {
+					$sideBarMenu.eq(0).addClass('current').siblings().removeClass();
+				} else if (top > 0) {
+					$subnav.fadeIn();
+				} else {
+					$subnav.fadeOut();
+				}
+			});
+
+			// 点击效果
+			$sideBarMenu.click(function() {
+				$("html, body").stop().animate({
+					"scrollTop": $(".jd").eq($(this).index()).offset().top
+				}, 1000);
+			});
+
+			$(".back").click(function() {
+				// 无动画
+				// $("html, body").scrollTop(0);
+				$("html, body").animate({
+					"scrollTop": 0
+				}, 300);
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="top">
+		<img src="images/top.png" alt="">
+	</div>
+	<div class="jd dian">
+		<img src="images/dian.png" alt="">
+	</div>
+	<div class="jd jia">
+		<img src="images/jia.png" alt="">
+	</div>
+	<div class="jd fu">
+		<img src="images/fu.png" alt="">
+	</div>
+	<div class="jd mei">
+		<img src="images/mei.png" alt="">
+	</div>
+	<div class="bottom">
+		<img src="images/bottom.png" alt="">
+	</div>
+	<div class="subnav">
+		<ul>
+			<li>电脑数码</li>
+			<li>家电通讯</li>
+			<li>服装精品</li>
+			<li>美容珠宝</li>
+		</ul>
+		<div class="back">
+			返回
+		</div>
+	</div>
+</body>
+</html>
+

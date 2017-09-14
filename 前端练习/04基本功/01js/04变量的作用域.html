@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var num = 10;
+        function fn() {
+            console.log(num);
+            result = 20;
+            
+            num = "哈哈";
+        }
+        fn();
+        console.log(num);
+        console.log(result);
+
+        var a = 1;
+        function func() {
+            a = b = 5;
+        }
+        func();
+        console.log(a);
+        console.log(b);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="wrap"></div>
+<script src='jquery-1.11.3.js'></script>
+</body>
+</html>
+    <script type="text/javascript">
+            $(function() {
+                createSelect()
+                createBr()
+                createText()
+                createBr()
+                createCheckbox()
+                createBr()
+                createUl()
+            });
+
+            /*innerHTML
+            jquery HTML
+            createElement setAttribute
+            当前页面的方式*/
+
+            /*拼接字符串+绑定数据*/
+            /*json html*/
+            var json = {name:'xiaozhang'}
+            var str;
+            /*拼接*/
+            str+=''+json.name+''
+            /*join fuxi
+            var strs=['']*/
+
+            /*创建select标签*/
+            function createSelect() {
+                var select = $("<select/>").appendTo($("body"));
+                var option1 = $("<option value=\"1\">text1</option>").appendTo(select);
+                var option2 = $("<option value=\"2\">text2</option>").appendTo(select);
+                var option3 = $("<option value=\"3\">text3</option>").appendTo(select);
+            }
+            /*创建Text标签*/
+            function createText() {
+                var text = $("<input type=\"text\">").css({ "width": "150px", "border": "1px lightgrey solid" }).appendTo($("body"));
+            }
+            /*创建br标签*/
+            function createBr(){
+                $('<br />').appendTo($("body"))
+            }
+            /*创建Checkbox标签*/
+            function createCheckbox() {
+                var checkbox = $("<input type=\"checkbox\" />").appendTo($("body"));
+                $('<input />', {
+                    id: 'cbx',
+                    name: 'cbx',
+                    type: 'checkbox',
+                    checked: 'checked',
+                    click: function() {
+                        alert("点我了~~");
+                    }
+                }).appendTo($('body'));
+            }
+            /*创建Ul标签*/
+            function createUl() {
+                var ul = $("<ul/>").appendTo($("body"));
+                var li = $("<li>li1</li>").appendTo(ul);
+                var li = $("<li>li2</li>").appendTo(ul);
+            }
+</script>

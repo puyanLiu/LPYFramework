@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			// 状态1
+    			ctx.fillStyle = 'red';
+    			ctx.fillRect(10, 10, 100, 100);
+
+    			// 状态只是上下文的一些样式的设置
+    			
+    			ctx.save(); // 保存状态1
+
+    			// 把当前画布移动到200， 200位置
+    			ctx.translate(200, 200);
+    			// 把整个画布旋转30度
+    			ctx.rotate(30 * Math.PI / 180);
+    			// 把整个画布放大
+    			ctx.scale(1, 2);
+    			// 设置透明度
+    			ctx.globalAlpha = .3;
+    			ctx.fillStyle = 'green';
+    			ctx.strokeStyle = 'purple';
+    			
+    			ctx.moveTo(0, 0);
+    			ctx.lineTo(400, 0);
+    			ctx.moveTo(0, 0);
+    			ctx.lineTo(0, 400);
+    			ctx.stroke();
+    			ctx.fillRect(10, 10, 40, 40);
+
+    			// 回到状态1
+    			ctx.restore();
+    			ctx.fillRect(300, 300, 100, 100);
+
+
+    		}());
+    	</script>
+    </body>
+</html>

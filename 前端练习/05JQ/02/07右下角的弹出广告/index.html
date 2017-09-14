@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.ad {
+			position: fixed;
+			right: 0;
+			bottom: 0;
+			width: 230px;
+			height: 120px;
+			background: url(images/ad.jpg);
+			display: none;
+		}
+		.ad span {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 40px;
+			height: 18px;
+			background: url(images/h.jpg);
+		}
+	</style>
+	<script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// slideDown 用滑动动画显示一个匹配元素
+			// slideUp 用滑动动画隐藏一个匹配元素
+			// fadeIn 通过淡入的方式显示匹配元素
+			// fadeOut 通过淡出的方式隐藏匹配元素
+			$(".ad").slideDown('normal').slideUp('slow').fadeIn(1000).children('span').click(function() {
+				$(this).parent().fadeOut();
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="ad">
+		<span></span>
+	</div>
+</body>
+</html>

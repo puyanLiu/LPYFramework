@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 等等 这个符号不严格，类型不同，也会帮我们转为相同的类型，然后比较
+        console.log(5 == 5);
+        console.log("5" == 5);
+        console.log(5 == "5");
+
+        // 全等于
+        console.log(5 === 5);
+        console.log("5" === 5);
+        console.log(5 === "5");
+
+        console.log(3 != 8);
+        console.log(3 != "3");
+        console.log(3 !== "3");
+    </script>
+</body>
+</html>

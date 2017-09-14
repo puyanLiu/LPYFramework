@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body {
+			background: pink;
+			height: 2000px;
+		}
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		document.onclick = function(event) {
+			// console.log(event.clientX); ///ie678不兼容
+			// console.log(window.event.clientX); // ie写法
+			// console.log(event.clientY);
+			var event = event || window.event; // 兼容写法
+			console.log("clientY   " + event.clientY);
+			console.log("pageY     " + event.pageY);
+			console.log("screenY   " + event.screenY);
+		}
+	</script>
+</body>
+</html>

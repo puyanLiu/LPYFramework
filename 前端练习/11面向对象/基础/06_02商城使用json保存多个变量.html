@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div id="itemInfo">
+		    <div id="name">
+		        <h1 id='pname'>乐视TV（ Letv） S50 Air 全配版 50英寸2D智能LED液晶 超级电视</h1>
+		        <div id="pdescription">各地区货源已陆续到库，我们将在十月十号左右发货，对于此次延迟发货给您带来的不便表示致歉，望您谅解。</div>
+		        <div id="pprice" class="p-ad">6000</div>
+		    </div>
+		</div>
+		<button id='add'>加入购物车</button>
+		<button id='buy'>立即购买</button>
+
+		<!--购物车：-->
+
+		<!--产品列表 -->
+		<!--产品的总价格-->
+
+		<!--模拟购物车：-->
+		<h2>购物车</h2>
+		<div>产品个数：<strong id='cartsum'>0</strong></div>
+		<div>价格：<strong id='cartprice'>0</strong></div>
+		<button id="btnsum">结算</button>
+		<button id="btncontinue">继续购物</button>
+
+    </body>
+</html>
+
+<script>
+	/*定义编程需要的数据*/
+    var product={
+        name:'iphone8',
+        description:'各地区货源已陆续到库，我们将在十月十号左右发货，对于此次延迟发货给您带来的不便表示致歉，望您谅解。',
+        price:6660
+    }
+
+    /*购物车*/
+    var cart={
+        name:'购物车',
+        products:[],
+        price:5000,
+        sum:0
+    }
+
+    /*获取元素 产品*/
+    var pdomName = document.getElementById('pname')
+    var pdomPrice = document.getElementById('pprice')
+    var pdomDescription = document.getElementById('pdescription')
+    var pbtnAdd= document.getElementById('add')
+    var pbtnBuy= document.getElementById('buy')
+
+    /*获取元素 购物车*/
+    var cartPrice = document.getElementById('cartprice')
+    var cartSum = document.getElementById('cartsum')
+    var btnsum = document.getElementById('btnsum')
+    var btncontinue = document.getElementById('btncontinue')
+
+    window.onload=function(){
+       /* 绑定数据 - 产品*/
+        domName.innerHTML = product.name
+        domPrice.innerHTML = product.price
+        domad.innerHTML = product.description
+        /*绑定事件 - 产品*/
+        domadd.onclick=function(){
+        }
+        dombuy.onclick=function(){
+        }
+
+
+        /*绑定数据 - 购物车*/
+        cartPrice.innerHTML= cart.price;
+        cartSum.innerHTML= cart.price;
+
+        /*绑定事件 - 购物车*/
+        btnsum.onclick=function(){
+        }
+        btncontinue.onclick=function(){
+        }
+
+
+    }
+</script>

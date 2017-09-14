@@ -1,0 +1,197 @@
+.shortcut {
+    height: 30px;
+    background: #F1F1F1;
+    line-height: 30px;
+}
+.shortcut ul li {
+    float: left;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.shortcut ul li.icon {
+    margin-right: 25px;
+}
+.shortcut ul li.iconAndJd_App {
+    padding-left: 20px;
+    margin-right: 25px;
+}
+.shortcut ul li.spacer {
+    width: 1px;
+    height: 12px;
+    margin-top: 9px;
+    background: #ddd;
+}
+.shortcut .arrow {
+    position: absolute;
+    overflow: hidden;
+    height: 8px;
+    top: 12px;
+    color: #6A6A6A;
+    font: 400 15px/15px consolas;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.shortcut .arrow s {
+    position: relative;
+    top: -6px;
+}
+.shortcut .jd_app {
+    position: absolute;
+    top: 5px;
+    width: 15px;
+    height: 20px;
+    margin-left: -20px;
+    background: url(../images/jd2015img.png) no-repeat;
+}
+.login-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .5);
+    z-index: 999;
+    display: none;
+}
+.login-box {
+    width: 400px;
+    height: 300px;
+    background: #38c2fb;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    margin-left: -200px;
+    top: 50%;
+    margin-top: -150px;
+    display: none;
+}
+.topBanner {
+    height: 80px;
+    background: #38c2fb;
+}
+.rel {
+    position: relative;
+}
+.topBanner span, .login-box span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    text-align: center;
+    line-height: 25px;
+    background: rgba(0, 0, 0 ,.3);
+}
+.search {
+    height: 100px;
+}
+.search .logo {
+    float: left;
+    height: 60px;
+    width: 362px;
+    padding: 20px 0;
+}
+.search .logo a {
+    display: block;
+    width: 270px;
+    height: 60px;
+    text-indent: -999em;
+    background: url(../images/logo.png) no-repeat;
+}
+.search .searchTxt {
+    float: left;
+    height: 36px;
+    padding-top: 25px;
+}
+.search .searchTxt .text {
+    float: left;
+    width: 446px;
+    height: 24px;
+    color: #666;
+    border-width: 2px 0 2px 2px;
+    border-color: #B61D1D;
+    border-style: solid;
+    font-size: 14px;
+    font-family: "Microsoft YaHei";
+    padding: 4px;
+}
+.search .searchTxt button {
+    float: left;
+    width: 82px;
+    height: 36px;
+    background: #B61D1D;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: "Microsoft YaHei";
+    color: #fff;
+}
+.search .searchBottom {
+    float: left;
+    line-height: 24px;
+}
+.search .searchBottom a {
+    margin-right: 10px;
+}
+.search .shopCar {
+    float: right;
+    position: relative;
+    margin-top: 25px;
+    margin-right: 65px;
+    width: 75px;
+    height: 34px;
+    background: #F9F9F9;
+    border: 1px solid #DFDFDF;
+    text-align: center;
+    padding: 0 28px 0 36px;
+}
+.search .shopCar a {
+    line-height: 34px;
+}
+.search .shopCar .carLeft {
+    position: absolute;
+    width: 16px;
+    height: 13px;
+    top: 10px;
+    left: 18px;
+    background: url(../images/jd2015img.png) no-repeat -1px -59px;
+}
+.search .shopCar .carRight {
+    position: absolute;
+    top: 11px;
+    right: 10px;
+    font: 400 13px/13px "SimSun";
+    color: #999;
+}
+.search .shopCar .carCount {
+    position: absolute;
+    min-width: 12px;
+    top: -4px;
+    left: 104px;
+    padding: 1px 2px;
+    font-size: 12px;
+    line-height: 12px;
+    color: #fff;
+    background: #C81623;
+    border-radius: 7px 7px 7px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,311 @@
+
+@import url('base.less');
+
+.jd_topBar {
+	position: static;
+}
+
+.jd_sageTip {
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	background: #fff;
+	text-align: center;
+	font-size: 13px;
+	border-bottom: @g_border;
+
+	p {
+		position: relative;
+		display: inline-block;
+		padding-left: 25px;
+
+		&::before {
+			content: '';
+			display: block;
+			width: 18px;
+			height: 18px;
+			background: url("../images/safe_icon.png") no-repeat;
+			background-size: 18px 18px;
+			position: absolute;
+			left: 0;
+			top: 8px;
+		}
+	}
+}
+/*公用复选框*/
+.jd_check_box {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background: url("../images/shop-icon.png") no-repeat;
+	background-size: 50px 100px;
+	background-position: 0 0;
+}
+.jd_check_box[checked] {
+	background-position: -25px  0;
+}
+
+.jd_shop {
+	margin-top: 10px;
+	background: #fff;
+
+	.jd_shop_tit {
+		height: 36px;
+		border-top: @g_border;
+		border-bottom: @g_border;
+
+		.tit_check {
+			width: 40px;
+			height: 35px;
+			position: absolute;
+
+			.jd_check_box {
+				position: absolute;
+				top: 7px;
+				left: 10px;
+			}
+		}
+
+		.tit_name {
+			font-size: 12px;
+			padding-left: 40px;
+
+			.imgLogo {
+				width: 15px;
+				height: 13px;
+				display: block;
+				float: left;
+				margin-top: 10px;
+			}
+			.name {
+				float: left;
+				margin-left: 4px;
+				margin-top: 8px;
+				font-size: 13px;
+			}
+			.tip {
+				float: right;
+				color: @g_color;
+				margin-right: 10px;
+				margin-top: 8px;
+			}
+		}
+	}
+
+	.jd_shop_con {
+		border-bottom: @g_border;
+		position: relative;
+
+		.con_check {
+			width: 40px;
+			height: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			.jd_check_box {
+				position: absolute;
+				top: 20px;
+				left: 10px;
+			}
+		}
+
+		.con_product {
+			margin-top: 10px;
+			padding-left: 40px;
+			padding-right: 10px;
+			padding-bottom: 10px;
+
+			.con_product_img {
+				width: 80px;
+				height: 80px;
+				display: block;
+				float: left;
+				margin-right: 10px;
+				position: absolute;
+
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+
+			.con_product_box {
+				padding-left: 90px;
+
+				.name {
+					height: 30px;
+					line-height: 15px;
+					font-size: 13px;
+					display: block;
+					overflow: hidden;
+				}
+
+				.price {
+					margin-top: 5px;
+				}
+
+				.option {
+					width: 100%;
+					margin-top: 5px;
+
+					.change_box {
+						float: left;
+
+						.change_box_left,
+						.change_box_right {
+							width: 32px;
+							height: 24px;
+							border: @g_border;
+							display: block;
+							float: left;
+							text-align: center;
+						}
+						.change_box_left {
+							border-top-left-radius: 2px;
+							border-bottom-left-radius: 2px;
+						}
+						input {
+							float: left;
+							width: 32px;
+							height: 24px;
+							border-top: @g_border;
+							border-bottom: @g_border;
+						}
+						.change_box_right {
+							border-top-right-radius: 2px;
+							border-bottom-right-radius: 2px;
+						}
+					}
+
+					.delete_box {
+						float: right;
+
+						.delete_box_top {
+							background: url("../images/delete_up.png") no-repeat;
+							width: 20px;
+							height: 5px;
+							background-size: 20px 5px;
+							margin-left: -1px;
+						}
+						.delete_box_bot {
+							background: url("../images/delete_down.png") no-repeat;
+							width: 18px;
+							height: 18px;
+							background-size: 18px 18px;
+							margin-top: -3px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/*金额操作*/
+.jd_amount {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 62px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	width: 100%;
+
+	.amount_check {
+		position: absolute;
+		width: 80px;
+		line-height: 62px;
+
+		.jd_check_box {
+			position: absolute;
+			top: 20px;
+			left: 10px;
+		}
+		span {
+			padding-left: 35px;
+		}
+	}
+	.amount_info {
+		height: 62px;
+		padding-left: 70px;
+		padding-right: 80px;
+		.sum {
+			font-size: 16px;
+			margin-top: 12px;
+		}
+		.other {
+			font-size: 10px;
+			margin-top: 5px;
+		}
+	}
+	.amount_submit {
+		height: 62px;
+		width: 120px;
+		color: #fff;
+		line-height: 62px;
+		background: @g_color;
+		text-align: center;
+		font-size: 18px;
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		span {
+			font-size: 12px;
+		}
+	}
+}
+
+/*弹出框*/
+.jd_win {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 1001;
+
+	.jd_win_box {
+			width: 85%;
+			background: #fff;
+			margin: 0 auto;
+			border: @g_border;
+			padding: 0 5%;
+			border-radius: 4px;
+
+		.jd_win_box_text {
+			line-height: 75px;
+			color: #666;
+			font-size: 16px;
+			text-align: center;
+			margin-bottom: 10px;
+			border-bottom: @g_border;
+		}
+		.jd_btn_box {
+			font-size: 15px;
+			margin-bottom: 10px;
+
+			.cancel,
+			.submit {
+				width: 45%;
+				height: 36px;
+				display: block;
+				float: left;
+				line-height: 36px;
+				text-align: center;
+				border-radius: 4px;
+			}
+			.cancel {
+				border: @g_border;
+				color: #888;
+				margin-right: 10%;
+			}
+			.submit {
+				background: @g_color;
+				color: #fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			ctx.beginPath();
+				ctx.moveTo(30,30);
+				//绘制二次贝塞尔曲线
+				//参数： 控制点x1，控制点y1  ,结束点x2 ，结束点y2
+				ctx.quadraticCurveTo(200, 200, 300, 30);
+				ctx.stroke();		
+
+				//绘制复杂的贝塞尔曲线
+				ctx.beginPath();
+				ctx.moveTo(400,400);
+				//参数说明：
+				// cp1x： 第一个贝塞尔控制点的 x 坐标
+				// cp1y： 第一个贝塞尔控制点的 y 坐标
+				// cp2x： 第二个贝塞尔控制点的 x 坐标
+				// cp2y： 第二个贝塞尔控制点的 y 坐标
+				// x: 结束点的 x 坐标
+				// y: 结束点的 y 坐标
+				ctx.bezierCurveTo(500, 200, 600, 600, 700, 300);
+				ctx.stroke();
+    		}());
+    	</script>
+    </body>
+</html>

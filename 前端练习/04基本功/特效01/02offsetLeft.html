@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#yeye {
+			position: absolute;
+			background: orange;
+			width: 600px;
+			height: 600px;
+			padding: 100px;
+		}
+		#father {
+			width: 500px;
+			height: 500px;
+			background: pink;
+			margin: 100px;
+			margin-left: 30px;
+		}
+		#son {
+			width: 200px;
+			height: 200px;
+			background: purple;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var son = document.getElementById("son");
+			console.log(son.offsetLeft);
+		}
+
+	</script>
+</head>
+<body>
+	<div id="yeye">
+		<div id="father">
+			<div id="son"></div>
+		</div>
+	</div>	
+</body>
+</html>

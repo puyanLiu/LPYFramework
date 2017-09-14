@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		a, img {
+			border:0;
+			text-decoration:none;
+		}
+		body {
+			font:12px/180% Arial, Helvetica, sans-serif, "新宋体";
+			background:#DCDCDC;
+		}
+		.box {
+			position:fixed;
+			top:0;
+			right:0;
+			z-index:9999;
+			width:140px;
+			cursor:pointer;
+			margin:100px 0 0 0;
+		}
+		/* 修正IE6振动bug */
+		*html, *html body {
+			background-image:url(about:blank);
+			background-attachment:fixed;
+		}
+		*html .box {
+			position:absolute;
+			top:expression(eval(document.documentElement.scrollTop));
+		}
+		.box a {
+			display:block;
+			position:relative;
+			height:30px;
+			line-height:30px;
+			margin-bottom:2px;
+			background:#fff;
+			padding-right:10px;
+			width:130px;
+			overflow:hidden;
+			color:#333;
+			cursor:pointer;
+			right:-110px;
+		}
+		.box a:hover {
+			text-decoration:none;
+			color:#1974A1;
+		}
+		.box a:hover span {
+			background:#5FA429
+		}
+		.box a span {
+			display:block;
+			float:left;
+			width:30px;
+			background:#636871;
+			color:#fff;
+			font-size:16px;
+			text-align:center;
+			margin-right:10px;
+			font-style:normal;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var timer = null;
+			$(".box").mouseenter(function() {
+				clearTimeout(timer);
+				var that = $(this);
+				timer = setTimeout(function() {
+					that.find("a").each(function(index, ele) {
+						setTimeout(function() {
+							$(ele).stop().animate({right: 0}, 200);
+						}, 50 * index);
+					})
+				}, 200);
+			}).mouseleave(function() {
+				if (timer) {
+					clearTimeout(timer);
+				}
+				$(this).find("a").each(function(index, ele) {
+					setTimeout(function() {
+						$(ele).stop().animate({right: -110}, 200);
+					}, 50 * index);
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+       <a href='#'><span>0</span>Flash素材</a>
+       <a href='#'><span>1</span>菜单导航</a>
+       <a href='#'><span>2</span>时间日期</a>
+       <a href='#'><span>3</span>焦点图</a>
+       <a href='#'><span>4</span>tab标签</a>
+       <a href='#'><span>5</span>jquery特效</a>
+       <a href='#'><span>6</span>在线客服</a>
+       <a href='#'><span>7</span>广告代码</a>
+       <a href='#'><span>8</span>相册代码</a>
+       <a href='#'><span>9</span>图片特效</a>
+       <a href='#'><span>10</span>名站特效</a>
+       <a href='#'><span>11</span>视频播放</a>
+       <a href='#'><span>12</span>其他代码</a>
+	</div>
+	<div style="height:1000px;"></div>
+</body>
+</html>

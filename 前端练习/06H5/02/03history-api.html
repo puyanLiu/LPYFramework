@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	html,
+        	body,
+        	.wrapper {
+				height: 100%;
+				overflow: hidden;
+				margin: 0;
+				padding: 0;
+        	}
+        	.list {
+        		background: #e0e0e0;
+        		height: 100%;
+        		width: 220px;
+        		float: left;
+        	}
+        	#list {
+        		font-size: 18px;
+        		line-height: 2;
+        	}
+        	.content {
+        		height: 100%;
+        		margin-left: 220px;
+        		padding: 0 20px;
+        	}
+        	#content {
+        		width: 100%;
+        		height: 100%;
+        		border: none;
+        		font-size: 22px;
+        		line-height: 2;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<div class="list">
+    			<ul id="list"></ul>
+    		</div>
+    		<div class="content">
+    			<textarea name="" id="content" cols="30" rows="10"></textarea>
+    		</div>
+    	</div>
+    	<script src="03data.js"></script>
+    	<script>
+    		// 将所有歌曲名字绑定到列表上
+    		var listElement = document.querySelector('#list');
+    		for(var title in data) {
+    			var li = document.createElement('li');
+    			li.innerHTML = '<a class="link" data-title="' + title + '" href="?title=' + title + '">' + title + '</a>';
+    			listElement.appendChild(li);
+    		}
+
+    		// 为每一个链接注册点击事件
+    		var links = document.querySelectorAll('.link');
+			console.log(links);
+
+    		for(var i = 0; i < links.length; i++) {
+    			links[i].addEventListener('click', function(e) {
+    				// 获取点击元素的标题
+    				var title = this.dataset['title'];
+    				// 加载歌词
+    				loadContent(title);
+    				// 记录访问历史
+    				// history.pushState(放入历史中的状态数据, 设置title(现在浏览器不支持)， 改变历史状态)
+    				if (window.history && history.pushState) {
+                        history.pushState(title, 'title没有任何浏览器支持', '?title=' + title);
+                    } else {
+                        console.log('不支持');
+                    }
+    				// history.replaceState(title, title, '?title=' + title); 跟 history.pushState(title, title, '?title=' + title);方法基本相同，区别只有一点 history.replaceState() 不会新生成历史记录，而是将当前历史记录替换掉
+    				// 阻止默认行为
+    				e.preventDefault();
+    			});
+    		}
+
+    		// 当我们在伪造的访问历史中前进后后退时会执行一个popstate事件
+    		window.addEventListener('popstate', function(e) {
+    			console.log(e);
+    			loadContent(e);
+    		});
+
+            // 第一次请求过来 获取地址栏中的参数
+            // window.location可以拿到当前网页中跟地址相关的信息
+    		if (window.location.search) {
+    			console.log(window.location.search);
+    			var title = decodeURI(window.location.search.split('=')[1]);
+    			loadContent(title);
+    		}
+
+    		function loadContent(title) {
+    			console.log(title);
+    			document.querySelector('#content').value=  data[title];
+    		}
+    	</script>
+    </body>
+</html>

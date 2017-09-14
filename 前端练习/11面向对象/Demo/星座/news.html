@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+*{margin: 0 auto;padding: 0;list-style: none;border: 0; text-align: center;}
+body{background: url(baidu/bg.jpg); -webkit-background-size: cover;
+background-size: cover;}
+.logo{margin-top: 30px; display: block;}
+.links{width: 740px; margin: 0 auto;}
+.links a{color: #fff; margin-right: 10px;}
+.search{margin-bottom: 40px; margin-top: 10px;}
+.search input{width: 537px; height: 40px;}
+.search button{width: 104px; height: 40px;}
+.container{width: 911px;}
+.menu{width: 80px; height: 318px; float: left; background: rgba(0,0,0,0.4);}
+.menu span{width: 80px; height: 35px; line-height: 35px; color: #fff; display: inline-block; font-weight: bold; font-size: 14px;}
+.menu span.choose{background: rgba(255,255,255,0.6) url(baidu/menu.png);}
+.card{width: 813px; height: 318px; float: right; background: rgba(255,255,255,0.6) url(baidu/news.png) right top no-repeat; }
+
+
+.loop-img{width: 426px; height: 218px; float: left; position: relative;}
+.loop-img .d-img-frame{width: 426px; height: 260px; position: relative; overflow: hidden; white-space: nowrap;}
+.loop-img .d-img-cell{position: absolute; left: 0; top: 0;}
+.loop-img .d-img-cell a{display: inline-block; width: 426px; height: 260px; outline: none;}
+.loop-img .d-img-cell img{position: relative; left: 0; top: 0;}
+.loop-img .d-img-mask{width: 426px; height: 260px; position: absolute; top: 0; left: 0; cursor: pointer; background-color: #000; opacity: 0.3; transition: opacity 500ms;}
+.loop-img.show-arrow .d-img-mask{opacity: 0; transition: opacity 500ms;}
+.loop-img .d-img-arrow{position: absolute; top: 0; width: 40px; height: 260px; cursor: pointer;}
+.loop-img .go-pre{left: 0;}
+.loop-img .go-next{right: 0;}
+.loop-img .arrow{position: absolute; width: 19px; height: 36px; top: 115px; left: 11px; display: block; background: url(img/arrow.png) no-repeat 1000px;}
+.loop-img.show-arrow .go-pre .arrow{background-position: 0 0;}
+.loop-img.show-arrow .go-next .arrow{background-position: -21px 0;}
+.loop-img.show-arrow .go-pre:hover .arrow{background-position: -40px 0;}
+.loop-img.show-arrow .go-next:hover .arrow{background-position: -61px 0;}
+.loop-img .d-title-mask{position: absolute; top: 232px; height: 28px; left: 0; width: 426px; background: #000; opacity: 0.3;}
+.loop-img .d-title{position: absolute; top: 232px; left: 0; height: 28px; display: block; color: #e6e6e6; text-indent: 15px; text-decoration: none; font-size: 16px; line-height: 30px;}
+.loop-img .d-title:hover{text-decoration: none;}
+.loop-img .d-bars{padding: 8px 0 0 15px; height: 50px; background-color: #191919; text-align: left;}
+.loop-img .d-small{position: relative; text-align: left; width: 80px; display: inline-block;}
+.loop-img .d-small-img{display: inline-block; height: 40px; width: 68px; border: 1px solid #191919;}
+.loop-img .d-small-mask{display: inline-block; position: absolute; top: 0; left: 0; width: 70px; height: 42px; opacity: 0.45; background: #000; cursor: pointer; transition: opacity 500ms;}
+.loop-img .current .d-small-mask, 
+.loop-img .d-small-mask:hover{opacity: 0; transition: opacity 500ms;}
+.loop-img .current .d-small-img{border: 1px solid #289cff;}
+</style>
+<script type="text/javascript" src="js/ICD.js"></script>
+<script type="text/javascript">
+
+//	如何用面向对象描述一个抽象新闻
+	function News(){
+		this.url = ''
+		this.title=''
+		this.imgURL=''
+        this.content=''
+	}
+    News.prototype={
+        getContent:function(){
+
+        }
+    }
+
+
+//实例化
+
+var news1 = new News();
+news1.url = 'http://photo.gmw.cn/2013-12/27/content_9938379.htm'
+news1.title = '新浪图片，年度盘点'
+news1.imgUrl = '1'
+
+
+var news2 = new News();
+news2.url = 'http://photo.gmw.cn/2013-12/27/content_9938379.htm'
+news2.title = '意大利回流茅台拍出78.2万'
+news2.imgUrl = '2'
+
+var news3 = new News();
+news3.url = 'http://photo.gmw.cn/2013-12/27/content_9938379.htm'
+news3.title = '绵阳舰在失联海域发现可疑漂浮物'
+news3.imgUrl = '3'
+
+var news4 = new News();
+news4.url = 'http://photo.gmw.cn/2013-12/27/content_9938379.htm'
+news4.title = '曝奶茶妹妹与70后京东掌门热恋'
+news4.imgUrl = '4'
+
+var news5 = new News();
+news5.url = 'http://photo.gmw.cn/2013-12/27/content_9938379.htm'
+news5.title = '抢购年代，不抢就没了'
+news5.imgUrl = '5'
+
+
+var imgData = [news1,news2,news3,news4,news5];
+
+</script>
+<script type="text/javascript">
+$(function(){
+	var NewsModule = function(data){
+		this.data = data;
+		this.num = 0;
+		this.length = data.length;
+		this.timerBar = null;
+		this.init();
+	}
+    NewsModule.prototype = {
+		init : function(){
+			this.create();
+			this.bindEvent();
+			this.go();
+		},
+		create : function(){
+			var frameTpl = [
+				'<div class="d-img-frame" num="0">',
+					// '<div class="d-img-cell-shadow">@(bigImgTpl)</div>',
+					'<div class="d-img-cell">@(bigImgTpl)</div>',
+					'<div class="d-img-mask"></div>',
+				'</div>',
+				'<div class="d-img-arrow go-pre">',
+					'<a href="#" onclick="return false;" hidefocus="" class="arrow"></a>',
+				'</div>',
+				'<div class="d-img-arrow go-next">',
+					'<a href="#" onclick="return false;" hidefocus="" class="arrow"></a>',
+				'</div>',
+				'<div class="d-title-mask"></div>',
+				'<a class="d-title" href="@(url)" target="_blank" hidefocus>@(title)</a>',
+				'<div class="d-bars">@(smallImgTpl)</div>',
+			].join('')
+			//大图
+			,bigImg = [
+				'<a href="@(url)" class="d-img-link" target="_blank">',
+					'<img height="260" width="426" src="@(imgUrl)"/>',
+				'</a>'
+			].join('')
+			//小图
+			,smallImg = [
+				'<span class="@(curspan) d-small" num="@(num)">',
+					'<img class="d-small-img" height="40" width="68" src="@(imgUrl)"/>',
+					'<span class="d-small-mask"></span>',
+				'</span>'
+			].join(''),
+			bigTpl = '',
+			smallTpl = '';
+			for(var i = 0; i < this.data.length; i++){
+				this.data[i].curspan = i == 0 ? 'current' : '';
+				this.data[i].num = i;
+				this.data[i].imgUrl = 'img/' + this.data[i].imgUrl + '.jpg'
+				bigTpl += $.formateString(bigImg, this.data[i]);
+				smallTpl += $.formateString(smallImg, this.data[i]);
+			}
+			$('.loop-img').html($.formateString(frameTpl, {
+				bigImgTpl : bigTpl,
+				smallImgTpl : smallTpl,
+				url : this.data[0].url,
+				title : this.data[0].title
+			}))
+		},
+		bindEvent : function(){
+			$('.loop-img').on('mouseenter', function(){
+				$('.loop-img').addClass('show-arrow');
+			}).on('mouseleave', function(){
+				$('.loop-img').removeClass('show-arrow');
+			});
+		},
+		stop : function(){
+			clearInterval(this.timerBar);
+			this.timerBar = null;
+		},
+		go : function(){
+			var that = this;
+			that.stop();
+			that.timerBar = setInterval(function(){
+				that.num++;
+				if(that.num >= that.length){
+					that.num = 0;
+				}
+				// 大图片
+				$('.d-img-cell').css('left', -that.num * 426 + 'px');
+				// 标题
+				$('.d-title').attr('href', that.data[that.num].url).html(that.data[that.num].title)
+				// 小图片
+				var small = $('.d-small')[that.num];
+				$('.d-small').removeClass('current');
+				$(small).addClass('current');
+			}, 2000);
+		}
+	}
+	new NewsModule(imgData);
+})
+</script>
+<body>
+<img class="logo" width="270" src="baidu/logo_white.png" alt="">
+<p class="links">
+	<a href="http://news.baidu.com" target="_blank">新闻</a>
+	<a href="http://www.baidu.com" target="_blank">网页</a>
+	<a href="http://tieba.baidu.com" target="_blank">贴吧</a>
+	<a href="http://zhidao.baidu.com" target="_blank">知道</a>
+	<a href="http://music.baidu.com" target="_blank">音乐</a>
+	<a href="http://image.baidu.com" target="_blank">图片</a>
+	<a href="http://v.baidu.com" target="_blank">视频</a>
+	<a href="http://map.baidu.com" target="_blank">地图</a>
+	<a href="http://baike.baidu.com" target="_blank">百科</a>
+	<a href="http://wenku.baidu.com" target="_blank">文库</a>
+	<a href="http://www.baidu.com/more/" target="_blank">更多&gt;&gt;</a>
+</p>
+<div class="search">
+	<input type="text"><button>百度一下</button>
+</div>	
+<div class="container">
+	<div class="menu">
+		<span>导航</span>
+		<span class="choose">音乐</span>
+		<span>新闻</span>
+	</div>
+	<div id="card" class="card"><div id="loop_img" class="loop-img"></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        img {
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        #demo {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+    <script type="text/javascript" src="my.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var pic = $("pic");
+            var leader = 0, target = 0, timer = null, top = pic.offsetTop;
+            window.onscroll = function() {
+                clearInterval(timer);
+                target = scroll().top;
+                timer = setInterval(function() {
+                    leader = leader + (target - leader) * 0.1;
+                    pic.style.top = leader + 50 + "px";
+                }, 30);
+            }
+        }
+    </script>
+</head>
+<body>
+    <img src="images/aside.jpg" id="pic" alt="" />
+    <div id="demo">
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+       <p>天王盖地虎，小鸡炖蘑菇</p>
+    </div>
+</body>
+</html>

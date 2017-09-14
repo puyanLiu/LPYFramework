@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 900;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			// 绘制坐标参考系
+    			ctx.beginPath();
+    			ctx.moveTo(0, 301);
+    			ctx.lineTo(900, 301);
+    			ctx.strokeStyle = "teal";
+    			ctx.stroke();
+
+    			ctx.moveTo(450, 0);
+    			ctx.lineTo(450, 600);
+    			ctx.stroke();
+
+    			ctx.fillRect(445, 295, 10, 10);
+
+    			// 绘制字体
+    			ctx.font = '20px "微软雅黑"';
+    			ctx.fillStyle = 'red';
+    			ctx.textBaseline = 'top';
+    			ctx.fillText("Top-g", 100, 300);
+
+    			ctx.textBaseline = 'middle';
+    			ctx.fillText("middle-g", 200, 300);
+
+    			ctx.textBaseline = 'bottom';
+    			ctx.fillText("bottom-g", 460, 300);
+
+    			ctx.textBaseline = 'Alphabetic';
+    			ctx.fillText("Alphabetic-g", 700, 300);
+
+    			// 绘制字体 设置对齐方式
+    			ctx.fillStyle = 'purple';
+    			ctx.textAlign = 'left';
+    			ctx.strokeText('left', 450, 400);
+
+    			ctx.textAlign = 'right';
+    			ctx.strokeText('right', 450, 440);
+
+    			ctx.textAlign = 'start';
+    			ctx.strokeText('start', 450, 480);
+
+    			ctx.textAlign = 'end';
+    			ctx.strokeText('end', 450, 520);
+
+    			ctx.textAlign = 'center';
+    			ctx.strokeText('center', 450, 560);
+    		}());
+    	</script>
+    </body>
+</html>

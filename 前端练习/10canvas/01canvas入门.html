@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			// 获取2D绘图上下文
+    			var ctx = canvasElem.getContext('2d'); // 3d webgl
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			ctx.moveTo(100, 100);
+    			ctx.lineTo(200, 100);
+    			ctx.lineTo(100, 200);
+
+    			// 闭合路径
+    			ctx.closePath();
+    			ctx.lineWidth = 4;
+    			ctx.strokeStyle = "red"; // rgba() rgb() red #888
+    			ctx.stroke(); // 描边
+
+    			// 填充样式
+    			ctx.fillStyle = "green";
+    			// 填充
+    			ctx.fill();
+
+    		}());
+    	</script>
+    </body>
+</html>

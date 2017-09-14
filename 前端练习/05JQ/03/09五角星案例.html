@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.comment {
+			color: red;
+			
+			/*设置字符间距*/
+			/*letter-spacing: -13px;*/
+			/*设置单词间距*/
+			/*word-spacing: -13px;*/
+		}
+		.comment li {
+			float: left;
+			font-size: 40px;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var wjx_sel = "★", wjx_none = "☆";
+			$(".comment").on("mouseenter", "li", function() {
+				// prevAll 前面所有的兄弟节点
+				// nextAll 后面所有的兄弟节点
+				// end() 结束当前调用的链，恢复上一级的调用链
+				$(this).text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+			}).on("click", "li", function() {
+				// 记录用户点击的那个五角星
+				// 给点击的li标签添加一个样式类
+				$(this).addClass('clicked').siblings().removeClass('clicked');
+			}).on("mouseleave", function() {
+				// 鼠标移开的时候，先给所有的li标签添加一个空心的五角星
+				// 隐式迭代
+				$(".comment li").text(wjx_none);
+				var t = $(".comment li").text();
+				// 当鼠标移开评分控件的时候，把click（包括自己）之前的五角星全部变成实心的，后面的变成空心的
+				$(".clicked").text(wjx_sel).prevAll().text(wjx_sel).end().nextAll().text(wjx_none);
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul class="comment">
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+		<li>☆</li>
+	</ul>
+</body>
+</html>

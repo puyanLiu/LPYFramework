@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        .screen ul {
+            width: 3000px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .screen li {
+            width: 500px;
+            height: 200px;
+            float: left;
+        }
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            border-radius: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20p;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .all ol li.current {
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box = document.getElementById("all");
+            var ul = document.getElementById("ul");
+            var ulLis = ul.children;
+
+            // 无缝滚动，克隆第一张放到最后一张后面
+            ul.appendChild(ulLis[0].cloneNode(true));
+
+            // 创建 ol li
+            var ol = document.createElement("ol");
+            box.appendChild(ol);
+            for(var i = 0; i < ulLis.length - 1; i++) {
+                var li = document.createElement("li");
+                li.index = i;
+                li.innerHTML = i + 1;
+                ol.appendChild(li);
+            }
+
+            // 开始动画
+            var olLis = ol.children;
+            olLis[0].className = "current";
+            for(var i = 0; i < olLis.length; i++) {
+                olLis[i].onmousemove = function() {
+                    for(var j = 0; j < olLis.length; j++) {
+                        olLis[j].className = "";
+                    }
+
+                    this.className = "current";
+                    animate(ul, -this.index * 500);
+                    square = key = this.index;
+                }
+            }
+
+            // 定时器
+            var timer = null;
+            var key = 0; // 控制播放第几张
+            var square = 0; // 控制小方块
+            timer = setInterval(autoPlay, 1000);
+            function autoPlay() {
+                key++;
+                square++;
+
+                if (key > ulLis.length - 1) {
+                    ul.style.left = 0;
+                    key = 1; // 第6张就是第一张，下次播放第2张
+                }
+                animate(ul, -key * 500);
+
+                if (square > olLis.length - 1) {
+                    square = 0;
+                }
+
+                for(var j = 0; j < olLis.length; j++) {
+                    olLis[j].className = "";
+                }
+                olLis[square].className = "current";
+            }
+
+            box.onmouseover = function() {
+                clearInterval(timer);
+            }
+            box.onmouseout = function() {
+                timer = setInterval(autoPlay, 1000);
+            }
+        }
+
+        function animate(obj, target) {
+            clearInterval(obj.timer);
+            var speed = obj.offsetLeft < target ? 15 : -15;
+            obj.timer = setInterval(function(){
+                obj.style.left = obj.offsetLeft + speed + "px";
+                var result = target - obj.offsetLeft;
+                if (Math.abs(result)) {
+                    clearInterval(obj.timer);
+                    obj.style.left = target + "px";
+                }
+            }, 10);
+        }
+    </script>
+</head>
+<body>
+    <div class="all" id="all">
+    <div class="screen">
+        <ul id="ul">
+            <li>
+                <img src="images/1.jpg" alt="" width="500" height="200" />
+            </li>
+            <li>
+                <img src="images/2.jpg" alt="" width="500" height="200" />
+            </li>
+            <li>
+                <img src="images/3.jpg" alt="" width="500" height="200" />
+            </li>
+            <li>
+                <img src="images/4.jpg" alt="" width="500" height="200" />
+            </li>
+            <li>
+                <img src="images/5.jpg" alt="" width="500" height="200" />
+            </li>
+        </ul>
+    </div>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            margin: 50px auto;
+            width: 400px;
+            height: 360px;
+            border: 1px solid #ccc;
+        }
+        .box .top span {
+            display: block;
+            width: 60px;
+            height: 40px;
+            background-color: pink;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+        }
+        .box .bottom {
+            float: left;
+            width: 400px;
+            height: 320px;
+            overflow: hidden;
+        }
+        .box .bottom ul {
+            list-style: none;
+        }
+        .box .bottom div {
+            background-color: purple;
+            display: none;
+            width: 400px;
+            height: 320px;
+        }
+        .box .top span.titleSelect {
+            background-color: purple;
+        }
+        .box .bottom div.show {
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            function setTabSelect(obj) {
+                var titles = document.getElementById(obj).getElementsByTagName("span");
+                var divs = document.getElementById(obj).getElementsByTagName("div")[1].getElementsByTagName("div");
+                for(var i = 0, len = titles.length; i < len; i++) {
+                    titles[i].index = i;
+                    titles[i].onclick = function() {
+
+                        for(var j = 0; j < len; j++) {
+                            titles[j].className = "";
+                            divs[j].className = "";
+                        }
+
+                        this.className = "titleSelect";
+                        divs[this.index].className = "show";
+                    }
+                }
+            }
+
+            setTabSelect("box1");
+            setTabSelect("box2");
+            setTabSelect("box3");
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="box1">
+        <div class="top">
+            <span class="titleSelect">新闻</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+            <span>杂志</span>
+        </div>
+        <div class="bottom">
+            <div class="show">新闻</div>
+            <div>娱乐</div>
+            <div>八卦</div>
+            <div>杂志</div>
+        </div>
+    </div>
+
+    <div class="box" id="box2">
+        <div class="top">
+            <span class="titleSelect">新闻</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+            <span>杂志</span>
+        </div>
+        <div class="bottom">
+            <div class="show">新闻</div>
+            <div>娱乐</div>
+            <div>八卦</div>
+            <div>杂志</div>
+        </div>
+    </div>
+
+    <div class="box" id="box3">
+        <div class="top">
+            <span class="titleSelect">新闻</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+            <span>杂志</span>
+        </div>
+        <div class="bottom">
+            <div class="show">新闻</div>
+            <div>娱乐</div>
+            <div>八卦</div>
+            <div>杂志</div>
+        </div>
+    </div>
+</body>
+</html>

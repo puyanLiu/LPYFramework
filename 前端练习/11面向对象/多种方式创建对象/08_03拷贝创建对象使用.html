@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//extend2实现的功能：extend(target,obj1,obj2,obj3)
+    /*功能：将多个json拷贝给目标*/
+    /*原理：*/
+    /*首先找到target   --arguments[0]*/
+   function extend () {
+        var key,i = 0,len = arguments.length,target = null,copy;
+        if(len === 0){
+            return;
+        }else if(len === 1){
+            target = this;
+        }else{
+            i++;
+            target = arguments[0];
+        }
+        for(; i < len; i++){
+            for(key in arguments[i]){
+                copy = arguments[i][key];
+                target[key] = copy;
+            }
+        }
+        return target;
+    }
+
+    /*hasOwnProperty*/
+    function extend2(){
+        for (var p in source) {
+            if (source.hasOwnProperty(p)) {
+                target[p] = source[p];
+            }
+        }
+
+        return target;
+    }
+
+
+    //游戏随机生成名字
+    var boy = {
+        name:'无忌'
+        ,image:'男性头像'
+        ,age:20
+        ,sex:'男'
+    };
+
+    //技能名称，等级，伤害值，需要的魔法
+    var shaolin = {
+        damo:{
+            name:'达摩棍法',
+            attack:function(){
+                console.log('达摩棍法')
+            }
+        },
+        WXQ:{
+            name:'少林五行拳',
+            attack:function(){
+                console.log('少林五行拳')
+            }
+        },
+        DLJGS:{
+            name:'大力金刚手',
+            attack:function(){
+                console.log('大力金刚手')
+            }
+        },
+        JJ72:{
+            name:'少林七十二绝技',
+            attack:function(){
+                console.log('少林七十二绝技')
+            }
+
+        },
+        XSJ:{
+                name:'洗髓经',
+                level:10,
+                strength:3000,
+                magic:30,
+                attack:function(){
+                    console.log('洗髓经')
+                }
+            },
+        YJJ:{
+            name:'易筋经',
+            level:10,
+            strength:3000,
+            magic:30,
+            attack:function(){
+                console.log('易筋经')
+            }
+        }
+    };
+
+    var gaibang = {
+        xiaoYao:{
+            name:'逍遥游',
+            attack:function(){
+                console.log('穆念慈 逍遥游')
+            }
+        },
+        bitDog:{
+            name:'打狗棍法',
+            attack:function(){
+                console.log('打狗棍法')
+            }
+
+        },
+        XL18:{
+            name:'释放降龙十八掌',
+            level:10,
+            strength:3000,
+            magic:30,
+            attack:function(){
+                console.log('释放降龙十八掌')
+            }
+        }
+    };
+
+
+
+
+    //第一种用法  醉侠客加入丐帮之后学到的技能
+    var zuixiake = extend({}, gaibang,shaolin);
+    zuixiake.name='醉侠客';
+    console.log(zuixiake.name);
+    zuixiake.XL18.attack()
+    zuixiake.DLJGS.attack()
+    console.log(zuixiake);
+    zuixiake.xiaoYao.name = '哈哈哈 改了';
+    console.log(zuixiake.xiaoYao.name);
+
+    //第二种用法  无忌加入丐帮
+    extend(boy,gaibang,shaolin);
+    console.log(boy.name);
+    boy.XL18.attack()
+    boy.DLJGS.attack()
+    console.log(boy);
+    console.log(boy.xiaoYao.name);
+</script>

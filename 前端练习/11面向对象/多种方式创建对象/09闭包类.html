@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+	        div{
+	            color:red;
+	            height: 100px;
+	            width: 100px;
+	            background: red;
+	        }
+	    </style>
+    </head>
+    <body>
+    	<div id='div'></div>
+    </body>
+</html>
+
+<script>
+  
+   // ChangeColor()
+
+   // function ChangeColor(){
+   //     var div = document.getElementById('div')
+   //     div.style.background = 'blue'
+   // }
+
+    (function(){
+        var div = document.getElementById('div')
+        div.style.background = 'orange'
+    })();
+
+
+
+
+    var Student = (function(){
+		var num = 0;	
+		return function(name, age){
+			num++;
+			var chineseAge;
+			this.name = name;
+			this.age = age;
+			chineseAge = age;
+			this.getChineseAge = function(){
+				return chineseAge;
+			}
+		};
+	})();
+
+	Student.prototype = {
+		lesson : 'javascript',
+		getTeacher : function(){
+			console.log('Mr Zhang');
+		}
+	}
+	var xiaoWang = new Student('wang', 20);
+	var xiaoLi = new Student('li', 30);
+	console.log(xiaoWang);
+	console.log(xiaoLi);
+	console.log(xiaoWang.name);
+	xiaoWang.getTeacher();
+</script>

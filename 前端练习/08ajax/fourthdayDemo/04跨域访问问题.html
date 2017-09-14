@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script>
+        	function handle(data) {
+        		console.log(data);
+        	}
+        </script>
+        <script src="03ajax.js"></script>
+
+	    <script src="http://v.juhe.cn/weather/index?format=1&cityname=%E5%8C%97%E4%BA%AC&key=e982f3629ae77eb7345b7e42f29b62ae&dtype=jsonp&callback=handle"></script>
+        <script>
+        	//浏览器的同源策略：约束当前的网站，不能使用XMLHttpRequest向另一个网站发送请求
+	        //JSONP
+	        
+	        //以get的方式请求跨域的地址，浏览器不允许。解决方案JSONP
+	        // window.onload = function () {
+	        //     ajax({
+	        //         type:"get",
+	        //         url:"http://v.juhe.cn/weather/index?format=1&cityname=%E5%8C%97%E4%BA%AC&key=e982f3629ae77eb7345b7e42f29b62ae",
+	        //         data:null,
+	        //         async:true,
+	        //         success: function (data) {
+	        //             alert(data);
+	        //         },
+	        //         error: function () {
+	        //             alert("错误");
+	        //         }
+
+	        //     })
+	        // }
+	        // 
+	        // 
+	        // 问题：浏览器不允许跨域请求
+	        // 浏览器的同源策略：ajax请求的 协议、域名、端口必须一致 
+	        // 
+	        // 解决方案：iframe、jsonp、服务器返回的响应头中包含Access-Control-Allow-Origin
+	        // jsonp演示
+	        // 服务器返回的json使用一个函数包裹，页面写一个函数，当获取到服务器返回的数据后执行该函数
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

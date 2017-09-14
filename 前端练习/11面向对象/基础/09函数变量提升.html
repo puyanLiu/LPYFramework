@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	var str =''
+    var num=1
+    var bool=true
+    var date = new Date()
+    console.log(fn())
+    console.log(fn2)//无法访问到
+
+    //函数声明，变量fn以及其实现被提升到顶部
+    function fn(){
+        console.log('函数')
+    }
+    //函数表达式,仅变量fn2被提升到顶部，实现没有被提升
+    var fn2 = function(){
+        console.log('函数变量形式')
+    }
+
+</script>

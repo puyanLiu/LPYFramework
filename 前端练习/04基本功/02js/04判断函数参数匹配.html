@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        console.log("哈哈");
+        var aa = 10, bb = 20;
+        var cc = 10;
+        var dd = 10;
+        function fn(a ,b) {
+            console.log(fn.length);
+            console.log(arguments);
+            console.log(arguments.length);
+            if (fn.length == arguments.length) {
+                console.log(a + b);
+            } else {
+                console.error("对不起，您的参数不匹配，正确的参数个数为：" + fn.length);
+            }
+        }
+        fn(1, 2);
+        fn(1, 2, 3);
+    </script>
+</body>
+</html>

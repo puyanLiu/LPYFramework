@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>xml文件</title>
+        <script type="text/javascript">
+        	window.onload = function() {
+        		var btn = document.getElementById('btn');
+        		btn.onclick = function() {
+        			showBookInfo();
+        		}
+
+        		function showBookInfo() {
+        			var xhr = null;
+        			if (window.XMLHttpRequest) {
+        				xhr = new XMLHttpRequest();
+        			} else {
+        				xhr = new ActiveXObject('Microsoft.XMLHTTP');
+        			}
+        			console.log('一 ' + xhr.readyState);
+        			xhr.open('get', 'data.xml');
+        			console.log('二 ' + xhr.readyState);
+        			xhr.send(null);
+        			xhr.onreadystatechange = function() {
+        				if(xhr.readyState == 4 && xhr.status == 200) {
+        					var data = xhr.responseXML;
+        					console.log(data);
+        					var bs = data.getElementsByTagName('bookstore')[0];
+        					console.log(bs);
+        					var books = bs.getElementsByTagName('book');
+        					var tag = '';
+        					for(var i = 0; i < books.length; i++) {
+        						var book = books[i];
+        						var name = book.getElementsByTagName('name')[0];
+        						var category = book.getElementsByTagName('category')[0];
+        						var desc = book.getElementsByTagName('desc')[0];
+        						tag += '<tr><td>' + getNodeText(name) + '</td><td>' + getNodeText(category) + '</td><td>' + getNodeText(desc) + '</td></tr>';
+        					}
+        					var tbody = document.createElement('tbody');
+        					tbody.innerHTML = tag;
+        					console.log(tbody);
+        					document.getElementById('bookInfo').appendChild(tbody);
+        				}
+        			}
+        		}
+        	}
+
+        	// 获取文本节点内容
+        	function getNodeText(node) {
+        		console.log(node);
+        		if (window.ActiveXObject) {
+        			// IE
+        			return node.text;
+        		} else {
+        			// 标准浏览器
+        			if (node.nodeType == 1) {
+        				return node.textContent;
+        			}
+        		}
+        	}
+        </script>
+    </head>
+    <body>
+    	<input type="button" value="点击" id="btn">
+    	<div>
+    		<table id="bookInfo"></table>
+    	</div>
+    </body>
+</html>

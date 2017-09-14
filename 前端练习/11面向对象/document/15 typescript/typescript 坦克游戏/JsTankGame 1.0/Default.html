@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript">
+        function pageLoad() {
+            var playerImages = [
+                'images/tank/left.png',
+                'images/tank/right.png',
+                'images/tank/Up.png',
+                'images/tank/Down.png'];
+            var enemyImages = [
+                'images/etank/left.png',
+                'images/etank/right.png',
+                'images/etank/Up.png',
+                'images/etank/Down.png'];
+            var shellImages = [
+                'images/shell/0.png',
+                'images/shell/1.png'];
+            var explosionImages = [
+                'images/Explosion/0.png',
+                'images/Explosion/1.png',
+                'images/Explosion/2.png',
+                'images/Explosion/3.png'];
+
+            var spriteManager = new hxy.JsGame.SpriteManager(mainDiv, playerImages, enemyImages, explosionImages, shellImages);
+            var manager = new hxy.JsGame.GameManager(spriteManager);
+            manager.Initialize();
+            $addHandler(document, "keydown", Function.createDelegate(manager, manager.KeyDown));
+            $addHandler(document, "keyup", Function.createDelegate(manager, manager.KeyUp));
+        }
+    </script>
+    <script src="js/MicrosoftAjax.debug.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        if (typeof (Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+        //]]>
+    </script>
+
+    <script src="js/hxy/JsGame/Interface/ICollidable.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/Enum/CollisionType.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/Enum/Direction.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/Common/Rectangle.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/Common/SpriteBase.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/ConcreteSprite/TankBase.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/ConcreteSprite/EnemyTank.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/ConcreteSprite/Explosion.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/ConcreteSprite/PlayerTank.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/ConcreteSprite/Shell.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/SpriteManager.js" type="text/javascript"></script>
+    <script src="js/hxy/JsGame/GameManager.js" type="text/javascript"></script>
+</head>
+<body>
+    <div id="mainDiv" style="width: 1024px; height: 468px;">
+    </div>
+    <script type="text/javascript">
+        //<![CDATA[
+        Sys.Application.initialize();
+        //]]>
+    </script>
+</body>
+</html>

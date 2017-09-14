@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	    <h1>产品最终价格：</h1>
+		<div id='type'></div>
+		<div id='mydiv'></div>
+    </body>
+</html>
+
+<script>
+	
+//算法家族 --放在同一的命名空间中 
+var Price={};
+
+//vip 客户优惠策略类
+Price.vipPrice = function() {
+    this.discount = 0.5;
+	this.getPrice = function(price) {
+　 	 　return price * this.discount;
+	}
+}
+ 
+//老客户优惠策略类:
+Price.oldPrice = function() {
+    this.discount = 0.3;
+	this.getPrice = function(price)
+	{
+	  return price * this.discount;
+	}
+}
+
+//普通客户
+Price.NormlPrice = function() {
+    this.discount = 1;
+	this.getPrice = function(price)
+	{
+		 return price ;
+	}
+}
+
+
+//后台的数据库
+// 关系型数据库：oracel  MS SQL SERVER   MYSQL DB2  1:1 1：n
+// 1：：  班级表 讲师 讲师 和学生
+
+
+
+
+
+//2. 上下文-  类似工厂模式中工厂
+//这里上下文的目的只是方便第三方使用，不用关心算法是怎么实现的，只需要会使用即可
+//算法对象的引入是方便我们思考问题，应对客户每日三疯 -- 需求变化频繁
+//上下文是方便用户使用方便，封装了算法的细节
+function Context() {
+    this.name = '';
+//    关联关系
+    this.strategy = null;
+    this.price = 0;
+}
+ 
+Context.prototype.set = function(name, strategy, price) {
+    this.name = name;
+    this.strategy = strategy;
+    this.price = price;
+}
+ 
+Context.prototype.getResult = function() {
+	console.log('123');
+	console.log(this.name);
+	console.log(this.price);
+	console.log(this.strategy.getPrice(this.price));
+	document.getElementById('type').innerHTML=this.name;;
+	document.getElementById('mydiv').innerHTML=this.strategy.getPrice(this.price);;
+    console.log(this.strategy.getPrice(this.price));
+}
+
+
+
+//3. 客户端使用;
+// 上下文
+var context = new Context();
+ 
+//vip客户
+var vip = new Price.vipPrice();
+context.set ('vip客户', vip, 200);
+context.getResult();
+ 
+//老客户
+var old = new Price.oldPrice();
+context.set ('老客户', old, 200);
+context.getResult();
+ 
+//普通客户
+//...
+
+
+
+//如果未来针对老顾客的优惠方式变了，只需要修改单个对象，而且修改这个对象不会影响其他对象
+//如果未来针对vip的优惠方式变了，只需要修改单个对象
+//如果以后客户又疯了，需要新增一种优惠方式，只需要新增一个对象，原来的代码丝毫不影响，也不需要修改
+</script>

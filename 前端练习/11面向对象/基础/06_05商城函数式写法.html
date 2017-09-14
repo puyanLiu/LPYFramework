@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div id="container">
+		    <div id="name">
+		        <h1 id='pname'>乐视TV（ Letv） S50 Air 全配版 50英寸2D智能LED液晶 超级电视</h1>
+		        <div id="pdes">各地区货源已陆续到库，我们将在十月十号左右发货，对于此次延迟发货给您带来的不便表示致歉，望您谅解。</div>
+		        <div >已售：<strong id="psales">6000</strong></div>
+		        <div>原价：<strong id='pprice'>6000</strong>元</div>
+		        <div>优惠价：<strong id='pyouhui'>5000</strong>元</div>
+		        <div>折扣：<strong id='pzhekou'>6.0</strong>折</div>
+		    </div>
+		</div>
+		<button id='btn'>加入购物车</button>
+    </body>
+</html>
+
+<script>
+	 //产品对象
+    /*对象内如何使用对象的属性和方法：this，对象外如何使用：先实例化，后用点语法*/
+    function Product(name,price,description,youhuijia,zhekou,sales) {
+        /*属性 行为*/
+        this.name =name;
+        this.price=price;
+        this.description = description;
+        this.youhuijia=youhuijia;
+        this.zhekou = zhekou
+        this.sales = sales
+        /*和产品对象相关的dom，统一管理，以后使用*/
+        this.doms={
+            btn:document.getElementById('btn'),
+            name:document.getElementById('pname'),
+            price: document.getElementById('pprice'),
+            sum:document.getElementById('sum'),
+            des:document.getElementById('pdes'),
+            youhuijia : document.getElementById('pyouhui'),
+            zhekou: document.getElementById('pzhekou'),
+            sales :document.getElementById('psales')
+        }
+    }
+    Product.prototype={
+        getPrice:function() {
+            return this.price
+        },
+        addToCart:function(){
+            alert('将物品添加到购物车')
+        },
+        bindDom:function(){
+            this.doms.name.innerHTML=this.name
+            this.doms.price.innerHTML=this.price
+            this.doms.des.innerHTML=this.description
+            this.doms.youhuijia.innerHTML=this.youhuijia
+            this.doms.zhekou.innerHTML=this.zhekou
+            this.doms.sales.innerHTML=this.sales
+        },
+        bindDomCodeSplit:function(dom) {
+        	var str = ''
+            str+='<h1 id="pname">'+this.name+'</h1>'
+            str+='<div id="pdes">'+this.description+'</div>'
+            str+='<div >已售：<strong id="psales">'+this.sales+'</strong></div>'
+            str+=' <div>原价：<strong id="pprice">'+this.price+'</strong>元</div>'
+            str+='<div>优惠价：<strong id="pyouhui">'+this.youhuijia+'</strong>元</div>'
+            str+='<div>折扣：<strong id="pzhekou">'+this.zhekou+'</strong>折</div>'
+            dom.innerHTML = str;
+        },
+        bindEvents:function(){
+            /*this that之争*/
+            var that = this;
+            this.doms.btn.onclick = function(){
+                that.addToCart()
+            }
+        },
+    }
+
+    /*搭积木开发 -- 代码可读性极高*/
+    window.onload=function() {
+        //如何使用
+        //对象的使用必须先实例化，对象定义好之后，都是抽象的，必须实例化成具体
+        var iphone = new Product('iphone7',5000,'手机中的战斗机',2000,3.3,20000)
+        
+        // iphone.bindDom()
+        
+        var container = document.getElementById('container')
+        iphone.bindDomCodeSplit(container);
+
+        iphone.bindEvents()
+    } 
+</script>

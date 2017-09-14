@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		font-family: '微软雅黑';
+        		background: #f7f7f7;
+        	}
+        	.wrapper {
+        		width: 1024px;
+        		margin: 0 auto;
+        	}
+        	.wrapper > section {
+        		min-height: 300px;
+        		margin-bottom: 30px;
+        		box-shadow: 1px 1px 4px #ddd;
+        		background: #fff;
+        	}
+        	.wrapper > header {
+        		text-align: center;
+        		line-height: 1;
+        		padding: 20px;
+        		margin-bottom: 10px;
+        		font-size: 30px;
+        	}
+        	.wrapper section > header {
+        		line-height: 1;
+        		padding: 10px;
+        		font-size: 22px;
+				color: #333;
+				background: #eee;
+        	}
+        	.wrapper .wrap-box {
+        		padding: 20px;
+        	}
+
+        	/*--------------------------------------------------------------*/
+			#demo1 li:first-child {
+				color: red;
+			}
+			#demo2 li:last-child {
+				color: red;
+			}
+			#demo3 li:nth-child(3) p:only-child {
+				color: red;
+			}
+			#demo4 li:nth-child(2) {
+				color: green;
+			}
+			#demo5 li:nth-last-child(1) {
+				color: red;
+			}
+			#demo6 > div span:nth-of-type(1) {
+				color: yellow;
+			}
+			#demo7 > div span:first-of-type {
+				color: red;
+			}
+			#demo8 > div p:last-of-type {
+				color: yellow;
+			}
+			#demo9 > div p:only-of-type {
+				color: green;
+			}
+			#demo10 > div > p:empty {
+				background-color: pink;
+			}
+			#demo1:target {
+				background-color: yellow;
+			}
+			section:last-child {
+				background-color: #ddd;
+			}
+			section:last-child p:after {
+				content: '我是after';
+				background: red;
+			}
+			section:last-child p:before {
+				content: '我是before';
+				background: yellow;
+			}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>CSS3-伪类选择器</header>
+    		<section id="demo1">
+    			<header>E:first-child</header>
+    			<div class="wrap-box">
+    				<ul>
+    					<li>哈哈1</li>
+    					<li>哈哈2</li>
+    					<li>哈哈3</li>
+    					<li>哈哈4</li>
+    					<li>哈哈5</li>
+    					<li>哈哈6</li>
+    					<li>哈哈7</li>
+    					<li>哈哈8</li>
+    					<li>哈哈9</li>
+    					<li>哈哈10</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section id="demo2">
+    			<header>E:last-child</header>
+    			<div class="wrap-box">
+    				<ul>
+    					<li>哈哈1</li>
+    					<li>哈哈2</li>
+    					<li>哈哈3</li>
+    					<li>哈哈4</li>
+    					<li>哈哈5</li>
+    					<li>哈哈6</li>
+    					<li>哈哈7</li>
+    					<li>哈哈8</li>
+    					<li>哈哈9</li>
+    					<li>哈哈10</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section id="demo3">
+    			<header>E:only-child</header>
+    			<div class="wrap-box">
+    			表示当前以E确定的父元素，除E之外并无其它子元素（独生子）
+    				<ul>
+    					<li>
+    						<span>我是span</span>
+    						<span>我是第2个span</span>
+    					</li>
+    					<li>
+    						<span>我是span</span>
+    						<p>我是p</p>
+    					</li>
+    					<li>
+    						<p>哈哈</p>
+    					</li>
+    					<li></li>
+    				</ul>
+    			</div>
+    		</section>
+			<section id="demo4">
+    			<header>E:nth-child(n)</header>
+    			<div class="wrap-box">
+    			E:nth-child(n) 第n个子元素，计算方法是E元素的全部兄弟元素
+    				<p>n的取值为大于等于1，当N作为系数时N的取值可以为0，比如2n+1</p>
+    				<ul>
+    					<li>
+    						<span>我是span</span>
+    					</li>
+    					<li>
+    						<span>我是span</span>
+    					</li>
+    					<li></li>
+    					<li></li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section id="demo5">
+    			<header>E:nth-last-child(n)</header>
+    			<div class="wrap-box">
+    				E:nth-last-child(n) 同E:nth-child(n) 计算顺序相反。
+    				<ul>
+    					<li>
+    						<span>我是span</span>
+    					</li>
+    					<li>
+    						<span>我是span</span>
+    					</li>
+    					<li>嘿嘿</li>
+    					<li>哈哈</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section id="demo6">
+    			<header>E:nth-of-type</header>
+    			<div class="wrap-box">
+    				E:nth-of-type(n) 第n个子元素，计算方法只是E元素，会忽略其子元素的存在
+					<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+    			</div>
+    		</section>
+    		<section id="demo7">
+    			<header>E:first-of-type</header>
+    			<div class="wrap-box">
+    				<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+    			</div>
+    		</section>
+    		<section id="demo8">
+    			<header>E:last-of-type</header>
+    			<div class="wrap-box">
+    				<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<p>哈哈</p>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+    			</div>
+    		</section>
+    		<section id="demo9">
+    			<header>E:only-of-type</header>
+    			<div class="wrap-box">
+					<span>嘿嘿</span>
+					<span>嘿嘿</span>
+					<p>哈哈</p>
+    			</div>
+    		</section>
+    		<section id="demo10">
+    			<header>E:empty</header>
+    			<div class="wrap-box">
+    				<span>E:empty 表示元素没有任何内容才能被选中</span>
+    				<p style="height:30px"></p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>E:target</header>
+    			<div class="wrap-box">
+	    			E:target 结合锚点进行使用，处于当前锚点的元素会被选中
+    				<a href="#demo1">demo1</a>
+    				<a href="#demo2">demo2</a>
+    				<a href="#demo3">demo3</a>
+    			</div>
+    		</section>
+    		<section>
+    			<header>E:after</header>
+    			<div class="wrap-box">
+    				<p>p</p>
+    				<span>span</span>
+    				<p>p</p>
+    				<span>span</span>
+    				<p>p</p>
+    				<span>span</span>
+    			</div>
+    		</section>
+    	</div>
+    </body>
+</html>

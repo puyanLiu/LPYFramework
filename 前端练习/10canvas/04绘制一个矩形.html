@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			ctx.rect(100, 100, 50, 50); // 参数（x, y, w, h）
+    			ctx.stroke();
+
+    			// 描边矩形
+    			ctx.strokeRect(200, 200, 100, 150);
+
+    			// 填充矩形
+    			ctx.fillRect(350, 300, 40, 40);
+    		}());
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .damao {
+            background-color: pink;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btns = document.getElementsByTagName("button");
+
+            for(var i = 0; i < btns.length; i++) {
+                btns[i].index = i;
+                
+                btns[i].onclick = function() {
+                    alert(this.index);
+                    for(var j = 0; j < btns.length; j++) {
+                        btns[j].className = "";
+                    }
+
+                    this.className = "damao";
+
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+    <button>思想原理</button>
+</body>
+</html>

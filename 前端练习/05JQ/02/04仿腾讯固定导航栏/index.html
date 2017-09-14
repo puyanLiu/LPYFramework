@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.top, .nav {
+			text-align: center;
+		}
+		.main {
+			width: 1000px;
+			margin: 0 auto;
+			margin-top: 20px;
+		}
+	</style>
+	<script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var H = $(".top").height();
+			$(window).scroll(function() {
+				var docScrollTop = $(document).scrollTop();
+				if (docScrollTop > H) {
+					$(".nav").css({
+						"position": 'fixed',
+						"top": '0',
+						"width": $(document).width() + 'px'
+					});
+					$(".main").css({
+						"margin-top": '103px',
+					});
+				} else {
+					$(".nav").css({
+						"position": 'static'
+					});
+					$(".main").css({
+						"margin-top": '20px'
+					});
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="top">
+		<img src="images/top.png" alt="">
+	</div>
+	<div class="nav">
+		<img src="images/nav.png" alt="">
+	</div>
+	<div class="main">
+		<img src="images/main.png" alt="">
+	</div>
+</body>
+</html>

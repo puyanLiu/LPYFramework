@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.2.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn").click(function(event) {
+				$.ajax({
+					url: "04data.php",
+					dataType: "text",
+					type: "get",
+					success: function(data) {
+						alert(data);
+						$("#showInfo").html(data);
+					},
+					error: function(e) {
+						console.log(e);
+					}
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="点击" id="btn">
+	<div id="showInfo"></div>
+</body>
+</html>

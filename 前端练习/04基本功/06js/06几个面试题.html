@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var a = 0 && 1;
+        console.log(a);
+        var b = 1 && 0;
+        console.log(b);
+        var c = 1 && 10;
+        console.log(c);
+
+        console.log(0 || 1);
+        console.log(1 || 0);
+        console.log(1 || 5);
+        console.log(5 || 1);
+
+        var aa = 1 && 2 && 3;
+        console.log(aa);
+        var bb = 0 && 1 && 2;
+        console.log(bb);
+        var cc = 1 && 0 && 2;
+        console.log(cc);
+    </script>
+</body>
+</html>

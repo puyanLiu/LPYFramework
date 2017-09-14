@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div>
+		    <label>用户名 </label>
+		    <input id="loginname" type="text"  value="" placeholder="邮箱/用户名/已验证手机">
+		</div>
+		<div>
+		    <label>密 码  </label>
+		    <input type="text" id="nloginpwd"  placeholder="密码">
+		</div>
+
+		<button type='button' id='btn'>提交</button>
+    </body>
+</html>
+
+<script>
+	//定义一个对象 - 名字是$
+    var $$ = function() {};
+
+
+    $$.prototype.$id=function(id) {
+        return document.getElementById(id)
+    }
+
+    //在框架中实例化，这样外面使用的使用就不用实例化了
+    //前面讲过了，对象使用之前需要先实例化
+    $$ = new $$();
+
+    //使用封装好的对象
+    var btn = $$.$id('btn')
+    btn.onclick = function(){
+        var userName= $$.$id('loginname').value
+        /*先判断是否为空*/
+        if(checkNull(lrtrim(userName))){
+            /*如果不为空再判断是否为数字*/
+            if(checkNum(lrtrim(userName))){
+                /*ajax提交数据*/
+                alert('成功')
+            }else{
+                alert('用户名必须是邮箱')
+            }
+        }else{
+            alert('用户名不能为空')
+        }
+    }
+
+    function checkNull(input){
+        if(input.length > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function lrtrim(input) {
+    	var regex = /(^\s*)|(\s*$)/g;
+    	return input.replace(regex, '');
+    }
+
+
+    function checkNum(input){
+    	// 正则表达式的字面量
+    	// var regex = /^[0-9]+$/;
+    	// var regex = /^[0-9]{9}$/;
+    	// var regex = /^[0-9]{5,}$/;
+    	// var regex = /^[0-9]{5,12}$/;
+    	// var regex = /^[A-Z]{6,12}$/;
+    	var regex = /^\w*([-+.]\w)*@\w+([-.]\w+).\w+([-.]\w+)*$/;
+    	// match要匹配的函数
+        if(input.match(regex)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>

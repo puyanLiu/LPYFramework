@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            .blue {
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+    <input id="button" type="button" value="查看联系方式" class="btn"/>
+
+     <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <p>This is a paragraph.</p>
+        <p>This is another paragraph.</p>
+        <button>Toggle class</button>
+    </body>
+</html>
+
+<script type="text/javascript" src="jquery-1.11.3.js"></script>
+<script>
+	 /*jquery基础事件*/
+       /* jQuery提供的函数
+        用于browers事件
+        error(fn)    load(fn)     unload(fn)    resize(fn)    scroll(fn)
+
+        用于form事件
+        change(fn)    select(fn)    submit(fn)
+
+        用于keyboard事件
+        keydown(fn)    keypress(fn)    keyup(fn)
+
+        用于mouse事件
+        click(fn)    dblclick(fn)    mousedown(fn)   mousemove(fn)
+        mouseout(fn)  mouseover(fn)     mouseup(fn)
+
+        用于UI事件
+        blur(fn)    focus(fn)*/
+
+        $(document).ready(function(){
+        $("button").click(function(){
+            $("h1,h2,p").toggleClass("blue");
+        });
+    });
+
+        $(function(){
+            /*为每个匹配元素的特定事件绑定事件处理函数*/
+          /*  $("#button").bind("click mouseover",function(){
+                $("#button").attr("value","14797710665");
+                console.log('111')
+            });*/
+
+          /*    $("#button").one("click",function(){
+             $("#button").attr("value","14797710665");
+             console.log('111')
+             });*/
+
+//            on()在选择元素上绑定一个或多个事件的事件处理函数
+            $("#button").on("click mouseover",function(){
+                $("#button").attr("value","14797710665");
+                console.log('111')
+            });
+        })
+</script>

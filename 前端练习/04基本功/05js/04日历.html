@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 150px;
+            height: 180px;
+            background-color: #369;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .box p {
+            text-align: center;
+            line-height: 60px;
+            font-size: 12px;
+            color: #fff;
+        }
+        .box span {
+            display: block;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto;
+            font-size: 50px;
+            color: #000;
+            background-color: yellowgreen;
+            line-height: 75px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box = document.getElementById("box");
+            var childs = box.children;
+
+            // 日期函数
+            var arr = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+            var date = new Date();
+            childs[0].innerHTML = date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日" + " " + arr[date.getDay()];
+            childs[1].innerHTML = date.getDate();
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <p></p>
+        <span></span>
+    </div>
+</body>
+</html>

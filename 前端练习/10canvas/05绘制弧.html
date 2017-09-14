@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			// 绘制一条0-30的弧
+    			// 弧度和角度的转换公式 rad = 30 * Math.PI / 180
+    			// ctx.moveTo(300, 300);
+    			ctx.arc(300, 300, 100, 0 * Math.PI / 180, 90 * Math.PI / 180, false); // 参数（x, y, r, sAngle, eAngle, counterclosewise）
+    			// ctx.closePath();
+    			// ctx.fill();
+    			ctx.strokeStyle = 'red';
+    			ctx.stroke();
+
+    			// 绘制扇区
+    			ctx.beginPath();
+    			ctx.moveTo(200, 200);
+    			ctx.fillStyle = 'green';
+    			ctx.arc(200, 200, 100, -90 * Math.PI / 180, -30 * Math.PI / 180);
+    			ctx.fill();
+    			
+    		}());
+    	</script>
+    </body>
+</html>

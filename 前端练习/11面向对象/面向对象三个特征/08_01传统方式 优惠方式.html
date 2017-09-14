@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+	    <h1>产品最终价格：</h1>
+		<div id='mydiv'></div>
+    </body>
+</html>
+
+<script>
+	function Price(personType, price) {
+    //大客户 5 折
+    if (personType == 'vip') {
+        return price * 0.5;
+    } 
+    else if (personType == 'old'){
+        //老客户 3 折
+        return price * 0.3;
+    } else {
+        return price; //其他都全价
+    }
+}
+
+document.getElementById('mydiv').innerHTML=Price('vip',1000);
+</script>

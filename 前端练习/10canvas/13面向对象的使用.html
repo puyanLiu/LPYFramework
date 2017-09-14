@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		// 在构造函数中添加属性
+    		function Sprite() {
+    			this.name = 'zhangsan';
+    			this.age = 19;
+    		}
+    		// 在原型中添加方法
+    		Sprite.prototype.show = function() {
+    			console.log(this.name);
+    		}
+    		// 尽量不要在原型中添加属性，公共的属性和常量的值可以放到原型对象上去
+    		var s = new Sprite();
+    		s.name = 'lisi';
+    		s.age = 20;
+    		s.show();
+
+    		//-----------------------------------------------
+    		// 把属性参数化
+    		function Sprite1(name, color ,age) {
+    			this.name = name;
+    			this.age = age;
+    			this.color = color;
+    		}
+    		// 在原型中添加方法
+    		Sprite1.prototype.show = function() {
+    			console.log(this.name);
+    		}
+    		var s1 = new Sprite1('wangwu', 'red', 23);
+    		s1.show();
+
+    		//-----------------------------------------------
+    		function Sprite2(option) {
+    			this.name = option.name;
+    			this.age = option.age;
+    			this.color = option.color;
+    		}
+    		// 在原型中添加方法
+    		Sprite2.prototype.show = function() {
+    			console.log(this.name);
+    		}
+    		var s2 = new Sprite2({name: 'zhaoliu', age: 20});
+    		s2.show();
+
+    		//-----------------------------------------------
+    		function Sprite3(option) {
+    			this._init(option);
+    		}
+    		Sprite3.prototype._init = function(option) {
+    			this.name = option.name;
+    			this.age = option.age;
+    			this.color = 'red';
+    		}
+    		Sprite3.prototype.show = function() {
+    			console.log(this.name);
+    		}
+    		var s3 = new Sprite3({name: 'zhaoliu', age: 20});
+    		s3.show();
+
+    		//-----------------------------------------------
+    		function Sprite4(option) {
+    			this._init(option);
+    		}
+    		Sprite4.prototype = {
+    			_init: function(option) {
+    				this.name = option.name;
+	    			this.age = option.age;
+	    			this.color = 'red';
+    			},
+    			show: function() {
+    				console.log(this.name);
+    			}
+    		};
+    		var s4 = new Sprite4({name: 'zhaoliu', age: 20});
+    		s4.show();
+    	</script>
+    </body>
+</html>

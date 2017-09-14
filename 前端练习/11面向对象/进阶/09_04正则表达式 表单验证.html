@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+			body{background: #ccc;}
+			label{width: 40px; display: inline-block;}
+			span{color: red;}
+			.container{margin: 100px auto; width: 400px; padding: 50px; line-height: 40px; border: 1px solid #999; background: #efefef;}
+			span{margin-left: 30px; font-size: 12px;}
+		</style>
+    </head>
+    <body>
+    	<div class="container">
+			<label>QQ</label><input type="text" id="inp1"><span></span><br>
+			<label>手机</label><input type="text" id="inp2"><span></span><br>
+			<label>昵称</label><input type="text" id="inp3"><span></span><br>
+			<label>密码</label><input type="password" id="inp4"><span></span><br>
+			<label>邮箱</label><input type="text" id="inp5"><span></span><br>
+		</div>
+    </body>
+</html>
+
+<script>
+	var g = function(id){return document.getElementById(id);}
+	var changed = function(id, fn){
+		g(id).onchange = fn;
+	}
+	var setNextHtml = function(id, html){
+		g(id).nextSibling.innerHTML = html;
+	}
+	var val = function(id){
+		return g(id).value;
+	}
+	changed('inp1', function(){
+		if(/^\d{5,11}$/.test(val('inp1'))){
+			setNextHtml('inp1', '');
+		}else{
+			setNextHtml('inp1', '请输入5到11位数字');
+		}
+	});
+	changed('inp2', function(){
+		if(/^1\d{10}$/.test(val('inp2'))){
+			setNextHtml('inp2', '');		
+		}else{
+			setNextHtml('inp2', '数字1开头，11位的数字');	
+		}
+	});
+	changed('inp3', function(){
+		if(/^[\w\-\u4e00-\u9fa5]{1,7}$/.test(val('inp3'))){
+			setNextHtml('inp3', '')
+		}else{
+			setNextHtml('inp3', '1到7位')
+		}
+	});
+	changed('inp4', function(){
+		if(/^[A-Z]\w{1,15}$/.test(val('inp4'))){
+			setNextHtml('inp4', '');
+		}else{
+			setNextHtml('inp4', '首字母大写，1到16位');
+		}
+	});
+	console.log(/^[\w\-\.]+\@[\w]+\.[\w]{2,4}$/.test('dsdsass@sf.7565'));
+	changed('inp5', function(){
+		if(/^[\w\-\.]+\@[\w]+\.[\w]{2,4}$/.test(val('inp5'))){
+			setNextHtml('inp5', '')
+		}else{
+			setNextHtml('inp5', '请输入正确邮箱格式')
+		}
+	});
+</script>

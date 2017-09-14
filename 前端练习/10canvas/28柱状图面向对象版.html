@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="konva/konva.js"></script>
+		<script src="js/28HistopramChart.js"></script>
+        <style>
+        	body {
+        		padding: 0;
+				margin: 0;
+				background: #f0f0f0;
+				overflow: hidden;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="container">
+    	</div>
+
+    	<script>
+    		// 创建舞台
+    		var stage = new Konva.Stage({
+    			container: 'container',
+    			width: window.innerWidth,
+    			height: window.innerHeight
+    		});
+
+    		// 中心点坐标
+    		var cenX = stage.width() / 2;
+    		var cenY = stage.height() / 2;
+
+    		// 创建层
+    		var bgLayer = new Konva.Layer();
+    		stage.add(bgLayer);
+
+    		//柱状图的数据
+			var data = [
+				{ name: '前端', value: '.8', color: 'green'},
+				{ name: 'PHP', value: '.3', color: 'blue'},
+				{ name: 'Java', value: '.7', color: 'red'},
+				{ name: 'UI', value: '.9', color: 'orange'},
+				{ name: 'IOS', value: '.4', color: 'purple'},
+				{ name: 'Android', value: '.9', color: 'pink'}
+			];
+
+			var x0 = 1 / 8 * stage.width(); // 柱状图原点的坐标
+			var y0 = 3 / 4 * stage.height();
+
+			var width = 3 / 4 * stage.width(); // 柱状图的最大宽度
+			var height = 1 / 2 * stage.height();
+
+			var h = new HistogramChart({
+				x: x0,
+				y: y0,
+				w: width,
+				h: height,
+				data: data
+			});
+
+			h.addToGroupOrLayer(bgLayer);
+
+
+    		bgLayer.draw();
+
+			// 点击任何的舞台的区域的时候，触发如下事件
+			stage.on('contentClick', function() {
+				// 让柱状图进行动画展示
+				
+				// 让状态图的中所有矩形 height：0，  y-> y0
+				// 拿到所有的矩形
+				// 类型的选择器是通过 形状的类名进行选择
+			
+				h.playAnimate();
+			});
+
+    	</script>
+    </body>
+</html>

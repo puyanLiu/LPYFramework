@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        
+        /*
+        $(document).ready(function() {
+            // var $ = "我是$";
+            // alert($);
+
+            $("#btn").click(function() {
+                alert("啦啦");    
+            });
+
+            jQuery("#btn").click(function() {
+                alert("哈哈");
+            });
+        });
+        */
+
+
+        var jQuery = function(dom) {
+            var obj = {
+                ready: function(func) {
+                    // console.log("我是ready");
+                    /*
+                        document.onload有没有被赋值（或者说有没有这个事件）
+                        1、有：接收一个旧的函数，然后，先去调用新的函数，接着再调用旧的函数
+                        2、没有：直接赋值给onload事件
+                    */
+                    if(typeof dom.onload === "function") {
+                        var oldFunc = dom.onload;
+                        dom.onload = function() {
+                            // 调用新的
+                            func();
+
+                            // 调用旧的
+                            oldFunc();
+                        }
+                    } else {
+                        dom.onload = func;
+                    }
+                }
+            };
+
+            return obj;
+        }
+
+        jQuery(window).ready(function() {
+            alert("第一次调用");
+        });
+
+        jQuery(window).ready(function() {
+            alert("第二次调用");
+        });
+
+        jQuery(window).ready(function() {
+            alert("第三次调用");
+        });
+
+        var obj = {
+            ready: function() {
+                console.log("哈哈吧");
+            }
+        };
+        obj.ready();
+
+
+        var obj1 = new Object();
+        obj1.ready = function() {
+            console.log("呵呵哒");
+        }
+
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="我是按钮" />
+</body>
+</html>

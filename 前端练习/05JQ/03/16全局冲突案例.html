@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script>
+		$ = {
+			show: function(argument) {
+				console.log("my $", argument);
+			}
+		};
+	</script>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		// 解决$冲突
+		$.noConflict();
+		jQuery(document).ready(function() {
+			// 此处不能使用$
+			jQuery("div").css("color", "red");
+		}); 
+
+		$.show("hello");
+	</script>
+</head>
+<body>
+	<div>哈哈嘿嘿吧</div>
+</body>
+</html>

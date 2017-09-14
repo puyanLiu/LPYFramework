@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	// 这是JSON字符串
+    var foo = '{ "prop": "val" }';
+
+    // 这是对象字面量
+    var bar = { "prop": "val" };
+
+    // 这是JSON字符串，比如从AJAX获取字符串信息
+    var my_json_string = '{ "prop": "val" }';
+
+    // 将字符串反序列化成对象
+    var my_obj = JSON.parse( my_json_string );
+
+    console.log(my_obj);
+
+    alert( my_obj.prop == 'val' ); //  提示 true, 和想象的一样!
+
+    // 将对象序列化成JSON字符串
+    var my_other_json_string = JSON.stringify( my_obj );
+</script>

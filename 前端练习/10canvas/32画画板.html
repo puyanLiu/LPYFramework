@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+    			console.log(canvasElem.getBoundingClientRect());
+
+    			canvasElem.onmousedown = function(e) {
+    				var x = e.clientX - canvasElem.getBoundingClientRect().left;
+    				var y = e.clientY - canvasElem.getBoundingClientRect().top;
+    				ctx.beginPath();
+    				ctx.moveTo(x, y);
+
+    				canvasElem.onmousemove = function(event) {
+    					var x = event.clientX - canvasElem.getBoundingClientRect().left;
+    					var y = event.clientY - canvasElem.getBoundingClientRect().top;
+    					ctx.lineTo(x, y);
+    					ctx.stroke();
+    				};
+
+    				canvasElem.onmouseup = function(event) {
+    					canvasElem.onmousemove = null;
+    					canvasElem.onmouseup = null;
+    				}
+    			};
+    		}());
+    	</script>
+    </body>
+</html>

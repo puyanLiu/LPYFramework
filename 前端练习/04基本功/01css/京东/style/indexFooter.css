@@ -1,0 +1,120 @@
+.footerSlogen {
+    margin-bottom: 20px;
+}
+.footerSlogen .slogen {
+    position: relative;
+    background: #F5F5F5;
+    height: 54px;
+    padding: 20px 0;
+    margin-bottom: 14px;
+    font: 400 18px/54px "Microsoft YaHei";
+    text-align: left;
+}
+.footerSlogen .slogen span {
+    width: 302px;
+}
+.footerSlogen .slogen .item1 {
+    position: absolute;
+    left: 50%;
+    margin-left: -604px;
+}
+.footerSlogen .slogen .item1 i {
+    position: absolute;
+    width: 220px;
+    height: 54px;
+    left: 10px;
+    background: url(../images/service_items_1.png) no-repeat;
+}
+.footerSlogen .slogen .item2 {
+    position: absolute;
+    left: 50%;
+    margin-left: -304px;
+}
+.footerSlogen .slogen .item2 i {
+    position: absolute;
+    width: 220px;
+    height: 54px;
+    left: 10px;
+    background: url(../images/service_items_2.png) no-repeat;
+}
+.footerSlogen .slogen .item3 {
+    position: absolute;
+    left: 50%;
+ }
+.footerSlogen .slogen .item3 i {
+    position: absolute;
+    width: 220px;
+    height: 54px;
+    left: 10px;
+    background: url(../images/service_items_3.png) no-repeat;
+}
+.footerSlogen .slogen .item4 {
+    position: absolute;
+    left: 50%;
+    margin-left: 304px;
+}
+.footerSlogen .slogen .item4 i {
+    position: absolute;
+    width: 220px;
+    height: 54px;
+    left: 10px;
+    background: url(../images/service_items_4.png) no-repeat;
+}
+.footerSlogen .slogen span b {
+    color: #C81623;
+    font-size: 24px;
+    padding: 0 10px;
+}
+.footerSlogen .slogen span i {
+    padding: 0 10px;
+}
+.footerSlogen dl {
+    float: left;
+    width: 199px;
+}
+.footerSlogen dl.item5{
+    width: 100px;
+}
+.footerSlogen dl dt {
+    padding: 6px 0;
+    font: 400 16px/24px "Microsoft YaHei";
+}
+.footerSlogen dl dd {
+    line-height: 20px;
+}
+.footerSlogen .coverage {
+    float: right;
+    width: 310px;
+    height: 168px;
+    background: url(../images/20130330B_1.png) no-repeat 60px -131px;
+}
+.footerSlogen .coverage .dt {
+    padding: 6px 40px 15px 80px;
+    font: 400 16px/24px "Microsoft YaHei";
+}
+.footerSlogen .coverage .dd {
+    padding: 0 40px 15px 80px;
+}
+.footerSlogen .coverage .dd .detail {
+    text-align: right;
+}
+.footer {
+    border-top: 1px solid #E5E5E5;
+    padding: 20px 0 30px;
+}
+.footer .links {
+    text-align: center;
+}
+.footer .links a {
+    margin: 0 10px;
+}
+.footer .copyright {
+    margin: 10px 0;
+    text-align: center;
+}
+.footer .authentication {
+    text-align: center;
+}
+.footer .authentication a {
+    margin: 0 5px;
+}

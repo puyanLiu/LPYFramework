@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .xiaomi {
+            width: 512px;
+            height: 400px;
+            margin: 100px auto;
+            border: 1px solid #f00;
+            overflow: hidden;
+            position: relative;
+        }
+        .xiaomi span {
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 50%;
+            width: 100%;
+            cursor: pointer;
+        }
+        .xiaomi img {
+            position: relative;
+        }
+        .up {
+            top: 0;
+        }
+        .down {
+            bottom: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var timer = null;
+            var num = 0;
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            $("picUp").onmouseover = function() {
+                
+                clearInterval(timer);
+                timer = setInterval(function() {
+                    num -= 3;
+                    num >= -1070 ? $("pic").style.top = num + "px" : clearInterval(timer);
+                }, 30);
+            }
+
+            $("picDown").onmouseover = function() {
+                console.log("down");
+                clearInterval(timer);
+                timer = setInterval(function() {
+                    num++;
+                    num < 0 ? $("pic").style.top = num + "px" : clearInterval(timer);
+                }, 30);
+            }
+
+            $("picUp").onmouseout = $("picDown").onmouseout = function() {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="xiaomi">
+        <img src="images/mi.png" alt="" id="pic" />
+        <span class="up" id="picUp"></span>
+        <span class="down" id="picDown"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        li {
+            font-size: 20px;
+        }
+    </style>
+
+    <script src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("li").css("font-size");
+
+            $("li").css("background", "red");
+
+            // 设置多个样式
+            $("li").css({
+                "background": "yellow",
+                "font-size": "30px",
+                "color": "red",
+            });
+
+            // 自定义样式
+            $("li").css("font-size", function(index, value){
+
+                // return (index + 1) * parseInt(value) + "px";
+
+
+                // 只设置第三个
+                if(index === 2) {
+                    return (index + 1) * parseInt(value) + "px";
+                }
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <ul>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+        <li>我是li元素</li>
+    </ul>
+</body>
+</html>

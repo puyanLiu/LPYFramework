@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<script>
+var extend = function(o){
+	var F = function(){};
+	F.prototype = o;
+	return new F();
+}
+var Student = {
+	book : ['javascript', 'css', 'html'],
+	getTeacher : function(){
+		console.log('Mr Zhang');
+	}
+}
+var xiaoWang = extend(Student);
+xiaoWang.name = 'wang';
+xiaoWang.age = 20;
+var xiaoLi = extend(Student);
+xiaoLi.name = 'li';
+xiaoLi.age = 30;
+
+console.log(xiaoWang.getTeacher === xiaoLi.getTeacher)
+console.log(xiaoWang.book);
+console.log(xiaoLi.book);
+xiaoWang.book.push('Ajax');
+console.log(xiaoLi.book);
+</script>

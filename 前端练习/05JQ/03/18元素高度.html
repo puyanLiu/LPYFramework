@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		
+		.box {
+			height: 100px;
+			width: 200px;
+			border: 1px solid #000;
+			background-color: teal;
+			padding: 20px;
+			position: relative;
+		}
+		.child {
+			height: 50px;
+			width: 50px;
+			background-color: #ccc;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#btn_GetHeight").click(function(event) {
+				// 获取元素内容高度
+				console.log($(".box").height());
+
+				// 获取内边距和内容的高度
+				console.log($(".box").innerHeight());
+
+				// 获取内边距+边框+内容的高度
+				console.log($(".box").outerHeight());
+			});
+
+			$("#btn_SetHeight").click(function(event) {
+				$(".box").height(205);
+			});
+
+			// 获取相对于document的位置
+			$("#btn_GetOffset").click(function(event) {
+				var offset = $(".child").offset();
+				console.log(offset.left + " " + offset.top + " " + offset);
+			});
+
+			// 设置相对于document的位置
+			$("#btn_SetOffset").click(function(event) {
+				$(".child").offset({
+					left: 150, 
+					top: 150
+				});
+			});
+
+			// 获取相对于其定位的父容器的位置
+			$("#btn_GetPosition").click(function(event) {
+				var pos = $(".child").position();
+				console.log(pos.left + " " + pos.top) ;
+			});
+		})
+	</script>
+</head>
+<body>
+	<input type="button" id="btn_GetHeight" value="获取元素高度" >
+	<input type="button" id="btn_SetHeight" value="设置元素高度" >
+
+	<input type="button" id="btn_GetOffset" value="获取元素相对文档位置" >
+	<input type="button" id="btn_SetOffset" value="设置元素相对于文档位置" >
+
+	<input type="button" id="btn_GetPosition" value="设置元素相对父容器位置" >
+
+	<div class="box">
+		<div class="child">
+			
+		</div>
+	</div>
+</body>
+</html>

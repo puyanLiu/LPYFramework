@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: pink;
+        }
+        #box1 {
+            position: absolute;
+            top: 150px;
+            width: 200px;
+            height: 200px;
+            background: purple;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn200">200</button>
+    <button id="btn400">400</button>
+    <div id="box"></div>
+    <div id="box1"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function $(id) {
+        return document.getElementById(id);
+    }
+    $("btn200").onclick = function() {
+        animate($("box"), 200);
+        animate($("box1"), 200);
+    }
+    $("btn400").onclick = function() {
+        animate($("box"), 400);
+    }
+    function animate(obj, target) {
+        clearInterval(obj.timer);
+
+        var speed = obj.offsetLeft < target ? 5 : -5;
+        obj.timer = setInterval(function(){
+            var result = target - obj.offsetLeft;
+            obj.style.left = obj.offsetLeft + speed + "px";
+            if (Math.abs(result) <= 5) {
+                clearInterval(obj.timer);
+                obj.style.left = target + "px";
+            }
+        }, 20);
+    }
+</script>

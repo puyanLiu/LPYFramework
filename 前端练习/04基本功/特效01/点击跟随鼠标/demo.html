@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#image {
+			width: 99px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+</head>
+<body>
+	<img src="images/img.jpg" alt="" id="image" />
+</body>
+</html>
+<script type="text/javascript">
+	var img = document.getElementById("image");
+	document.onclick = function(event) {
+		var event = event || window.event;
+		targetX = event.clientX - img.offsetWidth * 0.5;
+		targetY = event.clientY - img.offsetHeight * 0.5;
+	}
+
+	var leaderX = 0,
+	leaderY = 0,
+	targetX = 0,
+	targetY = 0;
+	setInterval(function(){
+		leaderX = leaderX + (targetX - leaderX) / 10;
+		leaderY = leaderY + (targetY - leaderY) / 10;
+		img.style.left = leaderX + "px";
+		img.style.top = leaderY + "px";
+	}, 10);
+</script>

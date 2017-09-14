@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">开始</button>
+    <div id="box"></div>
+</body>
+</html>
+<script type="text/javascript">
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    var target = 400;
+    var timer = null;
+    btn.onclick = function() {
+        timer = setInterval(function() {
+            // 盒子本身的位置 + 步长（不断变化的）
+            var step = (target - box.offsetLeft) * 0.1; // 步长
+            console.log(step);
+            step = step > 0 ? Math.ceil(step) : Math.floor(step);
+            box.style.left = box.offsetLeft + step + "px";
+            if (box.offsetLeft == target) {
+                clearInterval(timer);
+                console.log("到目标啦");
+            }
+        }, 30);
+    }
+</script>

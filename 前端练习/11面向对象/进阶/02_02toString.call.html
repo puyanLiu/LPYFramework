@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<script>
+	// toString.call 属于Object.prototype
+	console.log(toString.call(123)) //[object Number]
+
+    var num = 123;
+
+    console.log(num.toString(), toString.call(num.toString()))
+</script>

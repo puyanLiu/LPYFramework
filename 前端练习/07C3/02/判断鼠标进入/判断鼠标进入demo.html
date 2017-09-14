@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	* {margin: 0; padding: 0;}
+	        .demo {
+	            width: 1030px;
+	            margin: 50px auto;
+	        }
+	        .list {
+	        	border-radius: 15px;
+	        	width: 300px;
+	            height: 200px;
+	            float: left;
+	            margin: 20px;
+	            position: relative;
+	            overflow: hidden;
+	        }
+	        .list div {
+	        	position: absolute;
+	            top: 0;
+	            left: 0;
+	            transform: rotate(-100deg);
+	            /*旋转中心点*/
+	            transform-origin: top left; 
+	            transition: all 0.8s;
+	        }
+	        .current div {
+	        	transform: rotate(0deg);
+	        }
+	        .current div.top {
+	        	transform-origin: top left;
+	        }
+	        .current div.right {
+	        	transform-origin: top right;
+	        }
+	        .current div.bottom {
+	        	transform-origin: bottom right;
+	        }
+	        .current div.left {
+	        	transform-origin: bottom left;
+	        }
+        </style>
+        <script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+        	$(function() {
+        		$(".list").on("mouseenter mouseleave", function(e) {
+
+	        		var that = $(this);
+        			var w = $(this).width();
+        			var h = $(this).height();
+
+        			var x = (e.pageX - this.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1);
+        			var y = (e.pageY - this.offsetTop - (h / 2)) * (h > w ? (w / h) : 1);
+        			// direction的值为“0,1,2,3”分别对应着“上，右，下，左”
+        			var direction = Math.round(((Math.atan2(y, x) * (180 / Math.PI) + 180) / 90) + 3) % 4; 
+        			 // 将点的坐标对应的弧度值换算成角度度数值
+                  
+                     if(e.type == 'mouseenter') {
+                     	// 进入
+                     	switch(direction) {
+                     		case 0:
+                     			// 上
+                     			comeOn("top");
+                     			break;
+                     		case 1:
+                     			// 右
+                     			comeOn("right");
+                     			break;
+                     		case 2:
+                     			// 下
+                     			comeOn("bottom");
+                     			break;
+                     		case 3:
+                     			// 左
+                     			comeOn("left");
+                     			break;
+                     	}
+                     } else{ 
+                     	// 离开
+                     	switch(direction) {
+                     		case 0:
+                     			// 上
+                     			getOut("top");
+                     			break;
+                     		case 1:
+                     			// 右
+                     			getOut("right");
+                     			break;
+                     		case 2:
+                     			// 下
+                     			getOut("bottom");
+                     			break;
+                     		case 3:
+                     			// 左
+                     			getOut("left");
+                     			break;
+                     	}
+                     }
+
+	        		function comeOn(str) {
+	        			that.addClass('current');
+	        			that.children('div').removeClass().addClass(str);
+	        		}
+
+	        		function getOut(str) {
+	        			that.removeClass('current');
+	        			that.children('div').removeClass().addClass(str);
+	        		}
+        		});
+        	})
+        </script>
+    </head>
+    <body>
+    	<div class="demo">
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/1.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/2.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/3.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/4.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/5.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/6.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/7.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/8.jpg" alt="">
+    			</div>
+    		</div>
+    		<div class="list">
+    			<img src="images/00.jpg" alt="">
+    			<div>
+    				<img src="images/9.jpg" alt="">
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>

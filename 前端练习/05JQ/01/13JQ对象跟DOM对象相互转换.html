@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            height: 200px;
+            background: #000;
+        }
+    </style>
+
+     <script src="jquery-1.11.1.min.js"></script>
+     <script type="text/javascript">
+         $(document).ready(function() {
+            // DOM -> JQ
+            var btn = document.getElementById("btn");
+            $(btn).click(function() {
+                $("div").hide();
+            });
+
+            // JQ -> DOM
+            // $("button")[1].onclick = function() {
+            //     alert("JQ -> DOM");
+            // }
+
+            // JQ -> DOM
+            $("button").get(1).onclick = function() {
+                alert("JQ -> DOM");
+            }
+
+
+            // js里面的click() 触发Click事件
+            // js里面的onclick 绑定点击事件
+
+            var btn = document.getElementById("btn2");
+            btn.onclick = function() {
+                alert("我是btn的onclick");
+            }
+
+            btn.click();
+
+
+         });
+     </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <button id="btn2">按钮</button>
+    <button>按钮2</button>
+    <div></div>
+</body>
+</html>

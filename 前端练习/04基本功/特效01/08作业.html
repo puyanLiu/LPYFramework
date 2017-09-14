@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.box {
+			border: 50px solid #ccc;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.login {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 200px;
+			background: pink;
+			left: 50%;
+			margin-left: -150px;
+			top: 50%;
+			margin-top: -100px;
+			cursor: move;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var box = document.getElementById("box");
+			var login = document.getElementById("login");
+			login.onmousedown = function(event) {
+				// 清除居中内容
+				var event = event || window.event;
+				// 计算出鼠标在盒子内的距离
+				var startX = event.clientX - this.offsetLeft;
+				var startY = event.clientY - this.offsetTop;
+				console.log("起始位置" + startX, startY);	
+				var me = this;
+				document.onmousemove = function(event) {
+
+					var event = event || window.event;
+					var x = event.clientX -  startX;
+					var y = event.clientY - startY;
+					if (x < 50) {
+						x = 50;
+					} else if (x > box.offsetWidth - 50 - login.offsetWidth) {
+						x = box.offsetWidth - 50 - login.offsetWidth;
+					}
+					if (y < 50) {
+						y = 50;
+					} else if(y > box.offsetHeight - 50 - login.offsetHeight) {
+						y = box.offsetHeight - 50 - login.offsetHeight;
+					}
+					console.log(startX, startY,event.clientX, event.clientY);
+					login.style.left = x + "px";
+					login.style.top = y + "px";
+					login.style.marginLeft = "0px";
+					login.style.marginTop = "0px";
+
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				}
+			}
+			document.onmouseup = function() {
+				document.onmousemove = null;
+			}
+
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="box" id="box">
+	</div>
+	<div class="login" id="login">
+			<div>登录</div>
+		</div>
+</body>
+</html>

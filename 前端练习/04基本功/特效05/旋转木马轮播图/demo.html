@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css" />
+</head>
+<body>
+    <div class="wrap" id="wrap">
+        <div class="slider" id="slider">
+            <ul>
+                <li><a href="#"><img src="images/slidepic1.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic2.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic3.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic4.jpg" alt="" /></a></li>
+                <li><a href="#"><img src="images/slidepic5.jpg" alt="" /></a></li>
+            </ul>
+        </div>
+
+        <div class="arrow" id="arrow">
+            <a href="javascript:;" class="prev"></a>
+            <a href="javascript:;" class="next"></a>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="animate.js"></script>
+<script type="text/javascript">
+    var wrap = document.getElementById("wrap");
+    var arrow = document.getElementById("arrow");
+    var slider = document.getElementById("slider");
+    var lis = slider.getElementsByTagName("li");
+
+    wrap.onmouseover = function() {
+        animate(arrow, {'opacity': 100});
+    }
+    wrap.onmouseout = function() {
+        animate(arrow, {'opacity': 0});
+    }
+
+    // 存储图片信息
+    var json = [
+        {   //  1
+            width:400,
+            top:20,
+            left:50,
+            opacity:20,
+            z:2
+        },
+        {  // 2
+            width:600,
+            top:70,
+            left:0,
+            opacity:80,
+            z:3
+        },
+        {   // 3
+            width:800,
+            top:100,
+            left:200,
+            opacity:100,
+            z:4
+        },
+        {  // 4
+            width:600,
+            top:70,
+            left:600,
+            opacity:80,
+            z:3
+        },
+        {   //5
+            width:400,
+            top:20,
+            left:750,
+            opacity:20,
+            z:2
+        }
+    ];
+
+    for(var i = 0; i < json.length; i++) {
+        animate(lis[i], {
+            width: json[i].width,
+            top: json[i].top,
+            left: json[i].left,
+            opacity: json[i].opacity,
+            zIndex: json[i].z
+        });
+    }
+
+    // 两个按钮点击
+    var isFlag = true; // 用来控制函数节奏的变量
+    var arrows = arrow.children;
+    for(var k in arrows) {
+        arrows[k].onclick = function() {
+            if (this.className == "prev") {
+                // 左侧按钮
+                // 移除第一个，放到json最后一个
+                if(isFlag == true) {
+                    change(false);
+                    isFlag = false;
+                }
+            } else {
+                // 右侧按钮
+                // 移除最后一个，放到json第一个位置
+                if(isFlag == true) {
+                    change(true);
+                    isFlag = false;
+                }
+            }
+        }
+    }
+
+    function change(flag) {
+        if (flag) {
+            // 右侧
+            json.unshift(json.pop());
+        } else {
+            // 左侧
+            json.push(json.shift());
+        }
+
+        for(var i = 0; i < json.length; i++) {
+            animate(lis[i], {
+                width: json[i].width,
+                top: json[i].top,
+                left: json[i].left,
+                opacity: json[i].opacity,
+                zIndex: json[i].z
+            }, function() {
+                isFlag = true; // 等动画执行完毕，才执行下一个
+            });
+        }
+    }
+
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			// 创建图片的dom对象
+    			var img = new Image();
+    			img.src = 'images/a.jpg'; //只要设置了src属性，当前img对象立即去加载图片
+                // img.addEventListener("load", function(e) {});
+    			img.onload = function() {
+    				// 图片加载完成后，把图片绘制到canvas
+    				// ctx.drawImage(img, 100, 100); // 参数（图片, x, y）
+
+    				// for(var i = 0; i < 10; i++) {
+    				// 	ctx.drawImage(img, 100 + 20 *i, 100 + 20 * i);
+    				// }
+    				
+    				var ow = img.width;
+    				var oh = img.height;
+
+    				// 绘制指定宽高比的图片
+    				ctx.drawImage(img, 100, 100, 400, 400 * oh / ow); // 参数 (图片, x, y, width, height)
+    			}
+
+    			// 绘制指定的裁切图片
+    			var img2 = new Image();
+    			img2.src = 'images/DMMban.png';
+    			img2.onload = function() {
+    				ctx.drawImage(img2, 40, 65, 40, 65, 320, 300, 40, 65); // 参数(图片, sx, sy, swidth, sheight, x, y, width, height)
+    			}
+    			
+    		}());
+    	</script>
+    </body>
+</html>

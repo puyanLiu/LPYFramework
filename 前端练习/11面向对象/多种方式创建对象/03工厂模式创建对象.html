@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+		//工厂方式 : 封装函数  一般进入每个游戏，每种类型的人，比如法师，战士，精灵，矮人他们的名称不一样，选择的衣服不一样，
+        //技能，魔法，生命值是一样的，那我们把不一样的暴露出来，作为工厂的原料，输入进去，经过工厂之后生成一个对象
+
+        /*一般游戏名称是我们自己取的，其他事默认值*/
+        /*那么怎么做呢？*/
+        function createPerson(name){
+            //1.原料
+            var obj = new Object();
+            //2.加工
+            obj.name = name;
+            obj.HP=100;
+            obj.MP=100;
+            obj.technologys=['普通攻击','横扫千军','地狱火','漫天飞雪'];
+            obj.attack = function(){
+                console.log(obj.name+'发出攻击，导致对方10点伤害值')
+            };
+            obj.run = function(){
+            };
+            //3.出场
+            return obj;
+
+        }
+
+        var boy = createPerson('剑侠客');
+        boy.attack();
+        boy.run()
+
+
+        var girl = createPerson('炫舞天使');
+        girl.attack();
+</script>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		font-family: '微软雅黑';
+        		background: #f7f7f7;
+        	}
+        	ul {
+        		margin: 0;
+        		padding: 0;
+        		list-style: none;
+        	}
+        	.wrapper {
+        		width: 1024px;
+        		margin: 0 auto;
+        	}
+        	.wrapper > section {
+        		min-height: 300px;
+        		margin-bottom: 30px;
+        		box-shadow: 1px 1px 4px #ddd;
+        		background: #fff;
+        	}
+        	.wrapper > header {
+        		text-align: center;
+        		line-height: 1;
+        		padding: 20px;
+        		margin-bottom: 10px;
+        		font-size: 30px;
+        	}
+        	.wrapper section > header {
+        		line-height: 1;
+        		padding: 10px;
+        		font-size: 22px;
+				color: #333;
+				background: #eee;
+        	}
+        	.wrapper .wrap-box {
+        		padding: 20px;
+        	}
+
+        	/*-----------------------------------------------*/
+        	/*两端对齐（传统）*/
+        	section:nth-of-type(1) ul {
+        		overflow: hidden;
+        	}
+        	section:nth-of-type(1) li {
+        		width: 200px;
+        		height: 200px;
+        		text-align: center;
+        		line-height: 200px;
+        		float: left;
+        		font-size: 20px;
+        		background-color: pink;
+        		margin-right: 192px;
+        	}
+        	section:nth-of-type(1) li:last-child {
+        		margin-right: 0;
+        	}
+			/*两端对齐（伸缩布局）*/
+        	section:nth-of-type(2) ul {
+        		display: flex;
+        		justify-content: space-between;
+        	}
+        	section:nth-of-type(2) li {
+        		width: 200px;
+        		height: 200px;
+        		text-align: center;
+        		line-height: 200px;
+        		background-color: pink;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>CSS3-伸缩布局介绍</header>
+    		<section>
+    			<header>两端对齐布局（传统）</header>
+    			<div class="wrap-box">
+    				<p>需要精确计算边框及外边距</p>
+    				<ul>
+    					<li>1</li>
+    					<li>2</li>
+    					<li>3</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section>
+    			<header>两端对齐布局（伸缩布局）</header>
+    			<div class="wrap-box">
+    				<p>自动精确控制对齐</p> 
+    				<ul>
+    					<li>1</li>
+    					<li>2</li>
+    					<li>3</li>
+    				</ul>
+    			</div>
+    		</section>
+    		<section>
+    			<header>伸缩布局</header>
+    			<div class="wrap-box">
+    				<p>1、指定一个盒子为伸缩盒子 display: flex</p>
+    				<p>2、设置属性来调整此盒的子元素的布局方式 例如 flex-direction</p>
+					<p>3、明确方向</p>
+					<p>4、它可互换主侧轴，也可改变方向</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>flex-direction</header>
+    			<div class="wrap-box">
+    				<p>调整主轴方向（默认为水平方向）包括row、column、row-reverse、column-reverse</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>justify-content</header>
+    			<div class="wrap-box">
+    				<p>主轴方向对齐，可以调整元素在主轴方向上的对齐方式，包括flex-start、flex-end、center、space-around、space-between几种方式</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>align-items</header>
+    			<div class="wrap-box">
+    				<p>调整侧轴方向对齐方式，包括flex-start、flex-end、center、baseline、stretch</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>flex-wrap</header>
+    			<div class="wrap-box">
+    				<p>控制是否换行，包括wrap、nowrap</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>align-content</header>
+    			<div class="wrap-box">
+    				<p>堆栈排列，可对应用flex-wrap: wrap后产生的换行进行控制，包括flex-start、flex-end、center、space-between、space-around、stretch</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>flex-flow</header>
+    			<div class="wrap-box">
+    				<p>flex-direction和flex-wrap的简写形式 flex-flow: column wrap</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>flex</header>
+    			<div class="wrap-box">
+    				<p>控制元素的伸缩比例</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>align-self</header>
+    			<div class="wrap-box">
+    				<p>同align-items可覆盖父元素设置的algin-items，包括flex-start、flex-end、center、baseline、stretch</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>order</header>
+    			<div class="wrap-box">
+    				<p>控制子元素的顺序</p>
+    			</div>
+    		</section>
+    	</div>
+    </body>
+</html>

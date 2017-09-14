@@ -1,0 +1,100 @@
+
+@import url("base.less");
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.jd_category {
+	width: 100%;
+	height: 100%;
+	padding-top: 45px;
+	background: #fff;
+	position: relative;
+
+	.jd_category_left {
+		width: 90px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		padding-top: 45px;
+		overflow: hidden;
+		z-index: 999;
+
+		ul {
+			li {
+				width: 100%;
+				background: #f3f4f6;
+				height: 50px;
+				font-size: 12px;
+				font-family: sans-serif;
+
+				a {
+					width: 100%;
+					height: 100%;
+					display: block;
+					text-align: center;
+					line-height: 50px;
+					border-right: @g_border;
+					border-bottom: @g_border;
+				}
+				&.now {
+					background: #fff;
+					a {
+						border-right: none;
+						color: #f15353;
+					}
+				}
+			}
+		}
+	}
+
+	.jd_category_right {
+		width: 100%;
+		padding-left: 90px;
+		
+		.jd_category_right_box {
+			padding: 10px 12px;
+
+			.r_banner {
+				width: 100%;
+
+				a {
+					img {
+						width: 100%;
+					}
+				}
+			}
+
+			.r_product {
+				margin-top: 15px;
+				font-size: 12px;
+
+				h3 {
+					color: #888;
+					margin-bottom: 10px;
+				}
+				ul {
+					li {
+						width: 100% / 3;
+						float: left;
+						text-align: center;
+
+						img {
+							width: 62px;
+							height: 62px;
+							margin: 0 auto;
+						}
+
+						p {
+							line-height: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

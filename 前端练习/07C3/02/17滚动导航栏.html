@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{margin: 0; padding: 0;}
+        	body {
+	            text-align: center;
+	        }
+	        nav {
+	            display: inline-block;
+	            margin-top: 100px;
+	        }
+	        nav a {
+	            display: inline-block;
+	            color: white;
+	            text-decoration: none;
+	        }
+	        nav a span {
+	        	background-color: #2195de;
+	        	line-height: 40px;
+	            display: inline-block;
+	            padding: 0 25px;
+	            position: relative;
+	            transform-origin: top;
+	            transform-style: preserve-3d;
+	            transition: all 1s;
+	        }
+	        nav a span::after {
+				content: attr(data-hover);
+				position: absolute;
+				top: 100%;
+				left: 0;
+				background-color: #0965a0;
+				transform: rotateX(-90deg);
+				transform-origin: top;
+				width: 100%;
+				height: 100%;
+
+	        }
+	        nav a:hover span {
+	        	transform: rotateX(90deg) translateY(-20px);
+	        }
+        </style>
+    </head>
+    <body>
+    	<nav>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    		<a href=""><span data-hover="缺钱么">缺钱么</span></a>
+    	</nav>
+    </body>
+</html>

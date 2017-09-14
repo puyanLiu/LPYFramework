@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			ctx.strokeStyle = 'red';
+    			ctx.lineWidth = 20;
+
+    			// 第一条线
+    			ctx.beginPath(); 
+    			ctx.moveTo(100, 100);
+    			ctx.lineTo(300, 100);
+    			ctx.stroke();
+
+    			// 第二条线
+    			ctx.beginPath(); // 开启一个新的状态，新状态继承之前状态的样式，但当前状态设置所有的样式，只能作用于当前的状态
+    			ctx.strokeStyle = 'green';
+    			ctx.moveTo(100, 200);
+    			ctx.lineTo(300, 200);
+    			ctx.stroke();
+
+    			// 第三条线
+    			ctx.beginPath();
+    			ctx.strokeStyle = 'purple';
+    			ctx.moveTo(100, 300);
+    			ctx.lineTo(300, 300);
+    			ctx.stroke();
+    			
+    		}());
+    	</script>
+    </body>
+</html>

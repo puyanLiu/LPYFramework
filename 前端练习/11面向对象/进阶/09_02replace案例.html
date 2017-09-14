@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//    关键字变色
+    //    大家在一些网站上搜索文章的时候，会发现这么一个现象，就是搜索的关键字会高亮改变颜色显示出来？？
+    //    这是怎么实现的呢？？
+    //    其实我们可以用正则表达式来实现，具体怎么样实现呢？简单的原理请看下面的代码：
+
+
+    //第1种方法：基于特殊字符$
+    document.write("replace使用场景第一种实现 - 特殊字符 - 关键字变色:"+"<br />");
+    var myString="大家在一些网站上搜索文章的时候，会发现这么一个现象，就是搜索的关键字会高亮改变颜色显示出来？？";
+    myString=myString.replace(/(颜色)/g,"<font color=red>$1</font>");
+    document.write(myString+"<br />");
+
+
+
+    //第2种方法：基于函数
+    document.write("replace使用场景第2种实现 - 牛逼的函数  - 关键字变色:"+"<br />");
+
+    function test(str){
+        return "<font color='red'>"+str+"</font>"
+    }
+
+    myString="大家在一些网站上搜索文章的时候，会发现这么一个现象，就是搜索的关键字会高亮改变颜色显示出来？？";
+    myString=myString.replace(/(现象)/g,test);
+    document.write(myString);
+</script>

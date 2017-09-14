@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 300px;
+            margin: 30px auto;
+        }
+        .box ul {
+            list-style: none;
+        }
+        .box ul li {
+            line-height: 30px;
+        }
+        .box ul li span {
+            margin: 5px;
+        }
+        .current {
+            background-color: #aaa!important;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var lis = document.getElementsByTagName("li");
+            for(var i = 0, len = lis.length; i < len; i++) {
+                if (i % 2 == 0) {
+                    lis[i].style.backgroundColor = "#eee";
+                } else {
+                    lis[i].style.backgroundColor = "#ddd";
+                }
+                lis[i].onmouseover = function() {
+                    this.className = "current";
+                } 
+                lis[i].onmouseout = function() {
+                    this.className = "";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+            <li><span>上证指数</span><span>2423</span><span>哈哈</span><span>2016-07-8</span></li>
+        </ul>
+    </div>
+</body>
+</html>

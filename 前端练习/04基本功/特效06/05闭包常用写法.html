@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+    function outFun() {
+        var num = 10;
+
+        function inFun() {
+            console.log(num);
+        }
+
+        return inFun;
+    }
+
+    console.log(outFun);
+    console.log(outFun());
+    outFun()();
+    console.log('调用' ,outFun()());
+
+    var key = 10;
+    function one() {
+        console.log('one', key);
+    }
+    one();
+
+
+
+    function outerFun() {
+        var a = 0;
+        function innerFun() {
+            a++;
+            console.log('a', a);
+        }
+        return innerFun;
+    }
+    var obj1 = outerFun();
+    obj1();
+    obj1();
+    obj1();
+
+    var obj2 = outerFun();
+    obj2();
+    obj2();
+    obj2();
+
+</script>

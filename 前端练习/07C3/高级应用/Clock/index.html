@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clock</title>
+	<style>
+		.clock {
+			position: relative;
+			width: 150px;
+			height: 150px;
+			margin: 50px auto;
+			border: 10px solid black;
+			border-radius: 50%;
+		}
+
+		.line {
+			position: absolute;
+			left: 50%;
+			margin-left: -3px;
+			width: 6px;
+			height: 150px;
+			background-color: gray;
+		}
+
+		.line1 {
+			transform: rotate(30deg);
+		}
+
+		.line2 {
+			transform: rotate(-30deg);
+		}
+
+		.line3 {
+			transform: rotate(60deg);
+		}
+
+		.line4 {
+			transform: rotate(-60deg);
+		}
+
+		.line5 {
+			transform: rotate(30deg);
+		}
+
+		.line6 {
+			transform: rotate(90deg);
+		}
+
+		.line1, .line2, .line3, .line4, .line5 {
+			width: 2px;
+			margin-left: -1px;
+		}
+
+		.white_circle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -60px 0 0 -60px;
+			width: 120px;
+			height: 120px;
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		.black_circle {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin: -8px 0 0 -8px;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: #000;
+			z-index: 1;
+		}
+
+		.hour {
+			position: absolute;
+			top: 50%;
+			right: 50%;
+			width: 35px;
+			height: 6px;
+			margin-top: -3px;
+			background-color: #000;
+			border-radius: 5px;
+			transform-origin: right;
+			animation: tick-tock 216000s steps(60, end) infinite;
+		}
+
+		.minute {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 6px;
+			height: 46px;
+			margin: -46px 0 0 -3px;
+			background-color: #000;
+			border-radius: 5px;
+			transform-origin: bottom;
+			animation: tick-tock 3600s steps(60, end) infinite;
+		}
+
+		.second {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 2px;
+			height: 50px;
+			margin: -50px 0 0 -1px;
+			background-color: red;
+			border-radius: 5px;
+			transform-origin: bottom;
+			animation: tick-tock 60s steps(60, end) infinite;
+		}
+
+		@keyframes tick-tock {
+			to {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+		<!-- 时钟刻度线条 -->
+		<div class="line"></div>
+		<div class="line line1"></div>
+		<div class="line line2"></div>
+		<div class="line line3"></div>
+		<div class="line line4"></div>
+		<div class="line line5"></div>
+		<div class="line line6"></div>
+		<!-- 内部白圆与线条配合形成刻度 -->
+		<div class="white_circle"></div>
+		<!-- 时钟中心圆点 -->
+		<div class="black_circle"></div>
+		<div class="hour"></div>
+		<div class="minute"></div>
+		<div class="second"></div>
+	</div>
+</body>
+</html>

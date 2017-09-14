@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	function Product(){
+        this.name='iphone8'
+        this.description='手机中的战斗机'
+        this.price=7777
+        this.date=new Date()
+        this.add = function(){}
+    }
+
+    Product.prototype={
+        test:11111,
+        buy:function(){}
+    }
+    var iphone = new Product()
+    console.log(Product.prototype.isPrototypeOf(iphone))
+    console.log(Object.prototype.isPrototypeOf(iphone))
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+	        .link{text-decoration: none;color:red;margin:5px}
+	    </style>
+    </head>
+    <body>
+    	<div id="div">
+		    <span id='span'>
+
+		    </span>
+
+		</div>
+
+    </body>
+</html>
+
+<script>
+	window.onload=function(){
+       var isLogin=true;
+       if(isLogin){
+           Login2()
+       }else{
+           noLogin()
+       }
+   }
+
+
+//    对于简单的绑定，我们可以使用一个函数，大家只需要学会使用就可以了。至于原理我们以后会讲解
+//    要想懂得如下正则表达式，需要掌握如下知识点：
+//    \w	匹配包括下划线的任何单词字符。等价于'[A-Za-z0-9_]'。
+//    \W	匹配任何非单词字符。等价于 '[^A-Za-z0-9_]'。
+//    这里表示寻找到以@开头的字符串，然后用数据替换@之后同名数据
+//    replace的用法，
+// 第一个参数：正则表达式，第二个参数：处理函数：
+// 处理函数的第一个参数：匹配的字符串，第二个参数：括号中的值
+
+
+	//    参数将依次为：
+    //    1、整个正则表达式匹配的字符。
+    //    2、第一分组匹配的内容、第二分组匹配的内容…… 以此类推直到最后一个分组。
+    //    3、此次匹配在源自符串中的下标（位置）。
+    //    4、源自符串
+	function formateString(str, data) {
+		console.log('进来了');
+
+		var newstr = str.replace(/@\((\w+)\)/g, function(value, key) {
+			console.log('-----------',arguments); // @(name) name 2 欢迎@(name)来到百度世界
+
+			return typeof data[key] === 'undefined' ? '' : data[key];
+		});
+
+		console.log('返回');
+		return newstr;
+
+		// return str.replace(/@\((\w+)\)/g, function(value, key) {
+		// 	console.log('-----------',arguments); // @(name) name 2 欢迎@(name)来到百度世界
+		// 	return typeof data[key] === 'undefined' ? '' : data[key];
+		// });
+	}
+
+    function Login2() {
+    	var user = {name: '1232321哈哈', title: '099标题'};
+    	var span = document.getElementById("span");
+    	span.innerHTML = formateString("欢迎@(name)的@(title)来到百度世界", user);
+    }
+
+    function noLogin(){
+        var span = document.getElementById("span");
+        span.innerHTML = "<a href='' id='login' name='login' class='link'>登录2</a><a href='' id='register' class='link'>注册2</a>";
+    };
+
+    //登录成功后 -简单的绑定
+    function Login(){
+        var user={name:'书'}
+        var span = document.getElementById("span");
+        span.innerHTML = "欢迎"+user.name+'来到百度世界';
+
+    };
+</script>

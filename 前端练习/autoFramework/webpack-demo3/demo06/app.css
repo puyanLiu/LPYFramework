@@ -1,0 +1,15 @@
+/*
+* @Author: liupuyan
+* @Date:   2017-03-17 10:30:15
+* @Last Modified by:   liupuyan
+* @Last Modified time: 2017-03-17 10:36:39
+*/
+
+.h1 {
+	color: red;
+}
+
+// :global(...) 将其变成全局作用域下的css
+:global(.h2) {
+	color: blue;
+}

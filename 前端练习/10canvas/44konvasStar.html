@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="konva/konva.js"></script>
+        <style>
+        	body {
+        		padding: 0;
+				margin: 0;
+				background: #f0f0f0;
+				overflow: hidden;
+        	}
+        </style>
+    </head>
+    <body>
+	    <!-- 放我们的舞台 -->
+    	<div id="container"></div>
+    	<script>
+    		// 创建舞台
+    		var stage = new Konva.Stage({
+    			container: 'container',
+    			width: window.innerWidth,
+    			height: window.innerHeight
+    		});
+    		// 创建一个层
+    		var layer = new Konva.Layer();
+    		// 把层添加到舞台上
+    		stage.add(layer);
+
+    		var star = new Konva.Star({
+				x: 300,	//五角星中心点
+				y: 300,
+				numPoints: 5,	//角数
+				innerRadius: 40,	//内圆半径
+				outerRadius: 70,	//外圆半径
+				fill: "teal",
+				stroke: "red",
+				strokeWidth: 4,
+				// rotation: -90
+			});
+			layer.add(star);
+
+			//圆环
+			var ring = new Konva.Ring({
+				x: 500,	//圆环中心点
+				y: 200,
+				innerRadius: 40,	//内圆半径
+				outerRadius: 70,	//外圆半径
+				fill: "teal",
+				stroke: "red",
+				strokeWidth: 4
+			});
+			layer.add(ring);
+
+    		// 把层渲染到舞台上
+    		layer.draw();
+
+    		//五角星循环转动
+			var loopTween = new Konva.Tween({
+				node: star,
+				rotation: 360,
+				duration: 2,
+				easing: Konva.Easings.Linear,
+				onFinish: function() {
+					// this === loopTween //true
+					this.reset();//重置动画
+					this.play(); //重新播放动画
+				}
+			});
+			loopTween.play();
+    	</script>
+    </body>
+</html>

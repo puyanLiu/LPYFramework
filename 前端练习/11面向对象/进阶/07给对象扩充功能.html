@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	 function Aaa(){
+	     this.name = '小明';
+     }
+     Aaa.prototype.showName = function(){
+	     console.log( this.name );
+     };
+
+     var a1 = new Aaa();
+     a1.showName();
+
+
+
+     //在JS源码 : 系统对象也是基于原型的程序
+     //尽量不要去修改或者添加系统对象下面的方法和属性
+     function Array(){
+	     this.lenglth = 0;
+     }
+     Array.prototype.push = function(){
+     	console.log('push');
+     };
+     Array.prototype.sort = function(){
+     	console.log('sort');
+     };
+
+     var arr = new Array();
+     arr.push();
+     arr.sort();
+
+    
+
+    var arr = [1,2,3];
+
+    Array.prototype.push = function(){
+
+        //this : 1,2,3
+        //arguments : 4,5,6
+
+        for(var i=0;i<arguments.length;i++){
+            this[this.length] = arguments[i]
+        }
+
+        return this.length;
+    };
+
+    arr.push(4,5,6);
+
+    console.log( arr );
+
+
+
+
+
+    var str = 'hello';
+
+     console.log( typeof str );
+
+     str.charAt(0);
+     str.indexOf('e');
+
+    //null undefined
+    //包装对象 : 基本类型都有自己对应的包装对象 : String  Number  Boolean
+
+    var str1 = new String('hello');
+
+     console.log( typeof str1 );
+
+     console.log(str1.charAt(1));
+
+     // String.prototype.charAt = function(){
+     // 	console.log('charAt');
+     // };
+
+
+
+    var str2 = 'hello';
+    str2.charAt(0);  //基本类型会找到对应的包装对象类型，然后包装对象把所有的属性和方法给了基本类型，然后包装对象消失
+
+
+    var str3 = 'hello';
+     String.prototype.lastValue = function(){
+     	console.log(this);
+     return this.charAt(this.length-1);
+     };
+     console.log( str3.lastValue() );  //o
+
+
+    var str4 = 'hello';
+    str4.number = 10;
+    console.log( str4, str4.number, str4.number );  //undefined
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
+<script type="text/javascript">
+    
+    /*
+        判断是否怪异模式的浏览器
+        document.compatMode == "CSS1Compat"    CSS1Compat  已经声明
+        document.compatMode === "BackCompat"   BackCompat  未声明
+    */
+    function scroll() {
+        // ie9+ 和其他浏览器
+        if(window.pageYOffset) {
+            return {
+                left: window.pageXOffset,
+                top: window.pageYOffset
+            };
+        } 
+        // 声明了DTD 
+        // 检测是不是怪异模式的浏览器，怪异-没有声明<!DOCTYPE html>
+        else if(document.compatMode == "CSS1Compat") {
+            return {
+                left: document.documentElement.scrollLeft,
+                top: document.documentElement.scrollTop
+            };
+        } 
+        return {
+            // 怪异模式
+            left: document.body.scrollLeft,
+            top: document.body.scrollTop
+        };
+    }
+
+    window.onscroll = function() {
+        console.log(scroll().top);
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<script>
+	//现有一个人。。。
+	 // 球员：人
+	 //教练：人
+	 //采用原型方式定义对象
+	var person = function(firstname,lastname){
+			this.firstname =firstname;
+			this.lastname = lastname;
+		};
+	
+	person.prototype = {
+		   getName:function(){return this.firstname+this.lastname}
+		
+		};
+	 
+	 var jiaolian =function(firstname,lastname){
+		    person.call(this, firstname, lastname);  
+		 
+		 }
+	 jiaolian.prototype = new person();
+	 jiaolian.prototype.zhidao = function(){console.log("zhidao");};
+	 
+	 var david = new jiaolian('wang','shu');
+	 console.log(david.firstname);
+	 david.zhidao();
+	 
+	david.firstname='david';
+	 david.lastname=' jone';
+	 console.log(david.getName());
+
+</script>

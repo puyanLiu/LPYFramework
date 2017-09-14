@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("li").each(function(index, el) {
+				var originTxt = $(el).text();
+				$(el).text(originTxt + index);		
+			});
+
+			$.each($("li"), function(index, el) {
+				var originTxt = $(el).text();
+				$(el).text(originTxt + index);
+			});
+
+			// map函数 
+			// 全局的map函数参数跟jQuery对象的参数是反的
+			var temp = $.map($("li"), function(el, index) {
+				var originTxt = $(el).text();
+				$(el).text(originTxt + index);
+			});
+
+			var temp2 = $("li").map(function(index, el) {
+				var originTxt = $(el).text();
+				$(el).text(originTxt + index);
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>哈哈你猜我是</li>
+		<li>哈哈你猜我是</li>
+		<li>哈哈你猜我是</li>
+		<li>哈哈你猜我是</li>
+	</ul>
+</body>
+</html>

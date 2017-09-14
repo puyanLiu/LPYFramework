@@ -1,0 +1,23 @@
+#common {
+	.button {
+		display: block;
+		border: 1px solid black;
+		width: 100px;
+		height: 30px;
+		background-color: grey;
+		&:hover {
+			background-color: white;
+		}
+	}
+}
+#header {
+	.button {
+		#common > .button;
+	}
+}
+
+#nav {
+	a {
+		#common > .button;
+	}
+}

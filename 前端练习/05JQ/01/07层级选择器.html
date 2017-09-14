@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+
+    <script src="jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("li").css("font-size", "30px");
+
+            // 后代选择器
+            $(".wrap li").css("background", "red");
+
+            // 子代选择器
+            $(".wrap > ul > li").css("background", "green");
+
+            // 紧邻选择器
+            $(".wrap + div").css("background", 'pink');
+
+            // 兄弟选择器 后边的兄弟
+            $(".liItem ~ li").css("font-size", "40px");
+        });
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>姐妹01
+                <p>
+                    <ul>
+                        <li>孩纸01</li>
+                        <li>孩纸02</li>
+                        <li>孩纸03</li>
+                    </ul>
+                </p>
+            </li>
+            <li>姐妹02</li>
+            <li>姐妹03</li>
+            <li class="liItem">姐妹04</li>
+            <li>姐妹05</li>
+            <li>姐妹06</li>
+            <li>姐妹07</li>
+            <li>姐妹08</li>
+            <li>姐妹09</li>
+            <li>姐妹10</li>
+        </ul>
+    </div>
+
+    <div>div元素后面的第一个div</div>
+    <p>我是p元素</p>
+
+    <div>p元素后面的第一个div</div>
+    <div>p元素后面的第二个div</div>
+
+</body>
+</html>

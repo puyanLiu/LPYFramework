@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ol, li {
+            list-style: none;
+        }
+        .all {
+            width: 490px;
+            height: 170px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            background-color: pink;
+            overflow: hidden;
+            position: relative;
+        }
+        .all .ad {
+            width: 100%;
+        }
+        .all .ad ul {
+            width: 1000%;
+            position: relative;
+        }
+        .all .ad ul li {
+            float: left;
+            margin-right: 10px;
+            height: 170px;
+            overflow: hidden;
+        }
+        .all img {
+            display: block;
+            width: 490px;
+        }
+        .arrow {
+            position: absolute;
+            height: 42px;
+            top: 50%;
+            margin-top: -20px;
+            width: 470px;
+            padding: 0 10px;
+            display: none;
+        }
+        .arrow span {
+            position: absolute;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font: 400 30px/40px '黑体';
+            color: #fff;
+            border: 1px solid #fff;
+            background: #000;
+            opacity: 0.3;
+            cursor: pointer;
+        }
+        .arrow span.leftArrow {
+            left: 0;
+        }
+        .arrow span.rightArrow {
+            right: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $("box").onmouseover = function() {
+                $("arr").style.display = "block";
+            }
+            $("box").onmouseout = function() {
+                $("arr").style.display = "none";
+            }
+
+            var num = 0, distance = 0, step = 500;
+            $("left").onclick = function() {
+                distance += step;
+                
+            }
+            $("right").onclick = function() {
+                distance -= step;
+            }
+
+            setInterval(function() {
+                if (distance >= 0) {
+                    distance = 0;
+                } else if(distance <= -step * 4) {
+                    distance = -step * 4;
+                }
+                num = num + (distance - num) * 0.1;
+                console.log(num);
+                $("imgs").style.left = num + "px";
+            }, 20);
+
+        }
+    </script>
+</head>
+<body>
+    <div class="all" id="box">
+        <div class="ad">
+            <ul id="imgs">
+                <li><img src="images/1.jpg" alt="" /></li>
+                <li><img src="images/2.jpg" alt="" /></li>
+                <li><img src="images/3.jpg" alt="" /></li>
+                <li><img src="images/4.jpg" alt="" /></li>
+                <li><img src="images/5.jpg" alt="" /></li>
+            </ul>
+            <div class="arrow" id="arr">
+                <span id="left" class="leftArrow">&lt;</span>
+                <span id="right" class="rightArrow">&gt;</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	 var fackArray1 = {0:'first',1:'second',length:2};
+	 console.log(fackArray1);
+	 console.log(fackArray1[0], fackArray1[1]);
+	 var newArray1 = Array.prototype.slice.call(fackArray1);
+	 console.log(newArray1);
+
+	 var fackArray2 = {length: 2};
+	 console.log(fackArray2.length);
+	 var newArray2 = Array.prototype.slice.call(fackArray2);
+	 console.log(newArray2, newArray2[0], newArray2[1]);
+</script>

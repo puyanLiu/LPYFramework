@@ -1,0 +1,32 @@
+@header-border: 4px;
+@base-color: #111;
+@red: #842210;
+
+#header {
+	height: 100px;
+	color: @base-color * 3;
+	border: 5px solid desaturate(@red, 100%);
+	border-width: @header-border @header-border * 2 @header-border * 3 @header-border; 
+	border-color: desaturate(@red, 100%) @red lighten(@red, 10%) darken(@red, 30%);
+}
+
+
+
+#nav {
+	color: #888 / 4;
+	background-color: green;
+
+	// 简单四则运算 同单位操作
+	@base: 5%;
+	@filter: @base * 2;
+	@other: @base + @filter;
+	height: 100% / 2 + @other;
+
+	// 不同单位操作
+	@borderW: 1px + 6;
+	border: @borderW solid yellow;
+
+	// 使用() 改变运算的先后顺序
+	@width: 20px;
+	width: (@width + 5) * 3;
+}

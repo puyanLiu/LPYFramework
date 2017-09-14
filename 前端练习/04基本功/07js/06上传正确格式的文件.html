@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" name="" id="txt" /><span></span>
+</body>
+</html>
+<script type="text/javascript">
+    var file = document.getElementById("txt");
+    file.onchange = function() {
+        var path = this.value;
+        console.log(path);
+
+        var suxxif = path.substr(path.lastIndexOf("."));
+        console.log(suxxif);
+
+        if(suxxif.toUpperCase() == ".JPG" || suxxif.toUpperCase() == ".PNG") {
+            this.nextSibling.innerHTML = "格式正确";
+        } else {
+            this.nextSibling.innerHTML = "格式错误";
+        }
+
+    }
+</script>

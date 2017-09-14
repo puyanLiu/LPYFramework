@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<script>
+	//对象构造函数
+    // 私有属性好处： 安全 就类似闭包中的函数一样 减少污染
+    function Person(name) {
+        //私有属性，只能在对象构造函数内部使用
+        var className = "用户对象";
+        //公有属性,在对象实例化后调用
+        this.name = name;
+        //私有方法
+        var privateFunction = function () {
+            console.log(this.name);
+        }
+        //公有方法
+        this.publicFunction = function () {
+            console.log(this.name); //公有属性
+            console.log(className); //正确 直接通过变量名访问
+            console.log(this.className); //undefined 错误 不能这样访问
+        }
+        //公有属性
+        console.log(className);
+        //正确 直接通过变量名访问
+        console.log(this.className); //undefined 错误 不能这样访问
+    }
+
+    /*什么是公有属性：*/
+    /*使用象的人可以访问到对象内部的某个属性*/
+    var person = new Person('xiaowang')
+
+    console.log(person.className);
+    console.log(person.name)
+    console.log(person.publicFunction())
+    console.log(person.privateFunction())
+
+    /*最小原则：*/
+    $('#tab').tab()
+</script>

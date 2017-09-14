@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            vertical-align: top;
+            /*或者 display: block*/
+        }
+        ul, ol {
+            list-style: none;
+        }
+        .slider {
+            width: 490px;
+            height: 170px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            background-color: pink;
+        }
+        .inner {
+            width: 1000%;
+            height: 100%;
+        }
+        .inner ul {
+            position: relative;
+        }
+        .inner ul li {
+            margin-bottom: 10px;
+        }
+        .slider ol {
+            position: absolute;
+            left: 50%;
+            margin-left: -80px;
+            bottom: 10px;
+        }
+        .slider ol li {
+            float: left;
+            width: 18px;
+            height: 18px;
+            background-color: #fff;
+            line-height: 18px;
+            text-align: center;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 9px;
+        }
+        .slider ol li.current {
+            background-color: orange;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var jd = document.getElementById("jd");
+            var ul = jd.children[0].children[0];
+            var ol = jd.children[1];
+            var olLis = ol.children;
+            var num = 0, distance = 0;
+            for(var i = 0; i < olLis.length; i++) {
+                olLis[i].index = i;
+                olLis[i].onmouseover = function() {
+
+                    for(var j = 0; j < olLis.length; j++) {
+                        olLis[j].className = "";
+                    }
+
+                    this.className = "current";
+                    // currentStyle IE支持
+                    var height = window.getComputedStyle ? window.getComputedStyle(jd,null).height : jd.currentStyle.height;
+                    var paddingTop = window.getComputedStyle ? window.getComputedStyle(jd, null).paddingTop : jd.currentStyle.paddingTop;
+                    var paddingBottom = window.getComputedStyle ? window.getComputedStyle(jd, null).paddingBottom : jd.currentStyle.paddingBottom;
+                    distance = - (parseInt(height) + parseInt(paddingTop) + parseInt(paddingBottom)) * this.index;
+
+                }
+            }
+
+            setInterval(autoPlay, 20);
+            function autoPlay() {
+                num = num + (distance - num) * 0.1;
+                ul.style.top = num + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="slider" id="jd">
+        <div class="inner">
+            <ul>
+                <li><a href=""><img src="images/01.jpg" alt="" /></a></li>
+                <li><a href=""><img src="images/02.jpg" alt="" /></a></li>
+                <li><a href=""><img src="images/03.jpg" alt="" /></a></li>
+                <li><a href=""><img src="images/04.jpg" alt="" /></a></li>
+                <li><a href=""><img src="images/05.jpg" alt="" /></a></li>
+            </ul>
+        </div>
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+    </div>
+</body>
+</html>

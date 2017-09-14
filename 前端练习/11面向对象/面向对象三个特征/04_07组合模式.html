@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	function Person(name, age) {}
+	Person.prototype.say = function () {}
+
+
+	function Student(name, age, no) {
+		/*会自动调用Person的方法，同时将name age传递过去*/
+		Person.call(this,name,age);
+		//自己的属性
+		this.no = no;
+	}
+	Student.prototype = new Person();
+	var stu1 = new Student("0001","张三",11);
+</script>

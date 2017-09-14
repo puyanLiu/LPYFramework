@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+
+ //    apply的一些其他巧妙用法
+    //细心的人可能已经察觉到,在我调用apply方法的时候,
+    //        第一个参数是对象(this),
+    //        第二个参数是一个数组集合,
+    //        在调用Person的时候,他需要的不是一个数组,
+    //        但是为什么他给我一个数组我仍然可以将数组解析为一个一个的参数,
+    //        这个就是apply的一个巧妙的用处：可以将一个数组默认的转换为一个参数列表([param1,param2,param3] 转换为 param1,param2,param3) 这个如果让我们用程序来实现将数组的每一个项,来装换为参数的列表,
+    //        可能都得费一会功夫,借助apply的这点特性,所以就有了以下高效率的方法
+           
+
+	/* 我们先从Math.max()函数说起，
+    Math.max后面可以接任意个参数，最后返回所有参数中的最大值。
+    比如*/
+   console.log(Math.max(5,8)) //8
+   console.log(Math.max(5,7,9,3,1,6)) //9
+
+   /*问题：如何获取一个数组的最大值*/
+   /*遍历*/
+
+
+   /* 但是在很多情况下，我们需要找出数组中最大的元素。*/
+   /* var arr=[5,7,9,1]
+    alert(Math.max(arr)) // 这样却是不行的。一定要这样写*/
+
+
+    /*传统方式写法*/
+    function getMax(arr){
+        var arrLen=arr.length;
+        for(var i=0,ret=arr[0];i<arrLen;i++){
+            ret=Math.max(ret,arr[i]);
+        }
+        return ret;
+    }
+   console.log(getMax([1,2,3,4,5,6,7]))
+    /*这样写麻烦而且低效。如果用 apply呢，看代码：*/
+
+
+   /*参数数组拆分法则*/
+   /*传递一个数组，其实会将其拆成很多个参数*/
+
+   /*适用场景：函数可以接受不限个数的参数*/
+   /*这样我们只能使用arguments来管理可变参数*/
+   /*比如max min push join split replace*/
+   /*在js中有很多这样支持可变参数的函数
+   大家还记得我们前面写的extend，也是支持可变参数*/
+
+   /*这也是为什么apply这么流行，这么重要的原因*/
+
+   /*广泛运用在框架，算法中*/
+
+   /*巧用apply虽然传递的是数组，但是使用的时候是把数组拆开的。。
+   等价于  return Math.max.call(null,1,2,3,4,5);*/
+   /*所以等价于：Math.max(5,7,9,3,1,6)*/
+    function getMax2(arr){
+        return Math.max.apply(null,arr);
+       /* return Math.max.call(null,1,2,3,4,5);*/
+    }
+   console.log(getMax2([1,2,3,4,5,6,7]))
+
+
+
+
+    //计算最小值
+    /*参数数组拆分法则*/
+    /*传递一个数组，其实会将其拆成很多个参数，正好符合min的语法*/
+    var min=Math.min.apply(null,[3335,333,34343,34343,5657767,34455,445466,45454,343434,46466,56556,464646,464646,466,4646464])
+    console.log('最小值：'+min)
+//    整体解析：
+//           因为Math.max 参数里面不支持Math.max([param1,param2]) 也就是数组
+//           但是它支持Math.max(param1,param2,param3…),所以可以根据刚才apply的那个特点来解决
+//           var max=Math.max.apply(null,array),这样轻易的可以得到一个数组中最大的一项
+//           (apply会将一个数组装换为一个参数接一个参数的传递给方法)
+//    第一个参数为什么是null：
+//             这块在调用的时候第一个参数给了一个null,这个是因为没有对象去调用这个方法,
+//             我只需要用这个方法帮我运算,得到返回的结果就行,.所以直接传递了一个null过去
+            
+
+
+    /*练习*/
+    /*将一个数组合并到另一个数组中*/
+    var arr1=new Array("1","2","3");
+    var arr2=new Array("4","5","6");
+    /*最终arr1["1","2","3","4","5","6"]*/
+
+    //传统写法
+    function PushArray(arr1,arr2){
+        var arrLen=arr2.length
+        for(var i=0;i<arrLen;i++){
+            arr1.push(arr2[i])
+        }
+        return arr1;
+    }
+    var result = PushArray(arr1,arr2);
+    console.log(result)
+
+    /*使用apply写法*/
+     /*Array.prototype.push 可以实现两个数组合并
+     同样push方法没有提供push一个数组,但是它提供了push(param1,param,…paramN)
+     push（arr，2，3，3,3,3）
+     所以同样也可以通过apply来装换一下这个数组,即:*/
+    Array.prototype.push.apply(arr1,arr2);
+   /* Array.prototype.push.call(arr1,"4","5","6");*/
+   /*  push（arr1,"4","5","6"）*/
+    console.log(arr1)
+    console.log(arr2)
+
+
+
+
+     /*定义一个人类*/
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+
+    /*定义一个学生类*/
+    function Student(name,age,grade) {
+        Person.apply(this,arguments);
+        this.grade=grade;
+    }
+
+    //创建一个学生类
+    var student=new Student("田佩瑶",21,"一年级");
+    //测试
+    document.write("姓名:"+student.name+"\n"+"年龄:"+student.age+"\n"+"年级:"+student.grade);
+    //大家可以看到测试结果name:qian  age:21  grade:一年级
+    //学生类里面我没有给name和age属性赋值啊,为什么又存在这两个属性的值呢,这个就是apply的神奇之处.
+
+//    分析: Person.apply(this,arguments);
+//
+//    this:在创建对象在这个时候代表的是student
+//
+//    arguments:是一个数组,也就是[“qian”,”21”,”一年级”];
+//
+//    也就是通俗一点讲就是:
+//            用student去执行Person这个类里面的内容,在Person这个类里面存在this.name等之类的语句,
+//            这样就将属性创建到了student对象里面
+
+
+
+</script>

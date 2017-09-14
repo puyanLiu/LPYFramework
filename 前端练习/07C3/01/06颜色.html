@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		font-family: '微软雅黑';
+        		background: #f7f7f7;
+        	}
+        	.wrapper {
+        		width: 1024px;
+        		margin: 0 auto;
+        	}
+        	.wrapper > section {
+        		min-height: 300px;
+        		margin-bottom: 30px;
+        		box-shadow: 1px 1px 4px #ddd;
+        		background: #fff;
+        	}
+        	.wrapper > header {
+        		text-align: center;
+        		line-height: 1;
+        		padding: 20px;
+        		margin-bottom: 10px;
+        		font-size: 30px;
+        	}
+        	.wrapper section > header {
+        		line-height: 1;
+        		padding: 10px;
+        		font-size: 22px;
+				color: #333;
+				background: #eee;
+        	}
+        	.wrapper .wrap-box {
+        		padding: 20px;
+        	}
+
+        	.parent {
+        		width: 200px;
+        		height: 200px;
+        		background: red;
+        	}
+        	.child {
+        		width: 100px;
+        		height: 100px;
+        		background: transparent;
+        	}
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		background: url(images/huaban.jpg);
+        	}
+        	.layer {
+        		position: fixed;
+        		left: 0;
+        		right: 0;
+        		top: 0;
+        		bottom: 0;
+        		background-color: rgba(0, 0, 0, 0.3);
+        		/*background-color: hsla(0, 10%, 10%, 0.3);*/
+        		/*opacity: 0.3;*/
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>颜色</header>
+    		<section>
+    			<header>介绍</header>
+    			<div class="wrap-box">
+    				<pre>
+	新增了RGBA、HSLA模式，其中的A表示透明度通道，即可以设置颜色值的透明度，相较opacity，不具有继承性，即不会影响子元素的透明度。
+	Red、Green、Blue、Alpha即RGBA
+	Hue、Saturation、Lightness、Alpha即HSLA
+	R、G、B 取值范围0~255
+	H 取值范围0~360，0/360表示黑色、120表示绿色、240表示蓝色
+	S 取值范围0%~100%
+	L 取值范围0%~100%
+	A 取值范围0~1
+	关于透明度：
+	1、opacity子元素会继承父元素的透明度，在实际开发中会带来干扰；
+	2 、transparent 设置透明度时完全类似于“玻璃”一样的透明
+    				</pre>
+    			</div>
+    		</section>
+    		<section>
+    			<header>opacity</header>
+    			<div class="wrap-box">
+    				<p>子元素会继承父元素的透明度</p>
+    			</div>
+    		</section>
+    		<section>
+    			<header>transparent</header>
+    			<div class="wrap-box">
+    				<p>完全透明 类似玻璃一样</p>
+    				<div class="parent">
+    					<div class="child">哈哈</div>
+    				</div>
+    			</div>
+    		</section>
+
+    		<section>
+    			<header>例子</header>
+    			<div class="wrap-box layer">
+    				<img src="images/layer.jpg" alt="">
+    			</div>
+    		</section>
+    	</div>
+    </body>
+</html>

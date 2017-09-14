@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- Sublime Server 不要stop 直接退出 -->
+		<!-- npm install -g http-server -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    </head>
+    <body>
+        <!-- file text password radio checkbox button image submit reset select button -->
+    	<form action="#">
+    		<label>
+    			text: <input type="text" required>
+    		</label>
+    		<br>
+			<label>
+    			email: <input type="email" value="aa@qq.com">
+    		</label>
+    		<br>
+			<label>
+    			data: <input type="data" min="2014-10-14" max="2020-10-14" value="2016-08-14">
+    		</label>
+    		<br>
+            <label>
+                range: <input type="range" min="0" max="50" value="10">
+            </label>
+            <br>
+            <label>
+                search: <input type="search" results="10" placeholder="搜点啥呢？">
+            </label>
+            <br>
+            <label>
+                tel: <input type="tel" placeholder="(010) 888-8888" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$">
+            </label>
+            <br>
+            <label>
+                color: <input type="color" placeholder="e.g.#666">
+            </label>
+            <br>
+            <label>
+                number: <input type="number" step="1" min="-5" max="10" value="0">
+            </label>
+            <br>
+            <input type="image" src="toy.png" alt="">
+            <input type="submit" value="提交">
+    	</form>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+			h1{text-align: center; height: 100px; line-height: 100px;}
+			.orange{color: orange;}
+			.container{width: 600px; margin: 100px auto;}
+		</style>
+    </head>
+    <body>
+    	<div class="container">
+			<h1 id="result"></h1>
+			<input type="text" id="inp">
+			<button id="btn0">正常输入</button>
+			<button id="btn1">替换第一个字母l</button>
+			<button id="btn2">替换所有字母l</button>
+			<button id="btn3">标签转义</button>	
+		</div>
+    </body>
+</html>
+
+<script>
+var g = function(id){return document.getElementById(id);}
+var clicked = function(id, fn){
+	g(id).onclick = fn;
+}
+var html = function(html){
+	console.log('--------', html)
+	g('result').innerHTML = html;
+}
+var val = function(){return g('inp').value;}
+clicked('btn0', function(){
+	html(val());
+});
+clicked('btn1', function(){
+	html(val().replace('l', 'L'));
+});
+clicked('btn2', function(){
+	html(val().replace(/l/gi, 'L'));
+});
+clicked('btn3', function(){
+	html(val().replace(/[<>\"\'\&]/g, function(m, p, o){
+		console.log(arguments,m, p, o);
+		switch(m){
+			case '<':
+			console.log('进来')
+				return '&lt;';
+			case '>':
+				return '&gt;';
+			case '\"':
+				return '&quot;';
+			case '\'':
+				return '&#39;';
+			case '\&':
+				return '&amp;';
+		}
+	}))
+})
+</script>

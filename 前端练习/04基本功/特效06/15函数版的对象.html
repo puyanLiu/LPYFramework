@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    function Person(name, age) {
+        var obj = {};
+        obj.name = name;
+        obj.age = age;
+
+        obj.showName = function() {
+            console.log("名字", name);
+        }
+        obj.showAge = function() {
+            console.log("年龄", age);
+        }
+
+        return obj;
+    }
+
+
+    var xiaoming = Person("小明", 12);
+    console.log(xiaoming.name);
+    console.log(xiaoming.age);
+    xiaoming.showName();
+    xiaoming.showAge();
+
+    var daming = Person("大名", 15);
+    daming.showName();
+
+</script>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		#backTop {
+			position: fixed;
+			bottom: 40px;
+			right: 10px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#backTop").on('click', function(event) {
+				$(window).scrollTop(0);
+				$(window).scrollLeft(0);
+			});
+
+			$("#box").on('click', 'h1', function(event) {
+				// this jQuery的事件响应方法中，this指向被点击的dom对象
+				this.innerHTML += '-';
+
+				// dom对象转换成jQuery对象
+				$(this).text($(this).text() + 1);
+			});
+
+		})
+	</script>
+</head>
+<body>
+	<div id="backTop">
+		<img src="images/bk-top3.jpg" width="44" height="44" alt="">
+	</div>
+	<div id="box">
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+		<h1>哈哈</h1>
+	</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+        	fn();
+        	function fn() {
+        		console.log(122);
+        	}
+        	fn();
+
+        	// fn1(); // 报fn1 is not a function
+        	var fn1 = function() {
+        		console.log(2222);
+        	}
+        	fn1();
+
+        	/*
+        	javascript 代码运行分两个阶段：
+        		1、预解析 --- 把所有的函数定义提前，所有的变量声明提前，变量的赋值不提前
+        		2、执行 --- 从上到下执行 （setTimeout, setInterval, ajax 中的回调函数，事件中的函数需要触发执行）
+        	 */
+        	
+        	var obj = {
+        		name: "zhangsan",
+        		say: function() {
+        			console.log("hello");
+        		}
+        	};
+
+        	var cb = function() {
+        		console.log(123);
+        	}
+
+        	function fn2(callback) {
+        		callback();
+        	}
+        	// 函数的参数可以是一个函数，这个函数可以直接调用
+        	fn2(obj.say);
+
+        	function fn4() {
+        		var n = 1;
+        		var fn = function() {
+        			n++;
+        			console.log(n);
+        		}
+        		return fn;
+        	}
+        	var fn5 = fn4();
+        	fn5();
+        	fn5();
+        	fn5();
+        	
+        	// 函数可以作为返回值 函数的嵌套形成闭包
+        	
+        	// 此处输出 3 3 3
+        	var data = [];
+        	// 此处的i等价于定义在外边的i
+        	for(var i = 0; i < 3; i++) {
+        		data[i] = function() {
+        			console.log(i);
+        		}
+        	}
+        	data[0]();
+        	data[1]();
+        	data[2]();
+        	console.log('i = ' + i);
+
+
+        	// 此处输出 0 1 2
+        	var j = 3;
+        	var data1 = [];
+        	for(j = 0; j < 3; j++) {
+        		data1[j] = function(k) {
+        			return function() {
+        				console.log(k);
+        			}
+        		}(j);
+        	}
+        	data1[0]();
+        	data1[1]();
+        	data1[2]();
+
+
+
+        	/*
+        	function有双重身份
+        		1、对象
+        		2、构造函数
+        	 */
+        	function JuiceMachine(fruit) {
+        		this.fruit = fruit;
+        		this.produceJuice = function() {
+        			console.log(this.fruit + '果汁');
+        		}
+        	}
+        	JuiceMachine.brand = '九阳';
+        	JuiceMachine.open = function() {
+        		console.log('open');
+        	}
+        	JuiceMachine.open();
+
+        	var apple = new JuiceMachine("苹果");
+        	apple.produceJuice();
+        	var brand = apple.brand;
+        	console.log(brand); // undefined
+
+        	var orange = new JuiceMachine("橘子");
+        	orange.produceJuice();
+
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>

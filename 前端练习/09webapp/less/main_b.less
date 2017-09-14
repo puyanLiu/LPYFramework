@@ -1,0 +1,27 @@
+
+// 变量计算
+@nice-blue: #5b83ad;
+@light-blue: @nice-blue + #666;
+
+// 定义一个变量名为变量
+@fontSize: 30px;
+@bottomFontSize: "fontSize";
+
+// @arguments
+.boxShadow(@x: 0, @y:0, @blur: 1px, @color: #000) {
+	-mox-box-shadow: @arguments;
+	-webkit-box-shadow: @arguments;
+	box-shadow: @arguments;
+}
+
+.bottom {
+	width: 200px;
+	height: 50px;
+	// background-color: lighten(#000, 10%);
+	// background-color: darken(#fff, 10%);
+	background-color: @light-blue;
+	color: white;
+	font-size: @@bottomFontSize;
+
+	.boxShadow(2px, 2px, 3px, red);
+}

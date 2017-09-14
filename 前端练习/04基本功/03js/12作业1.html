@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto;
+            padding-top: 30px;
+        }
+        .box .top {
+            overflow: hidden;
+            _zoom: 1;
+            padding-left: 1px;
+            margin-top: -29px;
+            position: absolute;
+            z-index: 1;
+        }
+        .box .top button {
+            width: 100px;
+            height: 30px;
+            border: 1px solid red;
+            float: left;
+            margin-left: -1px;
+            background-color: #ddd;
+            outline-style: none;
+        }   
+        .bottom {
+            width: 400px;
+            height: 400px;
+            background-color: #aaa;
+            border: 1px solid red;
+        }
+        .bottom div {
+            display: none;
+        }
+        .bottom div.show {
+            display: block;
+        }
+        .box .top button.btn-selected {
+            background-color: #aaa;
+            border-bottom: none;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btns = document.getElementById("box_top").getElementsByTagName("button");
+            var divs = document.getElementById("box_bottom").getElementsByTagName("div");
+            for(var i = 0, len = btns.length; i < len; i++) {
+                btns[i].index = i;
+                btns[i].onclick = function() {
+
+                    for(var j = 0; j < len; j++) {
+                        btns[j].className = "";
+                        divs[j].className = "";
+                    }
+
+                    this.className = "btn-selected";
+                    divs[this.index].className = "show";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div class="top" id="box_top">
+            <button class="btn-selected">鼠标1</button>
+            <button>鼠标2</button>
+            <button>鼠标3</button>
+        </div>
+        <div class="bottom" id="box_bottom">
+            <div class="show" >
+                <img src="images/01big.jpg" alt="" />1
+            </div>
+            <div>
+                <img src="images/02big.jpg" alt="" />2
+            </div>
+            <div>
+                <img src="images/03big.jpg" alt="" />3
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

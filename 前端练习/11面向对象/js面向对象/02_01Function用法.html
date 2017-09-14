@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	function add1(a,b){
+        return a+b;
+    }
+
+//    Function对象的实例  -- 高级技巧 --- 写框架必须用的。。。
+
+    //前面表示参数，后面表示函数语句
+    var add2 = new Function("a","b","return a+b");
+
+   /* var num=1; Number
+    var arr =[1,1,1,1,1,1,1,] Array*/
+
+    console.log(add1(1,2))
+    console.log(add2(1,2))
+</script>

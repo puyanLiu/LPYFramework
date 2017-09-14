@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div id='div'>
+		    <div class='red'>11111</div>
+		    <div class='red'>22222</div>
+		    <div class='red'>33333</div>
+		</div>
+    </body>
+</html>
+
+<script>
+	//使用对象创建数组
+    var a = new Array("itsy", "bitsy", "spider");
+
+    console.log(typeof a, a.constructor); // "object", 数组是对象
+    console.log(a.constructor === Array); // true
+
+    //字面量
+    //没有必要去使用new去调用Array()构造方法，减少代码。
+    var a = ["itsy", "bitsy", "spider"];
+
+
+    //正则表达式
+    //对象写法
+    //var pattern = new RegExp('[bc]at','i');
+    //字面量写法
+    //var expression = /pattern/flags
+
+    var pattern = /a/i;//匹配字符串中所有'a'的实例
+    //三个标志flags
+    //[a]g:表示全局模式(global)
+    //[b]i:表示不区分大小写(ignoreCase)
+    //[c]m:表示多行模式(multiline)
+
+
+    //根据某个元素中class为 clasName的所有元素
+    function getByClass(obj,classname){
+        var elements = obj.getElementsByTagName('*');
+        var result = [];
+//    匹配字符串开头或者空格
+        var pattern = new RegExp( '^|\\s'+ classname + '\\s|$');
+        for(var i = 0; i < elements.length; i++){
+            if(pattern.test(elements[i].className)){
+                result.push(elements[i]);
+            }
+        }
+        return result
+    }
+    var div = document.getElementById('div')
+    var length = getByClass(div,'red').length
+    console.log(length)
+</script>

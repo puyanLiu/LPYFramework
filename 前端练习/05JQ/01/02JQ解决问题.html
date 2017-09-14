@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: : 0;
+            padding: 0;
+        }
+        div {
+            height: 200px;
+            background-color: pink;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+       // 入口函数
+       $(document).ready(function() {
+            alert("嘿嘿");
+            $("#demo").click(function() {
+                $("div").show(1000).html("我是内容");
+            });
+       });
+
+
+       // 入口函数 方式2
+       $(function() {
+            alert("哈哈");
+       })
+    </script>
+</head>
+<body>
+    <input type="button" value="我是按钮" id="demo" />
+    <div id="div1">
+        <span>哈哈哈</span>
+    </div>
+    <div></div>
+    <div></div>
+</body>
+</html>

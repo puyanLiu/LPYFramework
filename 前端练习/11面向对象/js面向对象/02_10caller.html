@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//    返回函数调用者
+//caller的应用场景 主要用于察看函数本身被哪个函数调用
+    function fn() {
+//        判断某函数是否被调用
+       console.log('--------', fn.caller);
+        if (fn.caller) {
+            console.log(fn.caller.toString());
+        } else {
+            console.log("函数直接执行");
+        }
+    }
+
+
+    function AAAA() {
+       console.log('AAAA--------', AAAA.caller);
+        fn();
+    }
+
+    AAAA();
+  /*  // fn被其他函数调用
+    //fn没有被其它函数调用而是直接执行
+    fn();*/
+</script>

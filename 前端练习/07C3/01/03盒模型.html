@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            div {
+                width: 200px;
+                height: 200px;
+                padding: 50px;
+                background-color: yellow;
+                margin: 100px auto;
+                border: 10px solid red;
+                /*类似IE低版本的怪异模式*/
+                box-sizing: border-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+    	<img src="images/box-sizing.gif" alt="">
+    	<br>
+    	w3c宽度 = content
+    	<br>
+    	ie 宽度 = border + padding + content
+        <p>
+            盒模型设定为border-box时 width = border + padding + content <br>
+            盒模型设定为content-box时 width = content
+            <p>所谓定盒模型即可以指定 属性width的计算方式</p>
+        </p>
+    </body>
+</html>

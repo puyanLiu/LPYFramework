@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		select {
+			width: 200px;
+			background: teal;
+			height: 200px;
+			font-size: 20px;
+		}
+		.box {
+			width: 30px;
+			display: inline-block;
+			vertical-align: top;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#sel-all").on('click', function(event) {
+				// 把所有的城市从左边移动到右边
+				$("#src-city option").appendTo('#tar-city');
+			});
+			$("#sel-none").on('click', function(event) {
+				// 把所有的城市从右边移动到左边
+				$("#tar-city option").appendTo('#src-city');
+			});
+			$("#btn-sel").on('click', function(event) {
+				$("#src-city option:selected").appendTo('#tar-city');
+			});
+			$("#btn-back").on('click', function(event) {
+				$("#tar-city option:selected").appendTo('#src-city');
+			});
+		})
+	</script>
+</head>
+<body>
+	<select name="src-city" id="src-city" multiple>
+		<option value="1">北京</option>
+		<option value="2">上海</option>
+		<option value="3">深圳</option>
+		<option value="4">广州</option>
+	</select>
+	<div class="box">
+		<button id="sel-all">&nbsp;&gt;&gt;&nbsp;</button>
+		<button id="sel-none">&nbsp;&lt;&lt;&nbsp;</button>
+		<button id="btn-sel">&nbsp;&gt;&nbsp;</button>
+		<button id="btn-back">&nbsp;&lt;&nbsp;</button>
+	</div>
+	<select name="tar-city" id="tar-city" multiple>
+		
+	</select>
+</body>
+</html>

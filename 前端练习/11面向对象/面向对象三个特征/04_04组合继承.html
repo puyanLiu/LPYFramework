@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//    基类 人
+var Person = function(name, age){
+	this.name = name;
+	this.age = age;
+}
+Person.prototype = {
+	say : function(){
+		console.log('Hello Everyone!');
+	}
+}
+
+//儿子 学生类  继承自人
+var Student = function(name, age, lesson){
+	Person.call(this, name, age);
+	this.lesson = lesson;
+}
+Student.prototype = new Person();
+Student.prototype.getTeacher = function(){
+	console.log("Mr Zhang");
+}
+
+
+
+
+//儿子 教师类  继承自人
+var Teacher = function(name, age, subject){
+	Person.call(this, name, age);
+	this.subject = subject;
+}
+Teacher.prototype = new Person();
+Teacher.prototype.getCollage = function(){
+	console.log('网页平面')
+}
+
+//使用
+var xiaoWang = new Student('wang', 20, 'javascript');
+var xiaoLi = new Student('li', 30, 'javascript');
+console.log(xiaoWang.name);
+console.log(xiaoWang.age);
+console.log(xiaoWang.lesson);
+console.log(xiaoLi.name);
+xiaoWang.say();
+xiaoLi.say();
+console.log(xiaoWang.say === xiaoLi.say);
+console.log(xiaoWang.getTeacher === xiaoLi.getTeacher);
+
+var xiaoMing = new Teacher('zhang', 25, 'javascript');
+console.log(xiaoMing.name);
+console.log(xiaoMing.age);
+console.log(xiaoMing.subject);
+xiaoMing.say();
+console.log(xiaoMing.say === xiaoWang.say);
+</script>

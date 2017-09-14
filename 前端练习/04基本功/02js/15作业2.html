@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            var btn = document.getElementById("btn");
+            btn.onclick = function(){
+                var txt = document.getElementById("num");
+                alert(txt);
+                var jc = 1;
+                for(var i = 1; i <= parseInt(txt.value); i++) {
+                    jc *= i;
+                }
+                alert(jc);
+            }
+        }
+    </script>
+    请输入一个数，求阶乘：
+    <input type="text" id="num" />
+    <button id="btn">求阶乘</button>
+</body>
+</html>

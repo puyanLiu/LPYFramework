@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            background-color: pink;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var one = document.getElementById("one");
+            var ul = document.getElementById("ul");
+            var ul2 = document.getElementById("ul2");
+            var ul3 = document.getElementById("ul3");
+            // IE8认识，其他浏览器不认识
+            // one.nextSibling.style.backgroundColor = "red";
+            // one.nextElementSibling正常浏览器认识，写在前边
+            var elenext = one.nextElementSibling || one.nextSibling;
+            elenext.style.backgroundColor = "red";
+
+            var elepre = one.previousElementSibling || one.previousSibling;
+            elepre.style.backgroundColor = "red";
+
+            var elefirst = (ul.firstElementChild || ul.firstChild);
+            elefirst.style.backgroundColor = "red";
+
+            var elelast = ul.lastElementChild || ul.lastChild;
+            elelast.style.backgroundColor = "red";
+
+            // 选择全部的孩子
+            var childNodes = ul.childNodes;
+            console.log(childNodes);
+
+
+            var childNodes2 = ul2.childNodes;
+            console.log(childNodes2);
+            for(var i = 0; i < childNodes2.length; i++) {
+                // 仅获取元素节点
+                if (childNodes2[i].nodeType == 1) {
+                    childNodes2[i].style.backgroundColor = "blue";
+                }
+            }
+
+            var children = ul3.children;
+            console.log(children);
+            for(var i = 0; i < children.length; i++) {
+                children[i].style.backgroundColor = "yellowgreen";
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="ul">
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li id="one">123242343one</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+    </ul>
+
+    <ul id="ul3">
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+        <li>123242343</li>
+    </ul>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

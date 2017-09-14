@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+
+    <script src="jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        // 页面所有元素全部加载完毕（包括图片、js、样式） 才调用
+        // window.onload = function() {
+        //     // alert($("#img3").width());
+        //     alert(document.getElementsByTagName("img")[2].clientWidth);
+        // }
+
+        // html标签加载完毕就调用 不包括图片、js、样式等等
+        $(document).ready(function() {
+            // alert($("#img3").width());
+            alert(document.getElementsByTagName("img")[2].clientWidth);
+        });
+    </script>
+
+
+</head>
+<body>
+    <img src="imgs/01.jpg" alt="" />
+    <img src="imgs/02.jpg" alt="" />
+    <img src="imgs/03.jpg" alt="" id="img3" />
+</body>
+</html>

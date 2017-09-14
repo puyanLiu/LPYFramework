@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.scroll {
+			width: 400px;
+			height: 8px;
+			background: #ccc;
+			margin: 100px;
+			position: relative;
+		}
+		.bar {
+			width: 10px;
+			height: 22px;
+			background: #369;
+			position: absolute;
+			top: -7px;
+			left: 0;
+			cursor: pointer;
+		}
+		.mask {
+			width: 0;
+			height: 100%;
+			background: #369;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var scrollBar = document.getElementById("scrollBar");
+			var bar = scrollBar.children[0];
+			var mask = scrollBar.children[1];
+			var maxDistance = scrollBar.offsetWidth - bar.offsetWidth;
+			var demo = document.getElementById("demo");
+			bar.onmousedown = function(event) {
+				var event = event || window.event;
+				var leftVal = event.clientX - this.offsetLeft;
+				var me = this;
+				document.onmousemove = function(event) {
+					var boxX = event.clientX - leftVal;
+					if (boxX < 0) {
+						boxX = 0;
+					} else if(boxX > maxDistance) {
+						boxX = maxDistance;
+					}
+					me.style.left = boxX + "px";
+					mask.style.width = boxX + "px";
+					demo.innerHTML = "已经走了：" + parseInt(boxX / maxDistance * 100) + "%";
+					// 清除选中
+					window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+				}
+
+				document.onmouseup = function() {
+					document.onmousemove = null;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="scroll" id="scrollBar">
+		<div class="bar"></div>
+		<div class="mask"></div>
+	</div>
+	<div id="demo">
+		
+	</div>
+</body>
+</html>

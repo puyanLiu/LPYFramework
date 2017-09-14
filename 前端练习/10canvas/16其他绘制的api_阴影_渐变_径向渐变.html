@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			// 阴影
+    			ctx.fillStyle = "red";
+    			ctx.shadowColor = "teal";
+    			ctx.shadowBlur = 10;
+    			ctx.shadowOffsetX = 10;
+    			ctx.shadowOffsetY = 10;
+    			ctx.fillRect(100, 100, 100, 100);
+
+    			// 创建一个线性渐变
+    			//创建线性渐变的对象，
+			    var grd=ctx.createLinearGradient(0,0,170,0);
+			    grd.addColorStop(0,"black");  //添加一个渐变颜色，第一个参数介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。
+			    grd.addColorStop(1,"white");  //添加一个渐变颜色
+			    ctx.fillStyle =grd;           //关键点，把渐变设置到 填充的样式
+			    ctx.fillRect(0, 0, 300, 300);
+
+			    // 径向渐变
+			    var rlg = ctx.createRadialGradient(300,300,10,300,300,200);
+				rlg.addColorStop(0, 'teal');    //添加一个渐变颜色
+				rlg.addColorStop(.4, 'navy');
+				rlg.addColorStop(1, 'purple');
+				ctx.fillStyle = rlg;//设置 填充样式为延续渐变的样式
+				ctx.fillRect(100, 100, 500, 500);
+
+
+
+    		}());
+    	</script>
+    </body>
+</html>

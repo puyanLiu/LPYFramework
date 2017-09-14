@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        #demo {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <button id="btn_Width">改变宽度</button>
+    <button id="btn_Height">改变高度</button>
+    <button id="btn_BackgroundColor">改变背景颜色</button>
+    <script type="text/javascript">
+        var demo = document.getElementById("demo");
+        btn_Width.onclick = function() {
+            demo.style.width = "400px";
+        }
+        btn_Height.onclick = function() {
+            demo.style.height = "400px";
+        }
+        btn_BackgroundColor.onclick = function() {
+            demo.style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>

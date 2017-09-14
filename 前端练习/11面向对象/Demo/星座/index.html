@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common.css"></link>
+    <link rel="stylesheet" href="css/xingzuo.css"></link>
+</head>
+<script type="text/javascript" src="js/ICD.js"></script>
+<script type="text/javascript">
+
+    //   我们看看如何使用面向对象开发星座场景  - 定义一个抽象星座对象 -- 抽象 --
+    function xingzuo(name,time,description,match){
+        this.name=name;
+        this.time=time;
+        this.description=description;
+        this.match = match;
+    }
+    xingzuo.prototype={
+        getDescription:function(){
+            return '猛男 靓女'
+        }
+
+    }
+
+//    实例化每个对象 -- 具体  -- 对象必须实例化才能使用
+    var shizi = new xingzuo('狮子座','7.23-8.22','猛男，靓女','射手')
+    shizi.description = '猛男，靓女'
+    var baiyang = new xingzuo('白羊座','3.21-4.19')
+    baiyang.description = '猛男，靓女'
+    var jinniu = new xingzuo('金牛座','4.20-5.20')
+    jinniu.description = '猛男，靓女'
+    var juxie = new xingzuo('巨蟹座','7.23-8.22','猛男，靓女','射手')
+    var chunv = new xingzuo('处女座','3.21-4.19')
+    var sheshou = new xingzuo('射手座','4.20-5.20')
+    var tiancheng = new xingzuo('天秤座','4.20-5.20')
+    var moxie = new xingzuo('摩羯座','4.20-5.20')
+    var sheshou = new xingzuo('射手座','4.20-5.20')
+    var shuiping = new xingzuo('水瓶座','4.20-5.20')
+    var shuangyu = new xingzuo('双鱼座','4.20-5.20')
+    var tianxie = new xingzuo('天蝎座','4.20-5.20')
+
+
+    //   数据结构 --  数组中的元素是一个对象
+    // var data = [shizi,baiyang,jinniu,juxie,chunv,sheshou,shuiping,shuangyu,tianxie];
+
+
+var data = [
+    {
+        name:'白羊座',
+        time:'3.21-4.19'
+    }
+    ,{
+        name:'金牛座',
+        time:'4.20-5.20'
+    }
+    ,{
+        name:'双子座',
+        time:'5.21-6.21'
+    }
+    ,{
+        name:'巨蟹座',
+        time:'6.22-7.22'
+    }
+    ,{
+        name:'狮子座',
+        time:'7.23-8.22'
+    }
+    ,{
+        name:'处女座',
+        time:'8.23-9.22'
+    }
+    ,{
+        name:'天秤座',
+        time:'9.23-10.23'
+    }
+    ,{
+        name:'天蝎座',
+        time:'10.24-11.22'
+    }
+    ,{
+        name:'射手座',
+        time:'11.23-12.21'
+    }
+    ,{
+        name:'摩羯座',
+        time:'12.22-1.19'
+    }
+    ,{
+        name:'水瓶座',
+        time:'1.20-2.18'
+    }
+    ,{
+        name:'双鱼座',
+        time:'2.19-3.20'
+    }
+];
+
+
+
+
+//    有的同学说，这些数据格式要是变化怎么办 -- 需要一个转换 -- 四大函数：转换
+
+    //    下面的知识 我们暂时不用关心，后面会讲解，先学会如何用对象描述你要开发的模块
+</script>
+<script type="text/javascript">
+    $(function(){
+//        定义一个对象封装单个星座对应的各种操作 -- 每个星座都会针对data num进行编程
+        var XingzuoModule = function(data, num){
+            this.data = data;
+            this.dom = $.create('div').addClass('item num-' + num )
+            //定义一个属性保存当前星座对应的坐标
+            this.num = num;
+            this.init();
+        }
+        XingzuoModule.prototype = {
+            init : function(){
+                this.create();
+                this.bindEvent();
+            }
+            ,create : function(){
+                var html = '<div class="image"></div><div class="description"><p class="name">@(name)</p><p class="time">@(time)</p><div class="mark"></div></div>';
+                this.dom.html($.formateString(html, this.data), true).appendTo('.xingzuo');
+            }
+            ,bindEvent : function(){
+                var that = this;
+
+                that.dom.on('click', function(e){
+                    that.dom.toggleClass('selected');
+//                    方法使用 属性使用 点语法
+//                    alert(data[that.num].description)
+                    // alert('=======' + data[that.num].getDescription())
+                    window.location = 'detail.html?num='+that.num
+                }).on('mouseenter', function(e){
+                    that.dom.addClass('is-hover');
+                }).on('mouseleave', function(e){
+                    that.dom.removeClass('is-hover');
+                })
+            }
+        }
+
+        //以此遍历 实例化对象
+        for(var i = 0, len = data.length; i < len; i++){
+            new XingzuoModule(data[i], i);
+        }
+    })
+</script>
+<body>
+<img class="logo" width="270" src="baidu/logo_white.png" alt="">
+<p class="links">
+    <a href="http://news.baidu.com" target="_blank">新闻</a>
+    <a href="http://www.baidu.com" target="_blank">网页</a>
+    <a href="http://tieba.baidu.com" target="_blank">贴吧</a>
+    <a href="http://zhidao.baidu.com" target="_blank">知道</a>
+    <a href="http://music.baidu.com" target="_blank">音乐</a>
+    <a href="http://image.baidu.com" target="_blank">图片</a>
+    <a href="http://v.baidu.com" target="_blank">视频</a>
+    <a href="http://map.baidu.com" target="_blank">地图</a>
+    <a href="http://baike.baidu.com" target="_blank">百科</a>
+    <a href="http://wenku.baidu.com" target="_blank">文库</a>
+    <a href="http://www.baidu.com/more/" target="_blank">更多&gt;&gt;</a>
+</p>
+<div class="search">
+    <input type="text"><button>百度一下</button>
+</div>
+<div class="container">
+    <div class="menu">
+        <span>导航</span>
+        <span>音乐</span>
+        <span>新闻</span>
+        <span class="choose">星座</span>
+    </div>
+    <div class="card"><div class="xingzuo"></div></div>
+</div>
+</body>
+</html>

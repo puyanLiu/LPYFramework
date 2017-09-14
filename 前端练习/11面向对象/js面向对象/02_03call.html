@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+	        div{
+	            height: 100px;
+	            width: 100px;
+	            background: red;
+	            margin: 10px;
+	        }
+	    </style>
+    </head>
+    <body>
+用户名：<input type="text" id="myText"   value="哈哈" />
+<div>122</div>
+<div>122</div>
+<div>122</div>
+    </body>
+</html>
+
+<script>
+   //对象1
+   var myclass={
+       getAllStudentsNumbers:function(){
+           return 130
+       }
+   };
+    //对象2
+    var student={
+       getDetail:function(){
+           return {name:'莉莉',aihao:'唱歌跳舞'}
+       }
+   };
+   // 借用 -供爷法则
+   console.log(myclass.getAllStudentsNumbers.call(student));
+
+
+
+   //对象1
+   var myclass1={
+       getAllStudentsNumbers:function(sum, sum1){
+           return sum + sum1
+       }
+   };
+   // 借用 -供爷法则
+   console.log(myclass1.getAllStudentsNumbers.call(student, 10, 200));
+   console.log(myclass1.getAllStudentsNumbers.apply(student, [10, 200]));
+
+
+
+   //函数其实也是对象
+    function add(a, b) {
+        console.log(a + b);
+    }
+
+    function sub(a, b) {
+        console.log(a - b);
+    }
+    /*借用：
+    就是把人家的方法放到自己中来*/
+    add.call(sub, 3, 1);
+
+
+
+    var value="全局变量";
+    /*函数中默认this指向window*/
+    function Fun1(){
+        console.log(this.value, this);
+    }
+    /*答案：全局变量*/
+
+    window.Fun1();
+    /*答案：window*/
+
+    Fun1.call(window);
+    /*答案：window*/
+    /*可以这么理解：先把fun1变成window对象的方法，同时改变Fun1中的this指向*/
+    /*这个时候this表示window*/
+
+    Fun1.call(document.getElementById('myText'));
+    /*答案*/
+    /*这个时候this指向input元素对象*/
+
+    //------------------------------伪数组
+    /*什么叫伪数组*/
+    /*伪数组：只有数组的部分功能：length，下标，无法访问数组对象中的方法*/
+
+
+    /*Array.prototype.slice.call(arguments)能将具有length属性的对象转成数组*/
+    /*这是一种固定用法*/
+
+    /*为什么需要学习伪数组*/
+   /*js中常见的伪数组：通过document获取的dom集合*/
+    /*最为常用的arguments*/
+
+    /*这些伪数组无法使用Array对象中的方法，因为他们不是数组对象，就是普通的含有length属性的json对象而已*/
+  /*  比如：var json = {1:'',2:'',length:2}*/
+
+
+
+    var divs = document.getElementsByTagName("div")
+    console.log(divs.length)
+    /*说明他不是一个数组，无法访问里面的方法*/
+    // divs.pop().style.background='green'
+
+    /*我们通过如下方式将其转换成数组*/
+    /* slice ： 截取数组，返回的还是数组，这里我们截取全部  */
+    var domNodes =  Array.prototype.slice.call(divs);
+    /*这样domNodes就可以应用Array下的所有方法了。*/
+    domNodes.pop().style.background='green'
+
+
+
+
+    /**定义一个animal类*/
+    function Animal(){
+        this.name = "Animal";
+        this.showName = function(){
+            console.log(this.name);
+        }
+    }
+    /**定义一个Cat类*/
+    function Cat(){
+        this.name = "Cat";
+    }
+
+    /**创建两个类对象*/
+    var animal = new Animal();
+    var cat = new Cat();
+
+    //通过call或apply方法，将原本属于Animal对象的showName()方法交给当前对象cat来使用了。
+    //输入结果为"Cat"
+    animal.showName.call(cat);
+    //animal.showName.apply(cat,[]);
+</script>

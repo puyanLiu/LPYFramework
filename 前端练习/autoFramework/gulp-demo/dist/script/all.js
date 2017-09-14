@@ -1,0 +1,1 @@
+"use strict";!function(){console.log("app");console.log(30)}(),function(){console.log("demo")}();

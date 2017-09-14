@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+
+	(function(){
+		
+		var o = new Object();
+		//这里其实就是继承，我新创建的一个对象，然后继承Object的所有属性和方法，也就是可以使用Object的所有属性和方法
+		//这里继承并不是新的概念，只是前面我们没讲这个玩意有个学名叫做继承
+		console.log(o.toString()); //能否访问，说明确实继承了Object
+		console.log(o.__proto__ === Function.prototype);  //false 
+		console.log(o.__proto__ === Object.prototype);  //true 继承的本质 -- 为什么能访问Object对象的方法，其实访问的是其原型对象的方法 所有的方法都是放在原型中而不是类中
+		console.log(o.__proto__ === Object);
+		console.log(Object.__proto__ === Function.prototype);
+		console.log(Function.prototype.__proto__ === Object.prototype);
+		console.log(Number.__proto__ === Function.prototype);
+		
+		var n = new Number(5);
+		console.log(n)
+		console.log(n.__proto__ === Function.prototype);
+		console.log(n.__proto__ === Number.prototype);
+
+		//object是万物祖先
+		
+
+
+		// 扩展原型
+		String.prototype.format = function () {  
+		    var str = this;   
+		    for(var i = 0, j = arguments.length; i < j; i++){  
+		        str = str.replace(new RegExp('\\{' + i +'\\}', 'g'), arguments[i]);  
+		    }  
+		  
+		    return str;  
+		}  
+		var name ='王书';
+		var role ='系统管理员';
+		console.log('登陆成功，用户名：{0} 角色：({1})'.format(name, role));  
+		
+
+
+		// 扩展原型-日期格式化
+		Date.prototype.format = function (format) {  
+        var $1, o = {  
+            "M+": this.getMonth() + 1,      // 月份，从0开始算  
+            "d+": this.getDate(),           // 日期  
+            "h+": this.getHours(),          // 小时  
+            "m+": this.getMinutes(),        // 分钟  
+            "s+": this.getSeconds(),        // 秒钟  
+                                            // 季度 quarter  
+            "q+": Math.floor((this.getMonth() + 3) / 3),  
+            "S": this.getMilliseconds() // 千秒  
+        };  
+        var key, value;  
+      
+        if (/(y+)/.test(format)) {  
+            $1 = RegExp.$1,   
+            format = format.replace($1, String(this.getFullYear()).substr(4 - $1));  
+        }  
+      
+        for (key in o) { // 如果没有指定该参数，则子字符串将延续到 stringvar 的最后。  
+            if (new RegExp("(" + key + ")").test(format)) {  
+                $1      = RegExp.$1,  
+                value   = String(o[key]),  
+                value   = $1.length == 1 ? value : ("00" + value).substr(value.length),  
+                format  = format.replace($1, value);  
+            }  
+        }  
+        return format;  
+    }  
+	
+	console.log(new Date().format("yyyy-MM-dd hh:mm:ss"));  
+
+
+
+	}());
+</script>

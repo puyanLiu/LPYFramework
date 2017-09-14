@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		function addSpace(str){
+        return str.split('').join(' ');
+    };
+
+   var str = 'hello world'
+    console.log(addSpace(str))
+
+    //    math容器中的功能 -- 四舍五入
+    var a=12.52;
+    b=10.35;
+    c=Math.round(a);
+    d=Math.round(b);
+    document.write(c+' '+d)
+
+    //    先思考思路：
+//    先split，然后从第二个开始遍历，针对每次遍历作如下事情：获取第一个字符变为大写，其余变为小写
+    function combo(msg){
+        var arr=msg.split("-");
+        for(var i=1;i<arr.length;i++){
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substr(1,arr[i].length-1);
+        }
+        msg=arr.join("");
+        return msg;
+    }
+//    使用substring改造
+    function combo2(msg){
+        var arr=msg.split("-");
+        for(var i=1;i<arr.length;i++){
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1,arr[i].length);
+        }
+        msg=arr.join("");
+        return msg;
+    }
+
+
+    str='get-element-by-id'
+    console.log(combo2(str))
+
+
+
+    //大牛做法；
+    //思路：先将字符串转换为数组 split()，利用数组的反序函数 reverse()颠倒数组，再利用 jion() 转换为字符串
+
+    function strReverse(str){
+        return str.split('').reverse().join('');
+    }
+    var str = '12345678';
+    console.log(strReverse(str))
+    	</script>
+    </body>
+</html>

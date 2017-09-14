@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div>
+    		<textarea name="" id="txt_value" cols="30" rows="10"></textarea>
+    	</div>
+    	<button id="btn_set">存储</button>
+    	<button id="btn_get">读取</button>
+    	<script>
+    		if(!window.localStorage) {
+    			alert('不支持LocalStorage');
+    		} else {
+    			var btnSet = document.querySelector('#btn_set');
+    			var btnGet = document.querySelector('#btn_get');
+    			var txtValue =document.querySelector('#txt_value');
+    			btn_set.addEventListener('click', function() {
+    				// localStorage.setItem('key1', txt_value.value);
+    				localStorage['key1'] = txt_value.value;
+
+                    // if (window.sessionStorage) {
+                    //     sessionStorage['key2'] = txt_value.value;
+                    // }
+    			});
+    			btn_get.addEventListener('click', function() {
+    				// txt_value.value = localStorage['key1']; // 不存在 undefined
+    				txt_value.value = localStorage.getItem('key1'); // 不存在为空
+
+                    // if (window.sessionStorage) {
+                    //     txt_value.value = sessionStorage.getItem('key2');
+                    // }
+    			});
+    		}
+    	</script>
+    </body>
+</html>

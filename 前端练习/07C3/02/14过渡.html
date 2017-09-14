@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+		        background-color: pink;
+		    }
+		    .pop {
+	            width: 350px;
+	            height: 100px;
+	            margin: 100px auto;
+	            background: url(images/paopao.png) no-repeat top left,
+	            			url(images/paopao.png) no-repeat right bottom #369;
+	            			border-radius: 15px;
+	            transition: all 1s;
+	        }
+	        .pop:hover {
+	        	background-position: right bottom, top left;
+	        }
+        </style>
+    </head>
+    <body>
+    	<div class="pop"></div>
+    </body>
+</html>

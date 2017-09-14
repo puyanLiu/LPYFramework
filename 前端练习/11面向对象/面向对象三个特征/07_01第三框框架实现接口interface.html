@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<script src="interface.js"></script>
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+//团队之间的口头约定
+// 规定MP3，优盘对象必须实现USB接口
+//接口一般以I开头
+/*
+ interface IUSB{
+ function read();
+ function write();
+ function clear();
+ }
+ */
+
+
+//比如我们再开发新浪体育板块
+//规定所有模块（对象）必须实现update接口
+/*
+ interface IUpdate{
+ function update();
+ }
+ */
+
+
+//口头约定只能靠各个团队自觉遵守，万一开发这个对象的人没有实现接口，则系统就会报错。
+//为此，我们可以通过编程强制开发这个对象的人必须实现接口，对其开发的对象进行检测，查看是否是否实现接口
+
+/* design interface*/
+//1这里是定义一个接口，要求必须实现ABC三个方法:读，写，格式化
+var USB = new Interface('USB',['Read','Write','Clear']);
+/* implements the methods of the interface*/
+
+
+//2定义一个对象，实现接口
+var MP3 = function(name){
+this.name = name;
+}
+MP3.prototype.Read = function(){
+console.log('MP3读功能');
+}
+MP3.prototype.Write = function(){
+ console.log('MP3写功能');
+}
+MP3.prototype.Clear = function(){
+ console.log('MP3格式化功能');
+}
+MP3.prototype.D = function(){
+ console.log('自身方法，非接口方法');
+}
+
+//3面向接口编程
+window.onload = function(){
+var mp3 = new MP3('王书');
+//强制对象必须实现接口
+//MP3必须实现USB接口
+Interface.ensureImplements(mp3,USB);
+//使用该对象
+mp3.D();
+mp3.Read();
+mp3.Write();
+}
+</script>

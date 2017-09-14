@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	/*继承的固定函数*/
+	function inheritPrototype(subType,superType){
+		console.log(subType, superType);
+
+		var prototype = Object(superType.prototype);
+		console.log(prototype);
+
+		prototype.constructor = subType;
+		subType.prototype = prototype;
+	}
+
+	function Person(name){
+		this.name = name;
+	}
+	Person.prototype.say= function(){}
+
+	function Student(name,age){
+		Person.call(this,name);
+		this.age = age;
+	}
+
+	// 继承原型
+	inheritPrototype(Student,Person);
+	var xiaozhang = new Student('小张',20);
+	console.log(xiaozhang.name)
+</script>

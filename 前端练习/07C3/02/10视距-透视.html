@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	.box {
+        		border: 1px solid red;
+	            width: 310px;
+	            height: 439px;
+	            margin: 100px auto;
+	            /*父盒子*/
+	            /*指定观察者与「z=0」平面的距离，使具有三维位置变换的元素产生透视效果。「z>0」的三维元素比正常大，而「z<0」时则比正常小，大小程度由该属性的值决定。
+				当该属性值为「非none」时，元素将会创建局部堆叠上下文。
+				对应的脚本特性为perspective。
+				*/
+	            perspective: 700px;
+	            /*
+	            指定透视点的位置。
+					该属性提供2个参数值。
+					如果提供两个，第一个用于横坐标，第二个用于纵坐标。
+					如果只提供一个，该值将用于横坐标；纵坐标将默认为center。
+					对应的脚本特性为perspactiveOrigin。
+	             */
+	            perspective-origin: 160px 100px;
+        	}
+        	.box img {
+				transition: all 2s;
+				transform-origin: bottom;
+        	}
+        	.box:hover img {
+        		transform: rotateX(80deg);
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="box">
+    		<img src="images/pk1.png" alt="">
+    	</div>
+    </body>
+</html>

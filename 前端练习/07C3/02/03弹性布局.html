@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	header {
+        		width: 80%;
+        		height: 300px;
+        		display: -webkit-box;
+				-webkit-box-orient: vertical;
+        	}
+        	section {
+        		-webkit-box-flex: 1;
+        		background-color: pink;
+        	}
+        	section:first-child {
+        		background-color: blue;
+        	}
+        	section:last-child {
+        		background-color: green;
+        	}
+        	section:nth-child(2) {
+        		-webkit-box-flex: 2;
+        	}
+        </style>
+    </head>
+    <body>
+    	<header>
+    		<section></section>
+    		<section></section>
+    		<section></section>
+    	</header>
+    </body>
+</html>

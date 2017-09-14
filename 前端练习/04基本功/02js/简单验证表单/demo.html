@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            text-align: center;
+            margin: 100px auto;
+        }
+        span {
+            display: inline-block;
+            width: 150px;
+            height: 20px;
+            border: 1px solid #ccc;
+            font-size: 12px;
+            line-height: 20px;
+            text-align: left;
+            padding-left: 20px;
+            background: #eee;
+            color: #999;
+        }
+        .right {
+            color: #5EFF5E;
+            border: 1px solid #ACFFAC;
+            background: url(images/right.png) no-repeat 4px 3px;
+        }
+        .wrong {
+            color: #FF6B39;
+            border: 1px solid #FFAC91;
+            background: url(images/wrong.png) no-repeat 4px 3px;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var txt = document.getElementById("txt");
+            var result = document.getElementById("result");
+            txt.onblur = function() {
+                if (this.value == "") {
+                    result.innerHTML = "请输入成绩";
+                    result.className = "wrong"
+                } else if (isNaN(this.value)) {
+                    result.innerHTML = "请输入数字";
+                    result.className = "wrong";
+                } else if(this.value > 150 || this.value < 0) {
+                    result.innerHTML = "请输入合理的范围";
+                    result.className = "wrong";
+                } else {
+                    result.innerHTML = "输入正确";
+                    result.className = "right";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        语文：<input type="text" id="txt" />
+        <span id="result">请输入成绩</span>
+    </div>
+</body>
+</html>

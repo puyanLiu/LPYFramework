@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		// 第一种：函数执行模式
+    		function add(a, b) {
+    			console.log(this);
+    			return a + b;
+    		}
+    		add(); // this === window
+
+    		// 第二种：对象方法的调用模式
+    		function Cat() {
+    			this.show = function() {
+    				console.log(this); // this === c
+    			}
+    		}
+    		var c = new Cat();
+    		c.show(); // 对象调用自己的方法
+
+    		// 第三种：构造器的调用模式
+    		function Cat1() {
+    			console.log(this);
+    		}
+    		Cat1.prototype.show = function() {
+    			console.log('--------', this);
+    		}
+    		Cat1();
+    		var t = new Cat1();
+    		t.show();
+    		Cat1.prototype.show();
+    	</script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	var human = {};
+	//将属性name设置成无法修改
+	//这样别人就无法修改了
+	Object.defineProperty(human, "name", { writable: false, value: "晁天王" });
+	console.log(human.name); //晁天王
+	human.name = "宋江";//严格模式下会报错 
+	console.log(human.name); //这个时候显示的还是晁天王
+
+
+
+	var NBAMember= {}
+
+    //将属性name设置成无法修改
+    //这样别人就无法修改了
+    //创建一个name属性
+    Object.defineProperty(NBAMember,"name",{ writable: false,value: "火箭队" });
+
+    console.log(NBAMember.name); //火箭队
+    NBAMember.name = "小火箭";//严格模式下会报错 虽然我将其更改了，但是还是显示火箭队
+    console.log(NBAMember.name); //火箭队
+
+
+    //    创建一个age属性
+    Object.defineProperty(NBAMember, "age", {
+        get: function () {return age+1;},
+        set: function (value) {
+            if(value>100)
+            {
+                console.log('值必须在0-100之间');
+            }else{
+                age = value;
+            }
+        }
+    });
+
+    NBAMember.age =12;
+    console.log(NBAMember.age)
+    NBAMember.age =172;
+</script>

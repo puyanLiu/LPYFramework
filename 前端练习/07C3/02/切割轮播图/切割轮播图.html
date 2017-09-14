@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		body {
+			padding-top: 0;
+			background-color: #F7F7F7;
+		}
+		.cut {
+			width: 560px;
+			height: 300px;
+			margin: 100px auto;
+			background-color: pink;
+			position: relative;
+		}
+		.prev, .next {
+			display: block;
+			width: 60px;
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+			margin-top: -30px;
+			font-size: 40px;
+			color: #FFF;
+			text-decoration: none;
+			background-color: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 50%;
+		}
+		.next {
+			right: 0;
+		}
+		.cut li {
+			width: 112px;
+			height: 100%;
+			background-color: purple;
+			position: absolute;
+			top: 0;
+			transform-style: preserve-3d;
+			transition: all 1s ease-in-out;
+		}
+		.cut li div {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.cut li div:nth-child(1) {
+			background-image: url(images/1.png);
+			transform: rotateX(0deg) translateZ(150px);
+		}
+		.cut li div:nth-child(2) {
+			background-image: url(images/2.png);
+			transform: rotateX(-90deg) translateZ(150px);
+		}
+		.cut li div:nth-child(3) {
+			background-image: url(images/3.png);
+			transform: rotateX(-180deg) translateZ(150px);
+		}
+		.cut li div:nth-child(4) {
+			background-image: url(images/4.png);
+			transform: rotateX(-270deg) translateZ(150px);
+		}
+	</style>
+	<script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("li").each(function(index, el) {
+				$(this).css({
+					"left": 560 / 5 * index,
+					"transition-delay": index * 0.2 + 's'
+				});
+				$(this).children('div').css('backgroundPosition', -560 / 5 * index + 'px 0');
+			});
+			var num = 0;
+			$(".next").on('click', function(event) {
+				event.preventDefault();
+				num++;
+				$("li").css({
+					"transform": "rotateX(" + num * 90 + "deg)"
+				});
+			});
+			$(".prev").on('click', function(event) {
+				event.preventDefault();
+				num--;
+				$("li").css({
+					"transform": "rotateX(" + num * 90 + "deg)"
+				});
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="cut">
+		<ul>
+			<li>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+
+			</li>
+			<li>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+
+			</li>
+			<li>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+
+			</li>
+			<li>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+
+			</li>
+			<li>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+
+			</li>
+		</ul>
+		<a href="javascript:;" class="prev">&lt;</a>
+		<a href="javascript:;" class="next">&gt;</a>
+	</div>
+</body>
+</html>

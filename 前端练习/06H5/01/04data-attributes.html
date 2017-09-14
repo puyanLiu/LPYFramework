@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>更语义化的标签</title>
+    </head>
+    <body>
+    	<ul id="users">
+    		<li class="item" data-id="1" data-age="18" data-gender="true">
+    			张三
+    			<pre></pre>
+    		</li>
+    	</ul>
+
+    	<script>
+    		var ul = document.getElementById("users");
+
+    		for(var i = 0; i < ul.children.length; i++) {
+    			var li = ul.children[i];
+
+    			// js 添加data属性
+    			li.setAttribute('data-name', li.innerText);
+
+    			li.children[0].innerText = '';
+    			for(var key in li.dataset) {
+    				li.children[0].innerText += key + ":" + li.dataset[key] + '\n';
+    			}
+    		}
+    	</script>
+    </body>
+</html>

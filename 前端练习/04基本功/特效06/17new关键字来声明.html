@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    
+    // 构造函数 就是一个普通函数，为了和普通函数区别，第一个字母大写
+    function Person(name, age) {
+        this.name = name;
+        this.age = age;
+
+        this.showName = function() {
+            console.log("name", name);
+        }
+
+        this.showAge = function() {
+            console.log("age", age);
+        }
+    }
+
+
+    var demo1 = new Person("哈哈", 18);
+    var demo2 = new Person("嘿嘿", 20);
+    console.log(demo1.name);
+    console.log(demo1["name"]);
+    console.log(demo1.age);
+    console.log(demo2.age);
+
+    demo1.showName();
+    console.log(demo1.showName == demo2.showName);
+ 
+</script>

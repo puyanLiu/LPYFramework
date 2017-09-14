@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	//传统方式定义对象
+    var teacher = new Object();
+    //属性 - 新增一个属性
+    teacher.name = 'Mr Zhang';
+    //属性 - 新增一个属性
+    teacher.college = '网页平面';
+    //方法
+    teacher.teach = function(){
+        console.log(this.college);
+    }
+
+    //    属性访问.语法
+    //修改属性的值
+    teacher.college = 'web 前端';
+    teacher.age = 'secret';
+    //测试修改后的结果
+    //console.log测试
+    console.log(teacher.college);
+    //console测试
+    console.log(teacher.age);
+
+
+
+
+    // 删除属性
+    function Foo(){}
+    Foo.prototype.bar = 42;
+    var foo = new Foo();
+    delete foo.bar;
+    console.log(foo.bar);           // 42
+    delete Foo.prototype.bar; // delete it from the prototype Object
+    console.log(foo.bar);           // undefined
+</script>

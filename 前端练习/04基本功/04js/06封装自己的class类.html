@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+        .demo {
+            background-color: purple
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            function getClass(className) {
+                // 浏览器支持
+                if(document.getElementsByClassName) {
+                    return document.getElementsByClassName(className);
+                }
+
+                // 浏览器不支持 ie678不支持
+                var arr = [];
+                var dom = document.getElementsByTagName("*");
+
+                for(var i = 0; i < dom.length; i++) {
+                    if(dom[i].className == className) {
+                        arr.push(dom[i]);
+                    }
+                }
+                return arr;
+            }
+
+            console.log(getClass("demo").length);
+        }
+    </script>
+</head>
+    <div class="demo"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+<body>
+</body>
+</html>

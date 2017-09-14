@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		.bgc {
+			background-color: #ccc;
+		}
+	</style>
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			// jQuery的hover(mouseIn事件，mouseOut事件)，绑定两个事件
+			// $("p").hover(function() {
+			// 	$(this).addClass('bgc');
+			// }, function() {
+			// 	$(this).removeClass('bgc');
+			// });
+		
+			$("p").hover(function() {
+				$(this).toggleClass('bgc');
+			});
+		})
+	</script>
+</head>
+<body>
+	<p>
+		我是段落，哈哈哈真好
+	</p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div id="itemInfo">
+		    <div id="name">
+		        <h1 id='pname'>乐视TV（ Letv） S50 Air 全配版 50英寸2D智能LED液晶 超级电视</h1>
+		        <div id="p-ad" class="p-ad J-ad-1510479">各地区货源已陆续到库，我们将在十月十号左右发货，对于此次延迟发货给您带来的不便表示致歉，望您谅解。</div>
+		        <div id="p-ad-phone" class="p-ad"></div>
+		    </div>
+		</div>
+		<button id='add'>加入购物车</button>
+		<button id='buy'>立即购买</button>
+
+		<!--购物车：-->
+
+		<!--产品列表 -->
+		<!--产品的总价格-->
+		<div>价格：<strong id='pprice'>0</strong></div>
+    </body>
+</html>
+
+<script>
+	//    定义变量保存数据
+    var name = 'iphone8'
+    var description = '各地区货源已陆续到库，我们将在十月十号左右发货，对于此次延迟发货给您带来的不便表示致歉，望您谅解。'
+    var price = 0;
+
+    //定义变量保存dom元素
+    var domName = document.getElementById('pname')
+    var domPrice = document.getElementById('pprice')
+    var domad = document.getElementById('p-ad')
+    var domadd= document.getElementById('add')
+    var dombuy= document.getElementById('buy')
+
+    window.onload=function(){
+        init()
+    }
+
+    //我们一般定义一个函数init来保存页面初始化加载的时候代码
+    function init() {
+        //其他可能的代码
+        bindData()
+        //其他可能的代码
+        bindEvent()
+
+    }
+
+     //我们一般定义一个函数保存数据绑定相关代码
+     function bindData(){
+            //数据绑定
+            //数据绑定概念：就是将数据和前端的dom进行绑定，换句话说就是将原来的造的假数据变成真数据
+            //真数据一般是从后台返回过来的
+            domName.innerHTML = name
+            domPrice.innerHTML = price
+            domad.innerHTML = description
+        }
+
+    // 我们一般定义函数封装页面或者某个模块的 事件
+    function bindEvent(){
+        //将产品添加到购物车事件
+        domadd.onclick=function(){
+            AddProductToCart()
+        }
+        //立即购买事件
+        dombuy.onclick=function(){
+            buyProduct()
+        }
+    }
+
+    //购买产品
+    function buyProduct(){
+        price = 7000;
+        domPrice.innerHTML=price;
+    }
+
+    //将产品添加到购物车
+    function AddProductToCart(){
+        price = 7000;
+        domPrice.innerHTML=price;
+    }
+</script>

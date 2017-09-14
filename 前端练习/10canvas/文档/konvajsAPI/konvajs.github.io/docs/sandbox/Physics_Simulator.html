@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset=utf-8"utf-8">
+  <title>Physics Simulator with Curve Detection | Konva - JavaScript 2d canvas framework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="canonical" href="http://konvajs.github.io/docs/sandbox/Physics_Simulator.html">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://konvajs.github.io/css/style.css" type="text/css">
+  <link href="../../../fonts.googleapis.com/css-family=Lato-300,700.css" tppabs="http://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet" type="text/css">
+  <link href="../../../fonts.googleapis.com/css-family=Source+Code+Pro-400,700.css" tppabs="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet" type="text/css">
+  <link rel="alternative" href="/atom.xml" title="Konva.js - JavaScript 2d canvas framework" type="application/atom+xml">
+  <meta name="description" content="Instructions: Throw the ball around with your cursor.
+
+Konva Physics Simulator with Curve Detectionview raw&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;script src=&quot;https://cdn.rawgit.com/konvajs">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Physics Simulator with Curve Detection">
+<meta property="og:url" content="http://konvajs.github.io/docs/sandbox/Physics_Simulator.html">
+<meta property="og:site_name" content="Konva.js - JavaScript 2d canvas framework">
+<meta property="og:description" content="Instructions: Throw the ball around with your cursor.
+
+Konva Physics Simulator with Curve Detectionview raw&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;script src=&quot;https://cdn.rawgit.com/konvajs">
+<meta property="og:image" content="http://konvajs.github.io/logo.png">
+<meta property="og:updated_time" content="2015-01-31T06:06:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Physics Simulator with Curve Detection">
+<meta name="twitter:description" content="Instructions: Throw the ball around with your cursor.
+
+Konva Physics Simulator with Curve Detectionview raw&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;  &amp;lt;script src=&quot;https://cdn.rawgit.com/konvajs">
+<meta name="twitter:site" content="@lavrton">
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-54202824-2', 'http://konvajs.github.io/docs/sandbox/konvajs.github.io');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <header id="header">
+  <div class="outer">
+    <div class="inner">
+      <h1 id="logo-wrap">
+        <a href="../../index.htm" tppabs="http://konvajs.github.io/" id="logo">Konva</a>
+        <a id="main-nav-toggle"></a>
+      </h1>
+      <nav id="main-nav">
+        <ul id="main-nav-list">
+          
+            <li class="main-nav-item">
+              <a href="../index.htm" tppabs="http://konvajs.github.io/docs/" class="main-nav-link">Tutorials</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="index.htm" tppabs="http://konvajs.github.io/docs/sandbox" class="main-nav-link">Demos</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="../../api/Konva.html" tppabs="http://konvajs.github.io/api/Konva.html" class="main-nav-link">API docs</a>
+            </li>
+          
+            <li class="main-nav-item">
+              <a href="../support.html" tppabs="http://konvajs.github.io/docs/support.html" class="main-nav-link">Support</a>
+            </li>
+          
+        </ul>
+        <a href="javascript:if(confirm('https://github.com/konvajs/konva  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/konvajs/konva'" tppabs="https://github.com/konvajs/konva" id="github-btn" title="GitHub" target="_blank"></a>
+        <a id="search-btn" class="st-search-launcher" title="Search"></a>
+      </nav>
+    </div>
+  </div>
+</header>
+  <article class="page" itemscope itemtype="http://schema.org/Article">
+  <header id="page-banner">
+    <div class="outer">
+      <div id="page-banner-inner" class="inner">
+        <h1 id="page-title" itemprop="name">Physics Simulator with Curve Detection</h1>
+        <a href="javascript:if(confirm('https://github.com/konvajs/site/blob/master/source/docs/sandbox/Physics_Simulator.md  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/konvajs/site/blob/master/source/docs/sandbox/Physics_Simulator.md'" tppabs="https://github.com/konvajs/site/blob/master/source/docs/sandbox/Physics_Simulator.md" title="Improve this doc" id="page-edit-link"></a>
+      </div>
+    </div>
+  </header>
+  <div class="outer">
+    <div id="mobile-menu-wrap"></div>
+    <div class="page-content">
+      <!--<div class="toc-wrap">-->
+        <!--<strong class="toc-title">Contents</strong>-->
+        <!---->
+      <!--</div>-->
+      <div class="page-entry" itemprop="articleBody">
+        <p>Instructions: Throw the ball around with your cursor.</p>
+<iframe src="../../downloads/code/sandbox/Physics_Simulator.html" tppabs="http://konvajs.github.io/downloads/code/sandbox/Physics_Simulator.html" width="100%" height="300" frameborder="0" allowfullscreen></iframe>
+<figure class="highlight html"><figcaption><span>Konva Physics Simulator with Curve Detection</span><a href="../../downloads/code/sandbox/Physics_Simulator.html" tppabs="http://konvajs.github.io/downloads/code/sandbox/Physics_Simulator.html">view raw</a></figcaption><table><tr><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"https://cdn.rawgit.com/konvajs/konva/0.10.0/konva.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">title</span>&gt;</span>Konva Physics Simulator Demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="tag">body</span> <span class="rules">{</span><br><span class="line">      <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">overflow</span>:<span class="value"> hidden</span></span>;</span><br><span class="line">      <span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#F0F0F0</span></span></span>;</span><br><span class="line">    }</span></span><br><span class="line">  </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"container"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="openscad"></span><br><span class="line">    var width = window.innerWidth;</span><br><span class="line">    var height = window.innerHeight;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    * Vector math functions</span><br><span class="line">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">dot</span><span class="params">(a, b)</span> {</span></span><br><span class="line">        return <span class="params">(<span class="params">(a.x * b.x)</span> + <span class="params">(a.y * b.y)</span>)</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">magnitude</span><span class="params">(a)</span> {</span></span><br><span class="line">        return Math.<span class="built_in">sqrt</span><span class="params">(<span class="params">(a.x * a.x)</span> + <span class="params">(a.y * a.y)</span>)</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">normalize</span><span class="params">(a)</span> {</span></span><br><span class="line">        var mag = magnitude<span class="params">(a)</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span><span class="params">(mag === <span class="number">0</span>)</span> {</span><br><span class="line">            return {</span><br><span class="line">                x: <span class="number">0</span>,</span><br><span class="line">                y: <span class="number">0</span></span><br><span class="line">            };</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> {</span><br><span class="line">            return {</span><br><span class="line">                x: a.x / mag,</span><br><span class="line">                y: a.y / mag</span><br><span class="line">            };</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(a, b)</span> {</span></span><br><span class="line">        return {</span><br><span class="line">            x: a.x + b.x,</span><br><span class="line">            y: a.y + b.y</span><br><span class="line">        };</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">angleBetween</span><span class="params">(a, b)</span> {</span></span><br><span class="line">        return Math.<span class="built_in">acos</span><span class="params">(dot<span class="params">(a, b)</span> / <span class="params">(magnitude<span class="params">(a)</span> * magnitude<span class="params">(b)</span>)</span>)</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">rotate</span><span class="params">(a, angle)</span> {</span></span><br><span class="line">        var ca = Math.<span class="built_in">cos</span><span class="params">(angle)</span>;</span><br><span class="line">        var sa = Math.<span class="built_in">sin</span><span class="params">(angle)</span>;</span><br><span class="line">        var rx = a.x <span class="built_in">*</span> ca - a.y <span class="built_in">*</span> sa;</span><br><span class="line">        var ry = a.x <span class="built_in">*</span> sa + a.y <span class="built_in">*</span> ca;</span><br><span class="line">        return {</span><br><span class="line">            x: rx <span class="built_in">*</span> -<span class="number">1</span>,</span><br><span class="line">            y: ry <span class="built_in">*</span> -<span class="number">1</span></span><br><span class="line">        };</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">invert</span><span class="params">(a)</span> {</span></span><br><span class="line">        return {</span><br><span class="line">            x: a.x <span class="built_in">*</span> -<span class="number">1</span>,</span><br><span class="line">            y: a.y <span class="built_in">*</span> -<span class="number">1</span></span><br><span class="line">        };</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">     * this cross product function has been simplified by</span><br><span class="line">     * setting x and y to zero because vectors a and b</span><br><span class="line">     * lie in the canvas plane</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">cross</span><span class="params">(a, b)</span> {</span></span><br><span class="line">        return {</span><br><span class="line">            x: <span class="number">0</span>,</span><br><span class="line">            y: <span class="number">0</span>,</span><br><span class="line">            z: <span class="params">(a.x * b.y)</span> - <span class="params">(b.x * a.y)</span></span><br><span class="line">        };</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">getNormal</span><span class="params">(curve, ball)</span> {</span></span><br><span class="line">        var curveLayer = curve.getLayer<span class="params">()</span>;</span><br><span class="line">        var context = curveLayer.getContext<span class="params">()</span>;</span><br><span class="line">        var testRadius = <span class="number">20</span>;</span><br><span class="line">        <span class="comment">// pixels</span></span><br><span class="line">        var totalX = <span class="number">0</span>;</span><br><span class="line">        var totalY = <span class="number">0</span>;</span><br><span class="line">        var x = ball.getX<span class="params">()</span>;</span><br><span class="line">        var y = ball.getY<span class="params">()</span>;</span><br><span class="line">        <span class="comment">/*</span><br><span class="line">         * check various points around the center point</span><br><span class="line">         * to determine the normal vector</span><br><span class="line">         */</span></span><br><span class="line">        <span class="keyword">for</span><span class="params">(var n = <span class="number">0</span>; n &lt; <span class="number">20</span>; n++)</span> {</span><br><span class="line">            var angle = n <span class="built_in">*</span> <span class="number">2</span> <span class="built_in">*</span> Math.<span class="literal">PI</span> / <span class="number">20</span>;</span><br><span class="line">            var offsetX = testRadius <span class="built_in">*</span> Math.<span class="built_in">cos</span><span class="params">(angle)</span>;</span><br><span class="line">            var offsetY = testRadius <span class="built_in">*</span> Math.<span class="built_in">sin</span><span class="params">(angle)</span>;</span><br><span class="line">            var testX = x + offsetX;</span><br><span class="line">            var testY = y + offsetY;</span><br><span class="line">            <span class="keyword">if</span><span class="params">(!context._context.isPointInPath<span class="params">(testX, testY)</span>)</span> {</span><br><span class="line">                totalX += offsetX;</span><br><span class="line">                totalY += offsetY;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        var normal;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span><span class="params">(totalX === <span class="number">0</span> &amp;&amp; totalY === <span class="number">0</span>)</span> {</span><br><span class="line">            normal = {</span><br><span class="line">                x: <span class="number">0</span>,</span><br><span class="line">                y: -<span class="number">1</span></span><br><span class="line">            };</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> {</span><br><span class="line">            normal = {</span><br><span class="line">                x: totalX,</span><br><span class="line">                y: totalY</span><br><span class="line">            };</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">        return normalize<span class="params">(normal)</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">handleCurveCollision</span><span class="params">(ball, curve)</span> {</span></span><br><span class="line">        var curveLayer = curve.getLayer<span class="params">()</span>;</span><br><span class="line">        var x = ball.getX<span class="params">()</span>;</span><br><span class="line">        var y = ball.getY<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">        var curveDamper = <span class="number">0.05</span>;</span><br><span class="line">        <span class="comment">// 5% energy loss</span></span><br><span class="line">        <span class="keyword">if</span><span class="params">(curveLayer.getIntersection<span class="params">({x:x, y:y})</span>)</span> {</span><br><span class="line">            var normal = getNormal<span class="params">(curve, ball)</span>;</span><br><span class="line">            <span class="keyword">if</span><span class="params">(normal !== null)</span> {</span><br><span class="line">                var angleToNormal = angleBetween<span class="params">(normal, invert<span class="params">(ball.velocity)</span>)</span>;</span><br><span class="line">                var crossProduct = <span class="built_in">cross</span><span class="params">(normal, ball.velocity)</span>;</span><br><span class="line">                var polarity = crossProduct.z &gt; <span class="number">0</span> ? <span class="number">1</span> : -<span class="number">1</span>;</span><br><span class="line">                var collisonAngle = polarity <span class="built_in">*</span> angleToNormal <span class="built_in">*</span> <span class="number">2</span>;</span><br><span class="line">                var collisionVector = <span class="built_in">rotate</span><span class="params">(ball.velocity, collisonAngle)</span>;</span><br><span class="line"></span><br><span class="line">                ball.velocity.x = collisionVector.x;</span><br><span class="line">                ball.velocity.y = collisionVector.y;</span><br><span class="line">                ball.velocity.x <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - curveDamper)</span>;</span><br><span class="line">                ball.velocity.y <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - curveDamper)</span>;</span><br><span class="line"></span><br><span class="line">                x += normal.x;</span><br><span class="line">                <span class="keyword">if</span><span class="params">(ball.velocity.y &gt; <span class="number">0.1</span>)</span> {</span><br><span class="line">                    y += normal.y;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span> {</span><br><span class="line">                    y += normal.y / <span class="number">10</span>;</span><br><span class="line">                }</span><br><span class="line">                ball.x<span class="params">(x)</span>.y<span class="params">(y)</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            tween.finish<span class="params">()</span>;</span><br><span class="line">        }</span><br><span class="line"></span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">updateBall</span><span class="params">(frame)</span> {</span></span><br><span class="line">        var timeDiff = frame.timeDiff;</span><br><span class="line">        var stage = ball.getStage<span class="params">()</span>;</span><br><span class="line">        var height = stage.getHeight<span class="params">()</span>;</span><br><span class="line">        var width = stage.getWidth<span class="params">()</span>;</span><br><span class="line">        var x = ball.getX<span class="params">()</span>;</span><br><span class="line">        var y = ball.getY<span class="params">()</span>;</span><br><span class="line">        var radius = ball.getRadius<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">        tween.reverse<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// physics variables</span></span><br><span class="line">        var gravity = <span class="number">10</span>;</span><br><span class="line">        <span class="comment">// px / second^2</span></span><br><span class="line">        var speedIncrementFromGravityEachFrame = gravity <span class="built_in">*</span> timeDiff / <span class="number">1000</span>;</span><br><span class="line">        var collisionDamper = <span class="number">0.2</span>;</span><br><span class="line">        <span class="comment">// 20% energy loss</span></span><br><span class="line">        var floorFriction = <span class="number">5</span>;</span><br><span class="line">        <span class="comment">// px / second^2</span></span><br><span class="line">        var floorFrictionSpeedReduction = floorFriction <span class="built_in">*</span> timeDiff / <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// if ball is being dragged and dropped</span></span><br><span class="line">        <span class="keyword">if</span><span class="params">(ball.isDragging<span class="params">()</span>)</span> {</span><br><span class="line">            var mousePos = stage.getPointerPosition<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span><span class="params">(mousePos)</span> {</span><br><span class="line">                var mouseX = mousePos.x;</span><br><span class="line">                var mouseY = mousePos.y;</span><br><span class="line"></span><br><span class="line">                var c = <span class="number">0.06</span> <span class="built_in">*</span> timeDiff;</span><br><span class="line">                ball.velocity = {</span><br><span class="line">                    x: c <span class="built_in">*</span> <span class="params">(mouseX - ball.lastMouseX)</span>,</span><br><span class="line">                    y: c <span class="built_in">*</span> <span class="params">(mouseY - ball.lastMouseY)</span></span><br><span class="line">                };</span><br><span class="line"></span><br><span class="line">                ball.lastMouseX = mouseX;</span><br><span class="line">                ball.lastMouseY = mouseY;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">else</span> {</span><br><span class="line">            <span class="comment">// gravity</span></span><br><span class="line">            ball.velocity.y += speedIncrementFromGravityEachFrame;</span><br><span class="line">            x += ball.velocity.x;</span><br><span class="line">            y += ball.velocity.y;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// ceiling condition</span></span><br><span class="line">            <span class="keyword">if</span><span class="params">(y &lt; radius)</span> {</span><br><span class="line">                y = radius;</span><br><span class="line">                ball.velocity.y <span class="built_in">*</span>= -<span class="number">1</span>;</span><br><span class="line">                ball.velocity.y <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - collisionDamper)</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// floor condition</span></span><br><span class="line">            <span class="keyword">if</span><span class="params">(y &gt; <span class="params">(height - radius)</span>)</span> {</span><br><span class="line">                y = height - radius;</span><br><span class="line">                ball.velocity.y <span class="built_in">*</span>= -<span class="number">1</span>;</span><br><span class="line">                ball.velocity.y <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - collisionDamper)</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// floor friction</span></span><br><span class="line">            <span class="keyword">if</span><span class="params">(y == height - radius)</span> {</span><br><span class="line">                <span class="keyword">if</span><span class="params">(ball.velocity.x &gt; <span class="number">0.1</span>)</span> {</span><br><span class="line">                    ball.velocity.y -= floorFrictionSpeedReduction;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span><span class="params">(ball.velocity.x &lt; -<span class="number">0.1</span>)</span> {</span><br><span class="line">                    ball.velocity.x += floorFrictionSpeedReduction;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">else</span> {</span><br><span class="line">                    ball.velocity.x = <span class="number">0</span>;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// right wall condition</span></span><br><span class="line">            <span class="keyword">if</span><span class="params">(x &gt; <span class="params">(width - radius)</span>)</span> {</span><br><span class="line">                x = width - radius;</span><br><span class="line">                ball.velocity.x <span class="built_in">*</span>= -<span class="number">1</span>;</span><br><span class="line">                ball.velocity.x <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - collisionDamper)</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            <span class="comment">// left wall condition</span></span><br><span class="line">            <span class="keyword">if</span><span class="params">(x &lt; radius)</span> {</span><br><span class="line">                x = radius;</span><br><span class="line">                ball.velocity.x <span class="built_in">*</span>= -<span class="number">1</span>;</span><br><span class="line">                ball.velocity.x <span class="built_in">*</span>= <span class="params">(<span class="number">1</span> - collisionDamper)</span>;</span><br><span class="line">            }</span><br><span class="line"></span><br><span class="line">            ball.setPosition<span class="params">({x:x, y:y})</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">/*</span><br><span class="line">             * if the ball comes into contact with the</span><br><span class="line">             * curve, then bounce it in the direction of the</span><br><span class="line">             * curve's surface normal</span><br><span class="line">             */</span></span><br><span class="line">            collision = handleCurveCollision<span class="params">(ball, curve)</span>;</span><br><span class="line"></span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    var stage = new Konva.Stage<span class="params">({</span><br><span class="line">        container: 'container',</span><br><span class="line">        width: width,</span><br><span class="line">        height: height</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    var curveLayer = new Konva.Layer<span class="params">()</span>;</span><br><span class="line">    var ballLayer = new Konva.Layer<span class="params">()</span>;</span><br><span class="line">    var radius = <span class="number">20</span>;</span><br><span class="line">    var anim;</span><br><span class="line"></span><br><span class="line">    var curve = new Konva.Shape<span class="params">({</span><br><span class="line">        sceneFunc: function<span class="params">(context)</span> {</span><br><span class="line">            context.beginPath<span class="params">()</span>;</span><br><span class="line">            context.moveTo<span class="params">(<span class="number">40</span>, height)</span>;</span><br><span class="line">            context.bezierCurveTo<span class="params">(width * <span class="number">0.2</span>, -<span class="number">1</span> * height * <span class="number">0.5</span>, width * <span class="number">0.7</span>, height * <span class="number">1.3</span>, width, height * <span class="number">0.5</span>)</span>;</span><br><span class="line">            context.lineTo<span class="params">(width, height)</span>;</span><br><span class="line">            context.lineTo<span class="params">(<span class="number">40</span>, height)</span>;</span><br><span class="line">            context.closePath<span class="params">()</span>;</span><br><span class="line">            context.fillShape<span class="params">(this)</span>;</span><br><span class="line">        },</span><br><span class="line">        fill: '#<span class="number">8</span>dbdff'</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    curveLayer.add<span class="params">(curve)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// create ball</span></span><br><span class="line">    var ball = new Konva.Circle<span class="params">({</span><br><span class="line">        x: <span class="number">190</span>,</span><br><span class="line">        y: <span class="number">20</span>,</span><br><span class="line">        radius: radius,</span><br><span class="line">        fill: 'blue',</span><br><span class="line">        draggable: <span class="literal">true</span>,</span><br><span class="line">        opacity: <span class="number">0.8</span></span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// custom property</span></span><br><span class="line">    ball.velocity = {</span><br><span class="line">        x: <span class="number">0</span>,</span><br><span class="line">        y: <span class="number">0</span></span><br><span class="line">    };</span><br><span class="line"></span><br><span class="line">    ball.on<span class="params">('dragstart', function<span class="params">()</span> {</span><br><span class="line">        ball.velocity = {</span><br><span class="line">            x: <span class="number">0</span>,</span><br><span class="line">            y: <span class="number">0</span></span><br><span class="line">        };</span><br><span class="line">        anim.start<span class="params">()</span>;</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    ball.on<span class="params">('mousedown', function<span class="params">()</span> {</span><br><span class="line">        anim.stop<span class="params">()</span>;</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    ball.on<span class="params">('mouseover', function<span class="params">()</span> {</span><br><span class="line">        document.body.style.cursor = 'pointer';</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    ball.on<span class="params">('mouseout', function<span class="params">()</span> {</span><br><span class="line">        document.body.style.cursor = 'default';</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    ballLayer.add<span class="params">(ball)</span>;</span><br><span class="line">    stage.add<span class="params">(curveLayer)</span>;</span><br><span class="line">    stage.add<span class="params">(ballLayer)</span>;</span><br><span class="line"></span><br><span class="line">    var tween = new Konva.Tween<span class="params">({</span><br><span class="line">        node: ball,</span><br><span class="line">        fill: 'red',</span><br><span class="line">        duration: <span class="number">0.3</span>,</span><br><span class="line">        easing: Konva.Easings.EaseOut</span><br><span class="line">    })</span>;</span><br><span class="line"></span><br><span class="line">    anim = new Konva.Animation<span class="params">(function<span class="params">(frame)</span> {</span><br><span class="line">        updateBall<span class="params">(frame)</span>;</span><br><span class="line">    }, ballLayer)</span>;</span><br><span class="line"></span><br><span class="line">    anim.start<span class="params">()</span>;</span><br><span class="line">  </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+      </div>
+      <footer id="page-footer">
+        <time id="page-footer-updated" datetime="2015-01-31T06:06:18.000Z" itemprop="dateModified">Last updated: Jan 31 2015</time>
+        <a href="javascript:if(confirm('http://konvajs.github.io/docs/sandbox,Modify_Shape_Color_on_Click.html  \n\n该文件无法用 Teleport Ultra 下载, 因为 服务器报告该文件未找到。  \n\n你想在服务器上打开它?'))window.location='http://konvajs.github.io/docs/sandbox,Modify_Shape_Color_on_Click.html'" tppabs="http://konvajs.github.io/docs/sandbox,Modify_Shape_Color_on_Click.html" id="page-footer-prev" title="Modify Shape Color on Click">Prev</a><a href="Expand_Images_on_Hover.html" tppabs="http://konvajs.github.io/docs/sandbox/Expand_Images_on_Hover.html" id="page-footer-next" title="Expand Images on Hover">Next</a>
+      </footer>
+      
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="javascript:if(confirm('http://disqus.com/?ref_noscript  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='http://disqus.com/?ref_noscript'" tppabs="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+    </div>
+    <aside id="sidebar">
+  
+    <strong class="sidebar-title">Getting Started</strong>
+    
+      <a href="../index.html" tppabs="http://konvajs.github.io/docs/index.html" class="sidebar-link">Intro</a>
+    
+      <a href="../overview.html" tppabs="http://konvajs.github.io/docs/overview.html" class="sidebar-link">Overview</a>
+    
+      <a href="../support.html" tppabs="http://konvajs.github.io/docs/support.html" class="sidebar-link">Support</a>
+    
+      <a href="../tools.html" tppabs="http://konvajs.github.io/docs/tools.html" class="sidebar-link">Tools</a>
+    
+  
+    <strong class="sidebar-title">Shapes</strong>
+    
+      <a href="../shapes/Rect.html" tppabs="http://konvajs.github.io/docs/shapes/Rect.html" class="sidebar-link">Rect</a>
+    
+      <a href="../shapes/Circle.html" tppabs="http://konvajs.github.io/docs/shapes/Circle.html" class="sidebar-link">Circle</a>
+    
+      <a href="../shapes/Ellipse.html" tppabs="http://konvajs.github.io/docs/shapes/Ellipse.html" class="sidebar-link">Ellipse</a>
+    
+      <a href="../shapes/Wedge.html" tppabs="http://konvajs.github.io/docs/shapes/Wedge.html" class="sidebar-link">Wedge</a>
+    
+      <a href="../shapes/Line_-_Simple_Line.html" tppabs="http://konvajs.github.io/docs/shapes/Line_-_Simple_Line.html" class="sidebar-link">Line - Simple Line</a>
+    
+      <a href="../shapes/Line_-_Polygon.html" tppabs="http://konvajs.github.io/docs/shapes/Line_-_Polygon.html" class="sidebar-link">Line - Polygon</a>
+    
+      <a href="../shapes/Line_-_Spline.html" tppabs="http://konvajs.github.io/docs/shapes/Line_-_Spline.html" class="sidebar-link">Line - Spline</a>
+    
+      <a href="../shapes/Line_-_Blob.html" tppabs="http://konvajs.github.io/docs/shapes/Line_-_Blob.html" class="sidebar-link">Line - Blob</a>
+    
+      <a href="../shapes/Sprite.html" tppabs="http://konvajs.github.io/docs/shapes/Sprite.html" class="sidebar-link">Sprite</a>
+    
+      <a href="../shapes/Image.html" tppabs="http://konvajs.github.io/docs/shapes/Image.html" class="sidebar-link">Image</a>
+    
+      <a href="../shapes/Text.html" tppabs="http://konvajs.github.io/docs/shapes/Text.html" class="sidebar-link">Text</a>
+    
+      <a href="../shapes/TextPath.html" tppabs="http://konvajs.github.io/docs/shapes/TextPath.html" class="sidebar-link">TextPath</a>
+    
+      <a href="../shapes/Star.html" tppabs="http://konvajs.github.io/docs/shapes/Star.html" class="sidebar-link">Star</a>
+    
+      <a href="../shapes/Ring.html" tppabs="http://konvajs.github.io/docs/shapes/Ring.html" class="sidebar-link">Ring</a>
+    
+      <a href="../shapes/Arc.html" tppabs="http://konvajs.github.io/docs/shapes/Arc.html" class="sidebar-link">Arc</a>
+    
+      <a href="../shapes/Label.html" tppabs="http://konvajs.github.io/docs/shapes/Label.html" class="sidebar-link">Label</a>
+    
+      <a href="../shapes/Path.html" tppabs="http://konvajs.github.io/docs/shapes/Path.html" class="sidebar-link">Path</a>
+    
+      <a href="../shapes/RegularPolygon.html" tppabs="http://konvajs.github.io/docs/shapes/RegularPolygon.html" class="sidebar-link">RegularPolygon</a>
+    
+      <a href="../shapes/Arrow.html" tppabs="http://konvajs.github.io/docs/shapes/Arrow.html" class="sidebar-link">Arrow</a>
+    
+      <a href="../shapes/Custom.html" tppabs="http://konvajs.github.io/docs/shapes/Custom.html" class="sidebar-link">Custom</a>
+    
+  
+    <strong class="sidebar-title">Styling</strong>
+    
+      <a href="../styling/Fill.html" tppabs="http://konvajs.github.io/docs/styling/Fill.html" class="sidebar-link">Fill</a>
+    
+      <a href="../styling/Stroke.html" tppabs="http://konvajs.github.io/docs/styling/Stroke.html" class="sidebar-link">Stroke</a>
+    
+      <a href="../styling/Opacity.html" tppabs="http://konvajs.github.io/docs/styling/Opacity.html" class="sidebar-link">Opacity</a>
+    
+      <a href="../styling/Shadow.html" tppabs="http://konvajs.github.io/docs/styling/Shadow.html" class="sidebar-link">Shadow</a>
+    
+      <a href="../styling/Line_Join.html" tppabs="http://konvajs.github.io/docs/styling/Line_Join.html" class="sidebar-link">Line Join</a>
+    
+      <a href="../styling/Hide_and_Show.html" tppabs="http://konvajs.github.io/docs/styling/Hide_and_Show.html" class="sidebar-link">Hide and Show</a>
+    
+  
+    <strong class="sidebar-title">Events</strong>
+    
+      <a href="../events/Binding_Events.html" tppabs="http://konvajs.github.io/docs/events/Binding_Events.html" class="sidebar-link">Binding Events</a>
+    
+      <a href="../events/Image_Events.html" tppabs="http://konvajs.github.io/docs/events/Image_Events.html" class="sidebar-link">Image Events</a>
+    
+      <a href="../events/Mobile_Events.html" tppabs="http://konvajs.github.io/docs/events/Mobile_Events.html" class="sidebar-link">Mobile Events</a>
+    
+      <a href="../events/Multi_Event.html" tppabs="http://konvajs.github.io/docs/events/Multi_Event.html" class="sidebar-link">Multi Event</a>
+    
+      <a href="../events/Desktop_and_Mobile.html" tppabs="http://konvajs.github.io/docs/events/Desktop_and_Mobile.html" class="sidebar-link">Desktop and Mobile</a>
+    
+      <a href="../events/Remove_Event.html" tppabs="http://konvajs.github.io/docs/events/Remove_Event.html" class="sidebar-link">Remove Event</a>
+    
+      <a href="../events/Remove_by_Name.html" tppabs="http://konvajs.github.io/docs/events/Remove_by_Name.html" class="sidebar-link">Remove by Name</a>
+    
+      <a href="../events/Custom_Hit_Region.html" tppabs="http://konvajs.github.io/docs/events/Custom_Hit_Region.html" class="sidebar-link">Custom Hit Region</a>
+    
+      <a href="../events/Listen_for_Events.html" tppabs="http://konvajs.github.io/docs/events/Listen_for_Events.html" class="sidebar-link">Listen for Events</a>
+    
+      <a href="../events/Cancel_Propagation.html" tppabs="http://konvajs.github.io/docs/events/Cancel_Propagation.html" class="sidebar-link">Cancel Propagation</a>
+    
+      <a href="../events/Event_Delegation.html" tppabs="http://konvajs.github.io/docs/events/Event_Delegation.html" class="sidebar-link">Event Delegation</a>
+    
+      <a href="../events/Fire_Events.html" tppabs="http://konvajs.github.io/docs/events/Fire_Events.html" class="sidebar-link">Fire Events</a>
+    
+      <a href="../events/Stage_Events.html" tppabs="http://konvajs.github.io/docs/events/Stage_Events.html" class="sidebar-link">Stage Events</a>
+    
+  
+    <strong class="sidebar-title">Drag and Drop</strong>
+    
+      <a href="../drag_and_drop/Drag_and_Drop.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_and_Drop.html" class="sidebar-link">Drag and Drop</a>
+    
+      <a href="../drag_and_drop/Drag_an_Image.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_an_Image.html" class="sidebar-link">Drag an Image</a>
+    
+      <a href="../drag_and_drop/Drag_a_Group.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_a_Group.html" class="sidebar-link">Drag a Group</a>
+    
+      <a href="../drag_and_drop/Drag_a_Line.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_a_Line.html" class="sidebar-link">Drag a Line</a>
+    
+      <a href="../drag_and_drop/Drag_a_Stage.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_a_Stage.html" class="sidebar-link">Drag a Stage</a>
+    
+      <a href="../drag_and_drop/Drag_Events.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drag_Events.html" class="sidebar-link">Drag Events</a>
+    
+      <a href="../drag_and_drop/Simple_Drag_Bounds.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Simple_Drag_Bounds.html" class="sidebar-link">Simple Drag Bounds</a>
+    
+      <a href="../drag_and_drop/Complex_Drag_and_Drop.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Complex_Drag_and_Drop.html" class="sidebar-link">Complex Drag and Drop</a>
+    
+      <a href="../drag_and_drop/Drop_Events.html" tppabs="http://konvajs.github.io/docs/drag_and_drop/Drop_Events.html" class="sidebar-link">Drop Events</a>
+    
+  
+    <strong class="sidebar-title">Groups and Layers</strong>
+    
+      <a href="../groups_and_layers/Groups.html" tppabs="http://konvajs.github.io/docs/groups_and_layers/Groups.html" class="sidebar-link">Groups</a>
+    
+      <a href="../groups_and_layers/Layering.html" tppabs="http://konvajs.github.io/docs/groups_and_layers/Layering.html" class="sidebar-link">Layering</a>
+    
+      <a href="../groups_and_layers/Change_Containers.html" tppabs="http://konvajs.github.io/docs/groups_and_layers/Change_Containers.html" class="sidebar-link">Change Containers</a>
+    
+      <a href="../groups_and_layers/Clipping_Regions.html" tppabs="http://konvajs.github.io/docs/groups_and_layers/Clipping_Regions.html" class="sidebar-link">Clipping Regions</a>
+    
+  
+    <strong class="sidebar-title">Filters</strong>
+    
+      <a href="../filters/RGBA.html" tppabs="http://konvajs.github.io/docs/filters/RGBA.html" class="sidebar-link">RGBA</a>
+    
+      <a href="../filters/Invert.html" tppabs="http://konvajs.github.io/docs/filters/Invert.html" class="sidebar-link">Invert</a>
+    
+      <a href="../filters/Grayscale.html" tppabs="http://konvajs.github.io/docs/filters/Grayscale.html" class="sidebar-link">Grayscale</a>
+    
+      <a href="../filters/Brighten.html" tppabs="http://konvajs.github.io/docs/filters/Brighten.html" class="sidebar-link">Brighten</a>
+    
+      <a href="../filters/Kaleidoscope.html" tppabs="http://konvajs.github.io/docs/filters/Kaleidoscope.html" class="sidebar-link">Kaleidoscope</a>
+    
+      <a href="../filters/Blur.html" tppabs="http://konvajs.github.io/docs/filters/Blur.html" class="sidebar-link">Blur</a>
+    
+      <a href="../filters/Multiple_Filters.html" tppabs="http://konvajs.github.io/docs/filters/Multiple_Filters.html" class="sidebar-link">Multiple Filters</a>
+    
+  
+    <strong class="sidebar-title">Tweens</strong>
+    
+      <a href="../tweens/Linear_Easing.html" tppabs="http://konvajs.github.io/docs/tweens/Linear_Easing.html" class="sidebar-link">Linear Easing</a>
+    
+      <a href="../tweens/Common_Easings.html" tppabs="http://konvajs.github.io/docs/tweens/Common_Easings.html" class="sidebar-link">Common Easings</a>
+    
+      <a href="../tweens/All_Easings.html" tppabs="http://konvajs.github.io/docs/tweens/All_Easings.html" class="sidebar-link">All Easings</a>
+    
+      <a href="../tweens/Finish_Event.html" tppabs="http://konvajs.github.io/docs/tweens/Finish_Event.html" class="sidebar-link">Finish Event</a>
+    
+      <a href="../tweens/All_Controls.html" tppabs="http://konvajs.github.io/docs/tweens/All_Controls.html" class="sidebar-link">All Controls</a>
+    
+      <a href="../tweens/Tween_Filter.html" tppabs="http://konvajs.github.io/docs/tweens/Tween_Filter.html" class="sidebar-link">Tween Filter</a>
+    
+      <a href="../tweens/Complex_Tweening.html" tppabs="http://konvajs.github.io/docs/tweens/Complex_Tweening.html" class="sidebar-link">Complex Tweening</a>
+    
+  
+    <strong class="sidebar-title">Animations</strong>
+    
+      <a href="../animations/Create_an_Animation.html" tppabs="http://konvajs.github.io/docs/animations/Create_an_Animation.html" class="sidebar-link">Create an Animation</a>
+    
+      <a href="../animations/Moving.html" tppabs="http://konvajs.github.io/docs/animations/Moving.html" class="sidebar-link">Moving</a>
+    
+      <a href="../animations/Rotation.html" tppabs="http://konvajs.github.io/docs/animations/Rotation.html" class="sidebar-link">Rotation</a>
+    
+      <a href="../animations/Scaling.html" tppabs="http://konvajs.github.io/docs/animations/Scaling.html" class="sidebar-link">Scaling</a>
+    
+      <a href="../animations/Stop_Animation.html" tppabs="http://konvajs.github.io/docs/animations/Stop_Animation.html" class="sidebar-link">Stop Animation</a>
+    
+  
+    <strong class="sidebar-title">Selectors</strong>
+    
+      <a href="../selectors/Select_by_id.html" tppabs="http://konvajs.github.io/docs/selectors/Select_by_id.html" class="sidebar-link">Select by id</a>
+    
+      <a href="../selectors/Select_by_Type.html" tppabs="http://konvajs.github.io/docs/selectors/Select_by_Type.html" class="sidebar-link">Select by Type</a>
+    
+      <a href="../selectors/Select_by_Name.html" tppabs="http://konvajs.github.io/docs/selectors/Select_by_Name.html" class="sidebar-link">Select by Name</a>
+    
+  
+    <strong class="sidebar-title">Data &amp; Serialization</strong>
+    
+      <a href="../data_&_serialization/Serialize_a_Stage.html" tppabs="http://konvajs.github.io/docs/data_&_serialization/Serialize_a_Stage.html" class="sidebar-link">Serialize a Stage</a>
+    
+      <a href="../data_&_serialization/Simple_Load.html" tppabs="http://konvajs.github.io/docs/data_&_serialization/Simple_Load.html" class="sidebar-link">Simple Load</a>
+    
+      <a href="../data_&_serialization/Complex_Load.html" tppabs="http://konvajs.github.io/docs/data_&_serialization/Complex_Load.html" class="sidebar-link">Complex Load</a>
+    
+      <a href="../data_&_serialization/Stage_Data_URL.html" tppabs="http://konvajs.github.io/docs/data_&_serialization/Stage_Data_URL.html" class="sidebar-link">Stage Data URL</a>
+    
+  
+    <strong class="sidebar-title">Performance</strong>
+    
+      <a href="../performance/Layer_Management.html" tppabs="http://konvajs.github.io/docs/performance/Layer_Management.html" class="sidebar-link">Layer Management</a>
+    
+      <a href="../performance/Batch_Draw.html" tppabs="http://konvajs.github.io/docs/performance/Batch_Draw.html" class="sidebar-link">Batch Draw</a>
+    
+      <a href="../performance/Shape_Caching.html" tppabs="http://konvajs.github.io/docs/performance/Shape_Caching.html" class="sidebar-link">Shape Caching</a>
+    
+      <a href="../performance/Optimize_Animation.html" tppabs="http://konvajs.github.io/docs/performance/Optimize_Animation.html" class="sidebar-link">Optimize Animation</a>
+    
+      <a href="../performance/Optimize_Strokes.html" tppabs="http://konvajs.github.io/docs/performance/Optimize_Strokes.html" class="sidebar-link">Optimize Strokes</a>
+    
+      <a href="../performance/Shape_Redraw.html" tppabs="http://konvajs.github.io/docs/performance/Shape_Redraw.html" class="sidebar-link">Shape Redraw</a>
+    
+      <a href="../performance/Disable_Perfect_Draw.html" tppabs="http://konvajs.github.io/docs/performance/Disable_Perfect_Draw.html" class="sidebar-link">Disable Perfect Drawing</a>
+    
+      <a href="../performance/Listening_False.html" tppabs="http://konvajs.github.io/docs/performance/Listening_False.html" class="sidebar-link">Listening False</a>
+    
+      <a href="../performance/Avoid_Memory_Leaks.html" tppabs="http://konvajs.github.io/docs/performance/Avoid_Memory_Leaks.html" class="sidebar-link">Avoid Memory Leaks</a>
+    
+      <a href="../performance/All_Performance_Tips.html" tppabs="http://konvajs.github.io/docs/performance/All_Performance_Tips.html" class="sidebar-link">All tips</a>
+    
+  
+    <strong class="sidebar-title">Demos</strong>
+    
+      <a href="Free_Drawing.html" tppabs="http://konvajs.github.io/docs/sandbox/Free_Drawing.html" class="sidebar-link">Free Drawing</a>
+    
+      <a href="Zoom_Layer_On_hover.html" tppabs="http://konvajs.github.io/docs/sandbox/Zoom_Layer_On_hover.html" class="sidebar-link">Zoom Layer On hover</a>
+    
+      <a href="Wheel_of_Fortune.html" tppabs="http://konvajs.github.io/docs/sandbox/Wheel_of_Fortune.html" class="sidebar-link">Wheel of Fortune</a>
+    
+      <a href="Quantum_Squiggle.html" tppabs="http://konvajs.github.io/docs/sandbox/Quantum_Squiggle.html" class="sidebar-link">Quantum Squiggle</a>
+    
+      <a href="20000_Nodes.html" tppabs="http://konvajs.github.io/docs/sandbox/20000_Nodes.html" class="sidebar-link">20000 Nodes</a>
+    
+      <a href="Elastic_Stars.html" tppabs="http://konvajs.github.io/docs/sandbox/Elastic_Stars.html" class="sidebar-link">Elastic Stars</a>
+    
+      <a href="Shape_Tango.html" tppabs="http://konvajs.github.io/docs/sandbox/Shape_Tango.html" class="sidebar-link">Shape Tango</a>
+    
+      <a href="Multi-touch_Scale_Shape.html" tppabs="http://konvajs.github.io/docs/sandbox/Multi-touch_Scale_Shape.html" class="sidebar-link">Multi-touch Scale Shape</a>
+    
+      <a href="Multi-touch_Scale_Stage.html" tppabs="http://konvajs.github.io/docs/sandbox/Multi-touch_Scale_Stage.html" class="sidebar-link">Multi-touch Scale Stage</a>
+    
+      <a href="Interactive_Building_Map.html" tppabs="http://konvajs.github.io/docs/sandbox/Interactive_Building_Map.html" class="sidebar-link">Interactive Building Map</a>
+    
+      <a href="Modify_Curves_with_Anchor_Points.html" tppabs="http://konvajs.github.io/docs/sandbox/Modify_Curves_with_Anchor_Points.html" class="sidebar-link">Modify Curves with Anchor Points</a>
+    
+      <a href="Drag_and_Drop_Stress_Test.html" tppabs="http://konvajs.github.io/docs/sandbox/Drag_and_Drop_Stress_Test.html" class="sidebar-link">Drag and Drop Stress Test</a>
+    
+      <a href="Animals_on_the_Beach_Game.html" tppabs="http://konvajs.github.io/docs/sandbox/Animals_on_the_Beach_Game.html" class="sidebar-link">Animals on the Beach Game</a>
+    
+      <a href="Animation_Stress_Test.html" tppabs="http://konvajs.github.io/docs/sandbox/Animation_Stress_Test.html" class="sidebar-link">Animation Stress Test</a>
+    
+      <a href="10000_Shapes_with_Tooltip.html" tppabs="http://konvajs.github.io/docs/sandbox/10000_Shapes_with_Tooltip.html" class="sidebar-link">10000 Shapes with Tooltips</a>
+    
+      <a href="Modify_Shape_Color_on_Click.html" tppabs="http://konvajs.github.io/docs/sandbox/Modify_Shape_Color_on_Click.html" class="sidebar-link">Modify Shape Color on Click</a>
+    
+      <a href="Physics_Simulator.html" tppabs="http://konvajs.github.io/docs/sandbox/Physics_Simulator.html" class="sidebar-link current">Physics Simulator</a>
+    
+      <a href="Expand_Images_on_Hover.html" tppabs="http://konvajs.github.io/docs/sandbox/Expand_Images_on_Hover.html" class="sidebar-link">Expand Images on Hover</a>
+    
+      <a href="Planets_Image_Map.html" tppabs="http://konvajs.github.io/docs/sandbox/Planets_Image_Map.html" class="sidebar-link">Planets Image Map</a>
+    
+      <a href="Image_Resize.html" tppabs="http://konvajs.github.io/docs/sandbox/Image_Resize.html" class="sidebar-link">Image Resize</a>
+    
+      <a href="Shape_Tooltips.html" tppabs="http://konvajs.github.io/docs/sandbox/Shape_Tooltips.html" class="sidebar-link">Shape Tooltips</a>
+    
+      <a href="Star_Spiner.html" tppabs="http://konvajs.github.io/docs/sandbox/Star_Spiner.html" class="sidebar-link">Star Spiner</a>
+    
+      <a href="Drag_and_Drop_Multiple_Shapes.html" tppabs="http://konvajs.github.io/docs/sandbox/Drag_and_Drop_Multiple_Shapes.html" class="sidebar-link">Drag and Drop Multiple Shapes</a>
+    
+      <a href="Image_Border_Highlighting.html" tppabs="http://konvajs.github.io/docs/sandbox/Image_Border_Highlighting.html" class="sidebar-link">Image Border Highlighting</a>
+    
+  
+</aside>
+  </div>
+</article>
+  <footer id="footer">
+  <div class="outer">
+    <div class="inner">
+      <div id="footer-copyright">
+        &copy; 2015 KonvaJS<br>
+      </div>
+      <div id="footer-links">
+        <a href="javascript:if(confirm('https://twitter.com/lavrton  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://twitter.com/lavrton'" tppabs="https://twitter.com/lavrton" id="footer-link-twitter" class="footer-link" target="_blank"><span>Twitter</span></a>
+        <a href="javascript:if(confirm('https://github.com/konvajs/konva  \n\n该文件无法用 Teleport Ultra 下载, 因为 它是一个域或路径外部被设置为它的启始地址的地址。  \n\n你想在服务器上打开它?'))window.location='https://github.com/konvajs/konva'" tppabs="https://github.com/konvajs/konva" id="footer-link-github" class="footer-link" target="_blank"><span>GitHub</span></a>
+      </div>
+    </div>
+  </div>
+  <script>
+    ((window.gitter = {}).chat = {}).options = {
+      room: 'konvajs/konva'
+    };
+  </script>
+  <script src="../../../sidecar.gitter.im/dist/sidecar.v1.js" tppabs="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</footer>
+  
+<!-- Disqus -->
+<script>
+  var disqus_shortname = 'konvajs';
+  
+  var disqus_url = 'Physics_Simulator.html'/*tpa=http://konvajs.github.io/docs/sandbox/Physics_Simulator.html*/;
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '../../../a.disquscdn.com/embed.js'/*tpa=http://go.disqus.com/embed.js*/;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<!-- Swiftype -->
+<script>
+var Swiftype = window.Swiftype || {};
+(function() {
+  Swiftype.key = 'rRaQRFqx1DcWDDysdpg_';
+
+  /** DO NOT EDIT BELOW THIS LINE **/
+  var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+  script.src = "../../../s.swiftypecdn.com/embed.js"/*tpa=http://s.swiftypecdn.com/embed.js*/;
+  var entry = document.getElementsByTagName('script')[0];
+  document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
+}());
+</script>
+<script src="../../../ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" tppabs="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="../../js/retina.min.js" tppabs="http://konvajs.github.io/js/retina.min.js" type="text/javascript"></script>
+<script src="../../js/script.js" tppabs="http://konvajs.github.io/js/script.js" type="text/javascript"></script>
+<!-- Google+ -->
+<script type="text/javascript" src="../../../apis.google.com/js/plusone.js" tppabs="http://apis.google.com/js/plusone.js"></script>
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+</body>
+</html>

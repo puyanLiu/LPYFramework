@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		div {
+			height: 2000px;
+		}
+	</style>
+	<!-- 
+		第一步：引包
+		第二步：写img
+		第三步： lazyload()方法
+	-->
+	<script src="jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script src="jquery.lazyload.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			$(".lazy").lazyload();
+		})
+	</script>
+</head>
+<body>
+	<div>
+		
+	</div>
+	<img class="lazy" src="images/1.gif" alt="" width="150" height="440">
+	<img class="lazy" src="images/2.gif" alt="" width="150" height="440">
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	* {
+        		margin: 0;
+        		padding: 0;
+        	}
+        	body {
+        		font: 8rem "微软雅黑";
+        		padding: 200px;
+        	}
+        	.zi {
+				margin: 0.2rem;
+				color: #369;
+				position: relative;
+        	}
+        	.zi:before,
+        	.zi:after {
+        		content: attr(data-zi);
+        		position: absolute;
+        		top: 0;
+        		left: 0;
+        		transform-origin: left top;
+        		-webkit-transform-origin: left top;
+        		-o-transform-origin: left top;
+        		-ms-transform-origin: left top;
+        		transition: 0.3s ease 0s;
+        	}
+        	.zi:before {
+        		color: #fff;
+        		z-index: 3;
+        		transform: rotateX(0deg) rotateY(-15deg) rotateZ(0deg);
+        	}
+        	.zi:after {
+        		color: rgba(0, 0, 0, 0.2);
+        		z-index: 2;
+        		transform: scale(1.1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        	}
+        	.zi:hover:before {
+        		color: #fafafa;
+        		/*指定对象skew transformation（斜切扭曲）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0*/
+        		transform: rotateX(0deg) rotateY(-40deg) rotateZ(0deg) skew(0deg, 10deg);
+        	}
+        	.zi:hover:after {
+				transform: scale(1.1, 1) rotateX(0deg) rotateY(-40deg) rotateZ(0deg) skew(0deg, 20deg);
+        	}
+        </style>
+    </head>
+    <body>
+    	<span class="zi" data-zi="缺">缺</span>
+    	<span class="zi" data-zi="钱">钱</span>
+    	<span class="zi" data-zi="么">么</span>
+    </body>
+</html>

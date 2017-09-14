@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script type="text/javascript">
+        	window.onload = function() {
+        		var btn = document.getElementById('btn');
+        		btn.onclick = function() {
+        			var username = document.getElementById("username").value;
+        			var password = document.getElementById("password").value;
+
+        			// 创建xhr对象
+	        		var xhr = null;
+	        		if (window.XMLHttpRequest) {
+	        			// 标准浏览器
+	        			xhr = new XMLHttpRequest();
+	        		} else {
+	        			// 早起的IE浏览器
+	        			xhr = new ActiveXObject('Microsoft.XMLHTTP');
+	        		}
+	        		// 准备发送请求-配置发送请求的一些行为
+	        		var url = '05open.php?username=' + encodeURIComponent(username) + '&password=' + password;
+	        		xhr.open('get', url);
+	        		// 执行发送动作
+	        		xhr.send(null);
+	        		// 指定一些回调函数
+	        		xhr.onreadystatechange = function() {
+	        			if (xhr.readyState == 4) {
+	        				if (xhr.status == 200) {
+	        					var data = xhr.responseText;
+	        					document.getElementById('showInfo').innerHTML = data;
+	        				}
+	        			}
+	        		}
+        		}
+        	}
+        </script>
+    </head>
+    <body>
+    	<div id="showInfo"></div>
+    	<form>
+    		用户名：<input type="text" name="username" id="username"><br>
+    		密码：<input type="password" name="password" id="password"><br>
+    		<input type="button" value="提交" id="btn">
+    	</form>
+    </body>
+</html>

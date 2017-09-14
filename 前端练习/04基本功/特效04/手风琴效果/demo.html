@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        div {
+            width: 1150px;
+            height: 400px;
+            margin: 50px auto;
+            border: 1px solid red;
+            overflow: hidden;
+        }
+        div ul {
+            width: 1300px;
+        }
+        div li {
+            width: 240px;
+            height: 400px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="animate.js"></script>
+<script type="text/javascript">
+    var box = document.getElementsByTagName("div")[0];
+    var lis = box.children[0].children;
+    for(var i = 0; i < lis.length; i++) {
+        lis[i].style.background = "url(images/" + (i + 1) + ".jpg)";
+        lis[i].onmouseover = function() {
+            for(var j = 0; j < lis.length; j++) {
+                animate(lis[j], {width: 100});
+            }
+
+            animate(this, {width: 800});
+        }
+        lis[i].onmouseout = function() {
+            for(var j = 0; j < lis.length; j++) {
+                animate(lis[j], {width: 240});
+            }
+        }
+    }
+
+</script>

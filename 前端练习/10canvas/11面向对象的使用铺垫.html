@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		function Cat() {
+    			this.age = 19;
+    			this.show = function() {
+
+    			}
+    		}
+
+    		var cat = new Cat();
+    		var cat1 = new Cat();
+    		cat.age = 20;
+    		cat1.age = 23;
+
+    		//-----------------------------------------------
+    		// 把函数放到原型里面去创建对象
+    		function Cat1() {
+    			this.age = 19;
+    		}
+    		Cat1.prototype.show = function() {
+    			console.log(this.age);
+    		}
+
+    		var cat1 = new Cat1();
+    		var cat11 = new Cat1();
+    		cat1.age = 20;
+    		cat11.age = 23;
+    		cat1.show();
+    		cat11.show();
+
+    		//-----------------------------------------------
+    		function Cat2(age, x, y) {
+    			this.age = age;
+    			this.x = x;
+    		}
+    		Cat2.prototype.show = function() {
+    			console.log(this.age);
+    		}
+    		var cat2 = new Cat2(16);
+    		var cat21 = new Cat2(12);
+    		// cat2.age = 20;
+    		// cat21.age = 23;
+    		cat2.show();
+    		cat21.show();
+
+    		//-----------------------------------------------
+    		function Cat3(option) {
+    			this.age = option.age;
+    			this.x = option.x;
+    		}
+    		Cat3.prototype.show = function() {
+    			console.log(this.age);
+    		}
+    		var cat3 = new Cat3({age: 10});
+    		var cat31 = new Cat3({age: 20});
+    		cat3.show();
+    		cat31.show();
+
+    		//-----------------------------------------------
+    		function Cat4(option) {
+    			this._init(option);
+    		}
+    		Cat4.prototype = {
+    			_init: function(option) {
+    				this.age = option.age || '';
+    			},
+    			show: function() {
+    				console.log(this.age);
+    			}
+    		};
+    		var cat4 = new Cat4({age: 60});
+    		var cat41 = new Cat4({age: 50});
+    		cat4.show();
+    		cat41.show();
+    	</script>
+    </body>
+</html>

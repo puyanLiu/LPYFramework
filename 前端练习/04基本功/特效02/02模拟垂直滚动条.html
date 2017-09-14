@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .box {
+            width: 300px;
+            height: 500px;
+            border: 1px solid red;
+            margin: 100px;
+            position: relative;
+        }
+        .content {
+            height: auto;
+            padding: 5px 18px 5px 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .scroll {
+            width: 18px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #eee;
+        }
+        .bar {
+            width: 100%;
+            height: 100px;
+            background: red;
+            cursor: pointer;
+            border-radius: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var box = document.getElementById("box");
+            var content = box.children[0];
+            var scroll = box.children[1];
+            var bar = scroll.children[0];
+            // 计算红色滚动条的高度
+            // 滚动条的长度计算公式： 容器的高度 / 内容的高度 * 容器的高度
+            var barHeight = box.offsetHeight / content.offsetHeight * box.offsetHeight;
+            bar.style.height = barHeight + "px";
+
+            // 拖动红色盒子
+            // 第一个参数拖动的控件，第二个参数 内容的盒子移动
+            startScroll(bar, content);
+            function startScroll(obj, target) {
+                obj.onmousedown = function(event) {
+                    var event = event || window.event;
+                    var t = event.clientY - this.offsetTop; // 红色盒子距离父亲盒子顶部的距离
+                    var me = this;
+                    document.onmousemove = function(event) {
+                        var event = event || window.event;
+                        var barTop = event.clientY - t;
+
+                        // 内容盒子要移动的距离
+                        // (内容盒子高度 - 大盒子高度) / (大盒子高度 - 红色盒子高度) * 红色盒子移动的数值
+                        var contentTop = (target.offsetHeight - target.parentNode.offsetHeight) / (target.parentNode.offsetHeight - me.offsetHeight) * barTop;
+
+                        if (barTop < 0) {
+                            barTop = 0;
+                        } else if(barTop > target.parentNode.offsetHeight - me.offsetHeight) {
+                            barTop = target.parentNode.offsetHeight - me.offsetHeight;
+                        } else {
+                            target.style.top = -contentTop + "px";
+                        }
+                        me.style.top = barTop + "px";
+                        window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); // 防止拖动滑块的时候，选中文字
+                    }
+
+                }
+
+                document.onmouseup = function() {
+                    document.onmousemove = null;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="content">
+        文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+         文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+        </div>
+        <div class="scroll">
+            <div class="bar"></div>
+        </div>
+    </div>
+</body>
+</html>

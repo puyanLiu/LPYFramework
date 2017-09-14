@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	
+var sharp = function(name){
+	this.name = name;
+}
+sharp.prototype = {
+	//改方法被继承,这个方法是大家都有的,并且都一样,可以放在基类中
+	getName : function(){
+			return this.name;
+		}
+    //会根据不同的形状而被重写
+	,zhouchang : function(){
+		   return 100;
+		}
+};
+
+
+//矩形对象
+var Rectangle = function(length,width){
+	sharp.call(this, name);
+	this.name='矩形';
+	this.length =length;
+	this.width = width;
+}
+//重写计算周长的方法
+Rectangle.prototype = new sharp();
+Rectangle.prototype.zhouchang = function(){
+	 return (this.length + this.width) * 2;
+}
+
+
+//好处
+//以后新增一个计算其他形状的需求,不用修改原来的代码,只需要扩充即可.
+//新增一个正方形
+var Square  = function(length){
+	sharp.call(this, name);
+	this.name='正方形';
+	this.length =length;
+	//this.width = width;
+}
+//重写计算周长的方法
+Square.prototype = new sharp();
+Square.prototype.zhouchang = function(){
+	 return this.length * 4;
+}
+
+
+
+//新增一个圆形
+var Circle   = function(radius){
+	sharp.call(this, name);
+	this.name='圆形';
+	this.radius =radius;
+	//this.width = width;
+}
+
+//重写计算周长的方法
+Circle.prototype = new sharp();
+Circle.prototype.zhouchang = function(){
+	//圆的周长=2×圆周率×半径 或 圆周率×直径
+	  return 2 * Math.PI * this.radius;
+}
+
+
+
+
+
+//使用对象 封装
+function computezhouchang(shape) {
+    console.log( shape.getName() + '的周长是' + shape.zhouchang() );
+}
+
+//组装世界
+//var rectangle = new Rectangle('矩形',10,20);
+//computezhouchang(rectangle);
+
+//去掉属性name
+var rectangle = new Rectangle(10,20);
+computezhouchang(rectangle);
+
+
+//正方形
+var square = new Square(10);
+computezhouchang(square);
+
+
+//圆形
+var circle = new Circle(10);
+computezhouchang(circle);
+
+
+// var Rectangle = function(name,length,width){
+// 	sharp.call(this, name);
+// 	this.length =length;
+// 	this.width = width;
+// }
+
+// Rectangle.prototype = new sharp();
+// Rectangle.prototype.zhouchang = function(){
+// 	 return (this.length + this.width) * 2;
+// }
+
+// function computezhouchang(shape) {
+//     console.log( shape.getName() + '的周长是' + shape.zhouchang() );
+// }
+
+// var rectangle = new Rectangle('矩形',10,20);
+// computezhouchang(rectangle);
+
+
+</script>

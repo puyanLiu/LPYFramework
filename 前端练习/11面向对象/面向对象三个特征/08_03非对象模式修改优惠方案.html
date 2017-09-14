@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<h1>产品最终价格：</h1>
+		<div id='type'></div>
+		<div id='mydiv'></div>
+    </body>
+</html>
+
+<script>
+	//算法家族 --放在同一的命名空间中 
+	//vip 客户优惠策略类
+	//适用于算法函数形式一样
+	var vipPrice = function(price) {
+	    　return price * 0.5;
+	}
+	 
+	//老客户优惠策略类:
+	var oldPrice = function(price) {
+	     return price * 0.3;
+	}
+
+	//普通客户
+	var NormlPrice = function(price) {
+	    return price ;
+	} 
+
+	 var calculatePrice = function( func, price ){
+	    return func(price);
+	};
+
+	 //使用
+	var price = calculatePrice(vipPrice,1000);
+	document.getElementById('mydiv').innerHTML=price;
+</script>

@@ -1,0 +1,22 @@
+// 定义一个类
+// ()里的内容是参数，参数后:后的内容是参数的默认值，也可以不传参数
+.roundedCorners(@radius: 20px) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	background-color: green;
+}
+
+// 定义的类使用
+@circleR: 80px;
+.circle {
+	width: @circleR;
+	height: @circleR;
+	.roundedCorners(@circleR);
+}
+
+.circle1 {
+	width: @circleR;
+	height: @circleR;
+	.roundedCorners();
+}

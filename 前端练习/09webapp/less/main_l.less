@@ -1,0 +1,26 @@
+
+@counter: 5;
+
+.loop(@counter) when(@counter > 0) {
+	.loop((@counter - 1)); // 递归调用自身
+	width: (20px * @counter); // 每次调用时产生的样式代码
+}
+
+div.loop {
+	background-color: green;
+	height: 50px;
+	.loop(5);
+}
+div.row {
+	height: 100px;
+}
+.generate-columns(4);
+.generate-columns(@n, @i: 1) when (@i =< @n) {
+	.column-@{i} {
+		width: (@i * 100% / @n);
+		height: 100%;
+		float: left;
+		background-color: #369 + @i * 15;
+	}
+	.generate-columns(@n, (@i + 1));
+}

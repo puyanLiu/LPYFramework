@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		margin: 0;
+        		padding: 0;
+        		font-family: '微软雅黑';
+        		background: #f7f7f7;
+        	}
+        	.wrapper {
+        		width: 1024px;
+        		margin: 0 auto;
+        	}
+        	.wrapper > section {
+        		min-height: 300px;
+        		margin-bottom: 30px;
+        		box-shadow: 1px 1px 4px #ddd;
+        		background: #fff;
+        	}
+        	.wrapper > header {
+        		text-align: center;
+        		line-height: 1;
+        		padding: 20px;
+        		margin-bottom: 10px;
+        		font-size: 30px;
+        	}
+        	.wrapper section > header {
+        		line-height: 1;
+        		padding: 10px;
+        		font-size: 22px;
+				color: #333;
+				background: #eee;
+        	}
+        	.wrapper .wrap-box {
+        		padding: 20px;
+        	}
+
+        	/*-----------------------------------------------*/
+        	/* white-space
+        	normal：
+			默认处理方式。
+			pre：
+			用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象
+			nowrap：
+			强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。
+			pre-wrap：
+			用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。
+			pre-line：
+			保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。
+        	 */
+        	
+        	/* text-shadow
+        	none：
+			无阴影
+			<length>①：
+			第1个长度值用来设置对象的阴影水平偏移值。可以为负值
+			<length>②：
+			第2个长度值用来设置对象的阴影垂直偏移值。可以为负值
+			<length>③：
+			如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值
+			<color>：
+			设置对象的阴影的颜色。
+        	 */
+        	
+			/* text-overflow
+			text-overflow 属性规定当文本溢出包含元素时发生的事情
+			clip	修剪文本
+			ellipsis	显示省略符号来代表被修剪的文本
+			string	使用给定的字符串来代表被修剪的文本
+			 */
+        	section:nth-of-type(1) span {
+        		color: #ccc;
+				font-size: 40px;
+				text-shadow: 2px 2px 8px #000;
+        	}
+        	section:nth-of-type(2) .box {
+        		width: 100px;
+        		height: 200px;
+        		border: 1px solid #ccc;
+        		/*word-wrap: break-all;*/
+        		word-wrap: break-word;
+        	}
+        	section:nth-of-type(2) .white-space {
+        		width: 100px;
+        		height: 200px;
+        		border: 1px solid red;
+        		white-space: pre;
+        	}
+        	section:nth-of-type(2) .pre {
+        		white-space: pre;
+        		border: 1px solid yellow;
+        	}
+        	section:nth-of-type(2) .pre-wrap {
+        		white-space: pre-wrap;
+        		border: 1px solid green;
+        	}
+        	section:nth-of-type(2) .pre-line {
+        		border: 1px solid blue;
+        		white-space: pre-line;
+        	}
+        	section:nth-of-type(2) .nowrap {
+        		white-space: nowrap;
+        	}
+        	section:nth-of-type(3) p {
+        		width: 200px;
+        		border: 1px solid red;
+        		text-overflow: ellipsis;
+        		overflow: hidden;
+        		display: -webkit-box;
+        		/*
+        		-webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。
+				限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他外来的WebKit属性。常见结合属性：
+				display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+				-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+				text-overflow，可以用来多行文本的情况下，用省略号“...”隐藏超出范围的文本 。
+        		 */
+        		-webkit-line-clamp: 5;
+        		/*设置或检索弹性盒模型对象的子元素的排列方式*/
+        		-webkit-box-orient: vertical;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="wrapper">
+    		<header>文本</header>
+    		<section>
+    			<header>文本阴影</header>
+    			<div class="wrap-box">
+    				<p>文本阴影 text-shadow: 2px 2px 8px #000;</p>
+    				<span>文本阴影</span>
+    			</div>
+    		</section>
+
+    		<section>
+    			<header>文本换行</header>
+    			<div class="wrap-box">
+    				<p class="box">
+    					我是一些字 http://huaban.com
+    				</p>
+    				<p class="box white-space pre">
+    					我是一些文字 我用的pre值
+    					一些文字
+    				</p>
+    				<p class="box2 white-space pre-wrap">哈哈吧
+黑    								我是一些文字 我用的pre-wrap值				啦啦
+    					一些文字	tab换行
+    				</p>
+    				<p class="box2 white-space pre-line">
+    								我是一些文字
+    							我用的pre-line
+
+啦啦
+    								一些文字
+    					哈哈
+    				</p>
+    				<p class="box2 white-space .nowrap">
+    					我是一些文字
+    						我用的nowrap
+    				一些文字
+    				<br>我要强制不换行
+    				</p>
+    			</div>
+    		</section>
+
+    		<section>
+    			<header>文本溢出</header>
+    			<div class="wrap-box">
+    				<p>文字溢出文字溢出文字溢出文字溢出文字溢出嘿
+    				文字溢出文字溢出文字溢出文字溢出文字溢出文字溢出 啦啦
+    				文字溢出文字溢出文字溢出文字溢出文字溢出文字溢出
+    				文字溢出文字溢出文字溢出文字溢出文字溢出文字溢出
+    				文字溢出文字溢出文字溢出文字溢出文字溢出文字溢出</p>
+    			</div>
+    		</section>
+    	</div>
+    </body>
+</html>

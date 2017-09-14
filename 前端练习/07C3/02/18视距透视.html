@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	body {
+        		/*
+					指定观察者与「z=0」平面的距离，使具有三维位置变换的元素产生透视效果。「z>0」的三维元素比正常大，而「z<0」时则比正常小，大小程度由该属性的值决定。
+					当该属性值为「非none」时，元素将会创建局部堆叠上下文。
+					对应的脚本特性为perspective。
+        		 */
+				perspective: 300px;
+        	}
+        	.father {
+				width: 300px;
+				height: 300px;
+				background-color: pink;
+				margin: 100px;
+				margin-left: 500px;
+				transform-style: preserve-3d;
+				transform: rotateY(-60deg);
+        	}
+        	.son {
+				width: 100px;
+				height: 100px;
+				background-color: purple;
+				margin: 100px;
+				transform: rotateY(-30deg);
+        	}
+        </style>
+    </head>
+    <body>
+    	<div class="father">
+    		<div class="son"></div>
+    	</div>
+    </body>
+</html>

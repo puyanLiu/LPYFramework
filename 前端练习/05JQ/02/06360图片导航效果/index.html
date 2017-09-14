@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+		}
+		img {
+			display: block;
+			border: 0;
+		}
+		.wrapper {
+			width: 752px;
+			border: 1px solid #ccc;
+			margin: 100px auto;
+			font-family: arial;
+			overflow: hidden;
+			padding: 10px 0 0 10px;
+		}
+		.wrapper li {
+			float: left;
+			margin: 0 10px 10px 0;
+			width: 178px;
+			height: 125px;
+			overflow: hidden;
+			position: relative;
+		}
+		.wrapper li div, .wrapper li p {
+			width: 178px;
+			height: 25px;
+			line-height: 25px;
+			text-align: center;
+			font-size: 14px;
+			color: white;
+			position: absolute;
+			left: 0;
+			bottom: -25px;
+			_bottom: -26px;
+		}
+		.wrapper li div {
+			background: #000;
+		}
+		.wrapper li p {
+			background: url(images/bg.png) no-repeat 5px 0;
+		}
+
+	</style>
+	<script src="../jquery-1.11.1.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			var div = $("<div></div>"), speed = 388, $p = $(".wrapper p");
+			// 在$p前边添加div
+			$p.before(div);
+			// 调整匹配元素的透明度
+			$(".wrapper div").fadeTo(0, 0.5);
+			$p.each(function(index, el) {
+				var y = index * 25;
+				$(el).css({
+					"background-position": '5px -' + y + 'px'
+				});	
+			});
+			// hover(鼠标进入事件, 鼠标离开事件)
+			$(".wrapper li").hover(function() {
+				$(this).children('div, p').stop().animate({
+					"bottom": 0},
+					speed);
+			}, function() {
+				$(this).children('div, p').stop().animate({
+					"bottom": "-25px"},
+					speed);
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<ul>
+			<li>
+				<a href="###"><img src="images/01.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/02.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/03.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/04.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/05.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/06.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/07.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+			<li>
+				<a href="###"><img src="images/08.JPG" alt=""></a>
+				<p>百度一下，你就知道</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

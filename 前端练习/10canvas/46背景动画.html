@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <script src="konva/konva.js"></script>
+        <style>
+        	body {
+        		padding: 0;
+				margin: 0;
+				background: #f0f0f0;
+				overflow: hidden;
+        	}
+        </style>
+    </head>
+    <body>
+	    <!-- 放我们的舞台 -->
+    	<div id="container"></div>
+    	<script>
+    		// 创建舞台
+    		var stage = new Konva.Stage({
+    			container: 'container',
+    			width: window.innerWidth,
+    			height: window.innerHeight
+    		});
+    		// 创建一个层
+    		var layer = new Konva.Layer();
+    		// 把层添加到舞台上
+    		stage.add(layer);
+    		
+    		//中心点坐标
+			var cenX = stage.width() / 2;
+			var cenY = stage.height() / 2;
+
+			var img = new Image();
+			img.src = "images/bg.jpg";
+			img.onload = function() {
+				var bgImg = new Konva.Image({
+					image: img,
+					width: stage.width(),
+					height: stage.height(),
+					x: 0,
+					y: 0
+				});	
+				layer.add(bgImg);
+				layer.draw();
+			};
+
+
+			var layerBgAnimate = new Konva.Layer();
+			stage.add( layerBgAnimate );
+			var triangleUp = new Konva.Shape({
+				sceneFunc: function( ctx ) {
+					ctx.beginPath();
+					ctx.moveTo( 0, 0 );
+					ctx.lineTo( stage.width(), 0 );
+					ctx.lineTo( 0, 1/4 * stage.height() );
+					ctx.closePath();
+					ctx.fillStyle = 'green';
+					ctx.fill();
+				},
+				x: 0,
+				y: -1/4 * stage.height(),
+				opacity: .1
+			});
+
+			layerBgAnimate.add( triangleUp );
+
+			var triangleDown = new Konva.Shape({
+				sceneFunc: function( ctx ) {
+					ctx.beginPath();
+					ctx.moveTo( 0, stage.height() );
+					ctx.lineTo( stage.width(), stage.height() );
+					ctx.lineTo( stage.width(), 3/4 * stage.height() );
+					ctx.closePath();
+					ctx.fillStyle = '#E6E6FA';
+					ctx.fill();
+				},
+				x: 0,
+				y: 1/4 * stage.height(),
+				opacity: .1
+			});
+			layerBgAnimate.add(triangleDown);
+
+    		triangleDown.to({
+			x: 0,
+			y: 0,
+			duration: .5,
+			opacity: 1,
+			// yoyo: true
+		});
+		layerBgAnimate.draw();
+
+		triangleUp.to({
+			x: 0,
+			y: 0,
+			duration: .5,
+			opacity: 1
+		});
+
+
+		var layerUp = new Konva.Layer();
+		var circle = new Konva.Circle({
+			x: cenX,
+			y: cenY,
+			radius: 4 * stage.width() ,
+            fillRadialGradientStartRadius: 0,	
+            fillRadialGradientEndRadius: 300,
+            fillRadialGradientColorStops: [0, '#FAFAD2', 1, 'yellow'],
+			opacity: 0
+		}); 
+		layerUp.add( circle );
+		layerUp.draw();
+
+		stage.add(layerUp);
+		setInterval(function(){
+			circle.to({
+				duration: 2,
+				opacity: .1,
+				onFinish: function() {
+					circle.to({
+						duration: 2,
+						opacity: 0
+					});
+				}
+			});
+		}, 4000);
+
+    	</script>
+    </body>
+</html>

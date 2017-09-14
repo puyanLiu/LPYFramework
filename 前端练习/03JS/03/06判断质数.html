@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var a = parseInt(prompt("请输入一个数"));
+        var isNoZS = false;
+        for (var i = 2; i < a; i++) {
+            if (a % i == 0) {
+                isNoZS = true;
+            }
+        }
+        if (isNoZS) {
+            alert("这个数不是质数");
+        } else {
+            alert("这个数是质数");
+        }
+    </script>
+</body>
+</html>

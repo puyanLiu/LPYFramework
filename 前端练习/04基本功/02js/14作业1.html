@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            function $(id) {
+                return document.getElementById(id);
+            }
+
+            $("btn").onclick = function() {
+                var workYear = parseInt($("workYear").value);
+                var salary = parseFloat($("salary").value);
+
+                if (workYear < 2) {
+                    alert(salary * (1 + 0.1));
+                } else if (workYear >=2 && workYear < 5) {
+                    alert(salary * (1 + 0.15));
+                } else if (workYear >= 5) {
+                    alert(salary * (1 + 0.2));
+                } else {
+                    alert("非法操作");
+                }
+            }
+
+        }
+    </script>
+    
+    请输入工龄：
+    <input type="text" id="workYear" />
+    <br />
+    请输入工资：
+    <input type="text" id="salary" />
+    <button id="btn">最后的工资</button>
+</body>
+</html>

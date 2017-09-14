@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+
+    		function ItcastRect( option ) {
+				this._init(option);
+			}
+			ItcastRect.prototype = {
+				_init: function( option ) {
+					option = option || {};
+					this.x = option.x === 0 ? 0 : option.x || 100;
+					this.y = option.y === 0 ? 0 : option.y || 100;
+					this.w = option.w || 100;
+					this.h = option.h || 100;
+					this.angle = option.angle === 0 ? 0 : option.angle || 0;
+					this.fillStyle = option.fillStyle || 'silver';
+					this.strokeStyle = option.strokeStyle || 'red';
+					this.strokeWidth = option.strokeWidth || 4;
+					this.scaleX = option.scaleX || 1;
+					this.scaleY = option.Y || 1;
+				},
+				render: function( ctx ) {
+					ctx.save();
+					ctx.translate(this.x, this.y);
+					ctx.rotate(this.angle * Math.PI / 180 );
+					ctx.scale(this.scaleX, this.scaleY);
+					ctx.fillStyle = this.fillStyle;
+					ctx.fillRect(0, 0, this.w, this.h);
+					ctx.lineWidth = this.strokeWidth;
+					ctx.strokeStyle = this.strokeStyle;
+					ctx.strokeRect(0,0,this.w,this.h);
+					ctx.restore();
+				},
+				constructor: ItcastRect
+			};
+
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			var rect  = new ItcastRect({
+					fillStyle: 'navy',
+					strokeStyle: 'gold',
+					x: 300,
+					y: 200,
+					h: 50,
+					w: 50,
+					angle: 60,
+				});
+				rect.render(ctx);
+
+				setInterval(function(){
+					canvas.width = canvas.width;
+					rect.x += 10;
+					rect.scaleX += .06;
+					rect.scaleY += .06;
+					rect.render(ctx);
+
+				}, 500)
+    			
+    		}());
+    	</script>
+    </body>
+</html>

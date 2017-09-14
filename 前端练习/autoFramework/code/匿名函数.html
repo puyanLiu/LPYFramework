@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<input id="btn" type="button" value="点我">
+    </body>
+</html>
+
+<script>
+	// (function() {
+	// 	// 独立的作用域，不会污染全局环境
+	// 	console.log(123);
+	// })();
+	
+
+	// (function(window, document) {
+	// 	// 对于当前作用域中，如果将window传入，就不用依赖全局对象了
+	// 	var btn = document.getElementById("btn");
+	// })(window, document);
+
+
+/*
+	var btn = document.getElementById("btn");
+	btn.onclick = function() {
+		console.log(1111);
+	}
+
+	(function() {
+		console.log(2222);
+	})();
+
+
+	// 上述函数会先打印1111，然后报错
+
+	等价于
+
+	var btn = document.getElementById("btn");
+	btn.onclick = function() {
+		console.log(1111);
+	}(function() {console.log(2222);})
+
+	();
+*/
+
+	// 把匿名函数优先作为一个表达式 再执行函数的几种方式
+	// 小括号
+    // 赋值操作
+    // 逻辑运算符
+    // 数字运算符
+    
+    (function aaa() {
+    	console.log(111);
+    })()
+
+    var a = function() {
+    	console.log(222);
+    }()
+
+    !function() {
+    	console.log(333);
+    }()
+
+    +function() {
+    	console.log(444);
+    }()
+
+
+</script>

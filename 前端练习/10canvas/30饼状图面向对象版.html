@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+         <script src="konva/konva.js"></script>
+         <script src="js/30PieChart.js"></script>
+        <style>
+        	body {
+        		padding: 0;
+				margin: 0;
+				background: #f0f0f0;
+				overflow: hidden;
+        	}
+        </style>
+    </head>
+    <body>
+    	<div id="container">
+    	</div>
+
+    	<script>
+    		// 创建舞台
+    		var stage = new Konva.Stage({
+    			container: 'container',
+    			width: window.innerWidth,
+    			height: window.innerHeight
+    		});
+
+    		// 中心点坐标
+    		var cenX = stage.width() / 2;
+    		var cenY = stage.height() / 2;
+
+    		// 创建层
+    		var bgLayer = new Konva.Layer();
+    		stage.add(bgLayer);
+
+    		//柱状图的数据
+			var data = [ 
+		    	{ name: "前端", value: .25, color: '#e0e'  },
+		    	{ name: "php",  value: .2,  color: 'orange'},
+		    	{ name: "UI",	value: .3,	color: 'blue'  },
+				{ name: "C++",	value: .05,	color: 'green' },
+				{ name: "游戏",	value: .1,	color: 'purple'},
+				{ name: "Java",	value: .1,	color: 'red'   }
+			];
+
+			var p = new PieChart({
+				x: cenX,
+				y: cenY,
+				r: 100,
+				data: data
+			});
+			p.addToGroupOrLayer(bgLayer);
+			bgLayer.draw();
+			p.playAnimate();
+
+    	</script>
+    </body>
+</html>

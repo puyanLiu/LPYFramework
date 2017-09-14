@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+<button id="btn">打开一个新的窗口</button>
+<button id="btn2">打开一个新的窗口2</button>
+<button id="btn3">打开一个新的窗口Location</button>
+<button id="btn4">刷新当前页面</button>
+<button id='btn5'>,普通用法</button>
+<button id='btn6'>,封装成函数</button>
+
+
+<button id='btn7'>&普通用法</button>
+<button id='btn8'>&封装成函数</button>
+
+
+<button id="btn9">打开链接</button>
+<button id="btn10">重新加载当前页面 - 刷新</button>
+    </body>
+</html>
+
+<script>
+	document.getElementById('btn').onclick=function() {
+        window.open('http://www.baidu.com')
+    }
+
+    document.getElementById('btn2').onclick=function() {
+        window.open ('http://www.baidu.com','newwindow','height=100,width=400,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+    }
+
+    //    我们可以控制窗口的各种属性：
+    //    宽为100，高为400，距屏顶0象素，屏左0象素，无工具条，无菜单条，无滚动条，
+    //    不可调整大小，无地址栏，无状态
+
+
+    document.getElementById('btn3').onclick=function() {
+        /*改变当前窗口的地址，则会打开新的网页*/
+        window.location ='test.html'
+        console.log(location.href)
+        console.log(location.port)
+        console.log(location.protocol)
+    }
+
+    document.getElementById('btn4').onclick=function() {
+        /*改变当前窗口的地址，则会打开新的网页*/
+       location.reload()
+    }
+
+    // document.location.href 返回完整的 URL。
+	// 如：http://www.cftea.com/foo.asp?p=1
+	// location.search是从当前URL的?号开始的字符串
+	// 如:http://www.51js.com/viewthread.php?tid=22720
+	// 它的search就是?tid=22720
+   document.getElementById('btn5').onclick=function() {
+       window.location = 'test1.html?shu,9527'
+   }
+
+    document.getElementById('btn6').onclick=function() {
+        window.location = 'test2.html?1,2'
+    }
+
+    document.getElementById('btn7').onclick=function() {
+        window.location = 'test3.html?num=1&id=1'
+    }
+
+    document.getElementById('btn8').onclick=function() {
+        window.location = 'test4.html?num=1&id=1'
+    }
+
+    document.getElementById('btn9').onclick=function() {
+         window.location = "http://www.baidu.com";
+            // location.href = "http://www.baidu.com";
+       location.assign("http://www.baidu.com");
+            // location.replace("http://www.baidu.com");
+//        replace和assign的区别
+//        replace()方法所做的操作与assign()方法一样，
+//        但它多了一步操作，即从浏览器的历史记录中删除了包含脚本的页面，
+//        这样就不能通过浏览器的后退按钮和前进按钮来访问它了，
+//        assign()方法却可以通过后退按钮来访问上个页面。
+    }
+
+    //刷新页面
+    document.getElementById('btn10').onclick=function() {
+         location.reload(true);    //从服务器重载当前页面
+//        location.reload(false);   //从浏览器缓存中重载当前页面
+//        location.reload();        //从浏览器缓存中重载当前页面
+    }
+
+
+//    hash：如果URL中包含有“#”，该方法将返回该符号之后的内容
+//    （例如：http://www.aa.cn/index.html#welcome的hash是“#welcome”）。
+
+//    host：服务器的名字，例如www.aa.cn。
+
+//    hostname：通常等于host，有时会省略前面的www。
+
+//    href：当前页面载入的完整URL。
+
+//    pathname：URL中主机名之后的部分。例如：http://www.aa.cn/html/js/index.html的pathname是“/html/js/index.html”。
+
+//    port：URL中声明的请求端口。默认情况下，大多数URL没有端口信息（默认为80端口），所以该属性通常是空白的。像http://www.aa.cn:8080/index.html这样的URL的port属性为8080。
+
+//    protocol：URL中使用的协议，即双斜杠（//）之前的部分。例如http://www.aa.cn中的protocol属性是http：
+//    ftp://www.aa.cn的protocol属性等于ftp:。
+
+        //search：执行GET请求的URL中的问号?后的部分，又称查询字符串。
+        // 例如http://www.aa.cn/search.html?name=shu中的search属性为?name=shu。
+    document.write( "<br>" + 
+                "hash:"+location.hash+"<br>"+
+                "host:"+location.host+"<br>"+
+                "hostname:"+location.hostname+"<br>"+
+                "href:"+location.href+"<br>"+
+                "pathname:"+location.pathname+"<br>"+
+                "port:"+location.port+"<br>"+
+                "protocol:"+location.protocol+"<br>"+
+                "search:"+location.search
+        );
+</script>

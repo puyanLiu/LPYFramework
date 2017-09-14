@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<div class="container">
+    		<canvas id="canvasElem">
+    			您的浏览器不支持canvas，请升级
+    		</canvas>
+    	</div>
+
+    	<script>
+    		(function() {
+    			var canvasElem = document.querySelector('#canvasElem');
+    			var ctx = canvasElem.getContext('2d');
+    			canvasElem.width = 600;
+    			canvasElem.height = 600;
+    			canvasElem.style.border = "1px solid #000";
+
+    			ctx.beginPath();
+				ctx.lineJoin = "miter";
+				ctx.lineWidth = 5;
+    			
+    			ctx.moveTo(100,100);
+				ctx.lineTo(200, 200);
+				ctx.lineTo(100, 110);
+				ctx.miterLimit= 300;
+				ctx.stroke();	
+
+				ctx.beginPath();
+				ctx.lineWidth = 30;
+				ctx.lineJoin = "bevel";
+				ctx.moveTo(200,100);
+				ctx.lineTo(300, 200);
+				ctx.lineTo(200, 300);
+				ctx.stroke();
+
+				ctx.beginPath();
+				ctx.lineWidth = 30;
+				ctx.lineJoin = "round";
+
+				ctx.moveTo(300,100);
+				ctx.lineTo(400, 200);
+				ctx.lineTo(300, 300);
+				ctx.stroke();	
+    		}());
+    	</script>
+    </body>
+</html>

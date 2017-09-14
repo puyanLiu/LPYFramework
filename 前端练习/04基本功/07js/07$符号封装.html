@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="one"></div>
+    <div class="one"></div>
+    <div class="one"></div>
+    <div></div>
+    <div></div>
+    <div id="last"></div>
+</body>
+</html>
+<script type="text/javascript">
+    function getClass(className) {
+        if (document.getElementsByClassName) {
+            return document.getElementsByClassName(className);
+        } else {
+            var domArray = [];
+            var doms = document.getElementsByTagName("*");
+            for(var i = 0; i < doms.length; i++) {
+                var arr = doms[i].className.split(" ");
+                for(var j = 0; j < arr.length; j++) {
+                    if (arr[j] == className) {
+                        domArray.push(doms[i]);
+                    }
+                }
+            }
+            return domArray;
+        }
+    }
+
+    function $(str) {
+        var s = str.charAt(0);
+        var ss = str.substr(1);
+        switch(s) {
+            case '#':
+                return document.getElementById(ss);
+            break;
+            case '.':
+                return getClass(ss);
+            break;
+            defult:
+                return document.getElementsByTagName(str);
+        }
+    }
+
+    $("#demo").style.backgroundColor = "yellow";
+    var one = $(".one");
+    for(var i = 0; i < one.length; i++) {
+        one[i].style.backgroundColor = "purple";
+    }
+
+</script>

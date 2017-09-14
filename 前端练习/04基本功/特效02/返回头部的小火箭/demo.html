@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        body {
+            width: 2000px;
+        }
+        .top {
+            position: fixed;
+            right: 50px;
+            bottom: 100px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="my.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+            var goTop = $("goTop");
+            window.onscroll = function() {
+                scroll().top > 0 ? show(goTop) : hide(goTop);
+                leader = scroll().top; // 把卷去得头部给起始位置
+            }
+            var leader = 0, target = 0, timer = null;
+            goTop.onclick = function() {
+                target = 0;
+                timer = setInterval(function() {
+                    leader = leader + (target - leader) * 0.1;
+                    window.scrollTo(0, leader);
+                    if (leader == target) {
+                        clearInterval(timer);
+                    }
+                }, 20);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="top" id="goTop">
+        <img src="images/Top.jpg" alt="" />
+    </div>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+    <p>我是内容部分，有很多恩多很多</p>
+</body>
+</html>

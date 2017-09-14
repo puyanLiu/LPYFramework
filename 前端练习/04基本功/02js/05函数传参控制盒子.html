@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 20px;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function btnClick(targetBoxId) {
+            var target = document.getElementById(targetBoxId);
+            target.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<button onclick="btnClick('demo1')">第1个按钮</button>
+<button onclick="btnClick('demo2')">第2个按钮</button>
+<button onclick="btnClick('demo3')">第3个按钮</button>
+<button onclick="btnClick('demo4')">第4个按钮</button>
+<div id="demo1">1</div>
+<div id="demo2">2</div>
+<div id="demo3">3</div>
+<div id="demo4">4</div>
+</body>
+</html>

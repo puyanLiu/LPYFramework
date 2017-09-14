@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+<script>
+	/*新增一个方法*/
+    String.prototype.alertSelf=function(){
+       console.log(this)
+    }
+
+  //重写方法
+  String.prototype.join =function(){
+      console.log('ssdfdfd')
+  }
+
+
+  /*trim是ES5新增的，以前的版本不支持，一般我们在编程的时候不会直接使用ES5，所以必须自己扩充*/
+  String.prototype.trim = function() {
+      return this.replace(/(^\s*)|(\s*$)/g, "");
+  }
+
+
+
+
+var str ='    a'
+str.join()
+  str.trim()
+  var str = '哈哈'
+  str.alertSelf()
+</script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        input, button {
+            border:none;
+            padding: 0;
+        }
+        
+        .search {
+            width: 256px;
+            height: 40px;
+            margin: 100px auto;
+            background: pink;
+        }
+        .search input {
+            background: url(images/left.jpg) no-repeat;
+            width: 208px;
+            height: 40px;
+            float: left;
+            padding-left: 8px;
+            color: #ccc;
+            outline-style: none;
+        }
+        .search button {
+            background: url(images/right.jpg) no-repeat;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            float: left;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            var txt = document.getElementById("txt");
+            txt.onfocus = function() {
+                if (this.value == "请输入...") {
+                    this.value = "";
+                    this.style.color = "#000";
+                }
+            }
+            txt.onblur = function() {
+                if (this.value == "") {
+                    this.value = "请输入...";
+                    this.style.color = "#ccc";
+                } 
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="search">
+        <input type="text" value="请输入..." id="txt" />
+        <button></button>
+    </div>
+</body>
+</html>
