@@ -1,0 +1,3 @@
+rootProject.name = 'MapViewDemo'
+
+include ':app'
