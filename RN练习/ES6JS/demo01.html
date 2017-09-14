@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript">
+        var array = [1, 23, 4, 5, 3];
+        // 缺点：不能使用break语句中断循环，也不能使用return语句返回到外层函数
+        array.forEach(function(value, index) {
+            console.log(value, index);
+        });
+
+
+        // 缺点：适合遍历字典，不适合遍历数组，因为index是一个索引字符串
+        // 用来遍历对象属性
+        for(var index in array) {
+            console.log(index + 0, array[index]);
+        }
+
+        // 可以正确响应break、continue、return
+        // 用来遍历数据，例如数组中得值
+        for(var value of array) {
+            console.log(value);
+            if (value == 4) {
+                break
+            }
+        }
+
+        // 字符串遍历 Unicode
+        for(var chr of "abc") {
+            console.log(chr);
+        }
+
+        // set遍历 去重复
+        var uniqueWords = new Set(["hi", "hello", "hi"]);
+        for(var word of uniqueWords) {
+            console.log(word);
+        }
+
+        // map遍历
+        var phoneBook = new Map();
+        phoneBook.set('name', '张三');
+        phoneBook.set('phone', '13430264654');
+        for(var [key, value] of phoneBook) {
+            console.log(key, value);
+        }
+
+        // for-of循环语句通过方法调用来遍历各种集合，数组、Map、Set都有一个迭代器方法
+        // for-of循环首先调用集合的[Symbol.iterator]()方法，紧接返回一个新的迭代器对象，迭代器对象可以是任意具有.next()方法的对象；for-of循环将重复调用这个方法，每次循环调用一次
+        var zeroesForeverIterator = {
+            [Symbol.iterator]: function() {
+                return this;
+            },
+            next: function() {
+                // done:是否完成迭代 value:下一个值
+                return {done: false, value: 0};
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

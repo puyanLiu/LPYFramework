@@ -271,8 +271,11 @@ extension ViewController {
             
         } else if (indexPath as NSIndexPath).row == 2 {
             
+//            self.navigationController?.view.makeToast("哈哈哈")
+            self.navigationController?.view.makeToast("您的借款申请正在安排放款，预计在24小时内完成！")
+            
             // Make toast with a title
-            self.navigationController?.view.makeToast("This is a piece of toast with a title", duration: 2.0, position: .top, title: "Toast Title", image: nil, style: nil, completion: nil)
+//            self.navigationController?.view.makeToast("This is a piece of toast with a title", duration: 2.0, position: .top, title: "Toast Title", image: nil, style: nil, completion: nil)
             
         } else if (indexPath as NSIndexPath).row == 3 {
             
